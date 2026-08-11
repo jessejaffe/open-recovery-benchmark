@@ -1,0 +1,40 @@
+{
+  "caseId": "qpdf-issue-179-nonnumeric-startxref",
+  "format": "pdf",
+  "damageClass": "nonnumeric-startxref",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:32.854Z",
+    "endedAt": "2026-08-11T22:25:32.964Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/qpdf-issue-179-nonnumeric-startxref/stdout.txt",
+    "stderr": "cases/qpdf-issue-179-nonnumeric-startxref/stderr.txt",
+    "output": {
+      "path": "cases/qpdf-issue-179-nonnumeric-startxref/tool-output/recovered.bin",
+      "byteLength": 1098,
+      "sha256": "aa794fd977bd394d75e9767480c35fa4194a78b5ccbc06c1032b9de3f7e39ae7"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 1,
+      "actualPageCount": 1,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

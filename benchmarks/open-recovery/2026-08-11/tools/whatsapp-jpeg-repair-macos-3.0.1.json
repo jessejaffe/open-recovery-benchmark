@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "whatsapp-jpeg-repair-macos-3.0.1",
+  "vendor": "WhatsApp JPEG Image Repair project",
+  "product": "WhatsApp JPEG Image Repair",
+  "version": "3.0.1 (commit 2774607332aeac32da74962ed5e269b80b56ed83)",
+  "platform": "macOS 26.3 arm64; built with Go 1.26.5",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://github.com/cdefgah/whatsapp-jpeg-repair tag v3.0.1",
+    "license": "GPL-3.0",
+    "binarySha256": "6c78129a0e62f79a696d3a7ddff8d13c6f70b9c3434cd25e63a8b59998347c57",
+    "build": "go build -o whatsapp-jpeg-repair ./cmd/whatsapp-jpeg-repair"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only corpus-jpeg.json and verify the executable SHA-256 before starting.",
+      "For each case, copy the packet input into its results directory before invoking positional-file mode so the packet input remains unchanged.",
+      "Do not use managed mode or provide any healthy sample.",
+      "List every resulting file and record the exact exit status and error output in the observation or an attachment.",
+      "Record refused and changed-output cases exactly; do not treat a merely decodable JPEG as an exact recovery."
+    ]
+  }
+}

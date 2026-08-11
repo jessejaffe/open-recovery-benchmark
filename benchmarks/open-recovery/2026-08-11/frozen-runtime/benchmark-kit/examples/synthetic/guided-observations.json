@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "synthetic-guided-observations-v1",
+  "toolId": "synthetic-guided-fixture-v1",
+  "cases": [
+    {
+      "caseId": "exact-case",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-10T12:00:00Z",
+      "productMessage": "Synthetic fixture reported success.",
+      "outputPath": "guided-outputs/exact.txt"
+    },
+    {
+      "caseId": "changed-case",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-10T12:01:00Z",
+      "productMessage": "Synthetic fixture reported success despite changed content.",
+      "outputPath": "guided-outputs/changed.txt"
+    },
+    {
+      "caseId": "refusal-case",
+      "productOutcome": "refusal",
+      "attemptedAt": "2026-08-10T12:02:00Z",
+      "productMessage": "Synthetic fixture refused the input."
+    }
+  ]
+}

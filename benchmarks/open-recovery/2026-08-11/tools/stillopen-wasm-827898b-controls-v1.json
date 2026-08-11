@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "stillopen-wasm-827898b-controls-v1",
+  "vendor": "StillOpen",
+  "product": "StillOpen WebAssembly recovery core",
+  "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+  "platform": "Node.js host with the released browser WebAssembly artifact",
+  "synthetic": false,
+  "acquisition": {
+    "source": "GitHub revision 827898b25e1459bdeb08ddc79bb865c088bfa4c3; public/wasm/stillopen-core.wasm",
+    "artifactSha256": "38ddee056233aa5c2f16f9a97a2ebc0f63df066f9b7000e7aec49d60de359fcf",
+    "healthyControlSemantics": "Adapter exit code 3 explicitly means the input scanned healthy and no repaired copy was needed or produced"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "{node}",
+    "args": [
+      "../../../../benchmark-kit/adapters/stillopen-recovery.mjs",
+      "--input",
+      "{input}",
+      "--output",
+      "{output}"
+    ],
+    "outputFile": "recovered.bin",
+    "exitCodeDisposition": {
+      "2": "refusal"
+    },
+    "healthyNoChangeExitCodes": [3]
+  }
+}

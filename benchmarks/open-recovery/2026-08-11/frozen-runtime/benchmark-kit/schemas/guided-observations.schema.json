@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stillopen.org/benchmark-kit/schemas/guided-observations.schema.json",
+  "title": "StillOpen guided benchmark observations",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "id", "toolId", "cases"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "benchmark-guided-observations" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+    "toolId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["caseId", "productOutcome", "attemptedAt"],
+        "properties": {
+          "caseId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+          "productOutcome": { "enum": ["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output"] },
+          "attemptedAt": { "type": "string", "format": "date-time" },
+          "productMessage": { "type": "string" },
+          "operatorNote": { "type": "string" },
+          "outputPath": { "type": "string", "minLength": 1 },
+          "returnedFiles": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["path"],
+              "properties": {
+                "path": { "type": "string", "minLength": 1 },
+                "recommended": { "type": "boolean" }
+              },
+              "additionalProperties": false
+            }
+          },
+          "attachments": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "not": { "required": ["outputPath", "returnedFiles"] },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

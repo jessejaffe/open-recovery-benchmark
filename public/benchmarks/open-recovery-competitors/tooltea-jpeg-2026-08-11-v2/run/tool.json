@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "tooltea-image-repair-2026-08-11",
+  "vendor": "ToolTea",
+  "product": "Free JPEG & PNG Repair Tool",
+  "version": "web capture 2026-08-11",
+  "platform": "Browser-local image repair service",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://tooltea.com/image/repair-jpeg",
+    "capturedAt": "2026-08-11",
+    "execution": "Page states in-browser processing and that files never leave the device",
+    "formats": [
+      "jpeg",
+      "png"
+    ],
+    "accountGate": false,
+    "publishedOutput": "Direct download after repair is attempted"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Run corpus-jpeg.json and corpus-png.json as separate nine-case packets, preserving manifest order within each format.",
+      "Do not enable enhancement, upscaling, recoloring, or any appearance-changing operation.",
+      "Download and list every returned file in display order, including structurally rewritten files that do not preview.",
+      "Record the diagnosis and exact success, refusal, error, unavailable, payment, or no-output result for every case.",
+      "Record whether any unexpected upload, account, quota, or payment boundary appears; only the independent RGBA validator decides recovery."
+    ]
+  }
+}

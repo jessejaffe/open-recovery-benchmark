@@ -1,0 +1,204 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/corpus.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-corpus",
+  "id": "external-source-jpeg-competitor-2026-08-11-v1",
+  "title": "Nine-case JPEG direct-repair cohort with healthy controls",
+  "cases": [
+    {
+      "id": "ijg-testorig-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testorig-corrupt-eoi.jpg",
+        "byteLength": 5770,
+        "sha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testorig-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testorig-trailing-bytes.jpg",
+        "byteLength": 5801,
+        "sha256": "c7e1af32fceed28501030e05021b3ad84fa5979cc6c23c517c9944c1bf294808"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgint-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgint-missing-eoi.jpg",
+        "byteLength": 5754,
+        "sha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgint-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgint-trailing-bytes.jpg",
+        "byteLength": 5787,
+        "sha256": "a86949088317db928a041e1c583fc0a3d5ef3884c801984794cf4129d15aa07a"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgari-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgari-corrupt-eoi.jpg",
+        "byteLength": 5126,
+        "sha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgari-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgari-missing-eoi.jpg",
+        "byteLength": 5124,
+        "sha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testorig",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testimgint",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testimgari",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    }
+  ]
+}

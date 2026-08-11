@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-publication-attestation",
+  "runId": "stillopen-jpeg-827898b-controls-v1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "index.html",
+      "byteLength": 16269,
+      "sha256": "9294d8ab36a877d65678ad8a05d4ea945c7e7c5a3e75fc1f7a969495ba22269b"
+    },
+    {
+      "path": "report.json",
+      "byteLength": 14709,
+      "sha256": "86c9b124d21449e42ea3207b576a899df92f376f5fb1656b07e68f7e94ee86ad"
+    },
+    {
+      "path": "run/attestation.json",
+      "byteLength": 10420,
+      "sha256": "6d0aee864f429ac0cbc1af7082effca97fab2c53bf0a577b3c46f41a0dd2e1d7"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgari/ground-truth.bin",
+      "byteLength": 5126,
+      "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgari/input.bin",
+      "byteLength": 5126,
+      "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgari/result.json",
+      "byteLength": 1131,
+      "sha256": "b5c2c4131750e89a2056e6c9419a7838d4a5bd280d00144670a2978b70d31c5f"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgari/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgari/stdout.txt",
+      "byteLength": 88,
+      "sha256": "01dd7455f3191847c7a724b4696abebf14279eb22493ad8ffd5a8c7e1d65d565"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgint/ground-truth.bin",
+      "byteLength": 5756,
+      "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgint/input.bin",
+      "byteLength": 5756,
+      "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgint/result.json",
+      "byteLength": 1131,
+      "sha256": "903e03c8b9809f54e2e873e28346d00c423e741fba1dec39c958d0e5db8f9e4e"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgint/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testimgint/stdout.txt",
+      "byteLength": 88,
+      "sha256": "01dd7455f3191847c7a724b4696abebf14279eb22493ad8ffd5a8c7e1d65d565"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testorig/ground-truth.bin",
+      "byteLength": 5770,
+      "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testorig/input.bin",
+      "byteLength": 5770,
+      "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testorig/result.json",
+      "byteLength": 1125,
+      "sha256": "0c355a09aff583128352c3fe018fa1b09c3b94b0381478f50dad6dec21d4933e"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testorig/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-ijg-testorig/stdout.txt",
+      "byteLength": 88,
+      "sha256": "01dd7455f3191847c7a724b4696abebf14279eb22493ad8ffd5a8c7e1d65d565"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/ground-truth.bin",
+      "byteLength": 5126,
+      "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/input.bin",
+      "byteLength": 5126,
+      "sha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/result.json",
+      "byteLength": 1344,
+      "sha256": "b1fac9b1428df259ed8243ab2fa03a9d7cb4815ce2da993e13e3676eeb6f8ceb"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/stdout.txt",
+      "byteLength": 96,
+      "sha256": "31a76638b437e80bc296e407e423bf8dc6369551e5366efa59da7b1c637f0a28"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-corrupt-eoi/tool-output/recovered.bin",
+      "byteLength": 77766,
+      "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/ground-truth.bin",
+      "byteLength": 5126,
+      "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/input.bin",
+      "byteLength": 5124,
+      "sha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/result.json",
+      "byteLength": 1343,
+      "sha256": "d7b2ffcaa9e14fcce6bd431d983c8d9cd6a6c95d9f0d538865dfa3172a937e6e"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/stdout.txt",
+      "byteLength": 96,
+      "sha256": "31a76638b437e80bc296e407e423bf8dc6369551e5366efa59da7b1c637f0a28"
+    },
+    {
+      "path": "run/cases/ijg-testimgari-missing-eoi/tool-output/recovered.bin",
+      "byteLength": 77766,
+      "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/ground-truth.bin",
+      "byteLength": 5756,
+      "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/input.bin",
+      "byteLength": 5754,
+      "sha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/result.json",
+      "byteLength": 1343,
+      "sha256": "58112948e9d54adf73ab152bddaad2ae1c6ef329fad9bac73ae20a327798bdb3"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/stdout.txt",
+      "byteLength": 96,
+      "sha256": "31a76638b437e80bc296e407e423bf8dc6369551e5366efa59da7b1c637f0a28"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-missing-eoi/tool-output/recovered.bin",
+      "byteLength": 77766,
+      "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/ground-truth.bin",
+      "byteLength": 5756,
+      "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/input.bin",
+      "byteLength": 5787,
+      "sha256": "a86949088317db928a041e1c583fc0a3d5ef3884c801984794cf4129d15aa07a"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/result.json",
+      "byteLength": 1370,
+      "sha256": "ebf4bb15e9677049389790c41137e6ea85f65a1280fa8bf371dc197ca11872a1"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/stdout.txt",
+      "byteLength": 96,
+      "sha256": "31a76638b437e80bc296e407e423bf8dc6369551e5366efa59da7b1c637f0a28"
+    },
+    {
+      "path": "run/cases/ijg-testimgint-trailing-bytes/tool-output/recovered.bin",
+      "byteLength": 77766,
+      "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/ground-truth.bin",
+      "byteLength": 5770,
+      "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/input.bin",
+      "byteLength": 5770,
+      "sha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/result.json",
+      "byteLength": 1336,
+      "sha256": "0e97f9e88a2a25ef4e62d261694b99417fe5479d7d72f0af64bb015924df5b1d"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/stdout.txt",
+      "byteLength": 96,
+      "sha256": "901ddbac13a0a62da8039ac5c3c223fa280384364481c7164e9ff993cb9606ec"
+    },
+    {
+      "path": "run/cases/ijg-testorig-corrupt-eoi/tool-output/recovered.bin",
+      "byteLength": 77678,
+      "sha256": "febdb8760933601c1e9bbc9daedbc163e2d497a372737be81557d08c17f598ec"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/ground-truth.bin",
+      "byteLength": 5770,
+      "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/input.bin",
+      "byteLength": 5801,
+      "sha256": "c7e1af32fceed28501030e05021b3ad84fa5979cc6c23c517c9944c1bf294808"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/result.json",
+      "byteLength": 1362,
+      "sha256": "bb1370fcaf3a2f8ce6f43fe431c4bd41e4a4ffc9641e474e8d4b57058bf30213"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/stdout.txt",
+      "byteLength": 96,
+      "sha256": "901ddbac13a0a62da8039ac5c3c223fa280384364481c7164e9ff993cb9606ec"
+    },
+    {
+      "path": "run/cases/ijg-testorig-trailing-bytes/tool-output/recovered.bin",
+      "byteLength": 77678,
+      "sha256": "febdb8760933601c1e9bbc9daedbc163e2d497a372737be81557d08c17f598ec"
+    },
+    {
+      "path": "run/corpus.json",
+      "byteLength": 9536,
+      "sha256": "7ee031840d261dbaefde37805e2f9233248b31f6c6946d5a157f6f00869ffe2e"
+    },
+    {
+      "path": "run/plan.json",
+      "byteLength": 1536,
+      "sha256": "5428650bfc536c1b3697e5d413bf118228ca58645943cd09dc7c7a92e4b3ff05"
+    },
+    {
+      "path": "run/protocol.json",
+      "byteLength": 1794,
+      "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+    },
+    {
+      "path": "run/run.json",
+      "byteLength": 14709,
+      "sha256": "86c9b124d21449e42ea3207b576a899df92f376f5fb1656b07e68f7e94ee86ad"
+    },
+    {
+      "path": "run/tool.json",
+      "byteLength": 1128,
+      "sha256": "c386bad9f4e4818aab691328764650d6bb38286db0f5e185ed468efd11ac3fc1"
+    }
+  ],
+  "rootDigest": "ba6a5a9adb0bf7bcd1d5f66030db25a764eb66cf444b04437512c4435cceeb8f"
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.4.0"
+  },
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "zpdf-web-2026-08-11",
+    "digest": "223f2a9b112191f0598951173040b39cdbb626b2f5db35e79c8d864469ecaa2b",
+    "vendor": "zPDF",
+    "product": "Repair PDF",
+    "version": "web capture 2026-08-11",
+    "platform": "Browser-local WebAssembly service",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass"
+  },
+  "limits": {
+    "timeoutMs": 1800000,
+    "maxCapturedBytes": 262144
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "qpdf-form-corrupt-startxref",
+    "qpdf-form-missing-eof",
+    "qpdf-11-pages-missing-startxref",
+    "qpdf-11-pages-trailing-bytes",
+    "qpdf-issue-179-startxref-out-of-range",
+    "qpdf-issue-179-nonnumeric-startxref",
+    "healthy-qpdf-form",
+    "healthy-qpdf-11-pages",
+    "healthy-qpdf-issue-179"
+  ],
+  "planDigest": "2568425179ba4531d9703a74b122a9be4bbe3095951bd7dccdf2d49c021f02c3"
+}

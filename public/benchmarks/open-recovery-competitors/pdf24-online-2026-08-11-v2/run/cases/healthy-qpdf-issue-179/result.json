@@ -1,0 +1,50 @@
+{
+  "caseId": "healthy-qpdf-issue-179",
+  "format": "pdf",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:27:00Z",
+    "productMessage": "PDF24 has processed your job.",
+    "operatorNote": "ZIP entry 9 of 9, mapped by the frozen upload and product display order.",
+    "output": {
+      "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+      "byteLength": 2840,
+      "sha256": "33a6afbf1e8652d861fcd74505c1551ec46b8d53d1ac6c200ea15978e59515b5"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+        "byteLength": 2840,
+        "sha256": "33a6afbf1e8652d861fcd74505c1551ec46b8d53d1ac6c200ea15978e59515b5",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-unexpected-changed-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-unexpected-changed-output",
+      "selectedReturnedFile": "cases/healthy-qpdf-issue-179/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 1,
+      "actualPageCount": 1,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

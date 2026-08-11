@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "4ddig-file-repair-macos-3.3.2",
+  "vendor": "Tenorshare",
+  "product": "4DDiG File Repair",
+  "version": "3.3.2 (bundle 3.3.2.3)",
+  "platform": "macOS 26.3 arm64",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Official Tenorshare DMG downloaded 2026-08-11",
+    "filename": "4ddig-file-repair-mac_11786479212617821002.dmg",
+    "byteLength": 337702099,
+    "sha256": "973099b6117aa12786e9057200615ef8ede2c01c97861c614e6574f8ab6e727f",
+    "inspectedBundle": "4DDiG File Repair.app universal"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Confirm product version 3.3.2 (bundle 3.3.2.3), plan/license state, and macOS build before opening a packet input.",
+      "Use standard file repair only; disable AI enhancement, upscaling, recoloring, and sample-assisted repair.",
+      "Run every case in packet order without overwriting the packet input.",
+      "Save and list every returned file in display order and identify a recommended result only when the product does.",
+      "Record refusals, errors, preview-only results, export paywalls, watermarks, and no-output outcomes exactly as observed."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "qpdf-macos-12.4.0",
+  "vendor": "qpdf project",
+  "product": "qpdf",
+  "version": "12.4.0",
+  "platform": "macOS 26.3 arm64; Homebrew",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Homebrew qpdf formula; https://github.com/qpdf/qpdf",
+    "license": "Apache-2.0",
+    "executable": "/opt/homebrew/bin/qpdf"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "/opt/homebrew/bin/qpdf",
+    "args": ["{input}", "{output}"],
+    "outputFile": "recovered.pdf",
+    "successExitCodes": [0, 3]
+  }
+}

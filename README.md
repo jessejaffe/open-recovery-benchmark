@@ -6,9 +6,16 @@ bundles offline.
 
 ## Status
 
-**Foundation plus one explicitly unofficial backend rehearsal and a four-format
-healthy-control addendum. No Benchmark v1.0, official competitor ranking, or
-production benchmark publication is included in this repository.**
+**Foundation plus a frozen, format-specific consumer-browser benchmark, one
+explicitly unofficial backend rehearsal, and a four-format healthy-control
+addendum.**
+
+The [2026-08-11 consumer-browser publication](benchmarks/open-recovery/2026-08-11/README.md)
+contains the preregistration, protocol, corpora, product definitions, broader
+competitor analysis, exact frozen harness snapshot, aggregate results, and all
+eight content-addressed evidence packages. Its score tables are deliberately
+separate by supported format: PDF, JPEG, and PNG. It does not calculate a
+cross-format overall score.
 
 The [2026-08-11 practice bundle](practice/2026-08-11/README.md) contains a
 project-authored eight-case corpus, guided browser observations, recovered
@@ -22,9 +29,12 @@ for intact PDF, JPEG, PNG, and ZIP inputs. Its scoring contract is documented in
 StillOpen plus four free or freemium browser surfaces, with coverage shown beside
 every mean and account, queue, and unsupported-format cases left unscored.
 
-The setup releases establish the public source and license trust anchor. Future
-benchmark definitions and results can identify the exact public
-Git commit that defined their runner, schemas, fixtures, and scoring behavior.
+The setup releases establish the public source and license trust anchor. The
+2026-08-11 publication was initially executed from the application repository;
+this repository preserves the exact registered files and runtime artifacts by
+their preregistered SHA-256 hashes, along with an offline verifier for the public
+mirror. Future registrations should identify this public repository's exact Git
+commit before execution.
 
 ## Included
 
@@ -77,18 +87,22 @@ Requires Node.js 22.13 or newer.
 ```sh
 npm ci
 npm test
+npm run verify:browser-competitors
 npm run demo -- --workspace benchmark-work --run-id local-proof
 node benchmark-kit/cli.mjs verify-publication \
   --publication benchmark-work/local-proof-publication
 ```
 
-The demo writes only to the ignored local `benchmark-work/` directory. CI runs
-the same workflow but does not publish its generated report.
+The browser-competitor verifier checks the frozen registration and runtime
+hashes, all eight publication attestations, every cohort denominator and score,
+and the aggregate summary. The demo writes only to the ignored local
+`benchmark-work/` directory. CI runs the same verification workflow but does not
+publish its generated report.
 
 ## Trust model
 
-A future report should name the exact public repository commit used for its
-test definition. The committed protocol, corpus, scoring code, raw outputs, and
+A report should name the exact public repository commit used for its test
+definition. The committed protocol, corpus, scoring code, raw outputs, and
 evidence inventory then give independent reviewers everything needed to
 recalculate the result. A rerun creates a new bundle rather than replacing an
 earlier one.

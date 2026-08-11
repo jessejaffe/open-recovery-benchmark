@@ -8,8 +8,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "test": "node --test benchmark-kit/tests/*.test.mjs",
-    "demo": "node benchmark-kit/cli.mjs demo"
+    "test": "node --test benchmark-kit/tests/*.test.mjs && npm run verify:browser-competitors",
+    "demo": "node benchmark-kit/cli.mjs demo",
+    "verify:browser-competitors": "node benchmarks/open-recovery/2026-08-11/scripts/verify-public-mirror.mjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "1.0.5",

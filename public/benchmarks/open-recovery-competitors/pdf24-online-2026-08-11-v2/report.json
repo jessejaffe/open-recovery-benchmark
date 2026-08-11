@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "pdf24-online-2026-08-11-v2",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "title": "Nine-case PDF direct-repair cohort with healthy controls",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "pdf24-online-2026-08-11",
+    "digest": "39a8e89df2138bce920fbee13a57604278fbc3590c295010d5b776d8a8f9b18d",
+    "vendor": "PDF24",
+    "product": "Repair PDF Online",
+    "version": "web capture 2026-08-11",
+    "platform": "Browser service with server processing",
+    "synthetic": false
+  },
+  "planDigest": "0b0696710f83cdb848ad81f9611f2f72e87a71dbb970900c11c3af7de13b0a84",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "The product returned one ZIP containing nine PDFs in the same display order as the frozen upload packet; this is entry 1. No login, quota, or payment boundary appeared.",
+        "output": {
+          "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+          "byteLength": 23476,
+          "sha256": "ff9f1da8fa6d31157e52898d80703f31ec8cc839e0dd8cb4ded908a270cc23ed"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+            "byteLength": 23476,
+            "sha256": "ff9f1da8fa6d31157e52898d80703f31ec8cc839e0dd8cb4ded908a270cc23ed",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf"
+        },
+        "attachments": [
+          {
+            "path": "cases/qpdf-form-corrupt-startxref/attachments/01.zip",
+            "byteLength": 77420,
+            "sha256": "01a6b97fbf201d9a3b39cacf780bddb2b0153c956cea5604fad5647d73576d56"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 2 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+          "byteLength": 23476,
+          "sha256": "e85ef8d8dfd4eef70d3e00ca9a28bc37598623b53ac161d22e6e84b589d51e7f"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+            "byteLength": 23476,
+            "sha256": "e85ef8d8dfd4eef70d3e00ca9a28bc37598623b53ac161d22e6e84b589d51e7f",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-form-missing-eof/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 3 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf",
+          "byteLength": 5879,
+          "sha256": "e02524b7c791be2141474328644b88d554aec720d34ad03f1b11421a361db06a"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf",
+            "byteLength": 5879,
+            "sha256": "e02524b7c791be2141474328644b88d554aec720d34ad03f1b11421a361db06a",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 4 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+          "byteLength": 5879,
+          "sha256": "5b9ceb2815a6fe326196e3e195cb96c1bd42eff19fdd4536f465afa8498e38ff"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+            "byteLength": 5879,
+            "sha256": "5b9ceb2815a6fe326196e3e195cb96c1bd42eff19fdd4536f465afa8498e38ff",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 5 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf",
+          "byteLength": 2823,
+          "sha256": "d0943e5ce0c2b7b8220c9756670bcd33581b3c81dc0ccce8dc9e43788f127b70"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf",
+            "byteLength": 2823,
+            "sha256": "d0943e5ce0c2b7b8220c9756670bcd33581b3c81dc0ccce8dc9e43788f127b70",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 6 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/qpdf-issue-179-nonnumeric-startxref/returned-files/01.pdf",
+          "byteLength": 2823,
+          "sha256": "61d6c4f070c1ec06e2bd3f9d71c23575de06df848ea211eacc7619100b52af26"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-issue-179-nonnumeric-startxref/returned-files/01.pdf",
+            "byteLength": 2823,
+            "sha256": "61d6c4f070c1ec06e2bd3f9d71c23575de06df848ea211eacc7619100b52af26",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-issue-179-nonnumeric-startxref/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 7 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+          "byteLength": 23476,
+          "sha256": "4297a93ca799b735745a93ae9521237d089d71b287f82e8aa31168e773d73214"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+            "byteLength": 23476,
+            "sha256": "4297a93ca799b735745a93ae9521237d089d71b287f82e8aa31168e773d73214",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-form/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 8 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+          "byteLength": 5879,
+          "sha256": "04c5101e827f398a1b68c3656873116bb2dda36f57d1dad2d6c6c48b2ba25fd8"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+            "byteLength": 5879,
+            "sha256": "04c5101e827f398a1b68c3656873116bb2dda36f57d1dad2d6c6c48b2ba25fd8",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-11-pages/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:27:00Z",
+        "productMessage": "PDF24 has processed your job.",
+        "operatorNote": "ZIP entry 9 of 9, mapped by the frozen upload and product display order.",
+        "output": {
+          "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+          "byteLength": 2840,
+          "sha256": "33a6afbf1e8652d861fcd74505c1551ec46b8d53d1ac6c200ea15978e59515b5"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+            "byteLength": 2840,
+            "sha256": "33a6afbf1e8652d861fcd74505c1551ec46b8d53d1ac6c200ea15978e59515b5",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-issue-179/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 6,
+    "changedOutputs": 3,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "competitiveSummaryEligible": true
+  }
+}

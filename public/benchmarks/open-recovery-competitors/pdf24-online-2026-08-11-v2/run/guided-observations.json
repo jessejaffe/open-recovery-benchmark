@@ -1,0 +1,129 @@
+{
+  "$schema": "https://stillopen.org/benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "pdf24-online-2026-08-11-observations",
+  "toolId": "pdf24-online-2026-08-11",
+  "cases": [
+    {
+      "caseId": "qpdf-form-corrupt-startxref",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-form-corrupt-startxref/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "attachments": [
+        "source-downloads/pdf24_repairPdf.zip"
+      ],
+      "operatorNote": "The product returned one ZIP containing nine PDFs in the same display order as the frozen upload packet; this is entry 1. No login, quota, or payment boundary appeared."
+    },
+    {
+      "caseId": "qpdf-form-missing-eof",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-form-missing-eof/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 2 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-11-pages-missing-startxref/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 3 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-11-pages-trailing-bytes/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 4 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-issue-179-startxref-out-of-range/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 5 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/qpdf-issue-179-nonnumeric-startxref/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 6 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "healthy-qpdf-form",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-qpdf-form/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 7 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "healthy-qpdf-11-pages",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-qpdf-11-pages/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 8 of 9, mapped by the frozen upload and product display order."
+    },
+    {
+      "caseId": "healthy-qpdf-issue-179",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:27:00Z",
+      "productMessage": "PDF24 has processed your job.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-qpdf-issue-179/results/repaired.pdf",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "ZIP entry 9 of 9, mapped by the frozen upload and product display order."
+    }
+  ]
+}

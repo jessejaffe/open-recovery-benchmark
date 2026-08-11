@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-attestation",
+  "runId": "stillopen-png-827898b-controls-v1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "cases/healthy-pngsuite-basn2c08/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn2c08/input.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn2c08/result.json",
+      "byteLength": 1135,
+      "sha256": "3744dca13ba8dabe46698c93f3120cb0270b122858e2e3d88ae1a3e4c5647ec6"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn2c08/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn2c08/stdout.txt",
+      "byteLength": 87,
+      "sha256": "e3fe8dc9a143aff10aa6d76471b7a85c71e5c9ff5a47f1d84e38ea203251f18e"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn3p08/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn3p08/input.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn3p08/result.json",
+      "byteLength": 1135,
+      "sha256": "fc1564a5b99977de9508e87b8abda97343fc88a61517ae6553127203362ebe62"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn3p08/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn3p08/stdout.txt",
+      "byteLength": 87,
+      "sha256": "e3fe8dc9a143aff10aa6d76471b7a85c71e5c9ff5a47f1d84e38ea203251f18e"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn6a16/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn6a16/input.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn6a16/result.json",
+      "byteLength": 1135,
+      "sha256": "08ad81ac107873d5d22e04a97f3b9137afe94271323bc95cf8490e36c931dd4a"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn6a16/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/healthy-pngsuite-basn6a16/stdout.txt",
+      "byteLength": 87,
+      "sha256": "e3fe8dc9a143aff10aa6d76471b7a85c71e5c9ff5a47f1d84e38ea203251f18e"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/input.bin",
+      "byteLength": 1286,
+      "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/result.json",
+      "byteLength": 1369,
+      "sha256": "a4a32318f21aef7e6779ef8c8443ffd29aed969e83295eedd640941c5f772bb5"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/stdout.txt",
+      "byteLength": 113,
+      "sha256": "f4e23395935c94507b15f8ff5dede0e9820f1296a0565090d08849ecc9c6ea97"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-idat-crc/tool-output/recovered.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/input.bin",
+      "byteLength": 1286,
+      "sha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/result.json",
+      "byteLength": 1369,
+      "sha256": "0b57b891dd11dda0606ac07b710cb134116ea15fdbbee46e8c32a47a0003870e"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/stdout.txt",
+      "byteLength": 113,
+      "sha256": "f4e23395935c94507b15f8ff5dede0e9820f1296a0565090d08849ecc9c6ea97"
+    },
+    {
+      "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/tool-output/recovered.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/input.bin",
+      "byteLength": 145,
+      "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/result.json",
+      "byteLength": 1352,
+      "sha256": "7ebffadc3c3884194be772dd7197e26b77ef1cb9f2cea802ea51057a9f6957e9"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/stdout.txt",
+      "byteLength": 112,
+      "sha256": "3af15ae84f4f09326a8c596f162607e70a7bdd60e5b64ad59bdba8c9b40136e4"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/tool-output/recovered.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/input.bin",
+      "byteLength": 133,
+      "sha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/result.json",
+      "byteLength": 1331,
+      "sha256": "fd259cc9eed58567edf9acb7ea2260075faf181dc0cc1f9802cc2a934c1cb48e"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/stdout.txt",
+      "byteLength": 117,
+      "sha256": "8726d73d2aa1acf35cae775a0153c8b6e76ef137272c0751dc1d2142b346a2fd"
+    },
+    {
+      "path": "cases/pngsuite-rgb8-missing-iend/tool-output/recovered.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/input.bin",
+      "byteLength": 3435,
+      "sha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/result.json",
+      "byteLength": 1361,
+      "sha256": "d2739d606579b32c09e5b6d1458d1b6029bdc5bcbc41a514c4181a2650f3a16f"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/stdout.txt",
+      "byteLength": 113,
+      "sha256": "2302e7af50350a36e49600da8834c0d6383c2adcfb691a98a4dc2138fbda1458"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-corrupt-iend-crc/tool-output/recovered.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/input.bin",
+      "byteLength": 3423,
+      "sha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/result.json",
+      "byteLength": 1340,
+      "sha256": "1ce91f24bd90101f8d5aed6a084edc0976139720d9f85e59cdc1dcad4160c102"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/stdout.txt",
+      "byteLength": 118,
+      "sha256": "cc37843396b3be541b49c1af3fb2e772b35fff0b4ff6f8290e784ee4ce831db4"
+    },
+    {
+      "path": "cases/pngsuite-rgba16-missing-iend/tool-output/recovered.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "corpus.json",
+      "byteLength": 9677,
+      "sha256": "2947d371d3961999d564160d44882c9278558eed8629fc0da37acc03e2dc4b6e"
+    },
+    {
+      "path": "plan.json",
+      "byteLength": 1572,
+      "sha256": "b49f75dcc31d3e389c9f35e29a840e028e29bd0ea58c64083e15d01c2119e725"
+    },
+    {
+      "path": "protocol.json",
+      "byteLength": 1794,
+      "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+    },
+    {
+      "path": "run.json",
+      "byteLength": 14748,
+      "sha256": "28ed408209ca2d0acfac18f8f051cab5bad258b06b6f263069bc17c7ae34d43c"
+    },
+    {
+      "path": "tool.json",
+      "byteLength": 1128,
+      "sha256": "c386bad9f4e4818aab691328764650d6bb38286db0f5e185ed468efd11ac3fc1"
+    }
+  ],
+  "signature": null,
+  "signatureStatus": "unsigned",
+  "rootDigest": "5fec66c33f6f3ebfa49845123a1c844383351d081ba3f601b15ccebf9dca3fb2"
+}

@@ -1,0 +1,42 @@
+{
+  "caseId": "pngsuite-rgba16-missing-iend",
+  "format": "png",
+  "damageClass": "remove-iend",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:35.613Z",
+    "endedAt": "2026-08-11T22:25:35.698Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/pngsuite-rgba16-missing-iend/stdout.txt",
+    "stderr": "cases/pngsuite-rgba16-missing-iend/stderr.txt",
+    "output": {
+      "path": "cases/pngsuite-rgba16-missing-iend/tool-output/recovered.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 32,
+      "actualWidth": 32,
+      "actualHeight": 32,
+      "dimensions": true,
+      "expectedRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+      "actualRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

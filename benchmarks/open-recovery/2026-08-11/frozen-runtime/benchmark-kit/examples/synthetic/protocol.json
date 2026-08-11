@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/protocol.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-protocol",
+  "id": "synthetic-command-slice-v1",
+  "title": "Synthetic command-adapter proof run",
+  "publicClaim": "This demonstration proves repeatable execution, evidence capture, independent exact-byte validation, and tamper verification across three synthetic outcomes.",
+  "frozenAt": "2026-08-10T00:00:00Z",
+  "inclusionRules": [
+    "Run every declared case in manifest order.",
+    "Preserve every terminal product outcome."
+  ],
+  "exclusionRules": [
+    "Synthetic results may not appear in competitor performance summaries."
+  ],
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass"
+  },
+  "limits": {
+    "timeoutMs": 5000,
+    "maxCapturedBytes": 65536
+  }
+}

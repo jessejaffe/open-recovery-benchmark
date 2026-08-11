@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "stillopen-jpeg-827898b-controls-v1",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-jpeg-competitor-2026-08-11-v1",
+    "title": "Nine-case JPEG direct-repair cohort with healthy controls",
+    "digest": "af35705f87582960cbf576589fa9278448a854a6be9b669146c691a8f6ea6a5a"
+  },
+  "tool": {
+    "id": "stillopen-wasm-827898b-controls-v1",
+    "digest": "cb7b33d097faaf834ffa7b3bf8f08d06c28b9a090d2df1ac681141dc63457720",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+    "platform": "Node.js host with the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "planDigest": "21b3872703c1e4a83332ba77caa67f358a62351c63482d0ca069694ce5ff7d65",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "ijg-testorig-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:33.931Z",
+        "endedAt": "2026-08-11T22:25:34.025Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testorig-corrupt-eoi/stdout.txt",
+        "stderr": "cases/ijg-testorig-corrupt-eoi/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testorig-corrupt-eoi/tool-output/recovered.bin",
+          "byteLength": 77678,
+          "sha256": "febdb8760933601c1e9bbc9daedbc163e2d497a372737be81557d08c17f598ec"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testorig-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.127Z",
+        "endedAt": "2026-08-11T22:25:34.269Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testorig-trailing-bytes/stdout.txt",
+        "stderr": "cases/ijg-testorig-trailing-bytes/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testorig-trailing-bytes/tool-output/recovered.bin",
+          "byteLength": 77678,
+          "sha256": "febdb8760933601c1e9bbc9daedbc163e2d497a372737be81557d08c17f598ec"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgint-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.274Z",
+        "endedAt": "2026-08-11T22:25:34.381Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testimgint-missing-eoi/stdout.txt",
+        "stderr": "cases/ijg-testimgint-missing-eoi/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testimgint-missing-eoi/tool-output/recovered.bin",
+          "byteLength": 77766,
+          "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgint-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.385Z",
+        "endedAt": "2026-08-11T22:25:34.481Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testimgint-trailing-bytes/stdout.txt",
+        "stderr": "cases/ijg-testimgint-trailing-bytes/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testimgint-trailing-bytes/tool-output/recovered.bin",
+          "byteLength": 77766,
+          "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgari-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.486Z",
+        "endedAt": "2026-08-11T22:25:34.579Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testimgari-corrupt-eoi/stdout.txt",
+        "stderr": "cases/ijg-testimgari-corrupt-eoi/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testimgari-corrupt-eoi/tool-output/recovered.bin",
+          "byteLength": 77766,
+          "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgari-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.584Z",
+        "endedAt": "2026-08-11T22:25:34.679Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/ijg-testimgari-missing-eoi/stdout.txt",
+        "stderr": "cases/ijg-testimgari-missing-eoi/stderr.txt",
+        "output": {
+          "path": "cases/ijg-testimgari-missing-eoi/tool-output/recovered.bin",
+          "byteLength": 77766,
+          "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testorig",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.683Z",
+        "endedAt": "2026-08-11T22:25:34.769Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-ijg-testorig/stdout.txt",
+        "stderr": "cases/healthy-ijg-testorig/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testimgint",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.772Z",
+        "endedAt": "2026-08-11T22:25:34.863Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-ijg-testimgint/stdout.txt",
+        "stderr": "cases/healthy-ijg-testimgint/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testimgari",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:34.866Z",
+        "endedAt": "2026-08-11T22:25:34.953Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-ijg-testimgari/stdout.txt",
+        "stderr": "cases/healthy-ijg-testimgari/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 9,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "competitiveSummaryEligible": true
+  }
+}

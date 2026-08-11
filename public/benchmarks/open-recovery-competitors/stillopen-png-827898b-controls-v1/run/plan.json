@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.4.0"
+  },
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-png-competitor-2026-08-11-v1",
+    "digest": "9cd5871c060642009c67cd1dd49895d88164aeef5381337a41f6510479c86662"
+  },
+  "tool": {
+    "id": "stillopen-wasm-827898b-controls-v1",
+    "digest": "cb7b33d097faaf834ffa7b3bf8f08d06c28b9a090d2df1ac681141dc63457720",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+    "platform": "Node.js host with the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass"
+  },
+  "limits": {
+    "timeoutMs": 1800000,
+    "maxCapturedBytes": 262144
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pngsuite-rgb8-missing-iend",
+    "pngsuite-rgb8-corrupt-iend-crc",
+    "pngsuite-palette8-corrupt-idat-crc",
+    "pngsuite-palette8-corrupt-ihdr-crc",
+    "pngsuite-rgba16-missing-iend",
+    "pngsuite-rgba16-corrupt-iend-crc",
+    "healthy-pngsuite-basn2c08",
+    "healthy-pngsuite-basn3p08",
+    "healthy-pngsuite-basn6a16"
+  ],
+  "planDigest": "ff3953f6e9677941fd07815fa6f49356c4e0bb3e0450144cb52e12036fc3a40b"
+}

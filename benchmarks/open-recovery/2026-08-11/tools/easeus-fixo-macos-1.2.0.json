@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "easeus-fixo-macos-1.2.0",
+  "vendor": "EaseUS",
+  "product": "Fixo",
+  "version": "1.2.0 installer capture",
+  "platform": "macOS 26.3 arm64",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Official EaseUS DMG downloaded 2026-08-11",
+    "filename": "fixo_ad_google_Setup_20260811.100000.dmg",
+    "byteLength": 9899135,
+    "sha256": "122de96c9ae8b27942760d142cad4f3699c04a00d30d728a61b4cd9f07fcfef5",
+    "inspectedBundle": "Fixo for Mac Installer.app 1.2.0 universal",
+    "versionPolicy": "Confirm the installed product version before capture; create a new tool definition if it differs."
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Confirm the installed product identity and version, plan/license state, and macOS build before opening a packet input.",
+      "Use structural file repair only and disable enhancement or sample-assisted modes.",
+      "Run every case in packet order without overwriting the packet input.",
+      "Save and list every returned file in display order, including any unchanged copy of the upload.",
+      "Record refusals, errors, preview-only results, export paywalls, watermarks, and no-output outcomes exactly as observed."
+    ]
+  }
+}

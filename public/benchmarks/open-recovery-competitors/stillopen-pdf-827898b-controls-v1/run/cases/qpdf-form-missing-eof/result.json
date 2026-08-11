@@ -1,0 +1,40 @@
+{
+  "caseId": "qpdf-form-missing-eof",
+  "format": "pdf",
+  "damageClass": "remove-final-eof",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:31.913Z",
+    "endedAt": "2026-08-11T22:25:32.328Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/qpdf-form-missing-eof/stdout.txt",
+    "stderr": "cases/qpdf-form-missing-eof/stderr.txt",
+    "output": {
+      "path": "cases/qpdf-form-missing-eof/tool-output/recovered.bin",
+      "byteLength": 32138,
+      "sha256": "91b3d985543a59e7d4092d0e8a99d50fc086e46ba40b629cc1401ed3a96a3448"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

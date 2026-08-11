@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "pdf24-online-2026-08-11",
+  "vendor": "PDF24",
+  "product": "Repair PDF Online",
+  "version": "web capture 2026-08-11",
+  "platform": "Browser service with server processing",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://tools.pdf24.org/en/repair-pdf",
+    "capturedAt": "2026-08-11",
+    "freePlan": "Official page states free use, no registration, no usage or time limits, and no forced premium version",
+    "businessModel": "Official page states advertising covers expenses",
+    "retention": "Official page states automatic server deletion after one hour"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only corpus-pdf.json public benchmark inputs and run all nine cases in packet order.",
+      "Download and list every returned PDF in display order, including unchanged copies.",
+      "Record every success, refusal, error, unavailable, quota, account, payment, or no-output result exactly as shown.",
+      "Record batch behavior, elapsed time, and whether the published no-registration and no-limit access remains true during the run.",
+      "Record the stated server-retention window and any deletion control without entering personal information."
+    ]
+  }
+}

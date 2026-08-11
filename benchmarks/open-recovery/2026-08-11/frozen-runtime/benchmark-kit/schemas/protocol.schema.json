@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stillopen.org/benchmark-kit/schemas/protocol.schema.json",
+  "title": "StillOpen benchmark protocol",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "id", "title", "publicClaim", "frozenAt", "scoring", "limits"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "benchmark-protocol" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "publicClaim": { "type": "string", "minLength": 1 },
+    "frozenAt": { "type": "string", "format": "date-time" },
+    "inclusionRules": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "exclusionRules": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "scoring": {
+      "type": "object",
+      "required": ["denominator", "passDisposition"],
+      "properties": {
+        "denominator": { "const": "all-eligible-cases" },
+        "passDisposition": { "const": "verified-pass" }
+      },
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "required": ["timeoutMs", "maxCapturedBytes"],
+      "properties": {
+        "timeoutMs": { "type": "integer", "minimum": 100, "maximum": 3600000 },
+        "maxCapturedBytes": { "type": "integer", "minimum": 1024 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

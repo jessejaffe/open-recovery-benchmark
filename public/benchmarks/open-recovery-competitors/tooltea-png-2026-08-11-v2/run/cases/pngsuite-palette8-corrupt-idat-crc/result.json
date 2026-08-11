@@ -1,0 +1,39 @@
+{
+  "caseId": "pngsuite-palette8-corrupt-idat-crc",
+  "format": "png",
+  "damageClass": "corrupt-idat-crc",
+  "eligible": true,
+  "observation": {
+    "disposition": "no-output",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair successful! Image renders correctly.",
+    "operatorNote": "Product reported IEND marker present and 0 fixes applied; returned file is byte-identical to the damaged input.",
+    "output": null,
+    "returnedFiles": [
+      {
+        "path": "cases/pngsuite-palette8-corrupt-idat-crc/returned-files/01.png",
+        "byteLength": 1286,
+        "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "byte-identical",
+        "classification": "original-returned"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "no-changed-output",
+      "selectedReturnedFile": null
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "disposition": "no-output"
+}

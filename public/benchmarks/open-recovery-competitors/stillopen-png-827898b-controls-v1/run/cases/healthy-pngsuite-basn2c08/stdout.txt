@@ -1,0 +1,1 @@
+{"outcome":"healthy-no-action","status":"healthy","format":"png","outputByteLength":0}

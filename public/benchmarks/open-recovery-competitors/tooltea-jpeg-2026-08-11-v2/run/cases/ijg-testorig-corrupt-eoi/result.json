@@ -1,0 +1,52 @@
+{
+  "caseId": "ijg-testorig-corrupt-eoi",
+  "format": "jpeg",
+  "damageClass": "corrupt-final-eoi",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair successful! Image renders correctly.",
+    "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+    "output": {
+      "path": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg",
+      "byteLength": 5772,
+      "sha256": "a016d194ecc65c6913796f78b6852707f97ad8218c06a7b212dedcf7de744a18"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg",
+        "byteLength": 5772,
+        "sha256": "a016d194ecc65c6913796f78b6852707f97ad8218c06a7b212dedcf7de744a18",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 227,
+      "expectedHeight": 149,
+      "actualWidth": 227,
+      "actualHeight": 149,
+      "dimensions": true,
+      "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+      "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

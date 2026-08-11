@@ -1,0 +1,126 @@
+{
+  "$schema": "https://stillopen.org/benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "tooltea-image-repair-2026-08-11-jpeg-observations",
+  "toolId": "tooltea-image-repair-2026-08-11",
+  "cases": [
+    {
+      "caseId": "ijg-testorig-corrupt-eoi",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testorig-corrupt-eoi/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "ijg-testorig-trailing-bytes",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testorig-trailing-bytes/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "ijg-testimgint-missing-eoi",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testimgint-missing-eoi/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "ijg-testimgint-trailing-bytes",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testimgint-trailing-bytes/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "ijg-testimgari-corrupt-eoi",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testimgari-corrupt-eoi/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "ijg-testimgari-missing-eoi",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/ijg-testimgari-missing-eoi/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "healthy-ijg-testorig",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-ijg-testorig/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker present and 0 fixes applied."
+    },
+    {
+      "caseId": "healthy-ijg-testimgint",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-ijg-testimgint/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker present and 0 fixes applied."
+    },
+    {
+      "caseId": "healthy-ijg-testimgari",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-ijg-testimgari/results/repaired.jpg",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported EOI marker present and 0 fixes applied. No upload, account, quota, or payment boundary appeared."
+    }
+  ]
+}

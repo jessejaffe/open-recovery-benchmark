@@ -1,0 +1,50 @@
+{
+  "caseId": "healthy-qpdf-issue-179",
+  "format": "pdf",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Done",
+    "operatorNote": "Free batch 3 of 3, returned file 3 of 3 (31.74 KB). The three-task cohort consumed 3 anonymous credits; more than 3 files in one task showed a premium notice.",
+    "output": {
+      "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+      "byteLength": 32504,
+      "sha256": "a34c666c7a8a055dd737aca26fb443beea73e381315bf37a442600a90465e2fe"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+        "byteLength": 32504,
+        "sha256": "a34c666c7a8a055dd737aca26fb443beea73e381315bf37a442600a90465e2fe",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-unexpected-changed-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-unexpected-changed-output",
+      "selectedReturnedFile": "cases/healthy-qpdf-issue-179/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 1,
+      "actualPageCount": 3,
+      "pageCount": false,
+      "pageDimensions": false,
+      "exactPageRenders": false,
+      "exactExtractedText": false
+    }
+  },
+  "disposition": "changed-output"
+}

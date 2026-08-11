@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "pdf2go-online-2026-08-11-v2",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "title": "Nine-case PDF direct-repair cohort with healthy controls",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "pdf2go-online-2026-08-11",
+    "digest": "eb71cebf8a50f1cd753a52f37c3f64d16c854f79908c75efd51f98e77d3dc4c4",
+    "vendor": "QaamGo / PDF2Go",
+    "product": "Repair PDF",
+    "version": "web capture 2026-08-11",
+    "platform": "Browser service with server processing",
+    "synthetic": false
+  },
+  "planDigest": "14ccc914f47f6216ef8f235815a886c730948255faed853598827349e466af15",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 1 of 3, returned file 1 of 3 (26.02 KB). Anonymous session began with 8 credits.",
+        "output": {
+          "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+          "byteLength": 26648,
+          "sha256": "d7f47c82c0ef81d3762e181ee0d014bef71f1c34cde9a6d01c6e7560c8d7b33e"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+            "byteLength": 26648,
+            "sha256": "d7f47c82c0ef81d3762e181ee0d014bef71f1c34cde9a6d01c6e7560c8d7b33e",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 1 of 3, returned file 2 of 3 (31.74 KB).",
+        "output": {
+          "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+          "byteLength": 32504,
+          "sha256": "558a4bd852089e98c3444ecbc6c58e4473a9a6118ea6711bfe37f95e687101df"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+            "byteLength": 32504,
+            "sha256": "558a4bd852089e98c3444ecbc6c58e4473a9a6118ea6711bfe37f95e687101df",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-form-missing-eof/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 1 of 3, returned file 3 of 3 (14.84 KB).",
+        "output": {
+          "path": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf",
+          "byteLength": 15201,
+          "sha256": "cff875d59cb9911a4ce7f10e1b7be4338fe9e42983e68fb985251207cf46fddd"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf",
+            "byteLength": 15201,
+            "sha256": "cff875d59cb9911a4ce7f10e1b7be4338fe9e42983e68fb985251207cf46fddd",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 2 of 3, the only returned file (10.73 KB).",
+        "output": {
+          "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+          "byteLength": 10990,
+          "sha256": "01ed491c785c102aba0f844f82ea711e887a4a1446f9f29beec26d62c4738340"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+            "byteLength": 10990,
+            "sha256": "01ed491c785c102aba0f844f82ea711e887a4a1446f9f29beec26d62c4738340",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Could not convert this file. The file seems to be broken and we are unable to fix it.",
+        "operatorNote": "Free batch 2 of 3. No output was returned.",
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Could not convert this file. The file seems to be broken and we are unable to fix it.",
+        "operatorNote": "Free batch 2 of 3. No output was returned.",
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 3 of 3, returned file 1 of 3 (6.78 KB).",
+        "output": {
+          "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+          "byteLength": 6942,
+          "sha256": "2c87eb9ece8bd95e303e8ffe6123b8740cba50bcb9932c782419ccb8bf96af8d"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+            "byteLength": 6942,
+            "sha256": "2c87eb9ece8bd95e303e8ffe6123b8740cba50bcb9932c782419ccb8bf96af8d",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-form/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 1,
+          "pageCount": false,
+          "pageDimensions": false,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 3 of 3, returned file 2 of 3 (10.73 KB).",
+        "output": {
+          "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+          "byteLength": 10990,
+          "sha256": "2f7e07a7bb068678e1120b70cfdf72b81d159410392d6bedd8c1a99a971ea209"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+            "byteLength": 10990,
+            "sha256": "2f7e07a7bb068678e1120b70cfdf72b81d159410392d6bedd8c1a99a971ea209",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-11-pages/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Done",
+        "operatorNote": "Free batch 3 of 3, returned file 3 of 3 (31.74 KB). The three-task cohort consumed 3 anonymous credits; more than 3 files in one task showed a premium notice.",
+        "output": {
+          "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+          "byteLength": 32504,
+          "sha256": "a34c666c7a8a055dd737aca26fb443beea73e381315bf37a442600a90465e2fe"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+            "byteLength": 32504,
+            "sha256": "a34c666c7a8a055dd737aca26fb443beea73e381315bf37a442600a90465e2fe",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-issue-179/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 3,
+          "pageCount": false,
+          "pageDimensions": false,
+          "exactPageRenders": false,
+          "exactExtractedText": false
+        }
+      },
+      "disposition": "changed-output"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 3,
+    "changedOutputs": 4,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 2,
+    "competitiveSummaryEligible": true
+  }
+}

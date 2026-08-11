@@ -1,0 +1,29 @@
+{
+  "caseId": "qpdf-issue-179-nonnumeric-startxref",
+  "format": "pdf",
+  "damageClass": "nonnumeric-startxref",
+  "eligible": true,
+  "observation": {
+    "disposition": "error",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "error",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Could not convert this file. The file seems to be broken and we are unable to fix it.",
+    "operatorNote": "Free batch 2 of 3. No output was returned.",
+    "output": null,
+    "returnedFiles": [],
+    "outputSelection": {
+      "strategy": "no-changed-output",
+      "selectedReturnedFile": null
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "disposition": "error"
+}

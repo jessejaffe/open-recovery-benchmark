@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-publication-attestation",
+  "runId": "tooltea-png-2026-08-11-v2",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "index.html",
+      "byteLength": 14607,
+      "sha256": "838fc35f6e300f0357f17903f86143e31516f8191de191c6bad3162d6727eeac"
+    },
+    {
+      "path": "report.json",
+      "byteLength": 16670,
+      "sha256": "308698a89440ed6c20cbfd759469a5ce214011d4210228782843c3628a5e46e0"
+    },
+    {
+      "path": "run/attestation.json",
+      "byteLength": 7824,
+      "sha256": "cd40634077819f9fef89c930598a29031660eb611eb4cad19cb2ea084e2c4dc2"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn2c08/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn2c08/input.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn2c08/result.json",
+      "byteLength": 1774,
+      "sha256": "5ed0e1f2177b16f3c42c16f568ae2daa54171781cc23e1d5c2a5561c7ae7f73b"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn2c08/returned-files/01.png",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn3p08/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn3p08/input.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn3p08/result.json",
+      "byteLength": 1776,
+      "sha256": "d854a42e3064455952d9d0ba2a64e8123cf514ebda07635904c43c285682cceb"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn3p08/returned-files/01.png",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn6a16/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn6a16/input.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn6a16/result.json",
+      "byteLength": 1833,
+      "sha256": "ef9885b2076936fac4f7e2281ad4a6b87578daf1b5899e1b5a367cb2eb51ebd6"
+    },
+    {
+      "path": "run/cases/healthy-pngsuite-basn6a16/returned-files/01.png",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-idat-crc/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-idat-crc/input.bin",
+      "byteLength": 1286,
+      "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-idat-crc/result.json",
+      "byteLength": 1202,
+      "sha256": "b098de6b1e0062d8e9c78fc12b61aee921009793755247390bdc78cd596448b0"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-idat-crc/returned-files/01.png",
+      "byteLength": 1286,
+      "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-ihdr-crc/ground-truth.bin",
+      "byteLength": 1286,
+      "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-ihdr-crc/input.bin",
+      "byteLength": 1286,
+      "sha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff"
+    },
+    {
+      "path": "run/cases/pngsuite-palette8-corrupt-ihdr-crc/result.json",
+      "byteLength": 851,
+      "sha256": "561307ed0fd449d61105a1f9d9725a3fc86418ce7cd8972f280d668cf5305835"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-corrupt-iend-crc/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-corrupt-iend-crc/input.bin",
+      "byteLength": 145,
+      "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-corrupt-iend-crc/result.json",
+      "byteLength": 1193,
+      "sha256": "f8a33ac2ffb7164748feba29040fbf5597266f0e2fa2848b661552a380796213"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-corrupt-iend-crc/returned-files/01.png",
+      "byteLength": 145,
+      "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-missing-iend/ground-truth.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-missing-iend/input.bin",
+      "byteLength": 133,
+      "sha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-missing-iend/result.json",
+      "byteLength": 1758,
+      "sha256": "5cf566c1666d828d45e9764b2429152d3e046851eaf21c0f2ae87db0317bb360"
+    },
+    {
+      "path": "run/cases/pngsuite-rgb8-missing-iend/returned-files/01.png",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-corrupt-iend-crc/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-corrupt-iend-crc/input.bin",
+      "byteLength": 3435,
+      "sha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-corrupt-iend-crc/result.json",
+      "byteLength": 1198,
+      "sha256": "45e47b6e40dca0399b3dac1355aca5c8448b863001a5aef9620f1db70324c1f8"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-corrupt-iend-crc/returned-files/01.png",
+      "byteLength": 3435,
+      "sha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-missing-iend/ground-truth.bin",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-missing-iend/input.bin",
+      "byteLength": 3423,
+      "sha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-missing-iend/result.json",
+      "byteLength": 1768,
+      "sha256": "1e533770c05088491de6084858ba6ac1d0c4c3694bee7129abdfe7469f4f3a70"
+    },
+    {
+      "path": "run/cases/pngsuite-rgba16-missing-iend/returned-files/01.png",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    {
+      "path": "run/corpus.json",
+      "byteLength": 9677,
+      "sha256": "2947d371d3961999d564160d44882c9278558eed8629fc0da37acc03e2dc4b6e"
+    },
+    {
+      "path": "run/guided-observations.json",
+      "byteLength": 4552,
+      "sha256": "851a356d819d8e1df6a9a5ad5976714699798baa3aedfcc1bcd30fc2bc9bfcf6"
+    },
+    {
+      "path": "run/plan.json",
+      "byteLength": 1516,
+      "sha256": "9e1d5fd5e5ad813fae02e920176108db4d8eabe845f83d87c553ba479c2a3595"
+    },
+    {
+      "path": "run/protocol.json",
+      "byteLength": 1794,
+      "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+    },
+    {
+      "path": "run/run.json",
+      "byteLength": 16670,
+      "sha256": "308698a89440ed6c20cbfd759469a5ce214011d4210228782843c3628a5e46e0"
+    },
+    {
+      "path": "run/tool.json",
+      "byteLength": 1376,
+      "sha256": "277bea2537625a89a5fc5c8d36d3c3500195e7137152084004e97d2d9175bada"
+    }
+  ],
+  "rootDigest": "f07d1971e9621318489e4bce833d6b6b1981afd55c3185986726ab929f002da2"
+}

@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "tooltea-jpeg-2026-08-11-v2",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-jpeg-competitor-2026-08-11-v1",
+    "title": "Nine-case JPEG direct-repair cohort with healthy controls",
+    "digest": "af35705f87582960cbf576589fa9278448a854a6be9b669146c691a8f6ea6a5a"
+  },
+  "tool": {
+    "id": "tooltea-image-repair-2026-08-11",
+    "digest": "0488068451e94736a270c5c5699c3b9eb7b84bf2a263cb90b19d4bb38642411d",
+    "vendor": "ToolTea",
+    "product": "Free JPEG & PNG Repair Tool",
+    "version": "web capture 2026-08-11",
+    "platform": "Browser-local image repair service",
+    "synthetic": false
+  },
+  "planDigest": "80a6184163d64f192595365a566f97fc8d62287ea24fde3c1f72db88a418202f",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "ijg-testorig-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg",
+          "byteLength": 5772,
+          "sha256": "a016d194ecc65c6913796f78b6852707f97ad8218c06a7b212dedcf7de744a18"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg",
+            "byteLength": 5772,
+            "sha256": "a016d194ecc65c6913796f78b6852707f97ad8218c06a7b212dedcf7de744a18",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testorig-corrupt-eoi/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testorig-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testorig-trailing-bytes/returned-files/01.jpg",
+          "byteLength": 5803,
+          "sha256": "f09fd4aaca507c1fb1168bc9bf974ce0358dc1fca47826e6ce1965ae1eaafb69"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testorig-trailing-bytes/returned-files/01.jpg",
+            "byteLength": 5803,
+            "sha256": "f09fd4aaca507c1fb1168bc9bf974ce0358dc1fca47826e6ce1965ae1eaafb69",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testorig-trailing-bytes/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgint-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testimgint-missing-eoi/returned-files/01.jpg",
+          "byteLength": 5756,
+          "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testimgint-missing-eoi/returned-files/01.jpg",
+            "byteLength": 5756,
+            "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testimgint-missing-eoi/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgint-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testimgint-trailing-bytes/returned-files/01.jpg",
+          "byteLength": 5789,
+          "sha256": "7d8d3062c6fff03a0d7960c9a7971874a891d2d35702072e398bc2358415cb68"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testimgint-trailing-bytes/returned-files/01.jpg",
+            "byteLength": 5789,
+            "sha256": "7d8d3062c6fff03a0d7960c9a7971874a891d2d35702072e398bc2358415cb68",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testimgint-trailing-bytes/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgari-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testimgari-corrupt-eoi/returned-files/01.jpg",
+          "byteLength": 5128,
+          "sha256": "636281b0fa27bc5259c7d4d0dbcdf46165d30758591d6686e9acc00cba4b3947"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testimgari-corrupt-eoi/returned-files/01.jpg",
+            "byteLength": 5128,
+            "sha256": "636281b0fa27bc5259c7d4d0dbcdf46165d30758591d6686e9acc00cba4b3947",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testimgari-corrupt-eoi/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "ijg-testimgari-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker missing and 1 fix applied.",
+        "output": {
+          "path": "cases/ijg-testimgari-missing-eoi/returned-files/01.jpg",
+          "byteLength": 5126,
+          "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/ijg-testimgari-missing-eoi/returned-files/01.jpg",
+            "byteLength": 5126,
+            "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/ijg-testimgari-missing-eoi/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testorig",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker present and 0 fixes applied.",
+        "output": {
+          "path": "cases/healthy-ijg-testorig/returned-files/01.jpg",
+          "byteLength": 5770,
+          "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-ijg-testorig/returned-files/01.jpg",
+            "byteLength": 5770,
+            "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "byte-identical",
+            "classification": "selected-healthy-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "healthy-recommended-identical-output",
+          "selectedReturnedFile": "cases/healthy-ijg-testorig/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testimgint",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker present and 0 fixes applied.",
+        "output": {
+          "path": "cases/healthy-ijg-testimgint/returned-files/01.jpg",
+          "byteLength": 5756,
+          "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-ijg-testimgint/returned-files/01.jpg",
+            "byteLength": 5756,
+            "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "byte-identical",
+            "classification": "selected-healthy-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "healthy-recommended-identical-output",
+          "selectedReturnedFile": "cases/healthy-ijg-testimgint/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-ijg-testimgari",
+      "format": "jpeg",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:47:07.348Z",
+        "productMessage": "Repair successful! Image renders correctly.",
+        "operatorNote": "Product reported EOI marker present and 0 fixes applied. No upload, account, quota, or payment boundary appeared.",
+        "output": {
+          "path": "cases/healthy-ijg-testimgari/returned-files/01.jpg",
+          "byteLength": 5126,
+          "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-ijg-testimgari/returned-files/01.jpg",
+            "byteLength": 5126,
+            "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "byte-identical",
+            "classification": "selected-healthy-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "healthy-recommended-identical-output",
+          "selectedReturnedFile": "cases/healthy-ijg-testimgari/returned-files/01.jpg"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 227,
+          "expectedHeight": 149,
+          "actualWidth": 227,
+          "actualHeight": 149,
+          "dimensions": true,
+          "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 9,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "competitiveSummaryEligible": true
+  }
+}

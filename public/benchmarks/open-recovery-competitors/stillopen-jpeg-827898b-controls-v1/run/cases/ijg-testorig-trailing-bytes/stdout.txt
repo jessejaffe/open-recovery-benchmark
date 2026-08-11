@@ -1,0 +1,1 @@
+{"success":true,"format":"jpeg","issueCode":null,"outputFormat":"png","outputByteLength":77678}

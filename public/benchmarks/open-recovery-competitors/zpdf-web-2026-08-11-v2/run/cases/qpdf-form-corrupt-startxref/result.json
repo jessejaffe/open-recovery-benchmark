@@ -1,0 +1,29 @@
+{
+  "caseId": "qpdf-form-corrupt-startxref",
+  "format": "pdf",
+  "damageClass": "corrupt-startxref",
+  "eligible": true,
+  "observation": {
+    "disposition": "error",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "error",
+    "attemptedAt": "2026-08-11T22:29:20.101Z",
+    "productMessage": "Unable to repair the PDF file.",
+    "operatorNote": "The nine-file batch stopped at an error, so all cases were rerun individually in frozen order.",
+    "output": null,
+    "returnedFiles": [],
+    "outputSelection": {
+      "strategy": "no-changed-output",
+      "selectedReturnedFile": null
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "disposition": "error"
+}

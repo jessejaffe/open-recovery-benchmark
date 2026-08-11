@@ -4,3 +4,16 @@ practice/**/*.jpeg binary
 practice/**/*.pdf binary
 practice/**/*.png binary
 practice/**/*.zip binary
+benchmarks/**/*.bin binary
+benchmarks/**/*.jpg binary
+benchmarks/**/*.jpeg binary
+benchmarks/**/*.pdf binary
+benchmarks/**/*.png binary
+benchmarks/**/*.wasm binary
+benchmarks/**/*.zip binary
+public/**/*.bin binary
+public/**/*.jpg binary
+public/**/*.jpeg binary
+public/**/*.pdf binary
+public/**/*.png binary
+public/**/*.zip binary

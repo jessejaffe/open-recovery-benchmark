@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "systools-mac-pdf-recovery-4.3",
+  "vendor": "SysTools",
+  "product": "Mac PDF Recovery",
+  "version": "4.3",
+  "platform": "macOS 26.3 arm64 via compatibility support",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Official SysTools DMG downloaded 2026-08-11",
+    "filename": "mac-pdf-recovery.dmg",
+    "byteLength": 95514624,
+    "sha256": "1f1569cb1c4c524832ec596defb4bb38c0123cc831d3b3d81c5440bae59acde2",
+    "inspectedPackage": "SysTools Mac PDF Recovery v4.3.pkg",
+    "signature": "Developer ID Installer: SysTools Software Private Limited; trusted timestamp 2025-03-18T17:54:51Z"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only corpus-pdf.json and confirm product version 4.3, plan/license state, package signature, and macOS build.",
+      "Run every PDF case in packet order without overwriting the packet input.",
+      "Save and list every returned PDF in display order, including unchanged copies.",
+      "Record preview-only behavior, licensing/export gates, watermarks, refusals, errors, and no-output outcomes exactly as observed.",
+      "Do not use any healthy source as an assisted-repair sample."
+    ]
+  }
+}

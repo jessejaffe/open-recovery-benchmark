@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "synthetic-missing-command-v1",
+  "vendor": "StillOpen test fixtures",
+  "product": "Synthetic missing executable",
+  "version": "1.0.0",
+  "platform": "Node.js test runtime",
+  "synthetic": true,
+  "acquisition": {
+    "source": "Deliberately unavailable executable for launch-failure testing"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "stillopen-benchmark-command-does-not-exist",
+    "args": [],
+    "outputFile": "output.bin"
+  }
+}

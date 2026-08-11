@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.4.0"
+  },
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "stillopen-wasm-827898b-controls-v1",
+    "digest": "cb7b33d097faaf834ffa7b3bf8f08d06c28b9a090d2df1ac681141dc63457720",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+    "platform": "Node.js host with the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass"
+  },
+  "limits": {
+    "timeoutMs": 1800000,
+    "maxCapturedBytes": 262144
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "qpdf-form-corrupt-startxref",
+    "qpdf-form-missing-eof",
+    "qpdf-11-pages-missing-startxref",
+    "qpdf-11-pages-trailing-bytes",
+    "qpdf-issue-179-startxref-out-of-range",
+    "qpdf-issue-179-nonnumeric-startxref",
+    "healthy-qpdf-form",
+    "healthy-qpdf-11-pages",
+    "healthy-qpdf-issue-179"
+  ],
+  "planDigest": "a7696936c6411cac35f9516c12cb0394d6d9b317173fb7668b9096deec023c51"
+}

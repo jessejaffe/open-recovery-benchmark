@@ -1,0 +1,36 @@
+{
+  "caseId": "healthy-qpdf-form",
+  "format": "pdf",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "healthy-no-change",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:32.970Z",
+    "endedAt": "2026-08-11T22:25:33.231Z",
+    "exitCode": 3,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/healthy-qpdf-form/stdout.txt",
+    "stderr": "cases/healthy-qpdf-form/stderr.txt",
+    "output": null,
+    "healthyNoChange": true
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

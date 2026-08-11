@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/protocol.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-protocol",
+  "id": "external-source-competitor-exact-content-v1",
+  "title": "External-source direct-repair competitor benchmark",
+  "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "frozenAt": "2026-08-11T21:10:00Z",
+  "inclusionRules": [
+    "Run every case in the selected frozen format cohort in manifest order.",
+    "Record every product-returned file in display order and preserve the exact product terminal outcome.",
+    "Require an eligible output-producing outcome and the independent validator before assigning verified-pass.",
+    "Treat an identical returned healthy control, or an explicit successful no-change result, as the desired behavior.",
+    "Disable AI enhancement, upscaling, recoloring, and assisted repair that uses a healthy sample."
+  ],
+  "exclusionRules": [
+    "The source files are externally authored, but the structural mutations are benchmark-authored.",
+    "Do not compare products across formats or against cases outside their declared cohort.",
+    "Preview-only, watermarked, truncated, placeholder, unavailable, paywalled, or missing outputs do not pass.",
+    "Deleted-file and disk-recovery products require a separate storage-recovery protocol and are not scored here.",
+    "An unsigned attestation proves bundle integrity, not publisher identity."
+  ],
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass"
+  },
+  "limits": {
+    "timeoutMs": 1800000,
+    "maxCapturedBytes": 262144
+  }
+}

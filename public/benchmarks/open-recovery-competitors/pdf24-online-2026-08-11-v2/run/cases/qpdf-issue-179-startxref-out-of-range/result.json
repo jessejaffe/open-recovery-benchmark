@@ -1,0 +1,50 @@
+{
+  "caseId": "qpdf-issue-179-startxref-out-of-range",
+  "format": "pdf",
+  "damageClass": "startxref-out-of-range",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:27:00Z",
+    "productMessage": "PDF24 has processed your job.",
+    "operatorNote": "ZIP entry 5 of 9, mapped by the frozen upload and product display order.",
+    "output": {
+      "path": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf",
+      "byteLength": 2823,
+      "sha256": "d0943e5ce0c2b7b8220c9756670bcd33581b3c81dc0ccce8dc9e43788f127b70"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf",
+        "byteLength": 2823,
+        "sha256": "d0943e5ce0c2b7b8220c9756670bcd33581b3c81dc0ccce8dc9e43788f127b70",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 1,
+      "actualPageCount": 1,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

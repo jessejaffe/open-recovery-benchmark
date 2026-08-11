@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "zpdf-web-2026-08-11",
+  "vendor": "zPDF",
+  "product": "Repair PDF",
+  "version": "web capture 2026-08-11",
+  "platform": "Browser-local WebAssembly service",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://zpdf.app/en/tools/repair-pdf",
+    "capturedAt": "2026-08-11",
+    "execution": "qpdf WebAssembly in the browser; page states that files are not uploaded",
+    "accountGate": false,
+    "maximumFilesPerSession": 10
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use corpus-pdf.json and run all nine packet cases in manifest order within the stated ten-file session limit.",
+      "Do not use a healthy source as an assisted-repair sample or expose the packet's blinded cases to any other tool.",
+      "Download and list every returned PDF in display order, including unchanged copies.",
+      "Record every success, refusal, error, unavailable, or no-output result exactly as shown.",
+      "Record whether any unexpected upload, account, quota, or payment boundary appears during the run."
+    ]
+  }
+}

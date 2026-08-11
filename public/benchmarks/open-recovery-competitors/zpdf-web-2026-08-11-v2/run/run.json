@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "zpdf-web-2026-08-11-v2",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "title": "Nine-case PDF direct-repair cohort with healthy controls",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "zpdf-web-2026-08-11",
+    "digest": "223f2a9b112191f0598951173040b39cdbb626b2f5db35e79c8d864469ecaa2b",
+    "vendor": "zPDF",
+    "product": "Repair PDF",
+    "version": "web capture 2026-08-11",
+    "platform": "Browser-local WebAssembly service",
+    "synthetic": false
+  },
+  "planDigest": "2568425179ba4531d9703a74b122a9be4bbe3095951bd7dccdf2d49c021f02c3",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:29:20.101Z",
+        "productMessage": "Unable to repair the PDF file.",
+        "operatorNote": "The nine-file batch stopped at an error, so all cases were rerun individually in frozen order.",
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:29:26.035Z",
+        "productMessage": "PDF repaired successfully! Download (31.38 KB)",
+        "operatorNote": "Captured from the individual result tab; downloaded as repaired_input (1).pdf after the final healthy-control tab and the PDF24 ZIP were downloaded first.",
+        "output": {
+          "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+          "byteLength": 32138,
+          "sha256": "d1e64e8198250941641f3d0a1f0d680a5d2e223366d5549e9eeca69d552437df"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+            "byteLength": 32138,
+            "sha256": "d1e64e8198250941641f3d0a1f0d680a5d2e223366d5549e9eeca69d552437df",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-form-missing-eof/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:29:31.057Z",
+        "productMessage": "Unable to repair the PDF file.",
+        "operatorNote": null,
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:29:36.193Z",
+        "productMessage": "PDF repaired successfully! Download (4.03 KB)",
+        "operatorNote": "Captured from the individual result tab; downloaded as repaired_input (2).pdf.",
+        "output": {
+          "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+          "byteLength": 4128,
+          "sha256": "a4f69ac02eba7131a9525c3d203c741c2ec8dfd9e00c671c0904adf2e6862a80"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+            "byteLength": 4128,
+            "sha256": "a4f69ac02eba7131a9525c3d203c741c2ec8dfd9e00c671c0904adf2e6862a80",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-repair-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-changed-output",
+          "selectedReturnedFile": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:29:41.214Z",
+        "productMessage": "Unable to repair the PDF file.",
+        "operatorNote": null,
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "error",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "error",
+        "attemptedAt": "2026-08-11T22:29:46.233Z",
+        "productMessage": "Unable to repair the PDF file.",
+        "operatorNote": null,
+        "output": null,
+        "returnedFiles": [],
+        "outputSelection": {
+          "strategy": "no-changed-output",
+          "selectedReturnedFile": null
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "disposition": "error"
+    },
+    {
+      "caseId": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:29:51.373Z",
+        "productMessage": "PDF repaired successfully! Download (31.38 KB)",
+        "operatorNote": "Captured from the individual result tab; downloaded as repaired_input (3).pdf.",
+        "output": {
+          "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+          "byteLength": 32138,
+          "sha256": "304ba53c271db7a768976a1241c13b3dde6ce719a9d1fe74273b085d1c67d329"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-form/returned-files/01.pdf",
+            "byteLength": 32138,
+            "sha256": "304ba53c271db7a768976a1241c13b3dde6ce719a9d1fe74273b085d1c67d329",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-form/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:29:56.524Z",
+        "productMessage": "PDF repaired successfully! Download (4.03 KB)",
+        "operatorNote": "Captured from the individual result tab; downloaded as repaired_input (4).pdf.",
+        "output": {
+          "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+          "byteLength": 4128,
+          "sha256": "13ee9952ef6abb542ea709a67e4b4a3b54ea917d90cbd1f1a3378b840b1982ac"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+            "byteLength": 4128,
+            "sha256": "13ee9952ef6abb542ea709a67e4b4a3b54ea917d90cbd1f1a3378b840b1982ac",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-11-pages/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T22:30:01.527Z",
+        "productMessage": "PDF repaired successfully! Download (1.07 KB)",
+        "operatorNote": "Captured from the individual result tab; this was downloaded first as repaired_input.pdf. No upload, account, quota, or payment boundary appeared.",
+        "output": {
+          "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+          "byteLength": 1098,
+          "sha256": "585aff858e9c84bd35ac84c480918fd129e5f75797cc758a66eddf730e69ebb4"
+        },
+        "returnedFiles": [
+          {
+            "path": "cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+            "byteLength": 1098,
+            "sha256": "585aff858e9c84bd35ac84c480918fd129e5f75797cc758a66eddf730e69ebb4",
+            "displayOrder": 1,
+            "recommended": true,
+            "inputComparison": "changed",
+            "classification": "selected-unexpected-changed-output"
+          }
+        ],
+        "outputSelection": {
+          "strategy": "sole-unexpected-changed-output",
+          "selectedReturnedFile": "cases/healthy-qpdf-issue-179/returned-files/01.pdf"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 5,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 4,
+    "competitiveSummaryEligible": true
+  }
+}

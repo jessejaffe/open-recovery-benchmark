@@ -1,0 +1,39 @@
+{
+  "caseId": "pngsuite-rgb8-corrupt-iend-crc",
+  "format": "png",
+  "damageClass": "corrupt-iend-crc",
+  "eligible": true,
+  "observation": {
+    "disposition": "no-output",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair successful! Image renders correctly.",
+    "operatorNote": "Product reported IEND marker present and 0 fixes applied; returned file is byte-identical to the damaged input.",
+    "output": null,
+    "returnedFiles": [
+      {
+        "path": "cases/pngsuite-rgb8-corrupt-iend-crc/returned-files/01.png",
+        "byteLength": 145,
+        "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "byte-identical",
+        "classification": "original-returned"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "no-changed-output",
+      "selectedReturnedFile": null
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "disposition": "no-output"
+}

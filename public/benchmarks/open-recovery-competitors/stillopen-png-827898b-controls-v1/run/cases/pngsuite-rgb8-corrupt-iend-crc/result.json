@@ -1,0 +1,42 @@
+{
+  "caseId": "pngsuite-rgb8-corrupt-iend-crc",
+  "format": "png",
+  "damageClass": "corrupt-iend-crc",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:35.349Z",
+    "endedAt": "2026-08-11T22:25:35.435Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/pngsuite-rgb8-corrupt-iend-crc/stdout.txt",
+    "stderr": "cases/pngsuite-rgb8-corrupt-iend-crc/stderr.txt",
+    "output": {
+      "path": "cases/pngsuite-rgb8-corrupt-iend-crc/tool-output/recovered.bin",
+      "byteLength": 145,
+      "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 32,
+      "actualWidth": 32,
+      "actualHeight": 32,
+      "dimensions": true,
+      "expectedRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+      "actualRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

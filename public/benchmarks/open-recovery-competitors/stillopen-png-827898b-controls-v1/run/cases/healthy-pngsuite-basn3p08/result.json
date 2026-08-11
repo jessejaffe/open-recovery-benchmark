@@ -1,0 +1,38 @@
+{
+  "caseId": "healthy-pngsuite-basn3p08",
+  "format": "png",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "healthy-no-change",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:35.878Z",
+    "endedAt": "2026-08-11T22:25:35.962Z",
+    "exitCode": 3,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/healthy-pngsuite-basn3p08/stdout.txt",
+    "stderr": "cases/healthy-pngsuite-basn3p08/stderr.txt",
+    "output": null,
+    "healthyNoChange": true
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 32,
+      "actualWidth": 32,
+      "actualHeight": 32,
+      "dimensions": true,
+      "expectedRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+      "actualRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

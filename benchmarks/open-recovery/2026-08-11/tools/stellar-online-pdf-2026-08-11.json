@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "stellar-online-pdf-2026-08-11",
+  "vendor": "Stellar",
+  "product": "Online PDF Repair",
+  "version": "web capture 2026-08-11",
+  "platform": "Browser service",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://repair.stellarinfo.com/pdf/",
+    "capturedAt": "2026-08-11",
+    "freePlan": "One PDF up to 10 MB per month; repaired file retained for 3 hours",
+    "premiumPlanObserved": "Five, fifty, or one hundred monthly repairs; 25 MB per file; 24-hour retention"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only corpus-pdf.json, public benchmark inputs, and the exact signed-in plan recorded in the observation.",
+      "Run every eligible PDF case in packet order; do not silently omit a case after quota exhaustion.",
+      "Download and list every returned PDF in display order, including unchanged copies.",
+      "Record the exact success, refusal, error, quota, sign-in, paywall, preview-only, or no-output message.",
+      "Record the stated retention window and any deletion action without recording an email address or credential."
+    ]
+  }
+}

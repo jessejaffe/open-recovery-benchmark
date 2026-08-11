@@ -1,0 +1,50 @@
+{
+  "caseId": "qpdf-11-pages-trailing-bytes",
+  "format": "pdf",
+  "damageClass": "append-trailing-bytes-after-eof",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Done",
+    "operatorNote": "Free batch 2 of 3, the only returned file (10.73 KB).",
+    "output": {
+      "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+      "byteLength": 10990,
+      "sha256": "01ed491c785c102aba0f844f82ea711e887a4a1446f9f29beec26d62c4738340"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+        "byteLength": 10990,
+        "sha256": "01ed491c785c102aba0f844f82ea711e887a4a1446f9f29beec26d62c4738340",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 11,
+      "actualPageCount": 11,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

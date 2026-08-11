@@ -1,0 +1,594 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/corpus.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-corpus",
+  "id": "external-source-all-format-competitor-2026-08-11-v1",
+  "title": "Twenty-seven-case PDF, JPEG, and PNG direct-repair cohort with healthy controls",
+  "cases": [
+    {
+      "id": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "input": {
+        "path": "cases/pdf/qpdf-form-corrupt-startxref.pdf",
+        "byteLength": 31890,
+        "sha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "input": {
+        "path": "cases/pdf/qpdf-form-missing-eof.pdf",
+        "byteLength": 31884,
+        "sha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "input": {
+        "path": "cases/pdf/qpdf-11-pages-missing-startxref.pdf",
+        "byteLength": 4113,
+        "sha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "input": {
+        "path": "cases/pdf/qpdf-11-pages-trailing-bytes.pdf",
+        "byteLength": 4159,
+        "sha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "input": {
+        "path": "cases/pdf/qpdf-issue-179-startxref-out-of-range.pdf",
+        "byteLength": 1824,
+        "sha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "input": {
+        "path": "cases/pdf/qpdf-issue-179-nonnumeric-startxref.pdf",
+        "byteLength": 1824,
+        "sha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testorig-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testorig-corrupt-eoi.jpg",
+        "byteLength": 5770,
+        "sha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testorig-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testorig-trailing-bytes.jpg",
+        "byteLength": 5801,
+        "sha256": "c7e1af32fceed28501030e05021b3ad84fa5979cc6c23c517c9944c1bf294808"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgint-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgint-missing-eoi.jpg",
+        "byteLength": 5754,
+        "sha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgint-trailing-bytes",
+      "format": "jpeg",
+      "damageClass": "append-trailing-bytes-after-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgint-trailing-bytes.jpg",
+        "byteLength": 5787,
+        "sha256": "a86949088317db928a041e1c583fc0a3d5ef3884c801984794cf4129d15aa07a"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgari-corrupt-eoi",
+      "format": "jpeg",
+      "damageClass": "corrupt-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgari-corrupt-eoi.jpg",
+        "byteLength": 5126,
+        "sha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "ijg-testimgari-missing-eoi",
+      "format": "jpeg",
+      "damageClass": "remove-final-eoi",
+      "input": {
+        "path": "cases/jpeg/ijg-testimgari-missing-eoi.jpg",
+        "byteLength": 5124,
+        "sha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testorig",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testorig.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testorig.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testorig.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testimgint",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgint.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgint.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgint.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-ijg-testimgari",
+      "format": "jpeg",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/jpeg/ijg-testimgari.jpg",
+        "byteLength": 5126,
+        "sha256": "4672c7f08864cd0a8c73a4fa4b66ca32b635d38464551c1ecf06564ae8c89b38"
+      },
+      "provenance": {
+        "source": "libjpeg-turbo/libjpeg-turbo@b9132f0ad099e06d951867e2b6f3d358eebc1f19:testimages/testimgari.jpg (https://github.com/libjpeg-turbo/libjpeg-turbo/blob/b9132f0ad099e06d951867e2b6f3d358eebc1f19/testimages/testimgari.jpg)",
+        "license": "IJG; evidence: benchmarks/external-holdout/2026-08-10/licenses/IJG-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgb8-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "input": {
+        "path": "cases/png/pngsuite-rgb8-missing-iend.png",
+        "byteLength": 133,
+        "sha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgb8-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "input": {
+        "path": "cases/png/pngsuite-rgb8-corrupt-iend-crc.png",
+        "byteLength": 145,
+        "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-idat-crc",
+      "format": "png",
+      "damageClass": "corrupt-idat-crc",
+      "input": {
+        "path": "cases/png/pngsuite-palette8-corrupt-idat-crc.png",
+        "byteLength": 1286,
+        "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-ihdr-crc",
+      "format": "png",
+      "damageClass": "corrupt-ihdr-crc",
+      "input": {
+        "path": "cases/png/pngsuite-palette8-corrupt-ihdr-crc.png",
+        "byteLength": 1286,
+        "sha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgba16-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "input": {
+        "path": "cases/png/pngsuite-rgba16-missing-iend.png",
+        "byteLength": 3423,
+        "sha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgba16-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "input": {
+        "path": "cases/png/pngsuite-rgba16-corrupt-iend-crc.png",
+        "byteLength": 3435,
+        "sha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn2c08",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn3p08",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn6a16",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    }
+  ]
+}

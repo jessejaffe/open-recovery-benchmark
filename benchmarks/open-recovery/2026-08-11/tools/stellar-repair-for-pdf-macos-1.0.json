@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "stellar-repair-for-pdf-macos-1.0",
+  "vendor": "Stellar",
+  "product": "Stellar Repair for PDF",
+  "version": "1.0 (bundle 1)",
+  "platform": "macOS 26.3 arm64 via compatibility support",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Official Stellar ZIP/DMG archive downloaded 2026-08-11",
+    "filename": "StellarRepairforPDF.dmg.zip",
+    "byteLength": 113357960,
+    "sha256": "20f383817cd48f907e6a658043a6ac2e29a13f432d04e602149b55d02f667282",
+    "innerDmgSha256": "9199209aecbac4c0e062ed0e1881d899db6313ad12414f27448750f0972585f6",
+    "inspectedBundle": "StellarRepairforPDF.app 1.0",
+    "archiveTimestamp": "2021-07-20"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only corpus-pdf.json and confirm product version 1.0, plan/license state, and macOS build.",
+      "Run every PDF case in packet order without overwriting the packet input.",
+      "Save and list every returned PDF in display order, including unchanged copies.",
+      "Record preview-only behavior, licensing/export gates, watermarks, refusals, errors, and no-output outcomes exactly as observed.",
+      "Do not use any healthy source as an assisted-repair sample."
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "executedDate": "2026-08-10",
+  "benchmark": "stillopen-external-source-blind-holdout",
+  "providerRoster": "provider-roster.json",
+  "providerRosterState": "browser-cohorts-frozen-pre-execution",
+  "browserBenchmarkRegistration": "../../open-recovery/2026-08-11/registration-v2.json",
+  "openSourceAccessResults": "open-source-access-results.json",
+  "scopeNote": "The companion roster preserves qpdf, Ghostscript, MuPDF mutool, libpng pngfix, and WhatsApp JPEG Image Repair as direct-repair capability evidence and now labels them recovery-engine baselines rather than equivalent consumer browser experiences. Recoverit, R-Studio, and Recuva remain documented adjacent deleted-file or disk-recovery products.",
+  "purpose": "Expand the direct-provider qualification beyond the two services that completed a fully scoreable six-case PDF workflow.",
+  "scoringRule": "Only providers that accepted the frozen inputs and yielded downloadable, independently validatable full outputs are assigned exact-content recovery scores. Availability, upload interop, maintenance, demo placeholders, and paywalls are reported separately.",
+  "fullyScored": [
+    {
+      "provider": "StillOpen",
+      "pdfCasesPassed": 6,
+      "pdfCasesAttempted": 6,
+      "disposition": "fully-scored"
+    },
+    {
+      "provider": "zpdf",
+      "pdfCasesPassed": 2,
+      "pdfCasesAttempted": 6,
+      "disposition": "fully-scored"
+    },
+    {
+      "provider": "iLovePDF",
+      "pdfCasesPassed": 0,
+      "pdfCasesAttempted": 6,
+      "disposition": "fully-scored",
+      "note": "Two UI successes produced downloads, but neither matched the frozen page-render fingerprints."
+    }
+  ],
+  "qualificationSweep": [
+    {
+      "provider": "EaseUS Fixo landing page",
+      "url": "https://www.easeus.com/ppc/new/fixo/photo.html",
+      "category": "desktop file repair",
+      "observed": "The Free Repair control downloads the macOS application; this landing page is not an in-browser repair workflow.",
+      "disposition": "not-comparable-desktop"
+    },
+    {
+      "provider": "EaseUS Online File Repair",
+      "url": "https://repair.easeus.com/document_repair/",
+      "category": "cloud file repair",
+      "testCase": "qpdf-form-corrupt-startxref",
+      "observed": "Accepted the file and reported Damaged file detected, but the Repair action produced no terminal result or downloadable output in the controlled run. This repeated the behavior observed in the earlier internal-fixture benchmark.",
+      "disposition": "unscored-no-output"
+    },
+    {
+      "provider": "Wondershare Repairit Online",
+      "url": "https://repairit.wondershare.com/app/file-repair",
+      "category": "cloud file repair",
+      "testCase": "qpdf-form-corrupt-startxref",
+      "observed": "After file selection, the service displayed: The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
+      "disposition": "unscored-maintenance"
+    },
+    {
+      "provider": "OfficeRecovery / SecureRecovery Online",
+      "url": "https://online.officerecovery.com/pdf",
+      "category": "cloud file repair",
+      "testCase": "qpdf-form-corrupt-startxref",
+      "observed": "Reported The file was successfully repaired. A demo preview was downloadable, while the full result required purchase.",
+      "demoOutput": {
+        "file": "outputs/officerecovery-demo/qpdf-form-corrupt-startxref.pdf",
+        "byteLength": 4063,
+        "sha256": "0ab872c6bbef257e3df6b5515faba52ab2cfe783a453e8d440365334ea8caf4f",
+        "pageCountMatch": true,
+        "pageDimensionsMatch": true,
+        "exactPageRenders": false,
+        "exactExtractedText": false
+      },
+      "disposition": "unscored-full-output-paywalled",
+      "note": "The demo is intentionally limited with placeholders, so its mismatch is not treated as evidence that the purchased full result would fail."
+    },
+    {
+      "provider": "Stellar Online PDF Repair",
+      "url": "https://repair.stellarinfo.com/pdf",
+      "category": "cloud file repair",
+      "observed": "The official page advertises one PDF up to 10 MB per month on the free plan and five PDFs for $9.99/month. The upload control did not complete in the controlled browser, so no repair claim was tested.",
+      "disposition": "unscored-upload-interop"
+    },
+    {
+      "provider": "Recovery Toolbox Online",
+      "url": "https://online.recoverytoolbox.com/",
+      "category": "cloud file repair",
+      "observed": "The supplied URL currently loads Recovery Toolbox's own supplied-file repair page. It lists PDF support and 30-day automatic deletion; browser upload/action remains pending because the user's signed-in external tab is not connected to this task.",
+      "disposition": "direct-repair-confirmed-pending-disposable-access"
+    },
+    {
+      "provider": "Online File Repair Service",
+      "url": "https://onlinefilerepair.com/",
+      "category": "cloud file repair",
+      "observed": "The historic URL currently redirects to online-file-fix.com. A stable, attributable PDF repair workflow was not established during this sweep.",
+      "disposition": "unscored-redirected-service"
+    }
+  ],
+  "excludedAdjacentProducts": [
+    {
+      "provider": "CCleaner Recuva",
+      "url": "https://www.ccleaner.com/recuva",
+      "reason": "Recovers deleted or lost files from storage media; CCleaner's own documentation states that it cannot repair damage to recovered files."
+    },
+    {
+      "provider": "Wondershare Recoverit",
+      "url": "https://recoverit.wondershare.com/",
+      "reason": "Primarily recovers lost, deleted, or formatted data from disks. This is adjacent data recovery rather than direct repair of an already-available corrupt PDF."
+    }
+  ],
+  "sources": [
+    "https://www.easeus.com/ppc/new/fixo/photo.html",
+    "https://repair.easeus.com/document_repair/",
+    "https://repairit.wondershare.com/app/file-repair",
+    "https://online.officerecovery.com/pdf",
+    "https://repair.stellarinfo.com/pdf",
+    "https://online.recoverytoolbox.com/",
+    "https://onlinefilerepair.com/",
+    "https://www.ccleaner.com/recuva",
+    "https://recoverit.wondershare.com/"
+  ]
+}

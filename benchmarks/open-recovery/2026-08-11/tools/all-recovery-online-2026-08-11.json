@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "all-recovery-online-2026-08-11",
+  "vendor": "All Recovery",
+  "product": "Online File Repair",
+  "version": "web capture 2026-08-11",
+  "platform": "Browser service",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://online.all-recovery-inc.com/",
+    "capturedAt": "2026-08-11",
+    "emailGate": true,
+    "maximumUpload": "10 GB",
+    "retention": "30-day automatic deletion stated on public page"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Use only public benchmark inputs and record the exact All Recovery product identity shown at access time.",
+      "Run every case in the selected supported-format cohort in packet order.",
+      "Download and list every returned file in display order, including unchanged copies.",
+      "Record the exact success, refusal, error, email gate, paywall, preview-only, or no-output message without recording the email address.",
+      "Record the retention window and any available deletion action after each upload."
+    ]
+  }
+}

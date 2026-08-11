@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "mupdf-mutool-clean-macos-1.28.2",
+  "vendor": "Artifex Software",
+  "product": "MuPDF mutool clean",
+  "version": "1.28.2",
+  "platform": "macOS 26.3 arm64; Homebrew",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Homebrew mupdf formula; https://github.com/ArtifexSoftware/mupdf",
+    "license": "AGPL-3.0-or-later or commercial Artifex license",
+    "executable": "/opt/homebrew/bin/mutool"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "/opt/homebrew/bin/mutool",
+    "args": ["clean", "{input}", "{output}"],
+    "outputFile": "recovered.pdf"
+  }
+}

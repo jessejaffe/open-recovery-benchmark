@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "kind": "competitor-benchmark-registration",
+  "id": "browser-competitor-2026-08-11-v1",
+  "frozenAt": "2026-08-11T22:08:16Z",
+  "state": "frozen-pre-execution",
+  "protocol": {
+    "path": "protocol.json",
+    "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+  },
+  "runtimeArtifacts": [
+    {
+      "pathFromRepositoryRoot": "public/wasm/stillopen-core.wasm",
+      "sha256": "38ddee056233aa5c2f16f9a97a2ebc0f63df066f9b7000e7aec49d60de359fcf"
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "pdf",
+      "formats": ["pdf"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-pdf.json",
+        "sha256": "0d1de202b5a8fe8c867afcdccbacc202b80270f7f72e905b44d768bb2c9f8199"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b.json",
+            "sha256": "e5cb1774e4e0e0c692a397a58d1c5c7b24a77756ce9f429483f597f4d6a82f0e"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/pdf24-online-2026-08-11.json",
+            "sha256": "7e3421e473adf421b71e76d1ac489c09597d2e16b94fb66d665f5a91f6014ecc"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/zpdf-web-2026-08-11.json",
+            "sha256": "ba48edbe7648e1d784cedd15e004af3b4afe434df3133fcd260b01886db2f67d"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/pdf2go-online-2026-08-11.json",
+            "sha256": "1cfa443fda3b52906d6ab4ff7066e55791fcab4ba7fb53574eafe626f4fb7459"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpeg",
+      "formats": ["jpeg"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-jpeg.json",
+        "sha256": "7ee031840d261dbaefde37805e2f9233248b31f6c6946d5a157f6f00869ffe2e"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b.json",
+            "sha256": "e5cb1774e4e0e0c692a397a58d1c5c7b24a77756ce9f429483f597f4d6a82f0e"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/tooltea-image-repair-2026-08-11.json",
+            "sha256": "277bea2537625a89a5fc5c8d36d3c3500195e7137152084004e97d2d9175bada"
+          }
+        }
+      ]
+    },
+    {
+      "id": "png",
+      "formats": ["png"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-png.json",
+        "sha256": "2947d371d3961999d564160d44882c9278558eed8629fc0da37acc03e2dc4b6e"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b.json",
+            "sha256": "e5cb1774e4e0e0c692a397a58d1c5c7b24a77756ce9f429483f597f4d6a82f0e"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/tooltea-image-repair-2026-08-11.json",
+            "sha256": "277bea2537625a89a5fc5c8d36d3c3500195e7137152084004e97d2d9175bada"
+          }
+        }
+      ]
+    }
+  ],
+  "reportingRules": [
+    "Score and report PDF, JPEG, and PNG as separate nine-case cohorts.",
+    "Do not assign a product cases in a format its frozen tool definition does not support.",
+    "Do not calculate an overall repair percentage across products with different format coverage.",
+    "Keep frozen products in their cohort when a run encounters a quota, sign-in, payment, refusal, error, or missing output; record the terminal outcome instead of removing the product after seeing results.",
+    "Count only independently validated complete outputs as verified-pass.",
+    "Report format breadth and consumer experience separately from exact-content repair scores.",
+    "Report command-line and build-from-source tools in a separately labeled engine-baseline layer."
+  ]
+}

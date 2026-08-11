@@ -1,0 +1,1 @@
+{"success":true,"format":"png","issueCode":"PNG_CHUNK_CRC_DAMAGED","outputFormat":"png","outputByteLength":145}

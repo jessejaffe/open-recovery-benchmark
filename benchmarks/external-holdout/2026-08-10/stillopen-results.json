@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "benchmark": "stillopen-external-source-blind-holdout",
+  "frozenDate": "2026-08-10",
+  "executedDate": "2026-08-10",
+  "product": "StillOpen",
+  "validator": "Independent strict decode/render plus exact source-content fingerprints",
+  "passDefinition": "Recovered output must match the untouched upstream source exactly: dimensions and decoded RGBA pixels for raster files; page count, page dimensions, rendered RGBA pixels, and extracted text for PDFs.",
+  "summary": {
+    "passed": 18,
+    "total": 18,
+    "passRate": 1,
+    "byFormat": {
+      "pdf": {
+        "passed": 6,
+        "total": 6
+      },
+      "jpeg": {
+        "passed": 6,
+        "total": 6
+      },
+      "png": {
+        "passed": 6,
+        "total": 6
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "mutation": "corrupt-startxref",
+      "inputByteLength": 31890,
+      "inputSha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b",
+      "expectedInputSha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": "PDF_CROSS_REFERENCE_DAMAGED"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_CROSS_REFERENCE_DAMAGED",
+        "verifiedPageCount": 3
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-form-corrupt-startxref.pdf",
+        "byteLength": 32138,
+        "sha256": "1f4b545079280f7c95e8bb32a532ef90bd1c438bc7095b1753021de6d7a85eb1"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "mutation": "remove-final-eof",
+      "inputByteLength": 31884,
+      "inputSha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1",
+      "expectedInputSha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": "PDF_TRUNCATED_MISSING_EOF"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_INCREMENTAL_UPDATE_INCOMPLETE",
+        "verifiedPageCount": 3
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-form-missing-eof.pdf",
+        "byteLength": 32138,
+        "sha256": "1f4b545079280f7c95e8bb32a532ef90bd1c438bc7095b1753021de6d7a85eb1"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "mutation": "remove-startxref-section",
+      "inputByteLength": 4113,
+      "inputSha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce",
+      "expectedInputSha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce",
+      "provenancePass": true,
+      "scan": {
+        "status": "healthy",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": null
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_CROSS_REFERENCE_DAMAGED",
+        "verifiedPageCount": 11
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-11-pages-missing-startxref.pdf",
+        "byteLength": 4128,
+        "sha256": "4da651f4f996e7998a6c79bcbc19846eee7e2968045871013e3f39867622f90a"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "mutation": "append-trailing-bytes-after-eof",
+      "inputByteLength": 4159,
+      "inputSha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec",
+      "expectedInputSha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": "PDF_TRUNCATED_MISSING_EOF"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_INCREMENTAL_UPDATE_INCOMPLETE",
+        "verifiedPageCount": 11
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-11-pages-trailing-bytes.pdf",
+        "byteLength": 4128,
+        "sha256": "4da651f4f996e7998a6c79bcbc19846eee7e2968045871013e3f39867622f90a"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "mutation": "startxref-out-of-range",
+      "inputByteLength": 1824,
+      "inputSha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd",
+      "expectedInputSha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": "PDF_CROSS_REFERENCE_DAMAGED"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_CROSS_REFERENCE_DAMAGED",
+        "verifiedPageCount": 1
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-issue-179-startxref-out-of-range.pdf",
+        "byteLength": 1098,
+        "sha256": "35cb4b1a6b0e35728c8e26e5f63b0e62d1a742ec6a5a26051a72576612be0f0f"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "mutation": "nonnumeric-startxref",
+      "inputByteLength": 1824,
+      "inputSha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2",
+      "expectedInputSha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "pdf",
+        "primaryIssueCode": "PDF_CROSS_REFERENCE_DAMAGED"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PDF_CROSS_REFERENCE_DAMAGED",
+        "verifiedPageCount": 1
+      },
+      "output": {
+        "file": "outputs/stillopen/qpdf-issue-179-nonnumeric-startxref.pdf",
+        "byteLength": 1098,
+        "sha256": "35cb4b1a6b0e35728c8e26e5f63b0e62d1a742ec6a5a26051a72576612be0f0f"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testorig-corrupt-eoi",
+      "format": "jpeg",
+      "sourceId": "ijg-testorig",
+      "mutation": "corrupt-final-eoi",
+      "inputByteLength": 5770,
+      "inputSha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443",
+      "expectedInputSha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRUNCATED_MISSING_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": true,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testorig-corrupt-eoi.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testorig-trailing-bytes",
+      "format": "jpeg",
+      "sourceId": "ijg-testorig",
+      "mutation": "append-trailing-bytes-after-eoi",
+      "inputByteLength": 5801,
+      "inputSha256": "c7e1af32fceed28501030e05021b3ad84fa5979cc6c23c517c9944c1bf294808",
+      "expectedInputSha256": "c7e1af32fceed28501030e05021b3ad84fa5979cc6c23c517c9944c1bf294808",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRAILING_DATA_AFTER_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": false,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testorig-trailing-bytes.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testimgint-missing-eoi",
+      "format": "jpeg",
+      "sourceId": "ijg-testimgint",
+      "mutation": "remove-final-eoi",
+      "inputByteLength": 5754,
+      "inputSha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e",
+      "expectedInputSha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRUNCATED_MISSING_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": false,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testimgint-missing-eoi.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testimgint-trailing-bytes",
+      "format": "jpeg",
+      "sourceId": "ijg-testimgint",
+      "mutation": "append-trailing-bytes-after-eoi",
+      "inputByteLength": 5787,
+      "inputSha256": "a86949088317db928a041e1c583fc0a3d5ef3884c801984794cf4129d15aa07a",
+      "expectedInputSha256": "a86949088317db928a041e1c583fc0a3d5ef3884c801984794cf4129d15aa07a",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRAILING_DATA_AFTER_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": false,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testimgint-trailing-bytes.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testimgari-corrupt-eoi",
+      "format": "jpeg",
+      "sourceId": "ijg-testimgari",
+      "mutation": "corrupt-final-eoi",
+      "inputByteLength": 5126,
+      "inputSha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec",
+      "expectedInputSha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRUNCATED_MISSING_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": true,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testimgari-corrupt-eoi.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "ijg-testimgari-missing-eoi",
+      "format": "jpeg",
+      "sourceId": "ijg-testimgari",
+      "mutation": "remove-final-eoi",
+      "inputByteLength": 5124,
+      "inputSha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc",
+      "expectedInputSha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "jpeg",
+        "primaryIssueCode": "JPEG_TRUNCATED_MISSING_EOI"
+      },
+      "recoveryReport": {
+        "success": true,
+        "width": 227,
+        "height": 149,
+        "inputRepaired": false,
+        "losslessTranscode": true
+      },
+      "output": {
+        "file": "outputs/stillopen/ijg-testimgari-missing-eoi.jpg",
+        "byteLength": 5756,
+        "sha256": "491679b8057739b3c8e5bacd1e918efb1691d271cbbd69820ff8d480dcb90963"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-rgb8-missing-iend",
+      "format": "png",
+      "sourceId": "pngsuite-basn2c08",
+      "mutation": "remove-iend",
+      "inputByteLength": 133,
+      "inputSha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761",
+      "expectedInputSha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "png",
+        "primaryIssueCode": "PNG_TRUNCATED_MISSING_IEND"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_TRUNCATED_MISSING_IEND",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 0,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-rgb8-missing-iend.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-rgb8-corrupt-iend-crc",
+      "format": "png",
+      "sourceId": "pngsuite-basn2c08",
+      "mutation": "corrupt-iend-crc",
+      "inputByteLength": 145,
+      "inputSha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c",
+      "expectedInputSha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c",
+      "provenancePass": true,
+      "scan": {
+        "status": "healthy",
+        "detectedFormat": "png",
+        "primaryIssueCode": null
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_CHUNK_CRC_DAMAGED",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 1,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-rgb8-corrupt-iend-crc.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-idat-crc",
+      "format": "png",
+      "sourceId": "pngsuite-basn3p08",
+      "mutation": "corrupt-idat-crc",
+      "inputByteLength": 1286,
+      "inputSha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d",
+      "expectedInputSha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d",
+      "provenancePass": true,
+      "scan": {
+        "status": "healthy",
+        "detectedFormat": "png",
+        "primaryIssueCode": null
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_CHUNK_CRC_DAMAGED",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 1,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-palette8-corrupt-idat-crc.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-ihdr-crc",
+      "format": "png",
+      "sourceId": "pngsuite-basn3p08",
+      "mutation": "corrupt-ihdr-crc",
+      "inputByteLength": 1286,
+      "inputSha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff",
+      "expectedInputSha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff",
+      "provenancePass": true,
+      "scan": {
+        "status": "healthy",
+        "detectedFormat": "png",
+        "primaryIssueCode": null
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_CHUNK_CRC_DAMAGED",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 1,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-palette8-corrupt-ihdr-crc.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-rgba16-missing-iend",
+      "format": "png",
+      "sourceId": "pngsuite-basn6a16",
+      "mutation": "remove-iend",
+      "inputByteLength": 3423,
+      "inputSha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904",
+      "expectedInputSha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904",
+      "provenancePass": true,
+      "scan": {
+        "status": "damaged",
+        "detectedFormat": "png",
+        "primaryIssueCode": "PNG_TRUNCATED_MISSING_IEND"
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_TRUNCATED_MISSING_IEND",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 0,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-rgba16-missing-iend.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    },
+    {
+      "id": "pngsuite-rgba16-corrupt-iend-crc",
+      "format": "png",
+      "sourceId": "pngsuite-basn6a16",
+      "mutation": "corrupt-iend-crc",
+      "inputByteLength": 3435,
+      "inputSha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289",
+      "expectedInputSha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289",
+      "provenancePass": true,
+      "scan": {
+        "status": "healthy",
+        "detectedFormat": "png",
+        "primaryIssueCode": null
+      },
+      "recoveryReport": {
+        "success": true,
+        "issueCode": "PNG_CHUNK_CRC_DAMAGED",
+        "width": 32,
+        "height": 32,
+        "structurallyComplete": false,
+        "crcErrors": 1,
+        "rowsSurvived": 32,
+        "rowsMissing": 0
+      },
+      "output": {
+        "file": "outputs/stillopen/pngsuite-rgba16-corrupt-iend-crc.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "dimensions": true,
+          "exactDecodedPixels": true
+        }
+      },
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery"
+    }
+  ]
+}

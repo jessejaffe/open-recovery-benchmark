@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-publication-attestation",
+  "runId": "pdf24-online-2026-08-11-v2",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "index.html",
+      "byteLength": 15361,
+      "sha256": "d3009da82c15f015ba9a8b0fbb313428e871c656da6404300c014ec0231c4ed6"
+    },
+    {
+      "path": "report.json",
+      "byteLength": 18235,
+      "sha256": "88f1799abc2a3d6b3c93b12a0d799e1a899ce5a90b97e9e57196cb1511d70565"
+    },
+    {
+      "path": "run/attestation.json",
+      "byteLength": 8159,
+      "sha256": "58e81aa5ef72c0df796e776b44a8a15e5d99c1ced4071198116dd500dafa9a93"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/input.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/result.json",
+      "byteLength": 1584,
+      "sha256": "8715d078ada5332115beb66800a0a137264cb6e499d5ecc04470223e8b6d7f65"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+      "byteLength": 5879,
+      "sha256": "04c5101e827f398a1b68c3656873116bb2dda36f57d1dad2d6c6c48b2ba25fd8"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/input.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/result.json",
+      "byteLength": 1572,
+      "sha256": "b2986fdc12adb49cacee37ecf9e0cfb3565a2b3d044e7a88192c7f579df51663"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/returned-files/01.pdf",
+      "byteLength": 23476,
+      "sha256": "4297a93ca799b735745a93ae9521237d089d71b287f82e8aa31168e773d73214"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/input.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/result.json",
+      "byteLength": 1586,
+      "sha256": "4437272cff45835787b06c1c74ac409e6b6f9a73fa51b0bcc23b07af88dbbb5f"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/returned-files/01.pdf",
+      "byteLength": 2840,
+      "sha256": "33a6afbf1e8652d861fcd74505c1551ec46b8d53d1ac6c200ea15978e59515b5"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/input.bin",
+      "byteLength": 4113,
+      "sha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/result.json",
+      "byteLength": 1621,
+      "sha256": "599e630dc9d8cfcad57c8fcbfbedfee123472fcf3ef47952aecda7448277f1b3"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/returned-files/01.pdf",
+      "byteLength": 5879,
+      "sha256": "e02524b7c791be2141474328644b88d554aec720d34ad03f1b11421a361db06a"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/input.bin",
+      "byteLength": 4159,
+      "sha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/result.json",
+      "byteLength": 1616,
+      "sha256": "a0004c21e2c57f86316a0912c75f43620ce0aeafe58f19c91d903ce562ba2711"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/returned-files/01.pdf",
+      "byteLength": 5879,
+      "sha256": "5b9ceb2815a6fe326196e3e195cb96c1bd42eff19fdd4536f465afa8498e38ff"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/attachments/01.zip",
+      "byteLength": 77420,
+      "sha256": "01a6b97fbf201d9a3b39cacf780bddb2b0153c956cea5604fad5647d73576d56"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/input.bin",
+      "byteLength": 31890,
+      "sha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/result.json",
+      "byteLength": 1905,
+      "sha256": "ce3c7ae668fb87ef9c34126b6e4b103d42a721664e526b6177870f2b35324343"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+      "byteLength": 23476,
+      "sha256": "ff9f1da8fa6d31157e52898d80703f31ec8cc839e0dd8cb4ded908a270cc23ed"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/input.bin",
+      "byteLength": 31884,
+      "sha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/result.json",
+      "byteLength": 1577,
+      "sha256": "ce6f0ebedd458dc070be138e717a7cdb4bc8cda1118e50615c53eeae85153f31"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/returned-files/01.pdf",
+      "byteLength": 23476,
+      "sha256": "e85ef8d8dfd4eef70d3e00ca9a28bc37598623b53ac161d22e6e84b589d51e7f"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/input.bin",
+      "byteLength": 1824,
+      "sha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/result.json",
+      "byteLength": 1631,
+      "sha256": "80cfe1a5b2fe67d7d6a292f5b18c5e867a8653b4ec599a50f0b20f5a4b440598"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/returned-files/01.pdf",
+      "byteLength": 2823,
+      "sha256": "61d6c4f070c1ec06e2bd3f9d71c23575de06df848ea211eacc7619100b52af26"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/input.bin",
+      "byteLength": 1824,
+      "sha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/result.json",
+      "byteLength": 1641,
+      "sha256": "b65c88c6ff050d55f304229e08266113f9960b214b4de47bc75fa9a7f27661e0"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/returned-files/01.pdf",
+      "byteLength": 2823,
+      "sha256": "d0943e5ce0c2b7b8220c9756670bcd33581b3c81dc0ccce8dc9e43788f127b70"
+    },
+    {
+      "path": "run/corpus.json",
+      "byteLength": 9489,
+      "sha256": "0d1de202b5a8fe8c867afcdccbacc202b80270f7f72e905b44d768bb2c9f8199"
+    },
+    {
+      "path": "run/guided-observations.json",
+      "byteLength": 4517,
+      "sha256": "b8b5cb7fd8c2abd5c2d9369539147ef8ccc2f0c51606f7f8d65ecab1b0b6ebd5"
+    },
+    {
+      "path": "run/plan.json",
+      "byteLength": 1480,
+      "sha256": "2f4a295a4fab9a2b0064d357b76175f734c82d62ff0f2d94c900f0aeeb791cd8"
+    },
+    {
+      "path": "run/protocol.json",
+      "byteLength": 1794,
+      "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+    },
+    {
+      "path": "run/run.json",
+      "byteLength": 18235,
+      "sha256": "88f1799abc2a3d6b3c93b12a0d799e1a899ce5a90b97e9e57196cb1511d70565"
+    },
+    {
+      "path": "run/tool.json",
+      "byteLength": 1348,
+      "sha256": "7e3421e473adf421b71e76d1ac489c09597d2e16b94fb66d665f5a91f6014ecc"
+    }
+  ],
+  "rootDigest": "dbeca3829dee525eb0ac1c4e062c947504f76368ffbe8cb54be57b7ed7a4122c"
+}

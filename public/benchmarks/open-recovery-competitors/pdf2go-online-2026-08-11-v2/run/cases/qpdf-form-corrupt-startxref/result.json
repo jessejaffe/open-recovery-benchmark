@@ -1,0 +1,50 @@
+{
+  "caseId": "qpdf-form-corrupt-startxref",
+  "format": "pdf",
+  "damageClass": "corrupt-startxref",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Done",
+    "operatorNote": "Free batch 1 of 3, returned file 1 of 3 (26.02 KB). Anonymous session began with 8 credits.",
+    "output": {
+      "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+      "byteLength": 26648,
+      "sha256": "d7f47c82c0ef81d3762e181ee0d014bef71f1c34cde9a6d01c6e7560c8d7b33e"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+        "byteLength": 26648,
+        "sha256": "d7f47c82c0ef81d3762e181ee0d014bef71f1c34cde9a6d01c6e7560c8d7b33e",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": false,
+      "exactExtractedText": false
+    }
+  },
+  "disposition": "changed-output"
+}

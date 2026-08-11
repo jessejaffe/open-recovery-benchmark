@@ -1,0 +1,52 @@
+{
+  "caseId": "healthy-ijg-testorig",
+  "format": "jpeg",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair successful! Image renders correctly.",
+    "operatorNote": "Product reported EOI marker present and 0 fixes applied.",
+    "output": {
+      "path": "cases/healthy-ijg-testorig/returned-files/01.jpg",
+      "byteLength": 5770,
+      "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/healthy-ijg-testorig/returned-files/01.jpg",
+        "byteLength": 5770,
+        "sha256": "acc6ec555d41d15b368320edaa3b20958ee6fa97cb6e4a18d1213d5ae8bec73b",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "byte-identical",
+        "classification": "selected-healthy-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "healthy-recommended-identical-output",
+      "selectedReturnedFile": "cases/healthy-ijg-testorig/returned-files/01.jpg"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 227,
+      "expectedHeight": 149,
+      "actualWidth": 227,
+      "actualHeight": 149,
+      "dimensions": true,
+      "expectedRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+      "actualRgbaSha256": "0c2c6b08bc575890a37dec329752d608487230fe4ab1c56e1e79909203945bf7",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

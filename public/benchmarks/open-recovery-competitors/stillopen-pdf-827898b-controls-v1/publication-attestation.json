@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-publication-attestation",
+  "runId": "stillopen-pdf-827898b-controls-v1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "index.html",
+      "byteLength": 14374,
+      "sha256": "439d3c66e3cdb23dac42e2ff8605d6f260cc78bb2b422f66bb08fc2adef10e2d"
+    },
+    {
+      "path": "report.json",
+      "byteLength": 13108,
+      "sha256": "d6885982e410aaf4fa58cf8fd1edb9d3261efc72acf38b9aca739d621c61cab5"
+    },
+    {
+      "path": "run/attestation.json",
+      "byteLength": 10530,
+      "sha256": "d38026a420a3f28facd5a8609c954420702e5da6a0c864ba57a099582c62aaaa"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/input.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/result.json",
+      "byteLength": 952,
+      "sha256": "7ef58bb60e0a85f03a8ae1828303be704d0118846467f700a5adbf21d8f74335"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-11-pages/stdout.txt",
+      "byteLength": 87,
+      "sha256": "380e9a64254d2f4aeb50b4ffab1d254721bb6a18a1d83c69975f81de9d075ce5"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/input.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/result.json",
+      "byteLength": 938,
+      "sha256": "1a339644afbffcf75645e50a196269506626933fbdc2e5576c390c530984b0c1"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-form/stdout.txt",
+      "byteLength": 87,
+      "sha256": "380e9a64254d2f4aeb50b4ffab1d254721bb6a18a1d83c69975f81de9d075ce5"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/input.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/result.json",
+      "byteLength": 953,
+      "sha256": "26de0226331795900c7a5c68f3da2d382d2686325ba3bc8efc30c162338e0aab"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/healthy-qpdf-issue-179/stdout.txt",
+      "byteLength": 87,
+      "sha256": "380e9a64254d2f4aeb50b4ffab1d254721bb6a18a1d83c69975f81de9d075ce5"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/input.bin",
+      "byteLength": 4113,
+      "sha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/result.json",
+      "byteLength": 1194,
+      "sha256": "9babacf51ef829bb4b6c87952e4227d0bd6daaf6f1bc823c9ae67dbca2b87415"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/stdout.txt",
+      "byteLength": 119,
+      "sha256": "21f09704b2ac8c0a35b8f8df74fce8274cc2c4a65bdc8cd3849fab1b44401a32"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-missing-startxref/tool-output/recovered.bin",
+      "byteLength": 4128,
+      "sha256": "57bb700da3562308d8ac2ba0354f6083a6568899c365b544378b2b3c669c9336"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/ground-truth.bin",
+      "byteLength": 4128,
+      "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/input.bin",
+      "byteLength": 4159,
+      "sha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/result.json",
+      "byteLength": 1189,
+      "sha256": "cddac29a6916a4b730066c239e7e18fcc6d58ea71a62ce3a412095a65ee3c8a2"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/stdout.txt",
+      "byteLength": 125,
+      "sha256": "a9dc077ddd5fa9aeaf7f87be2f0989e05118a154cb03ecf0657694225211eed3"
+    },
+    {
+      "path": "run/cases/qpdf-11-pages-trailing-bytes/tool-output/recovered.bin",
+      "byteLength": 4128,
+      "sha256": "57bb700da3562308d8ac2ba0354f6083a6568899c365b544378b2b3c669c9336"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/input.bin",
+      "byteLength": 31890,
+      "sha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/result.json",
+      "byteLength": 1170,
+      "sha256": "e9013bc4b172dd57dd3afb05585877fbc0149cc389b00f69e774e9990417bf0f"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/stdout.txt",
+      "byteLength": 120,
+      "sha256": "5b98b129ee4f8307a42048ac3bb2b3ad809963f7895946c4f02014b1317d9d20"
+    },
+    {
+      "path": "run/cases/qpdf-form-corrupt-startxref/tool-output/recovered.bin",
+      "byteLength": 32138,
+      "sha256": "2379ae1dbbf3eba61f19816dcfc7c978df8cb33e58e4263c4a20a82eec5ae1c7"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/ground-truth.bin",
+      "byteLength": 31890,
+      "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/input.bin",
+      "byteLength": 31884,
+      "sha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/result.json",
+      "byteLength": 1145,
+      "sha256": "012333e0c6abccf2778c8d3cdd6aef11f89281d991e736e38a174bfec33923a0"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/stdout.txt",
+      "byteLength": 126,
+      "sha256": "ca25861b164a79ea230d2411e45b6560fbb3efa4f57509f356ab0053fdc427bd"
+    },
+    {
+      "path": "run/cases/qpdf-form-missing-eof/tool-output/recovered.bin",
+      "byteLength": 32138,
+      "sha256": "91b3d985543a59e7d4092d0e8a99d50fc086e46ba40b629cc1401ed3a96a3448"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/input.bin",
+      "byteLength": 1824,
+      "sha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/result.json",
+      "byteLength": 1204,
+      "sha256": "2857f25054a8b001d88ff9c00e9bb41d5c95488c66b15c1ef60b624582ed6c66"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/stdout.txt",
+      "byteLength": 119,
+      "sha256": "0f6391c9782db39322a8c98183639b959142404e3e5f43e2cfc1394ed3a026f7"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-nonnumeric-startxref/tool-output/recovered.bin",
+      "byteLength": 1098,
+      "sha256": "aa794fd977bd394d75e9767480c35fa4194a78b5ccbc06c1032b9de3f7e39ae7"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/ground-truth.bin",
+      "byteLength": 1824,
+      "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/input.bin",
+      "byteLength": 1824,
+      "sha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/result.json",
+      "byteLength": 1214,
+      "sha256": "bba4f63a88af5f7dd67fc122828211750825fe14dcb729327dcc2ddb3b63a702"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/stdout.txt",
+      "byteLength": 119,
+      "sha256": "0f6391c9782db39322a8c98183639b959142404e3e5f43e2cfc1394ed3a026f7"
+    },
+    {
+      "path": "run/cases/qpdf-issue-179-startxref-out-of-range/tool-output/recovered.bin",
+      "byteLength": 1098,
+      "sha256": "aa794fd977bd394d75e9767480c35fa4194a78b5ccbc06c1032b9de3f7e39ae7"
+    },
+    {
+      "path": "run/corpus.json",
+      "byteLength": 9489,
+      "sha256": "0d1de202b5a8fe8c867afcdccbacc202b80270f7f72e905b44d768bb2c9f8199"
+    },
+    {
+      "path": "run/plan.json",
+      "byteLength": 1552,
+      "sha256": "7ea6a83e74d8e4e2e6d20cbc138885acb410d2257446a52874b4fb1ee9d3398d"
+    },
+    {
+      "path": "run/protocol.json",
+      "byteLength": 1794,
+      "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+    },
+    {
+      "path": "run/run.json",
+      "byteLength": 13108,
+      "sha256": "d6885982e410aaf4fa58cf8fd1edb9d3261efc72acf38b9aca739d621c61cab5"
+    },
+    {
+      "path": "run/tool.json",
+      "byteLength": 1128,
+      "sha256": "c386bad9f4e4818aab691328764650d6bb38286db0f5e185ed468efd11ac3fc1"
+    }
+  ],
+  "rootDigest": "71187e1cc803a380da8ec7daed8a51da045899e5317d8179d0963bd7eceb3da2"
+}

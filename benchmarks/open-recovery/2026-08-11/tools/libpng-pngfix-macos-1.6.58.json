@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "libpng-pngfix-macos-1.6.58",
+  "vendor": "libpng project",
+  "product": "pngfix",
+  "version": "1.6.58",
+  "platform": "macOS 26.3 arm64; Homebrew",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Homebrew libpng formula; https://github.com/pnggroup/libpng",
+    "license": "libpng license",
+    "executable": "/opt/homebrew/bin/pngfix"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "/opt/homebrew/bin/pngfix",
+    "args": ["--out={output}", "{input}"],
+    "outputFile": "recovered.png",
+    "successExitCodes": [0, 2]
+  }
+}

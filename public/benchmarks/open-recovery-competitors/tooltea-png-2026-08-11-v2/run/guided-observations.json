@@ -1,0 +1,120 @@
+{
+  "$schema": "https://stillopen.org/benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "tooltea-image-repair-2026-08-11-png-observations",
+  "toolId": "tooltea-image-repair-2026-08-11",
+  "cases": [
+    {
+      "caseId": "pngsuite-rgb8-missing-iend",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/pngsuite-rgb8-missing-iend/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "pngsuite-rgb8-corrupt-iend-crc",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/pngsuite-rgb8-corrupt-iend-crc/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied; returned file is byte-identical to the damaged input."
+    },
+    {
+      "caseId": "pngsuite-palette8-corrupt-idat-crc",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/pngsuite-palette8-corrupt-idat-crc/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied; returned file is byte-identical to the damaged input."
+    },
+    {
+      "caseId": "pngsuite-palette8-corrupt-ihdr-crc",
+      "productOutcome": "error",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair attempted — structural fixes applied but image data may be damaged. File structure appears valid but the image data is corrupted beyond repair.",
+      "operatorNote": "No download was returned."
+    },
+    {
+      "caseId": "pngsuite-rgba16-missing-iend",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/pngsuite-rgba16-missing-iend/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker missing and 1 fix applied."
+    },
+    {
+      "caseId": "pngsuite-rgba16-corrupt-iend-crc",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/pngsuite-rgba16-corrupt-iend-crc/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied; returned file is byte-identical to the damaged input."
+    },
+    {
+      "caseId": "healthy-pngsuite-basn2c08",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-pngsuite-basn2c08/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied."
+    },
+    {
+      "caseId": "healthy-pngsuite-basn3p08",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-pngsuite-basn3p08/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied."
+    },
+    {
+      "caseId": "healthy-pngsuite-basn6a16",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T22:47:07.348Z",
+      "productMessage": "Repair successful! Image renders correctly.",
+      "returnedFiles": [
+        {
+          "path": "cases/healthy-pngsuite-basn6a16/results/repaired.png",
+          "recommended": true
+        }
+      ],
+      "operatorNote": "Product reported IEND marker present and 0 fixes applied. No upload, account, quota, or payment boundary appeared."
+    }
+  ]
+}

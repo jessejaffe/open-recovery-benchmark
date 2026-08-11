@@ -1,0 +1,50 @@
+{
+  "caseId": "healthy-qpdf-11-pages",
+  "format": "pdf",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:29:56.524Z",
+    "productMessage": "PDF repaired successfully! Download (4.03 KB)",
+    "operatorNote": "Captured from the individual result tab; downloaded as repaired_input (4).pdf.",
+    "output": {
+      "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+      "byteLength": 4128,
+      "sha256": "13ee9952ef6abb542ea709a67e4b4a3b54ea917d90cbd1f1a3378b840b1982ac"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/healthy-qpdf-11-pages/returned-files/01.pdf",
+        "byteLength": 4128,
+        "sha256": "13ee9952ef6abb542ea709a67e4b4a3b54ea917d90cbd1f1a3378b840b1982ac",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-unexpected-changed-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-unexpected-changed-output",
+      "selectedReturnedFile": "cases/healthy-qpdf-11-pages/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 11,
+      "actualPageCount": 11,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

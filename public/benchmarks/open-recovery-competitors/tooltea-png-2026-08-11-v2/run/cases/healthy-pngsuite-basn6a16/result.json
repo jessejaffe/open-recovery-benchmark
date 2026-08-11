@@ -1,0 +1,52 @@
+{
+  "caseId": "healthy-pngsuite-basn6a16",
+  "format": "png",
+  "damageClass": "none",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair successful! Image renders correctly.",
+    "operatorNote": "Product reported IEND marker present and 0 fixes applied. No upload, account, quota, or payment boundary appeared.",
+    "output": {
+      "path": "cases/healthy-pngsuite-basn6a16/returned-files/01.png",
+      "byteLength": 3435,
+      "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/healthy-pngsuite-basn6a16/returned-files/01.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "byte-identical",
+        "classification": "selected-healthy-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "healthy-recommended-identical-output",
+      "selectedReturnedFile": "cases/healthy-pngsuite-basn6a16/returned-files/01.png"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 32,
+      "actualWidth": 32,
+      "actualHeight": 32,
+      "dimensions": true,
+      "expectedRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+      "actualRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

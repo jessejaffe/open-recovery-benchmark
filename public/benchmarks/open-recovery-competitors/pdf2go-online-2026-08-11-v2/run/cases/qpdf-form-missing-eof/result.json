@@ -1,0 +1,50 @@
+{
+  "caseId": "qpdf-form-missing-eof",
+  "format": "pdf",
+  "damageClass": "remove-final-eof",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Done",
+    "operatorNote": "Free batch 1 of 3, returned file 2 of 3 (31.74 KB).",
+    "output": {
+      "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+      "byteLength": 32504,
+      "sha256": "558a4bd852089e98c3444ecbc6c58e4473a9a6118ea6711bfe37f95e687101df"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/qpdf-form-missing-eof/returned-files/01.pdf",
+        "byteLength": 32504,
+        "sha256": "558a4bd852089e98c3444ecbc6c58e4473a9a6118ea6711bfe37f95e687101df",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/qpdf-form-missing-eof/returned-files/01.pdf"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

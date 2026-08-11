@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "kind": "competitor-benchmark-results",
+  "id": "browser-competitor-2026-08-11-v2-results",
+  "publishedAt": "2026-08-11T22:55:27Z",
+  "registration": {
+    "path": "registration-v2.json",
+    "id": "browser-competitor-2026-08-11-v2",
+    "frozenAt": "2026-08-11T22:21:46Z",
+    "sha256": "7d899c4e909e2c6cd4c0d49f8dd838c6e7f0c16e42c0aa8fa58d21a1d7896a83"
+  },
+  "claimBoundary": "Scores apply only to each product's registered nine-case format cohort: six externally sourced files with benchmark-authored content-preserving structural mutations plus three untouched healthy controls. There is no cross-format aggregate score.",
+  "cohorts": [
+    {
+      "id": "pdf",
+      "format": "PDF",
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "products": [
+        {
+          "id": "stillopen",
+          "displayName": "StillOpen",
+          "role": "control",
+          "runId": "stillopen-pdf-827898b-controls-v1",
+          "verifiedPasses": 9,
+          "changedOutputs": 0,
+          "errors": 0,
+          "runEvidenceRootDigest": "078a94da65b03cff1414aa54488fed77e4c778e3ec43f5b40dae3f891a86e245",
+          "publicationRootDigest": "71187e1cc803a380da8ec7daed8a51da045899e5317d8179d0963bd7eceb3da2",
+          "publicationPath": "/benchmarks/open-recovery-competitors/stillopen-pdf-827898b-controls-v1/"
+        },
+        {
+          "id": "pdf24-online",
+          "displayName": "PDF24 Repair PDF",
+          "role": "consumer-browser-competitor",
+          "runId": "pdf24-online-2026-08-11-v2",
+          "verifiedPasses": 6,
+          "changedOutputs": 3,
+          "errors": 0,
+          "runEvidenceRootDigest": "c9dec1d46678618e696d12d671f47dd601d0cfc71ef1eda2c99e26a5a1d68854",
+          "publicationRootDigest": "dbeca3829dee525eb0ac1c4e062c947504f76368ffbe8cb54be57b7ed7a4122c",
+          "publicationPath": "/benchmarks/open-recovery-competitors/pdf24-online-2026-08-11-v2/"
+        },
+        {
+          "id": "zpdf-web",
+          "displayName": "zPDF Repair PDF",
+          "role": "consumer-browser-competitor",
+          "runId": "zpdf-web-2026-08-11-v2",
+          "verifiedPasses": 5,
+          "changedOutputs": 0,
+          "errors": 4,
+          "runEvidenceRootDigest": "f2697195d25fe74f184c99772a48c41a4f2336fa751535565a3da05d41f81afc",
+          "publicationRootDigest": "f633a6a76783a2c3a103efe56807996f198a826c230c2510ffd0cde7d73aee92",
+          "publicationPath": "/benchmarks/open-recovery-competitors/zpdf-web-2026-08-11-v2/"
+        },
+        {
+          "id": "pdf2go-online",
+          "displayName": "PDF2Go Repair PDF",
+          "role": "consumer-browser-competitor",
+          "runId": "pdf2go-online-2026-08-11-v2",
+          "verifiedPasses": 3,
+          "changedOutputs": 4,
+          "errors": 2,
+          "runEvidenceRootDigest": "0d07f0ce2ce5fcfd4f1f887898120157d0e4e2b4a5c4a732e9d4b5de9b250725",
+          "publicationRootDigest": "1ba1df0dd865f85177658fa7d1bd376221d782e5f64c08c139c7fc819c09571e",
+          "publicationPath": "/benchmarks/open-recovery-competitors/pdf2go-online-2026-08-11-v2/"
+        }
+      ]
+    },
+    {
+      "id": "jpeg",
+      "format": "JPEG",
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "products": [
+        {
+          "id": "stillopen",
+          "displayName": "StillOpen",
+          "role": "control",
+          "runId": "stillopen-jpeg-827898b-controls-v1",
+          "verifiedPasses": 9,
+          "changedOutputs": 0,
+          "errors": 0,
+          "runEvidenceRootDigest": "d5203ed09968a599f34db8b91324baf697f3c9bbaabbe150c6ec7502c7fab5eb",
+          "publicationRootDigest": "ba6a5a9adb0bf7bcd1d5f66030db25a764eb66cf444b04437512c4435cceeb8f",
+          "publicationPath": "/benchmarks/open-recovery-competitors/stillopen-jpeg-827898b-controls-v1/"
+        },
+        {
+          "id": "tooltea-image-repair",
+          "displayName": "ToolTea Image Repair",
+          "role": "consumer-browser-competitor",
+          "runId": "tooltea-jpeg-2026-08-11-v2",
+          "verifiedPasses": 9,
+          "changedOutputs": 0,
+          "errors": 0,
+          "runEvidenceRootDigest": "1e5d0a30a8acf3051c6a3952a90938b6b3cfb64441965f870ecd1168446bf1dc",
+          "publicationRootDigest": "036d6235eb1106bc2ac2e738366e8a0e3ccbd3ab17e69eee1b2d48d4d5c0f85c",
+          "publicationPath": "/benchmarks/open-recovery-competitors/tooltea-jpeg-2026-08-11-v2/"
+        }
+      ]
+    },
+    {
+      "id": "png",
+      "format": "PNG",
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "products": [
+        {
+          "id": "stillopen",
+          "displayName": "StillOpen",
+          "role": "control",
+          "runId": "stillopen-png-827898b-controls-v1",
+          "verifiedPasses": 9,
+          "changedOutputs": 0,
+          "errors": 0,
+          "runEvidenceRootDigest": "5fec66c33f6f3ebfa49845123a1c844383351d081ba3f601b15ccebf9dca3fb2",
+          "publicationRootDigest": "87fe36d778516638869010de6447aa8bc89104a62145b89f08c6497584f55bfc",
+          "publicationPath": "/benchmarks/open-recovery-competitors/stillopen-png-827898b-controls-v1/"
+        },
+        {
+          "id": "tooltea-image-repair",
+          "displayName": "ToolTea Image Repair",
+          "role": "consumer-browser-competitor",
+          "runId": "tooltea-png-2026-08-11-v2",
+          "verifiedPasses": 5,
+          "changedOutputs": 0,
+          "errors": 4,
+          "runEvidenceRootDigest": "1099cc91c27dd303070d3c415522e15224de5e81d3b0d964e6bcdd566cc5721d",
+          "publicationRootDigest": "f07d1971e9621318489e4bce833d6b6b1981afd55c3185986726ab929f002da2",
+          "publicationPath": "/benchmarks/open-recovery-competitors/tooltea-png-2026-08-11-v2/"
+        }
+      ]
+    }
+  ],
+  "consumerExperience": [
+    {
+      "id": "stillopen",
+      "formatsInBenchmark": ["PDF", "JPEG", "PNG"],
+      "installation": "none",
+      "account": "none",
+      "paymentForCompleteExport": "none",
+      "observedQuota": "none",
+      "execution": "browser-local",
+      "fileTransfer": "none"
+    },
+    {
+      "id": "pdf24-online",
+      "formatsInBenchmark": ["PDF"],
+      "installation": "none",
+      "account": "none",
+      "paymentForCompleteExport": "none",
+      "observedQuota": "none",
+      "execution": "server",
+      "fileTransfer": "upload; page states deletion after one hour"
+    },
+    {
+      "id": "zpdf-web",
+      "formatsInBenchmark": ["PDF"],
+      "installation": "none",
+      "account": "none",
+      "paymentForCompleteExport": "none",
+      "observedQuota": "up to 10 files per session",
+      "execution": "browser-local qpdf WebAssembly",
+      "fileTransfer": "none"
+    },
+    {
+      "id": "pdf2go-online",
+      "formatsInBenchmark": ["PDF"],
+      "installation": "none",
+      "account": "none for observed run",
+      "paymentForCompleteExport": "none for observed run",
+      "observedQuota": "8 anonymous credits; maximum 3 files per free task",
+      "execution": "server",
+      "fileTransfer": "upload; page states regular deletion"
+    },
+    {
+      "id": "tooltea-image-repair",
+      "formatsInBenchmark": ["JPEG", "PNG"],
+      "installation": "none",
+      "account": "none",
+      "paymentForCompleteExport": "none",
+      "observedQuota": "none; single-file workflow",
+      "execution": "browser-local",
+      "fileTransfer": "none"
+    }
+  ],
+  "reportingRules": [
+    "Do not compute an overall score across formats.",
+    "Product-reported success is not a pass until the independent validator accepts the returned content.",
+    "Downloadable, paywalled, preview-only, Windows-only, command-line, and storage-recovery products remain in competitor-analysis.md with their exclusion reason instead of receiving invented scores."
+  ]
+}

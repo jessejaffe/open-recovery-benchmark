@@ -1,0 +1,204 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/corpus.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-corpus",
+  "id": "external-source-pdf-competitor-2026-08-11-v1",
+  "title": "Nine-case PDF direct-repair cohort with healthy controls",
+  "cases": [
+    {
+      "id": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "input": {
+        "path": "cases/pdf/qpdf-form-corrupt-startxref.pdf",
+        "byteLength": 31890,
+        "sha256": "3cf747465e192b710b4c6b22201982f95751e2ebbdb67124e3a5696ee4e4b81b"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "input": {
+        "path": "cases/pdf/qpdf-form-missing-eof.pdf",
+        "byteLength": 31884,
+        "sha256": "2cc43dd9c8f4c03d9ff5ca6fdc8d798fc9335019d211ede34ddab063546aafe1"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "input": {
+        "path": "cases/pdf/qpdf-11-pages-missing-startxref.pdf",
+        "byteLength": 4113,
+        "sha256": "ef37f1a2c9ec144524d70fb1fa47500a1c7e1a87cec15cc216de5669d0ff6dce"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "input": {
+        "path": "cases/pdf/qpdf-11-pages-trailing-bytes.pdf",
+        "byteLength": 4159,
+        "sha256": "a5acfa1d06c13f4059aa4f53b413c7e4a1620bf1c685ce33029cc6810ee539ec"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "input": {
+        "path": "cases/pdf/qpdf-issue-179-startxref-out-of-range.pdf",
+        "byteLength": 1824,
+        "sha256": "db8e4d10ca1c565e95c6426b3ae9afe27b9712bde2fe1395b005519a5142fbcd"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "input": {
+        "path": "cases/pdf/qpdf-issue-179-nonnumeric-startxref.pdf",
+        "byteLength": 1824,
+        "sha256": "1013c68ffaf6422efb1f1a8dbfe45baa3826e211f581b39f29331b45828724a2"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-form.pdf",
+        "byteLength": 31890,
+        "sha256": "0d2d376aa561887c691b964b3657ca9cfdbfa56f651cf6f7f4b1cbfd5bc39d8f"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/storage/form.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/storage/form.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-11-pages.pdf",
+        "byteLength": 4128,
+        "sha256": "d07b6afc97c1e8699f0640a951a5dc3c2426d7bea7cddf39b4ebb0f1bab1a2a0"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:qpdf/qtest/qpdf/11-pages.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/qpdf/qtest/qpdf/11-pages.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "groundTruth": {
+        "validator": "pdf-render-text-v1",
+        "path": "ground-truth/pdf/qpdf-issue-179.pdf",
+        "byteLength": 1824,
+        "sha256": "07fdcd53dde2cea3b11f65e8cf907cece6d8bf6917f9061d9a8de3bba5e0001a"
+      },
+      "provenance": {
+        "source": "qpdf/qpdf@babad179ce5db9a21635c8d1ac17baa59637eada:examples/qtest/bookmarks/issue-179.pdf (https://github.com/qpdf/qpdf/blob/babad179ce5db9a21635c8d1ac17baa59637eada/examples/qtest/bookmarks/issue-179.pdf)",
+        "license": "Apache-2.0; evidence: benchmarks/external-holdout/2026-08-10/licenses/qpdf-Apache-2.0.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    }
+  ]
+}

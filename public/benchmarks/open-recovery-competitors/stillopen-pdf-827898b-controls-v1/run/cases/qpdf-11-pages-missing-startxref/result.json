@@ -1,0 +1,40 @@
+{
+  "caseId": "qpdf-11-pages-missing-startxref",
+  "format": "pdf",
+  "damageClass": "remove-startxref-section",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:32.362Z",
+    "endedAt": "2026-08-11T22:25:32.501Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/qpdf-11-pages-missing-startxref/stdout.txt",
+    "stderr": "cases/qpdf-11-pages-missing-startxref/stderr.txt",
+    "output": {
+      "path": "cases/qpdf-11-pages-missing-startxref/tool-output/recovered.bin",
+      "byteLength": 4128,
+      "sha256": "57bb700da3562308d8ac2ba0354f6083a6568899c365b544378b2b3c669c9336"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 11,
+      "actualPageCount": 11,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true
+    }
+  },
+  "disposition": "verified-pass"
+}

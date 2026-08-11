@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "benchmark": "stillopen-external-source-blind-holdout",
+  "executedDate": "2026-08-10",
+  "scope": "Six frozen external PDF cases. Only vendors that completed a consistent no-account PDF workflow were scored.",
+  "passDefinition": "A vendor UI success counts only if the downloaded output independently matches the untouched upstream source's page count, page dimensions, rendered RGBA fingerprints, and extracted-text fingerprints.",
+  "competitors": [
+    {
+      "competitor": "zpdf",
+      "passed": 2,
+      "total": 6,
+      "uiSuccesses": 2,
+      "refusals": 4
+    },
+    {
+      "competitor": "iLovePDF",
+      "passed": 0,
+      "total": 6,
+      "uiSuccesses": 2,
+      "refusals": 4
+    }
+  ],
+  "results": [
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-form-corrupt-startxref",
+      "uiOutcome": "refused",
+      "uiEvidence": "Unable to repair the PDF file.",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-form-missing-eof",
+      "uiOutcome": "success",
+      "uiEvidence": "PDF repaired successfully!",
+      "outputFile": "outputs/zpdf/qpdf-form-missing-eof.pdf",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery",
+      "output": {
+        "file": "outputs/zpdf/qpdf-form-missing-eof.pdf",
+        "byteLength": 32138,
+        "sha256": "e2fd709248886b63d62098d4504e41e7437b9134548e0c664354a7163de91693"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      }
+    },
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "uiOutcome": "refused",
+      "uiEvidence": "Unable to repair the PDF file.",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "uiOutcome": "success",
+      "uiEvidence": "PDF repaired successfully!",
+      "outputFile": "outputs/zpdf/qpdf-11-pages-trailing-bytes.pdf",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "exactGroundTruthPass": true,
+      "disposition": "exact-content-recovery",
+      "output": {
+        "file": "outputs/zpdf/qpdf-11-pages-trailing-bytes.pdf",
+        "byteLength": 4128,
+        "sha256": "a66cc9d9e2b4e9003c01b5d2099571965ff37eed0bb945da097547014d9d907e"
+      },
+      "validation": {
+        "pass": true,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      }
+    },
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "uiOutcome": "refused",
+      "uiEvidence": "Unable to repair the PDF file.",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "zpdf",
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "uiOutcome": "refused",
+      "uiEvidence": "Unable to repair the PDF file.",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-form-corrupt-startxref",
+      "uiOutcome": "success",
+      "uiEvidence": "This task has been processed successfully.",
+      "outputFile": "outputs/ilovepdf/qpdf-form-corrupt-startxref.pdf",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "exactGroundTruthPass": false,
+      "disposition": "changed-content-output",
+      "output": {
+        "file": "outputs/ilovepdf/qpdf-form-corrupt-startxref.pdf",
+        "byteLength": 33321,
+        "sha256": "71c82c50932cd3cc7b688ec747afde91d68b79ce983bf796d7fda81530a87c0a"
+      },
+      "validation": {
+        "pass": false,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": true
+        }
+      }
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-form-missing-eof",
+      "uiOutcome": "success",
+      "uiEvidence": "This task has been processed successfully.",
+      "outputFile": "outputs/ilovepdf/qpdf-form-missing-eof.pdf",
+      "format": "pdf",
+      "sourceId": "qpdf-form",
+      "exactGroundTruthPass": false,
+      "disposition": "changed-content-output",
+      "output": {
+        "file": "outputs/ilovepdf/qpdf-form-missing-eof.pdf",
+        "byteLength": 33321,
+        "sha256": "5545140069aec7c65c27fe9b61001f42c4c56d3dc5b40d3ea08b1a704d8793d0"
+      },
+      "validation": {
+        "pass": false,
+        "checks": {
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": false,
+          "exactExtractedText": true
+        }
+      }
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "uiOutcome": "refused",
+      "uiEvidence": "Oh no! We couldn't process your files.",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "uiOutcome": "refused",
+      "uiEvidence": "Oh no! We couldn't process your files.",
+      "format": "pdf",
+      "sourceId": "qpdf-11-pages",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "uiOutcome": "refused",
+      "uiEvidence": "Oh no! We couldn't process your files.",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    },
+    {
+      "competitor": "iLovePDF",
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "uiOutcome": "refused",
+      "uiEvidence": "Oh no! We couldn't process your files.",
+      "format": "pdf",
+      "sourceId": "qpdf-issue-179",
+      "exactGroundTruthPass": false,
+      "disposition": "safe-refusal"
+    }
+  ],
+  "sources": [
+    "https://zpdf.app/en/tools/repair-pdf",
+    "https://www.ilovepdf.com/repair-pdf"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "caseId": "pngsuite-palette8-corrupt-ihdr-crc",
+  "format": "png",
+  "damageClass": "corrupt-ihdr-crc",
+  "eligible": true,
+  "observation": {
+    "disposition": "error",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "error",
+    "attemptedAt": "2026-08-11T22:47:07.348Z",
+    "productMessage": "Repair attempted — structural fixes applied but image data may be damaged. File structure appears valid but the image data is corrupted beyond repair.",
+    "operatorNote": "No download was returned.",
+    "output": null,
+    "returnedFiles": [],
+    "outputSelection": {
+      "strategy": "no-changed-output",
+      "selectedReturnedFile": null
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "disposition": "error"
+}

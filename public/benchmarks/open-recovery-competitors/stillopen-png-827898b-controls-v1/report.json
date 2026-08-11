@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "stillopen-png-827898b-controls-v1",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-png-competitor-2026-08-11-v1",
+    "title": "Nine-case PNG direct-repair cohort with healthy controls",
+    "digest": "9cd5871c060642009c67cd1dd49895d88164aeef5381337a41f6510479c86662"
+  },
+  "tool": {
+    "id": "stillopen-wasm-827898b-controls-v1",
+    "digest": "cb7b33d097faaf834ffa7b3bf8f08d06c28b9a090d2df1ac681141dc63457720",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+    "platform": "Node.js host with the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "planDigest": "ff3953f6e9677941fd07815fa6f49356c4e0bb3e0450144cb52e12036fc3a40b",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "pngsuite-rgb8-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.165Z",
+        "endedAt": "2026-08-11T22:25:35.250Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-rgb8-missing-iend/stdout.txt",
+        "stderr": "cases/pngsuite-rgb8-missing-iend/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-rgb8-missing-iend/tool-output/recovered.bin",
+          "byteLength": 145,
+          "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "actualRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pngsuite-rgb8-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.349Z",
+        "endedAt": "2026-08-11T22:25:35.435Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-rgb8-corrupt-iend-crc/stdout.txt",
+        "stderr": "cases/pngsuite-rgb8-corrupt-iend-crc/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-rgb8-corrupt-iend-crc/tool-output/recovered.bin",
+          "byteLength": 145,
+          "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "actualRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pngsuite-palette8-corrupt-idat-crc",
+      "format": "png",
+      "damageClass": "corrupt-idat-crc",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.439Z",
+        "endedAt": "2026-08-11T22:25:35.524Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-palette8-corrupt-idat-crc/stdout.txt",
+        "stderr": "cases/pngsuite-palette8-corrupt-idat-crc/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-palette8-corrupt-idat-crc/tool-output/recovered.bin",
+          "byteLength": 1286,
+          "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "actualRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pngsuite-palette8-corrupt-ihdr-crc",
+      "format": "png",
+      "damageClass": "corrupt-ihdr-crc",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.527Z",
+        "endedAt": "2026-08-11T22:25:35.609Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-palette8-corrupt-ihdr-crc/stdout.txt",
+        "stderr": "cases/pngsuite-palette8-corrupt-ihdr-crc/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-palette8-corrupt-ihdr-crc/tool-output/recovered.bin",
+          "byteLength": 1286,
+          "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "actualRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pngsuite-rgba16-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.613Z",
+        "endedAt": "2026-08-11T22:25:35.698Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-rgba16-missing-iend/stdout.txt",
+        "stderr": "cases/pngsuite-rgba16-missing-iend/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-rgba16-missing-iend/tool-output/recovered.bin",
+          "byteLength": 3435,
+          "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "actualRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pngsuite-rgba16-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.703Z",
+        "endedAt": "2026-08-11T22:25:35.787Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pngsuite-rgba16-corrupt-iend-crc/stdout.txt",
+        "stderr": "cases/pngsuite-rgba16-corrupt-iend-crc/stderr.txt",
+        "output": {
+          "path": "cases/pngsuite-rgba16-corrupt-iend-crc/tool-output/recovered.bin",
+          "byteLength": 3435,
+          "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "actualRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-pngsuite-basn2c08",
+      "format": "png",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.790Z",
+        "endedAt": "2026-08-11T22:25:35.875Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-pngsuite-basn2c08/stdout.txt",
+        "stderr": "cases/healthy-pngsuite-basn2c08/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "actualRgbaSha256": "eaf754543de2f7b68ed1d07f36802ef667bf41dad1ecf55a19d554f3077f1d53",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-pngsuite-basn3p08",
+      "format": "png",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.878Z",
+        "endedAt": "2026-08-11T22:25:35.962Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-pngsuite-basn3p08/stdout.txt",
+        "stderr": "cases/healthy-pngsuite-basn3p08/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "actualRgbaSha256": "4a2785bee924eae7158c18aa93ad7d83d3be01e6505007620291acd2fd8942b7",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-pngsuite-basn6a16",
+      "format": "png",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:35.965Z",
+        "endedAt": "2026-08-11T22:25:36.048Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-pngsuite-basn6a16/stdout.txt",
+        "stderr": "cases/healthy-pngsuite-basn6a16/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 32,
+          "actualWidth": 32,
+          "actualHeight": 32,
+          "dimensions": true,
+          "expectedRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "actualRgbaSha256": "deb246e374669920c8ba34b3c6968ffed9bf9d0443fae5201ec968322a632fa5",
+          "exactDecodedPixels": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 9,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "competitiveSummaryEligible": true
+  }
+}

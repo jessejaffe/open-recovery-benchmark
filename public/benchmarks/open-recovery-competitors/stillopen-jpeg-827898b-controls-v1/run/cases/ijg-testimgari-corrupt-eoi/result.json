@@ -1,0 +1,42 @@
+{
+  "caseId": "ijg-testimgari-corrupt-eoi",
+  "format": "jpeg",
+  "damageClass": "corrupt-final-eoi",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T22:25:34.486Z",
+    "endedAt": "2026-08-11T22:25:34.579Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/ijg-testimgari-corrupt-eoi/stdout.txt",
+    "stderr": "cases/ijg-testimgari-corrupt-eoi/stderr.txt",
+    "output": {
+      "path": "cases/ijg-testimgari-corrupt-eoi/tool-output/recovered.bin",
+      "byteLength": 77766,
+      "sha256": "eb908647023bb326a9b5669b9f2103b729131b7838898d4d70866e3d2ee40d30"
+    },
+    "healthyNoChange": false
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 227,
+      "expectedHeight": 149,
+      "actualWidth": 227,
+      "actualHeight": 149,
+      "dimensions": true,
+      "expectedRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+      "actualRgbaSha256": "0e6d2b2b65c65e55bb8b42be66bc601a2394d4bce315f8db8e655465dab4189a",
+      "exactDecodedPixels": true
+    }
+  },
+  "disposition": "verified-pass"
+}

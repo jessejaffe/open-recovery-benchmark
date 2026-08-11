@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "stillopen-pdf-827898b-controls-v1",
+  "protocol": {
+    "id": "external-source-competitor-exact-content-v1",
+    "title": "External-source direct-repair competitor benchmark",
+    "publicClaim": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+    "digest": "5ef9c74dbd319f8e25702a94ae0b90dd29aeae98d2c13b62c30324e739a3e9c7"
+  },
+  "corpus": {
+    "id": "external-source-pdf-competitor-2026-08-11-v1",
+    "title": "Nine-case PDF direct-repair cohort with healthy controls",
+    "digest": "91f53d4ed764be0478f48776e862b3bcf28579d661d04f70652552331da034ce"
+  },
+  "tool": {
+    "id": "stillopen-wasm-827898b-controls-v1",
+    "digest": "cb7b33d097faaf834ffa7b3bf8f08d06c28b9a090d2df1ac681141dc63457720",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "827898b25e1459bdeb08ddc79bb865c088bfa4c3",
+    "platform": "Node.js host with the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "planDigest": "a7696936c6411cac35f9516c12cb0394d6d9b317173fb7668b9096deec023c51",
+  "claimBoundary": "Named direct-repair products are compared only within the same frozen format cohort, using identical damaged inputs and healthy controls, complete terminal-outcome evidence, and independent PDF render/text or raster RGBA validation.",
+  "cases": [
+    {
+      "caseId": "qpdf-form-corrupt-startxref",
+      "format": "pdf",
+      "damageClass": "corrupt-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:31.129Z",
+        "endedAt": "2026-08-11T22:25:31.556Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-form-corrupt-startxref/stdout.txt",
+        "stderr": "cases/qpdf-form-corrupt-startxref/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-form-corrupt-startxref/tool-output/recovered.bin",
+          "byteLength": 32138,
+          "sha256": "2379ae1dbbf3eba61f19816dcfc7c978df8cb33e58e4263c4a20a82eec5ae1c7"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-form-missing-eof",
+      "format": "pdf",
+      "damageClass": "remove-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:31.913Z",
+        "endedAt": "2026-08-11T22:25:32.328Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-form-missing-eof/stdout.txt",
+        "stderr": "cases/qpdf-form-missing-eof/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-form-missing-eof/tool-output/recovered.bin",
+          "byteLength": 32138,
+          "sha256": "91b3d985543a59e7d4092d0e8a99d50fc086e46ba40b629cc1401ed3a96a3448"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-11-pages-missing-startxref",
+      "format": "pdf",
+      "damageClass": "remove-startxref-section",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:32.362Z",
+        "endedAt": "2026-08-11T22:25:32.501Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-11-pages-missing-startxref/stdout.txt",
+        "stderr": "cases/qpdf-11-pages-missing-startxref/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-11-pages-missing-startxref/tool-output/recovered.bin",
+          "byteLength": 4128,
+          "sha256": "57bb700da3562308d8ac2ba0354f6083a6568899c365b544378b2b3c669c9336"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-11-pages-trailing-bytes",
+      "format": "pdf",
+      "damageClass": "append-trailing-bytes-after-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:32.523Z",
+        "endedAt": "2026-08-11T22:25:32.674Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-11-pages-trailing-bytes/stdout.txt",
+        "stderr": "cases/qpdf-11-pages-trailing-bytes/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-11-pages-trailing-bytes/tool-output/recovered.bin",
+          "byteLength": 4128,
+          "sha256": "57bb700da3562308d8ac2ba0354f6083a6568899c365b544378b2b3c669c9336"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-startxref-out-of-range",
+      "format": "pdf",
+      "damageClass": "startxref-out-of-range",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:32.709Z",
+        "endedAt": "2026-08-11T22:25:32.843Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-issue-179-startxref-out-of-range/stdout.txt",
+        "stderr": "cases/qpdf-issue-179-startxref-out-of-range/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-issue-179-startxref-out-of-range/tool-output/recovered.bin",
+          "byteLength": 1098,
+          "sha256": "aa794fd977bd394d75e9767480c35fa4194a78b5ccbc06c1032b9de3f7e39ae7"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "qpdf-issue-179-nonnumeric-startxref",
+      "format": "pdf",
+      "damageClass": "nonnumeric-startxref",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:32.854Z",
+        "endedAt": "2026-08-11T22:25:32.964Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/qpdf-issue-179-nonnumeric-startxref/stdout.txt",
+        "stderr": "cases/qpdf-issue-179-nonnumeric-startxref/stderr.txt",
+        "output": {
+          "path": "cases/qpdf-issue-179-nonnumeric-startxref/tool-output/recovered.bin",
+          "byteLength": 1098,
+          "sha256": "aa794fd977bd394d75e9767480c35fa4194a78b5ccbc06c1032b9de3f7e39ae7"
+        },
+        "healthyNoChange": false
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-form",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:32.970Z",
+        "endedAt": "2026-08-11T22:25:33.231Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-qpdf-form/stdout.txt",
+        "stderr": "cases/healthy-qpdf-form/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-11-pages",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:33.262Z",
+        "endedAt": "2026-08-11T22:25:33.373Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-qpdf-11-pages/stdout.txt",
+        "stderr": "cases/healthy-qpdf-11-pages/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 11,
+          "actualPageCount": 11,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "healthy-qpdf-issue-179",
+      "format": "pdf",
+      "damageClass": "none",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-change",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T22:25:33.393Z",
+        "endedAt": "2026-08-11T22:25:33.489Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/healthy-qpdf-issue-179/stdout.txt",
+        "stderr": "cases/healthy-qpdf-issue-179/stderr.txt",
+        "output": null,
+        "healthyNoChange": true
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 1,
+          "actualPageCount": 1,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true
+        }
+      },
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "eligibleCases": 9,
+    "verifiedPasses": 9,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "competitiveSummaryEligible": true
+  }
+}

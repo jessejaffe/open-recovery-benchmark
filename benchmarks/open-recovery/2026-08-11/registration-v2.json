@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "kind": "competitor-benchmark-registration",
+  "id": "browser-competitor-2026-08-11-v2",
+  "frozenAt": "2026-08-11T22:21:46Z",
+  "state": "frozen-pre-execution",
+  "supersedes": "registration.json",
+  "supersessionReason": "The v1 StillOpen control run preserved explicit healthy no-change exits as errors. No competitor was run. Harness 1.4.0 adds frozen command-adapter healthy-control semantics before any competitor execution.",
+  "expectedHarness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.4.0"
+  },
+  "protocol": {
+    "path": "protocol.json",
+    "sha256": "10f90078c2eb10bd715cba2ae06ff0118b6132baf61fb22c9d1b7c0d9a0767e3"
+  },
+  "runtimeArtifacts": [
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/cli.mjs",
+      "sha256": "881ec0ff7f9216cdc55a0ead74681e9db2914f9e511b74faf2dc153a49f81a71"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/canonical.mjs",
+      "sha256": "0fa49661cf6b83749db16ea8f0662bd70038716a4886b0b754fe736671c3ad69"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/contracts.mjs",
+      "sha256": "16deb3796a7a5b395e91086687c8d3309917476848e5d6b432fc4bf4d503d7de"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/files.mjs",
+      "sha256": "537eb2d54271452c65958191d3f7ba3929e92cd81922d26d527b83cdc2edd2a7"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/guided-packet.mjs",
+      "sha256": "c6a2d99fdbb0b70938d9e4b6416dc44aa76c44b2fc443438e57d591ad874ce34"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/publisher.mjs",
+      "sha256": "c6167759cbdaba233e0be092ef906d3a8728042f7a915ba4785777995940ea90"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/runner.mjs",
+      "sha256": "d4523f618aefab66fed2977c88cc94cac82710ab6e907b9c5ede5b600ec01c4e"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/lib/validators.mjs",
+      "sha256": "a6f36dcc7a2b84eeadc0291cd05343dd927b5e4393f696b34434763f9aa7bd5e"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/adapters/stillopen-recovery.mjs",
+      "sha256": "4bd812cbb2c4b7b1bf54fffe99961f2cffce4410e6526007a3f33573c8c95ff6"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmark-kit/schemas/tool.schema.json",
+      "sha256": "b2dc3cfdf62dadc6941b20b37c8ecd6349d2734d130a5583a3e98d8f1e56489a"
+    },
+    {
+      "pathFromRepositoryRoot": "benchmarks/open-recovery/2026-08-11/scripts/verify-registration.mjs",
+      "sha256": "ed652b357cf2190c4fb697feb321ecea37f4802284d65c101080192b28f7c65e"
+    },
+    {
+      "pathFromRepositoryRoot": "tests/helpers/stillopen-wasm.mjs",
+      "sha256": "eae691d34eef531f2246489f3a32c67bd9f17ad0f45970a31c4436fcb70f1abd"
+    },
+    {
+      "pathFromRepositoryRoot": "public/wasm/stillopen-core.wasm",
+      "sha256": "38ddee056233aa5c2f16f9a97a2ebc0f63df066f9b7000e7aec49d60de359fcf"
+    },
+    {
+      "pathFromRepositoryRoot": "package-lock.json",
+      "sha256": "01c6f0cf23812df75e83fdbb3fa5b8bf7d72ae22c26b36a14fdbb18bf41b5af0"
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "pdf",
+      "formats": ["pdf"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-pdf.json",
+        "sha256": "0d1de202b5a8fe8c867afcdccbacc202b80270f7f72e905b44d768bb2c9f8199"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b-controls-v1.json",
+            "sha256": "4aa5c86bccbfd3cb7060986b6864e513d3c3dcb3e14b31d24a0f74e9bbc50a05"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/pdf24-online-2026-08-11.json",
+            "sha256": "7e3421e473adf421b71e76d1ac489c09597d2e16b94fb66d665f5a91f6014ecc"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/zpdf-web-2026-08-11.json",
+            "sha256": "ba48edbe7648e1d784cedd15e004af3b4afe434df3133fcd260b01886db2f67d"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/pdf2go-online-2026-08-11.json",
+            "sha256": "1cfa443fda3b52906d6ab4ff7066e55791fcab4ba7fb53574eafe626f4fb7459"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpeg",
+      "formats": ["jpeg"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-jpeg.json",
+        "sha256": "7ee031840d261dbaefde37805e2f9233248b31f6c6946d5a157f6f00869ffe2e"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b-controls-v1.json",
+            "sha256": "4aa5c86bccbfd3cb7060986b6864e513d3c3dcb3e14b31d24a0f74e9bbc50a05"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/tooltea-image-repair-2026-08-11.json",
+            "sha256": "277bea2537625a89a5fc5c8d36d3c3500195e7137152084004e97d2d9175bada"
+          }
+        }
+      ]
+    },
+    {
+      "id": "png",
+      "formats": ["png"],
+      "denominator": 9,
+      "damagedCases": 6,
+      "healthyControls": 3,
+      "corpus": {
+        "path": "corpus-png.json",
+        "sha256": "2947d371d3961999d564160d44882c9278558eed8629fc0da37acc03e2dc4b6e"
+      },
+      "products": [
+        {
+          "role": "control",
+          "tool": {
+            "path": "tools/stillopen-wasm-827898b-controls-v1.json",
+            "sha256": "4aa5c86bccbfd3cb7060986b6864e513d3c3dcb3e14b31d24a0f74e9bbc50a05"
+          }
+        },
+        {
+          "role": "consumer-browser-competitor",
+          "tool": {
+            "path": "tools/tooltea-image-repair-2026-08-11.json",
+            "sha256": "277bea2537625a89a5fc5c8d36d3c3500195e7137152084004e97d2d9175bada"
+          }
+        }
+      ]
+    }
+  ],
+  "reportingRules": [
+    "Score and report PDF, JPEG, and PNG as separate nine-case cohorts.",
+    "Do not assign a product cases in a format its frozen tool definition does not support.",
+    "Do not calculate an overall repair percentage across products with different format coverage.",
+    "Keep frozen products in their cohort when a run encounters a quota, sign-in, payment, refusal, error, or missing output; record the terminal outcome instead of removing the product after seeing results.",
+    "Count only independently validated complete outputs or explicit validated healthy-control no-change outcomes as verified-pass.",
+    "Report format breadth and consumer experience separately from exact-content repair scores.",
+    "Report command-line and build-from-source tools in a separately labeled engine-baseline layer."
+  ]
+}

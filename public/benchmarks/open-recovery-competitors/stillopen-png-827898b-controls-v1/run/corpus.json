@@ -1,0 +1,204 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/corpus.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-corpus",
+  "id": "external-source-png-competitor-2026-08-11-v1",
+  "title": "Nine-case PNG direct-repair cohort with healthy controls",
+  "cases": [
+    {
+      "id": "pngsuite-rgb8-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "input": {
+        "path": "cases/png/pngsuite-rgb8-missing-iend.png",
+        "byteLength": 133,
+        "sha256": "81cf6fad68222cc824d526c0d99cd2a9c2fa92d083e0ba11c3a8f1dcbb13c761"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgb8-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "input": {
+        "path": "cases/png/pngsuite-rgb8-corrupt-iend-crc.png",
+        "byteLength": 145,
+        "sha256": "86ef21d79aa4ba0e1b3fa7c64e09009850cade3a417a3b0710f5eeabbabc425c"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-idat-crc",
+      "format": "png",
+      "damageClass": "corrupt-idat-crc",
+      "input": {
+        "path": "cases/png/pngsuite-palette8-corrupt-idat-crc.png",
+        "byteLength": 1286,
+        "sha256": "2628053ef52771957f1f25f8afaee665d104fc84dbad05d4bb26ef470be92e8d"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-palette8-corrupt-ihdr-crc",
+      "format": "png",
+      "damageClass": "corrupt-ihdr-crc",
+      "input": {
+        "path": "cases/png/pngsuite-palette8-corrupt-ihdr-crc.png",
+        "byteLength": 1286,
+        "sha256": "aeb5db0f79aadcc5575d16274cb93f327664e0d6920d998432faea5e3a93a7ff"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgba16-missing-iend",
+      "format": "png",
+      "damageClass": "remove-iend",
+      "input": {
+        "path": "cases/png/pngsuite-rgba16-missing-iend.png",
+        "byteLength": 3423,
+        "sha256": "267f9bfe83d1802dd026ca6d02e0efa2037860e67d996abc21f2b02e2738c904"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "pngsuite-rgba16-corrupt-iend-crc",
+      "format": "png",
+      "damageClass": "corrupt-iend-crc",
+      "input": {
+        "path": "cases/png/pngsuite-rgba16-corrupt-iend-crc.png",
+        "byteLength": 3435,
+        "sha256": "ac856842f6eb2ab3f5cbf13a11681cedecd526397dd8cc8041a0b0df77066289"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn2c08",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn2c08.png",
+        "byteLength": 145,
+        "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn2c08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn2c08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn3p08",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn3p08.png",
+        "byteLength": 1286,
+        "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn3p08.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn3p08.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    },
+    {
+      "id": "healthy-pngsuite-basn6a16",
+      "format": "png",
+      "damageClass": "none",
+      "inputCondition": "healthy-control",
+      "input": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "groundTruth": {
+        "validator": "raster-rgba-v1",
+        "path": "ground-truth/png/pngsuite-basn6a16.png",
+        "byteLength": 3435,
+        "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f"
+      },
+      "provenance": {
+        "source": "pnggroup/libpng@d1d0abeffede1cc898ddc3d0e600839cf026d749:contrib/pngsuite/basn6a16.png (https://github.com/pnggroup/libpng/blob/d1d0abeffede1cc898ddc3d0e600839cf026d749/contrib/pngsuite/basn6a16.png)",
+        "license": "PngSuite permission grant; evidence: benchmarks/external-holdout/2026-08-10/licenses/pngsuite-README.txt",
+        "frozenManifest": "benchmarks/external-holdout/2026-08-10/manifest.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "caseId": "qpdf-form-corrupt-startxref",
+  "format": "pdf",
+  "damageClass": "corrupt-startxref",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T22:27:00Z",
+    "productMessage": "PDF24 has processed your job.",
+    "operatorNote": "The product returned one ZIP containing nine PDFs in the same display order as the frozen upload packet; this is entry 1. No login, quota, or payment boundary appeared.",
+    "output": {
+      "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+      "byteLength": 23476,
+      "sha256": "ff9f1da8fa6d31157e52898d80703f31ec8cc839e0dd8cb4ded908a270cc23ed"
+    },
+    "returnedFiles": [
+      {
+        "path": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf",
+        "byteLength": 23476,
+        "sha256": "ff9f1da8fa6d31157e52898d80703f31ec8cc839e0dd8cb4ded908a270cc23ed",
+        "displayOrder": 1,
+        "recommended": true,
+        "inputComparison": "changed",
+        "classification": "selected-repair-output"
+      }
+    ],
+    "outputSelection": {
+      "strategy": "sole-changed-output",
+      "selectedReturnedFile": "cases/qpdf-form-corrupt-startxref/returned-files/01.pdf"
+    },
+    "attachments": [
+      {
+        "path": "cases/qpdf-form-corrupt-startxref/attachments/01.zip",
+        "byteLength": 77420,
+        "sha256": "01a6b97fbf201d9a3b39cacf780bddb2b0153c956cea5604fad5647d73576d56"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": false,
+      "exactExtractedText": false
+    }
+  },
+  "disposition": "changed-output"
+}

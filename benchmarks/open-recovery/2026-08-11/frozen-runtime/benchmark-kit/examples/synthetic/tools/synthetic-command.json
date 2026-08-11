@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "synthetic-fixture-tool-v1",
+  "vendor": "StillOpen test fixtures",
+  "product": "Synthetic command adapter",
+  "version": "1.0.0",
+  "platform": "Node.js test runtime",
+  "synthetic": true,
+  "acquisition": {
+    "source": "benchmark-kit/fixtures/synthetic-tool.mjs"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "{node}",
+    "args": [
+      "../../../fixtures/synthetic-tool.mjs",
+      "--mode",
+      "{caseId}",
+      "--input",
+      "{input}",
+      "--output",
+      "{output}"
+    ],
+    "outputFile": "output.bin",
+    "exitCodeDisposition": {
+      "2": "refusal"
+    }
+  }
+}

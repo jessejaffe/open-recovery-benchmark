@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": 1,
+  "kind": "repair-open-source-access-log",
+  "id": "external-holdout-open-source-access-2026-08-11",
+  "capturedAt": "2026-08-11T21:15:00Z",
+  "status": "pre-freeze-qualification",
+  "host": {
+    "platform": "macOS",
+    "version": "26.3",
+    "build": "25D125",
+    "architecture": "arm64",
+    "packageManager": "Homebrew",
+    "publicInputsOnly": true,
+    "temporaryOutputs": "Ephemeral system temporary directories; outputs were not retained after hashes and validation were recorded.",
+    "credentialsRecorded": false
+  },
+  "reproducibleInstallCommands": [
+    "brew install qpdf ghostscript mupdf libpng",
+    "git clone --branch v3.0.1 https://github.com/cdefgah/whatsapp-jpeg-repair.git",
+    "go build -o whatsapp-jpeg-repair ./cmd/whatsapp-jpeg-repair"
+  ],
+  "corpus": {
+    "manifest": "manifest.json",
+    "cases": 6,
+    "pdfCaseIds": [
+      "qpdf-form-corrupt-startxref",
+      "qpdf-form-missing-eof",
+      "qpdf-11-pages-missing-startxref",
+      "qpdf-11-pages-trailing-bytes",
+      "qpdf-issue-179-startxref-out-of-range",
+      "qpdf-issue-179-nonnumeric-startxref"
+    ],
+    "pngCaseIds": [
+      "pngsuite-rgb8-missing-iend",
+      "pngsuite-rgb8-corrupt-iend-crc",
+      "pngsuite-palette8-corrupt-idat-crc",
+      "pngsuite-palette8-corrupt-ihdr-crc",
+      "pngsuite-rgba16-missing-iend",
+      "pngsuite-rgba16-corrupt-iend-crc"
+    ],
+    "jpegCaseIds": [
+      "ijg-testorig-corrupt-eoi",
+      "ijg-testorig-trailing-bytes",
+      "ijg-testimgint-missing-eoi",
+      "ijg-testimgint-trailing-bytes",
+      "ijg-testimgari-corrupt-eoi",
+      "ijg-testimgari-missing-eoi"
+    ],
+    "groundTruthPolicy": "Only the untouched public source is the comparison target; no healthy benchmark source was supplied as an assisted-repair sample.",
+    "validator": "PDF page count, dimensions, rendered RGBA hash, and extracted-text hash; PNG/JPEG dimensions and decoded RGBA hash."
+  },
+  "tools": [
+    {
+      "providerId": "qpdf-cli",
+      "product": "qpdf",
+      "format": "pdf",
+      "version": "12.4.0",
+      "executable": "/opt/homebrew/bin/qpdf",
+      "install": "Homebrew formula qpdf",
+      "repositoryUrl": "https://github.com/qpdf/qpdf",
+      "documentationUrl": "https://qpdf.readthedocs.io/en/latest/",
+      "officialUrl": "https://qpdf.sourceforge.io/",
+      "license": "Apache-2.0",
+      "startActionResult": {
+        "start": "Opened each public damaged PDF from manifest.json on macOS 26.3 arm64.",
+        "action": "qpdf damaged.pdf repaired.pdf",
+        "result": "Six complete outputs were written. qpdf returned exit 3 with damage warnings for four cases and exit 0 for two cases; exit status was not treated as output validity.",
+        "completeOutputs": 6,
+        "exactValidOutputs": 6,
+        "disposition": "qualified-disposable-run"
+      },
+      "outputs": [
+        {"caseId": "qpdf-form-corrupt-startxref", "exitCode": 3, "bytes": 32138, "sha256": "6ef33e4a654408a22a0523787c9aa73c6e432c903a6fad7253e7715d8de6282d", "exact": true},
+        {"caseId": "qpdf-form-missing-eof", "exitCode": 0, "bytes": 32138, "sha256": "37c049a2a6cc7af48df5e6fa143ea324f8ace4d2da5a1c3235e8c85e21183ed9", "exact": true},
+        {"caseId": "qpdf-11-pages-missing-startxref", "exitCode": 3, "bytes": 4128, "sha256": "71be10ddaa969004fbdce45caf3108824110517c366c7026a1d0b75f13754964", "exact": true},
+        {"caseId": "qpdf-11-pages-trailing-bytes", "exitCode": 0, "bytes": 4128, "sha256": "849b0f32a433a84e0cb47e457f30c12797214272f70eb1e6dadc98fea6de745d", "exact": true},
+        {"caseId": "qpdf-issue-179-startxref-out-of-range", "exitCode": 3, "bytes": 1098, "sha256": "ffccfb21994a62811719fa435351d93006da1412e7319643334a01c44adf70e6", "exact": true},
+        {"caseId": "qpdf-issue-179-nonnumeric-startxref", "exitCode": 3, "bytes": 1098, "sha256": "cb98969a0b7f4fcf80fb01a24f0ceaf6ce829015a1ae8a1e9ff2b8dfcb9b7637", "exact": true}
+      ]
+    },
+    {
+      "providerId": "ghostscript-pdfwrite",
+      "product": "Ghostscript pdfwrite",
+      "format": "pdf",
+      "version": "10.07.1",
+      "executable": "/opt/homebrew/bin/gs",
+      "install": "Homebrew formula ghostscript",
+      "repositoryUrl": "https://github.com/ArtifexSoftware/ghostpdl",
+      "documentationUrl": "https://ghostscript.com/docs/",
+      "officialUrl": "https://ghostscript.com/releases/gsdnld.html",
+      "license": "AGPL-3.0-or-later or commercial Artifex license",
+      "startActionResult": {
+        "start": "Opened each public damaged PDF from manifest.json on macOS 26.3 arm64.",
+        "action": "gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=repaired.pdf damaged.pdf",
+        "result": "Six complete outputs were written with exit code 0. Four matched all independent PDF fingerprints; the two form cases were valid but not exact.",
+        "completeOutputs": 6,
+        "exactValidOutputs": 4,
+        "disposition": "qualified-disposable-run; exact-content candidate only for cases that pass the validator"
+      },
+      "outputs": [
+        {"caseId": "qpdf-form-corrupt-startxref", "exitCode": 0, "bytes": 23489, "sha256": "9d0083f3a7ecfb21444e22969e311bfc31988753778644d5614a36609a3f6955", "exact": false},
+        {"caseId": "qpdf-form-missing-eof", "exitCode": 0, "bytes": 23489, "sha256": "ddbd092f28ff422ce9f997e72b3cc25d7353abeff9494729ac70f1da79d8410d", "exact": false},
+        {"caseId": "qpdf-11-pages-missing-startxref", "exitCode": 0, "bytes": 5890, "sha256": "9478bf6d67526ee928116c7b11c2c0635ea775d06f56215862401ca9236a5146", "exact": true},
+        {"caseId": "qpdf-11-pages-trailing-bytes", "exitCode": 0, "bytes": 5890, "sha256": "ebd7134554d0d71b0264020909db2dccc2c54971ee5817ec4e988f8452058bd2", "exact": true},
+        {"caseId": "qpdf-issue-179-startxref-out-of-range", "exitCode": 0, "bytes": 2838, "sha256": "aced197827a90fb6d4f6230331f2e266ca53ae4719d31c9a6c0e4add52f0b794", "exact": true},
+        {"caseId": "qpdf-issue-179-nonnumeric-startxref", "exitCode": 0, "bytes": 2838, "sha256": "0a5d04f1cf715fadb508f085ee327ed86700d39f019ecb2484185013c1e84d87", "exact": true}
+      ]
+    },
+    {
+      "providerId": "mupdf-mutool-clean",
+      "product": "MuPDF mutool clean",
+      "format": "pdf",
+      "version": "1.28.2",
+      "executable": "/opt/homebrew/bin/mutool",
+      "install": "Homebrew formula mupdf",
+      "repositoryUrl": "https://github.com/ArtifexSoftware/mupdf",
+      "documentationUrl": "https://mupdf.readthedocs.io/en/latest/",
+      "officialUrl": "https://mupdf.com/",
+      "license": "AGPL-3.0-or-later or commercial Artifex license",
+      "startActionResult": {
+        "start": "Opened each public damaged PDF from manifest.json on macOS 26.3 arm64.",
+        "action": "mutool clean damaged.pdf repaired.pdf",
+        "result": "Six complete outputs were written with exit code 0. MuPDF emitted repair warnings for damaged xref cases, and all six outputs passed independent validation.",
+        "completeOutputs": 6,
+        "exactValidOutputs": 6,
+        "disposition": "qualified-disposable-run"
+      },
+      "outputs": [
+        {"caseId": "qpdf-form-corrupt-startxref", "exitCode": 0, "bytes": 31420, "sha256": "8c9cd1a06ce1213abed7dbfd1c3b88c6de7087a4f286652eedbb7c18406a5c7a", "exact": true},
+        {"caseId": "qpdf-form-missing-eof", "exitCode": 0, "bytes": 31415, "sha256": "64af6ef312e2ed23d34bb56adc561b137ea746075eb3018131767a7667491523", "exact": true},
+        {"caseId": "qpdf-11-pages-missing-startxref", "exitCode": 0, "bytes": 3886, "sha256": "511ea7bb2621d22be6c19c68dca140354e854f9e093cd494f2a61bc9373dd94a", "exact": true},
+        {"caseId": "qpdf-11-pages-trailing-bytes", "exitCode": 0, "bytes": 3886, "sha256": "511ea7bb2621d22be6c19c68dca140354e854f9e093cd494f2a61bc9373dd94a", "exact": true},
+        {"caseId": "qpdf-issue-179-startxref-out-of-range", "exitCode": 0, "bytes": 8741, "sha256": "80ad0da4a2bc3b19a4fabea09db4ab93737ff6ccee803898a8dd90a2024bba21", "exact": true},
+        {"caseId": "qpdf-issue-179-nonnumeric-startxref", "exitCode": 0, "bytes": 8741, "sha256": "80ad0da4a2bc3b19a4fabea09db4ab93737ff6ccee803898a8dd90a2024bba21", "exact": true}
+      ]
+    },
+    {
+      "providerId": "libpng-pngfix",
+      "product": "libpng pngfix",
+      "format": "png",
+      "version": "1.6.58",
+      "executable": "/opt/homebrew/bin/pngfix",
+      "install": "Homebrew libpng formula; pngfix is the libpng contrib tool",
+      "repositoryUrl": "https://github.com/pnggroup/libpng",
+      "documentationUrl": "https://www.libpng.org/pub/png/libpng.html",
+      "officialUrl": "https://www.libpng.org/pub/png/libpng.html",
+      "license": "libpng license",
+      "startActionResult": {
+        "start": "Opened each public damaged PNG from manifest.json on macOS 26.3 arm64.",
+        "action": "pngfix --out=repaired.png damaged.png",
+        "result": "Six output paths were attempted. Four outputs decoded and matched every RGBA pixel. Two missing-IEND cases returned exit 28 (0x1c) and left unusable 49-byte outputs.",
+        "completeOutputs": 4,
+        "exactValidOutputs": 4,
+        "refusedOrUnusable": 2,
+        "disposition": "qualified-narrow-scope-disposable-run"
+      },
+      "outputs": [
+        {"caseId": "pngsuite-rgb8-missing-iend", "exitCode": 28, "bytes": 49, "sha256": "7995a83dea5103a56b34fb6a1c98c29d3e8f1c754b165127afb226ca7fa4e104", "exact": false, "usable": false},
+        {"caseId": "pngsuite-rgb8-corrupt-iend-crc", "exitCode": 2, "bytes": 145, "sha256": "ecea1ef4a001a999ce9b82d18abf47401eb92998708b306b6c9a8ac3a6a9a2c8", "exact": true, "usable": true},
+        {"caseId": "pngsuite-palette8-corrupt-idat-crc", "exitCode": 2, "bytes": 1286, "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952", "exact": true, "usable": true},
+        {"caseId": "pngsuite-palette8-corrupt-ihdr-crc", "exitCode": 2, "bytes": 1286, "sha256": "eca1db90338a8481e4d3f2469befa06d7564534e9323b6a8040ed0cdd281d952", "exact": true, "usable": true},
+        {"caseId": "pngsuite-rgba16-missing-iend", "exitCode": 28, "bytes": 49, "sha256": "61b5ced23699a71f31738499596758b9f60968182fb9776e7044e0e71f21bd29", "exact": false, "usable": false},
+        {"caseId": "pngsuite-rgba16-corrupt-iend-crc", "exitCode": 2, "bytes": 3435, "sha256": "569040d3237a5552935a44b8bbe165cf02afe0d71caf30fba81955922ac9373f", "exact": true, "usable": true}
+      ]
+    },
+    {
+      "providerId": "whatsapp-jpeg-repair",
+      "product": "WhatsApp JPEG Image Repair",
+      "format": "jpeg",
+      "version": "3.0.1",
+      "commit": "2774607332aeac32da74962ed5e269b80b56ed83",
+      "binarySha256": "6c78129a0e62f79a696d3a7ddff8d13c6f70b9c3434cd25e63a8b59998347c57",
+      "executable": "Ephemeral local build; binary SHA-256 recorded below",
+      "install": "Built from the tagged public source with Go 1.26.5; no third-party binary was trusted.",
+      "repositoryUrl": "https://github.com/cdefgah/whatsapp-jpeg-repair",
+      "documentationUrl": "https://github.com/cdefgah/whatsapp-jpeg-repair#readme",
+      "officialUrl": "https://github.com/cdefgah/whatsapp-jpeg-repair",
+      "license": "GPL-3.0",
+      "startActionResult": {
+        "start": "Opened each public damaged JPEG from manifest.json on macOS 26.3 arm64.",
+        "action": "whatsapp-jpeg-repair damaged.jpg (direct positional-file mode; no healthy sample or managed mode)",
+        "result": "Two trailing-byte cases returned complete JPEG outputs but changed decoded pixels; four EOI/marker cases refused with unexpected EOF or unknown-marker errors. No case passed exact RGBA validation.",
+        "completeOutputs": 2,
+        "exactValidOutputs": 0,
+        "refusedOrChanged": 6,
+        "disposition": "qualified-narrow-scope-disposable-run; not an exact-content candidate on this corpus"
+      },
+      "outputs": [
+        {"caseId": "ijg-testorig-corrupt-eoi", "exitCode": 1, "bytes": 5770, "sha256": "d59bb878cc5b11e8bfea32ca98580232368316a3910a5a51b0e1ec4fe82f1443", "exact": false, "usable": false, "error": "unsupported JPEG feature: unexpected EOF"},
+        {"caseId": "ijg-testorig-trailing-bytes", "exitCode": 0, "bytes": 16958, "sha256": "4f2fb78a7f98a62797eb1ee3c79ec010fee958f98f16e913396aa8713367ea39", "exact": false, "usable": true},
+        {"caseId": "ijg-testimgint-missing-eoi", "exitCode": 1, "bytes": 5754, "sha256": "26a2dcf3442fd0755f47f818c96a0cd1318d846deaa9ad1a15c8e2d14705d65e", "exact": false, "usable": false, "error": "unsupported JPEG feature: unexpected EOF"},
+        {"caseId": "ijg-testimgint-trailing-bytes", "exitCode": 0, "bytes": 16915, "sha256": "a5b640759aaaa56a733cd1e0abebb534ab1c483c1d215816e013bf679c43fa81", "exact": false, "usable": true},
+        {"caseId": "ijg-testimgari-corrupt-eoi", "exitCode": 1, "bytes": 5126, "sha256": "72da044cd5fc5a70a54db551e8d68c0232f4ad3f43dc5334cba458a0cd2914ec", "exact": false, "usable": false, "error": "unsupported JPEG feature: unknown marker"},
+        {"caseId": "ijg-testimgari-missing-eoi", "exitCode": 1, "bytes": 5124, "sha256": "baf63bf82d95850dd03dd416813f11483557db0e23c5f941e2e4cc1ba74d44fc", "exact": false, "usable": false, "error": "unsupported JPEG feature: unknown marker"}
+      ]
+    }
+  ],
+  "installerInventory": [
+    {
+      "providerId": "repairit-desktop",
+      "filename": "Wondershare_Repairit_Installer.dmg",
+      "platform": "macOS",
+      "sha256": "a8f780d62be7f7ba78b0b144bd8198c55b209c9248af8d6af2ddfd8fc28e6552",
+      "bytes": 2113821,
+      "observedContainer": "UDZO/UDBZ disk image",
+      "observedVersion": "4.1.0 (Wondershare Repairit Installer.app; universal x86_64/arm64)",
+      "accessStatus": "installer-inventory-only",
+      "startActionResult": "Mounted read-only and inspected metadata; interactive installation and disposable repair action not run."
+    },
+    {
+      "providerId": "4ddig-file-repair-desktop",
+      "filename": "4ddig-file-repair-mac_11786479212617821002.dmg",
+      "platform": "macOS",
+      "sha256": "973099b6117aa12786e9057200615ef8ede2c01c97861c614e6574f8ab6e727f",
+      "bytes": 337702099,
+      "observedContainer": "UDBZ disk image",
+      "observedVersion": "3.3.2 (bundle 3.3.2.3; universal x86_64/arm64)",
+      "accessStatus": "installed-ready-for-guided-capture",
+      "installedApplication": "4DDiG File Repair.app in the system Applications folder",
+      "signature": "Notarized Developer ID: Tenorshare(Hongkong)Limited (T69WTJ4737)",
+      "startActionResult": "Mounted read-only, installed the complete app, verified its nested code signatures and notarization, and confirmed version 3.3.2 (bundle 3.3.2.3); disposable repair action not yet run."
+    },
+    {
+      "providerId": "easeus-fixo-desktop",
+      "filename": "fixo_ad_google_Setup_20260811.100000.dmg",
+      "platform": "macOS",
+      "sha256": "122de96c9ae8b27942760d142cad4f3699c04a00d30d728a61b4cd9f07fcfef5",
+      "bytes": 9899135,
+      "observedContainer": "UDZO disk image",
+      "observedVersion": "1.2.0 (bundle 01020020240813X; universal x86_64/arm64)",
+      "accessStatus": "installer-inventory-only",
+      "startActionResult": "Mounted read-only and inspected metadata; interactive installation and disposable repair action not run."
+    },
+    {
+      "providerId": "systools-pdf-recovery-desktop",
+      "filename": "mac-pdf-recovery.dmg",
+      "platform": "macOS",
+      "sha256": "1f1569cb1c4c524832ec596defb4bb38c0123cc831d3b3d81c5440bae59acde2",
+      "bytes": 95514624,
+      "observedContainer": "ISO/UDF disk image",
+      "observedVersion": "4.3 (SysTools Mac PDF Recovery v4.3.pkg)",
+      "signature": "Developer ID Installer: SysTools Software Private Limited; trusted timestamp 2025-03-18T17:54:51Z",
+      "accessStatus": "installer-inventory-only",
+      "startActionResult": "Mounted read-only and inspected package signature; installation and disposable repair action not run."
+    },
+    {
+      "providerId": "stellar-repair-for-pdf-desktop",
+      "filename": "StellarRepairforPDF.dmg.zip",
+      "platform": "macOS x86_64 application; usable on Apple silicon with compatibility support",
+      "sha256": "20f383817cd48f907e6a658043a6ac2e29a13f432d04e602149b55d02f667282",
+      "bytes": 113357960,
+      "observedContainer": "ZIP containing StellarRepairforPDF.dmg",
+      "innerDmgSha256": "9199209aecbac4c0e062ed0e1881d899db6313ad12414f27448750f0972585f6",
+      "observedVersion": "1.0 (bundle 1; archive timestamp 2021-07-20)",
+      "accessStatus": "installed-ready-for-guided-capture",
+      "installedApplication": "StellarRepairforPDF.app in the system Applications folder",
+      "signature": "Notarized Developer ID: Stellar Data Recovery Inc. (Q7W6ZY9MM4)",
+      "startActionResult": "Archive extracted, complete macOS app installed, nested code signatures and notarization verified, and version 1.0 confirmed; disposable repair action not yet run."
+    },
+    {
+      "providerId": "wondershare-recoverit",
+      "filename": "Wondershare_Recoverit_Installer.dmg",
+      "platform": "macOS download; category is adjacent deleted-file recovery",
+      "sha256": "954ca5c7202ff234ce71617a6535996c26ac1156831ca0f6581e08af043e9b6b",
+      "bytes": 4042132,
+      "observedContainer": "UDBZ disk image",
+      "observedVersion": "not exposed without accepting the installer SULA",
+      "accessStatus": "inventory-only-adjacent-exclusion",
+      "startActionResult": "Mounted only far enough to identify the installer and SULA; no supplied-file direct-repair module was exercised and no score is assigned."
+    },
+    {
+      "providerId": "kernel-pdf-repair-desktop",
+      "filename": "kernelpdfrepair.exe",
+      "platform": "Windows",
+      "sha256": "8b2cbf7c5b2a9a309734a9fb35dc78b77a6a8d9d632722bff718aa04dfa298f5",
+      "bytes": 12853784,
+      "observedContainer": "PE32 GUI executable",
+      "observedVersion": "not exposed by static metadata",
+      "accessStatus": "installer-inventory-only",
+      "startActionResult": "Windows 10/11 test environment is not provisioned in this turn; installer was not executed."
+    }
+  ],
+  "directRepairIdentityChecks": [
+    {
+      "providerId": "recovery-toolbox-online",
+      "checkedAt": "2026-08-11",
+      "platform": "Codex in-app browser; signed-in external-browser action pending",
+      "officialUrl": "https://online.recoverytoolbox.com/",
+      "canonicalUrlObserved": "https://online.recoverytoolbox.com/",
+      "start": "Opened the public Recovery Toolbox URL without credentials.",
+      "action": "Inspected the live service identity, supported types, upload control, workflow, and retention notice.",
+      "result": "Recovery Toolbox's own page describes repairing supplied damaged files, lists PDF support, and states uploads are deleted after 30 days. This confirms direct-repair identity; no disposable upload was submitted because the user's signed-in external-browser tab is not connected to this task.",
+      "disposition": "direct-repair-confirmed-pending-disposable-access",
+      "retentionPolicy": "30-day automatic deletion stated on the public page; deletion action must be recorded after any future public test.",
+      "source": "https://online.recoverytoolbox.com/"
+    },
+    {
+      "providerId": "stellar-online-pdf",
+      "checkedAt": "2026-08-11",
+      "platform": "public web GET; user-loaded browser session available to root-only interaction",
+      "officialUrl": "https://repair.stellarinfo.com/pdf",
+      "start": "Opened the public service page without recording credentials.",
+      "action": "Inspected the published upload, plan, and retention information; did not submit a file without root browser control.",
+      "result": "The page describes supplied-file PDF repair, with a free one-PDF/10-MB monthly allowance and paid five-PDF allowance. Disposable upload/action/result remains pending the root-only browser check.",
+      "disposition": "direct-repair-confirmed-pending-disposable-access",
+      "retentionPolicy": "Public page states repaired files are stored for three hours on free service and 24 hours on premium; deletion action must be recorded after any future test.",
+      "source": "https://repair.stellarinfo.com/pdf"
+    },
+    {
+      "providerId": "r-studio-data-recovery",
+      "checkedAt": "2026-08-11",
+      "platform": "public web GET; user-reported browser label not independently observable from this role",
+      "officialUrl": "https://www.r-studio.com/data-recovery-software/",
+      "start": "Opened the official R-Studio product page.",
+      "action": "Compared the documented workflow and supported sources with the direct-repair definition.",
+      "result": "The official product is disk, partition, file-system, local/remote, and deleted-file recovery software. No supplied damaged-file upload/repair endpoint was found, so it remains an adjacent exclusion and receives no direct-repair score.",
+      "disposition": "excluded-adjacent-recovery-confirmed",
+      "source": "https://www.r-studio.com/data-recovery-software/"
+    },
+    {
+      "providerId": "wondershare-recoverit",
+      "checkedAt": "2026-08-11",
+      "platform": "macOS installer inventory; no direct-repair action",
+      "officialUrl": "https://recoverit.wondershare.com/",
+      "start": "Inspected the user-downloaded Recoverit installer without entering credentials.",
+      "action": "Compared the official category description and installer entry point with the direct-repair definition.",
+      "result": "Recoverit is presented as lost/deleted/formatted storage recovery. No supplied damaged-file repair module was exposed during this inventory check. Keep it adjacent; if a direct-repair module is later shown, qualify that module separately.",
+      "disposition": "excluded-adjacent-recovery-confirmed",
+      "source": "https://recoverit.wondershare.com/"
+    }
+  ],
+  "limitations": [
+    "The Codex in-app browser can inspect public pages, but the user's signed-in external-browser tabs are not connected to this task. Stellar and Recovery Toolbox therefore have identity checks but no upload/action/download record.",
+    "A Windows 10/11 VM or machine was not available in this turn; Windows-only desktop tools remain inventory-only and have no execution result.",
+    "No license, full-output purchase, or cloud upload of a non-public input was made. Demo, preview, watermark, and incomplete-output behavior remains non-scoreable.",
+    "This document is evidence for access qualification, not a frozen scored roster. Freeze only after the pending browser and Windows checks are complete and versions, corpus, and scoring policy are locked."
+  ],
+  "sources": [
+    "https://github.com/qpdf/qpdf",
+    "https://qpdf.readthedocs.io/en/latest/",
+    "https://github.com/ArtifexSoftware/ghostpdl",
+    "https://ghostscript.com/releases/gsdnld.html",
+    "https://github.com/ArtifexSoftware/mupdf",
+    "https://mupdf.readthedocs.io/en/latest/",
+    "https://github.com/pnggroup/libpng",
+    "https://www.libpng.org/pub/png/libpng.html",
+    "https://github.com/cdefgah/whatsapp-jpeg-repair",
+    "https://online.recoverytoolbox.com/",
+    "https://online.all-recovery-inc.com/",
+    "https://repair.stellarinfo.com/pdf",
+    "https://www.r-studio.com/data-recovery-software/",
+    "https://recoverit.wondershare.com/"
+  ]
+}
