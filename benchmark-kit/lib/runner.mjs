@@ -9,10 +9,15 @@ import { missingOutputValidation, validateCapturedOutput } from "./validators.mj
 
 const HARNESS = Object.freeze({
   name: "stillopen-open-recovery-benchmark-kit",
-  version: "1.1.0",
+  version: "1.2.0",
 });
 
-const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", HARNESS.version]);
+const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", HARNESS.version]);
+const CASE_CATEGORIES = [
+  "damaged-full-restoration",
+  "damaged-partial-restoration",
+  "healthy-control",
+];
 
 function safeRunId(value) {
   if (!/^[a-z0-9][a-z0-9._-]{1,99}$/.test(value)) throw new Error("runId is not a portable identifier.");
@@ -39,9 +44,10 @@ function guidedTerminalOutcome(productOutcome, hasOutput) {
   return { disposition, terminalOutcomeEligible: disposition === "output-produced" };
 }
 
-function scoredDisposition(validationPass, terminal) {
+function scoredDisposition(validation, terminal) {
   if (!terminal.terminalOutcomeEligible) return terminal.disposition;
-  return validationPass ? "verified-pass" : "changed-output";
+  if (validation.pass) return "verified-pass";
+  return validation.score > 0 ? "verified-partial" : "changed-output";
 }
 
 async function captureProcess({ executable, args, cwd, timeoutMs, maxCapturedBytes }) {
@@ -178,13 +184,28 @@ async function inventory(root) {
 }
 
 function summarize(caseResults, tool) {
+  const categoryScores = Object.fromEntries(CASE_CATEGORIES.map((category) => {
+    const cases = caseResults.filter((item) => item.category === category);
+    const total = cases.reduce((sum, item) => sum + item.score, 0);
+    return [category, {
+      cases: cases.length,
+      meanRecoveryScore: cases.length === 0 ? null : Number((total / cases.length).toFixed(6)),
+      fullRecoveries: cases.filter((item) => item.disposition === "verified-pass").length,
+      partialRecoveries: cases.filter((item) => item.disposition === "verified-partial").length,
+      zeroRecoveries: cases.filter((item) => item.score === 0).length,
+    }];
+  }));
+  const totalScore = caseResults.reduce((sum, item) => sum + item.score, 0);
   return {
     eligibleCases: caseResults.length,
     verifiedPasses: caseResults.filter((item) => item.disposition === "verified-pass").length,
+    verifiedPartials: caseResults.filter((item) => item.disposition === "verified-partial").length,
     changedOutputs: caseResults.filter((item) => item.disposition === "changed-output").length,
     refusals: caseResults.filter((item) => item.disposition === "refusal").length,
     unavailable: caseResults.filter((item) => ["unavailable", "paywalled"].includes(item.disposition)).length,
     errors: caseResults.filter((item) => ["error", "launch-error", "timeout", "no-output"].includes(item.disposition)).length,
+    meanRecoveryScore: caseResults.length === 0 ? null : Number((totalScore / caseResults.length).toFixed(6)),
+    categoryScores,
     competitiveSummaryEligible: !tool.synthetic,
   };
 }
@@ -301,9 +322,10 @@ export async function executeBenchmark({ protocolPath, corpusPath, toolPath, wor
           groundTruth: item.groundTruth,
         })
       : missingOutputValidation(item.groundTruth.validator);
-    const disposition = scoredDisposition(validation.pass, terminal);
+    const disposition = scoredDisposition(validation, terminal);
     const result = {
       caseId: item.id,
+      category: item.category,
       format: item.format,
       damageClass: item.damageClass,
       eligible: true,
@@ -322,6 +344,7 @@ export async function executeBenchmark({ protocolPath, corpusPath, toolPath, wor
         output,
       },
       validation,
+      score: terminal.terminalOutcomeEligible ? validation.score : 0,
       disposition,
     };
     await writeJson(path.join(caseRoot, "result.json"), result);
@@ -396,9 +419,10 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
         })
       : missingOutputValidation(item.groundTruth.validator);
     const terminal = guidedTerminalOutcome(recorded.productOutcome, Boolean(output));
-    const disposition = scoredDisposition(validation.pass, terminal);
+    const disposition = scoredDisposition(validation, terminal);
     const result = {
       caseId: item.id,
+      category: item.category,
       format: item.format,
       damageClass: item.damageClass,
       eligible: true,
@@ -413,6 +437,7 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
         attachments,
       },
       validation,
+      score: terminal.terminalOutcomeEligible ? validation.score : 0,
       disposition,
     };
     await writeJson(path.join(caseRoot, "result.json"), result);
@@ -469,7 +494,7 @@ export async function verifyRun(runRoot) {
   }
   for (const item of run.cases) {
     const frozenCase = corpus.cases.find((candidate) => candidate.id === item.caseId);
-    if (!frozenCase || item.eligible !== true || item.format !== frozenCase.format || item.damageClass !== frozenCase.damageClass) {
+    if (!frozenCase || item.eligible !== true || item.category !== frozenCase.category || item.format !== frozenCase.format || item.damageClass !== frozenCase.damageClass) {
       throw new Error(`Run case metadata does not match the frozen corpus for ${item.caseId}.`);
     }
     const inputEvidence = await hashFile(resolveContained(runRoot, `cases/${item.caseId}/input.bin`, "case input evidence"));
@@ -534,7 +559,9 @@ export async function verifyRun(runRoot) {
       || item.observation.terminalOutcomeEligible !== expectedTerminal.terminalOutcomeEligible) {
       throw new Error(`Terminal outcome semantics are inconsistent for ${item.caseId}.`);
     }
-    const expectedDisposition = scoredDisposition(expectedValidation.pass, expectedTerminal);
+    const expectedScore = expectedTerminal.terminalOutcomeEligible ? expectedValidation.score : 0;
+    if (item.score !== expectedScore) throw new Error(`Recovery score is inconsistent for ${item.caseId}.`);
+    const expectedDisposition = scoredDisposition(expectedValidation, expectedTerminal);
     if (item.disposition !== expectedDisposition) throw new Error(`Scored disposition is inconsistent for ${item.caseId}.`);
     const caseRecord = await readJson(resolveContained(runRoot, `cases/${item.caseId}/result.json`, "case result path"));
     if (canonicalize(item) !== canonicalize(caseRecord)) throw new Error(`Run summary record does not match case evidence for ${item.caseId}.`);

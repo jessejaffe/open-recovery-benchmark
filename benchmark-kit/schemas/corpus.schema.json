@@ -15,9 +15,10 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "format", "damageClass", "input", "groundTruth", "provenance"],
+        "required": ["id", "category", "format", "damageClass", "input", "groundTruth", "provenance"],
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+          "category": { "enum": ["damaged-full-restoration", "damaged-partial-restoration", "healthy-control"] },
           "format": { "type": "string", "minLength": 1 },
           "damageClass": { "type": "string", "minLength": 1 },
           "input": { "$ref": "#/$defs/file" },
@@ -25,7 +26,7 @@
             "type": "object",
             "required": ["validator", "path", "byteLength", "sha256"],
             "properties": {
-              "validator": { "enum": ["exact-sha256-v1", "raster-rgba-v1", "pdf-render-text-v1"] },
+              "validator": { "enum": ["exact-sha256-v1", "raster-rgba-v1", "pdf-render-text-v1", "zip-entry-bytes-v1"] },
               "path": { "type": "string", "minLength": 1 },
               "byteLength": { "type": "integer", "minimum": 0 },
               "sha256": { "$ref": "#/$defs/sha256" }

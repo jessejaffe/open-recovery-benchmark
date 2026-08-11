@@ -2,6 +2,11 @@ import { isSupportedValidator } from "./validators.mjs";
 
 const ID_PATTERN = /^[a-z0-9][a-z0-9._-]{1,79}$/;
 const SHA_PATTERN = /^[a-f0-9]{64}$/;
+const CASE_CATEGORIES = new Set([
+  "damaged-full-restoration",
+  "damaged-partial-restoration",
+  "healthy-control",
+]);
 
 function object(value, label) {
   if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error(`${label} must be an object.`);
@@ -36,6 +41,8 @@ export function validateProtocol(protocol) {
   object(protocol.scoring, "benchmark-protocol.scoring");
   if (protocol.scoring.denominator !== "all-eligible-cases") throw new Error("Only the all-eligible-cases denominator is supported in schemaVersion 1.");
   if (protocol.scoring.passDisposition !== "verified-pass") throw new Error("The pass disposition must be verified-pass.");
+  if (protocol.scoring.partialDisposition !== "verified-partial") throw new Error("The partial disposition must be verified-partial.");
+  if (protocol.scoring.scoreRange !== "zero-to-one") throw new Error("The score range must be zero-to-one.");
   object(protocol.limits, "benchmark-protocol.limits");
   if (!Number.isInteger(protocol.limits.timeoutMs) || protocol.limits.timeoutMs < 100 || protocol.limits.timeoutMs > 3_600_000) {
     throw new Error("benchmark-protocol.limits.timeoutMs is outside the supported range.");
@@ -56,6 +63,7 @@ export function validateCorpus(corpus) {
     id(item.id, `${label}.id`);
     if (ids.has(item.id)) throw new Error(`Duplicate case id ${item.id}.`);
     ids.add(item.id);
+    if (!CASE_CATEGORIES.has(item.category)) throw new Error(`${label}.category is unsupported.`);
     text(item.format, `${label}.format`);
     text(item.damageClass, `${label}.damageClass`);
     object(item.input, `${label}.input`);

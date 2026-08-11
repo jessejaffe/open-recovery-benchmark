@@ -9,8 +9,8 @@ bundles offline.
 **Foundation only. No StillOpen report, competitor result, product ranking, or
 production benchmark publication is included in this repository.**
 
-The `v0.1.0` setup release establishes the public source and license trust
-anchor. Future benchmark definitions and results can identify the exact public
+The setup releases establish the public source and license trust anchor. Future
+benchmark definitions and results can identify the exact public
 Git commit that defined their runner, schemas, fixtures, and scoring behavior.
 
 ## Included
@@ -18,6 +18,15 @@ Git commit that defined their runner, schemas, fixtures, and scoring behavior.
 - Versioned JSON contracts for protocols, corpora, tools, and guided captures.
 - Command and operator-guided execution paths.
 - Independent exact-byte, raster RGBA, and PDF render/text validators.
+- Three required case categories: damaged files expected to be fully restored,
+  damaged files where partial restoration must be measured, and healthy
+  controls that expose unnecessary changes.
+- Deterministic 0–1 recovery scores with visible recovered-unit counts: exact
+  decoded pixels for raster images, exact render-and-text pages for PDFs, and
+  verified entry bytes for ZIP archives. Similarity diagnostics are reported
+  separately and cannot turn altered content into exact recovery credit.
+- ZIP and ZIP64 output validation that independently opens entries, checks
+  sizes and CRC-32 values, and credits exact files or verified byte prefixes.
 - Content-addressed evidence inventories and offline verification.
 - Synthetic fixtures proving exact, changed, refusal, timeout, tamper, and
   path-containment behavior.

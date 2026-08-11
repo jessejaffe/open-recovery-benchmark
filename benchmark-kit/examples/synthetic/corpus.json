@@ -7,6 +7,7 @@
   "cases": [
     {
       "id": "exact-case",
+      "category": "damaged-full-restoration",
       "format": "synthetic/text",
       "damageClass": "truncated-directory",
       "input": {
@@ -27,6 +28,7 @@
     },
     {
       "id": "changed-case",
+      "category": "damaged-partial-restoration",
       "format": "synthetic/text",
       "damageClass": "truncated-directory",
       "input": {
@@ -47,6 +49,7 @@
     },
     {
       "id": "refusal-case",
+      "category": "healthy-control",
       "format": "synthetic/text",
       "damageClass": "truncated-directory",
       "input": {

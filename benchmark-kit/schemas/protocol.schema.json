@@ -16,10 +16,12 @@
     "exclusionRules": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "scoring": {
       "type": "object",
-      "required": ["denominator", "passDisposition"],
+      "required": ["denominator", "passDisposition", "partialDisposition", "scoreRange"],
       "properties": {
         "denominator": { "const": "all-eligible-cases" },
-        "passDisposition": { "const": "verified-pass" }
+        "passDisposition": { "const": "verified-pass" },
+        "partialDisposition": { "const": "verified-partial" },
+        "scoreRange": { "const": "zero-to-one" }
       },
       "additionalProperties": false
     },

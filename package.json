@@ -1,6 +1,6 @@
 {
   "name": "open-recovery-benchmark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open, independently verifiable file-recovery benchmark harness",
   "license": "MIT",
   "type": "module",

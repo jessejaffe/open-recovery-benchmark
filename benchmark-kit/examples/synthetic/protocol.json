@@ -15,7 +15,9 @@
   ],
   "scoring": {
     "denominator": "all-eligible-cases",
-    "passDisposition": "verified-pass"
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one"
   },
   "limits": {
     "timeoutMs": 5000,

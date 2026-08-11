@@ -8,6 +8,7 @@ import { canonicalize, sha256 } from "../lib/canonical.mjs";
 import { hashFile, readJson } from "../lib/files.mjs";
 import { publishRun, verifyPublication } from "../lib/publisher.mjs";
 import { executeBenchmark, ingestGuidedBenchmark, makePlan, verifyRun } from "../lib/runner.mjs";
+import { validateCapturedOutput } from "../lib/validators.mjs";
 
 const kitRoot = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const exampleRoot = path.join(kitRoot, "examples", "synthetic");
@@ -21,16 +22,95 @@ async function workspace() {
   return mkdtemp(path.join(os.tmpdir(), "stillopen-benchmark-test-"));
 }
 
+const CRC_TABLE = Array.from({ length: 256 }, (_, value) => {
+  let crc = value;
+  for (let bit = 0; bit < 8; bit += 1) crc = (crc & 1) ? 0xedb88320 ^ (crc >>> 1) : crc >>> 1;
+  return crc >>> 0;
+});
+
+function crc32(bytes) {
+  let crc = 0xffffffff;
+  for (const byte of bytes) crc = CRC_TABLE[(crc ^ byte) & 0xff] ^ (crc >>> 8);
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+function storedZip(entries) {
+  const localRecords = [];
+  const centralRecords = [];
+  let localOffset = 0;
+  for (const [nameText, contentText] of entries) {
+    const name = Buffer.from(nameText, "utf8");
+    const content = Buffer.from(contentText, "utf8");
+    const checksum = crc32(content);
+    const local = Buffer.alloc(30 + name.byteLength + content.byteLength);
+    local.writeUInt32LE(0x04034b50, 0);
+    local.writeUInt16LE(20, 4);
+    local.writeUInt32LE(checksum, 14);
+    local.writeUInt32LE(content.byteLength, 18);
+    local.writeUInt32LE(content.byteLength, 22);
+    local.writeUInt16LE(name.byteLength, 26);
+    name.copy(local, 30);
+    content.copy(local, 30 + name.byteLength);
+    localRecords.push(local);
+
+    const central = Buffer.alloc(46 + name.byteLength);
+    central.writeUInt32LE(0x02014b50, 0);
+    central.writeUInt16LE(20, 4);
+    central.writeUInt16LE(20, 6);
+    central.writeUInt32LE(checksum, 16);
+    central.writeUInt32LE(content.byteLength, 20);
+    central.writeUInt32LE(content.byteLength, 24);
+    central.writeUInt16LE(name.byteLength, 28);
+    central.writeUInt32LE(localOffset, 42);
+    name.copy(central, 46);
+    centralRecords.push(central);
+    localOffset += local.byteLength;
+  }
+  const central = Buffer.concat(centralRecords);
+  const end = Buffer.alloc(22);
+  end.writeUInt32LE(0x06054b50, 0);
+  end.writeUInt16LE(entries.length, 8);
+  end.writeUInt16LE(entries.length, 10);
+  end.writeUInt32LE(central.byteLength, 12);
+  end.writeUInt32LE(localOffset, 16);
+  return Buffer.concat([...localRecords, central, end]);
+}
+
 test("command slice preserves exact, changed, and refusal outcomes", async () => {
   const root = await workspace();
   const result = await executeBenchmark({ ...inputs, workspaceRoot: root, runId: "proof-run" });
   assert.deepEqual(result.run.summary, {
     eligibleCases: 3,
     verifiedPasses: 1,
+    verifiedPartials: 0,
     changedOutputs: 1,
     refusals: 1,
     unavailable: 0,
     errors: 0,
+    meanRecoveryScore: 0.333333,
+    categoryScores: {
+      "damaged-full-restoration": {
+        cases: 1,
+        meanRecoveryScore: 1,
+        fullRecoveries: 1,
+        partialRecoveries: 0,
+        zeroRecoveries: 0,
+      },
+      "damaged-partial-restoration": {
+        cases: 1,
+        meanRecoveryScore: 0,
+        fullRecoveries: 0,
+        partialRecoveries: 0,
+        zeroRecoveries: 1,
+      },
+      "healthy-control": {
+        cases: 1,
+        meanRecoveryScore: 0,
+        fullRecoveries: 0,
+        partialRecoveries: 0,
+        zeroRecoveries: 1,
+      },
+    },
     competitiveSummaryEligible: false,
   });
   assert.deepEqual(result.run.cases.map((item) => item.disposition), ["verified-pass", "changed-output", "refusal"]);
@@ -38,6 +118,61 @@ test("command slice preserves exact, changed, and refusal outcomes", async () =>
   assert.equal(result.run.cases[1].validation.pass, false);
   assert.match(await readFile(path.join(result.runRoot, "cases", "changed-case", "stdout.txt"), "utf8"), /reports recovery success/);
   assert.equal((await verifyRun(result.runRoot)).ok, true);
+});
+
+test("raster scoring exposes exact recovered pixels separately from visual similarity", async () => {
+  const root = await workspace();
+  const { createCanvas } = await import("@napi-rs/canvas");
+  const makePng = (rightColor) => {
+    const canvas = createCanvas(2, 1);
+    const context = canvas.getContext("2d");
+    context.fillStyle = "#ff0000";
+    context.fillRect(0, 0, 1, 1);
+    context.fillStyle = rightColor;
+    context.fillRect(1, 0, 1, 1);
+    return canvas.toBuffer("image/png");
+  };
+  const groundTruthPath = path.join(root, "ground.png");
+  const outputPath = path.join(root, "partial.png");
+  await writeFile(groundTruthPath, makePng("#00ff00"));
+  await writeFile(outputPath, makePng("#0000ff"));
+  const output = await hashFile(outputPath);
+  const groundTruth = { validator: "raster-rgba-v1", ...await hashFile(groundTruthPath) };
+  const validation = await validateCapturedOutput({
+    validator: groundTruth.validator,
+    outputPath,
+    output,
+    groundTruthPath,
+    groundTruth,
+  });
+  assert.equal(validation.pass, false);
+  assert.equal(validation.score, 0.5);
+  assert.equal(validation.recoveredUnits, 1);
+  assert.equal(validation.totalUnits, 2);
+  assert.ok(validation.checks.normalizedChannelSimilarity > validation.score);
+  assert.ok(validation.checks.normalizedChannelSimilarity < 1);
+});
+
+test("ZIP scoring credits exact entries and only the verified prefix of a partial entry", async () => {
+  const root = await workspace();
+  const groundTruthPath = path.join(root, "ground.zip");
+  const outputPath = path.join(root, "partial.zip");
+  await writeFile(groundTruthPath, storedZip([["a.txt", "alpha"], ["b.txt", "bravo"]]));
+  await writeFile(outputPath, storedZip([["a.txt", "alpha"], ["b.txt", "br"]]));
+  const output = await hashFile(outputPath);
+  const groundTruth = { validator: "zip-entry-bytes-v1", ...await hashFile(groundTruthPath) };
+  const validation = await validateCapturedOutput({
+    validator: groundTruth.validator,
+    outputPath,
+    output,
+    groundTruthPath,
+    groundTruth,
+  });
+  assert.equal(validation.pass, false);
+  assert.equal(validation.score, 0.7);
+  assert.equal(validation.recoveredUnits, 7);
+  assert.equal(validation.totalUnits, 10);
+  assert.equal(validation.checks.exactEntries, 1);
 });
 
 test("guided evidence keeps product outcomes separate from independent validation", async () => {
@@ -73,12 +208,19 @@ test("verification ties rehashed guided outcomes to their source observation rec
   caseRecord.observation.disposition = "refusal";
   caseRecord.observation.terminalOutcomeEligible = false;
   caseRecord.disposition = "refusal";
+  caseRecord.score = 0;
   await writeFile(casePath, `${JSON.stringify(caseRecord, null, 2)}\n`);
   const runPath = path.join(result.runRoot, "run.json");
   const run = await readJson(runPath);
   run.cases[0] = caseRecord;
   run.summary.verifiedPasses = 0;
   run.summary.refusals = 2;
+  run.summary.meanRecoveryScore = 0;
+  Object.assign(run.summary.categoryScores["damaged-full-restoration"], {
+    meanRecoveryScore: 0,
+    fullRecoveries: 0,
+    zeroRecoveries: 1,
+  });
   await writeFile(runPath, `${JSON.stringify(run, null, 2)}\n`);
   const attestationPath = path.join(result.runRoot, "attestation.json");
   const attestation = await readJson(attestationPath);
@@ -151,14 +293,23 @@ test("verification independently rejects a rehashed forged pass", async () => {
   const casePath = path.join(result.runRoot, "cases", "changed-case", "result.json");
   const caseRecord = await readJson(casePath);
   caseRecord.validation.pass = true;
+  caseRecord.validation.score = 1;
+  caseRecord.validation.recoveredUnits = 1;
   caseRecord.validation.checks.exactBytes = true;
   caseRecord.disposition = "verified-pass";
+  caseRecord.score = 1;
   await writeFile(casePath, `${JSON.stringify(caseRecord, null, 2)}\n`);
   const runPath = path.join(result.runRoot, "run.json");
   const run = await readJson(runPath);
   run.cases[1] = caseRecord;
   run.summary.verifiedPasses = 2;
   run.summary.changedOutputs = 0;
+  run.summary.meanRecoveryScore = 0.666667;
+  Object.assign(run.summary.categoryScores["damaged-partial-restoration"], {
+    meanRecoveryScore: 1,
+    fullRecoveries: 1,
+    zeroRecoveries: 0,
+  });
   await writeFile(runPath, `${JSON.stringify(run, null, 2)}\n`);
   const attestationPath = path.join(result.runRoot, "attestation.json");
   const attestation = await readJson(attestationPath);
@@ -239,12 +390,19 @@ test("verification rejects a rehashed forged terminal outcome", async () => {
   caseRecord.observation.disposition = "output-produced";
   caseRecord.observation.terminalOutcomeEligible = true;
   caseRecord.disposition = "verified-pass";
+  caseRecord.score = 1;
   await writeFile(casePath, `${JSON.stringify(caseRecord, null, 2)}\n`);
   const runPath = path.join(result.runRoot, "run.json");
   const run = await readJson(runPath);
   run.cases[0] = caseRecord;
   run.summary.verifiedPasses = 1;
   run.summary.refusals = 2;
+  run.summary.meanRecoveryScore = 0.333333;
+  Object.assign(run.summary.categoryScores["damaged-full-restoration"], {
+    meanRecoveryScore: 1,
+    fullRecoveries: 1,
+    zeroRecoveries: 0,
+  });
   await writeFile(runPath, `${JSON.stringify(run, null, 2)}\n`);
   const attestationPath = path.join(result.runRoot, "attestation.json");
   const attestation = await readJson(attestationPath);

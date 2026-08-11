@@ -6,10 +6,25 @@ It captures every terminal product outcome and stores inputs, outputs, logs,
 guided attachments, validation records, and publication files in a hashed
 evidence inventory.
 
-Product messages never decide whether recovery passed. A benchmark-owned
-validator scores the captured output, and a pass also requires an eligible
-output-producing terminal outcome. Refusals, errors, timeouts, unavailable
-products, paywalls, and missing output remain distinct visible outcomes.
+Every corpus case belongs to exactly one of three categories:
+
+- `damaged-full-restoration`: the complete healthy content is expected.
+- `damaged-partial-restoration`: incomplete output is useful, but the recovered
+  amount must be measured against frozen ground truth.
+- `healthy-control`: unnecessary changes are visible and reduce the score.
+
+Product messages never decide the score. A benchmark-owned validator compares
+the captured output with frozen ground truth and reports a deterministic value
+from 0 to 1 plus its numerator, denominator, and unit. Exact-byte validation is
+all-or-nothing. Raster validation counts exact decoded pixels and also reports a
+separate channel-similarity diagnostic. PDF validation counts pages whose render
+and extracted text both match. ZIP validation independently opens the archive
+and counts exact entry bytes, including a verified prefix of a partial entry.
+
+A full pass or partial score also requires an eligible output-producing terminal
+outcome. Refusals, errors, timeouts, unavailable products, paywalls, and missing
+output remain distinct visible outcomes and receive a run score of zero even if
+stray output bytes happen to match.
 
 ## Commands
 
