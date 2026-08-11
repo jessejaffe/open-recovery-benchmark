@@ -1,0 +1,30 @@
+{
+  "caseId": "png-partial-truncated-idat",
+  "category": "damaged-partial-restoration",
+  "format": "png",
+  "damageClass": "truncated-image-data",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T16:46:00Z",
+    "productMessage": "Repair PDF accepts PDF files only.",
+    "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+    "output": null,
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

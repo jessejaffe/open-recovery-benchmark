@@ -1,0 +1,43 @@
+{
+  "caseId": "pdf-full-missing-eof",
+  "category": "damaged-full-restoration",
+  "format": "pdf",
+  "damageClass": "missing-final-eof",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T16:45:20Z",
+    "productMessage": "PDF repaired successfully!",
+    "operatorNote": "The file was repeated independently after an ambiguous two-file batch attempt. The independent run produced one downloadable repaired PDF.",
+    "output": {
+      "path": "cases/pdf-full-missing-eof/operator-output.bin",
+      "byteLength": 1347,
+      "sha256": "6d6e6f8e149f32bb9ef258b5c7cf8a92831ebdbcc64f03c8f2f0f85ec241b436"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "score": 1,
+    "recoveredUnits": 3,
+    "totalUnits": 3,
+    "unit": "exact-render-and-text-page",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true,
+      "matchingPages": 3,
+      "pageRecoveryFraction": 1
+    }
+  },
+  "score": 1,
+  "disposition": "verified-pass"
+}

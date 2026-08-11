@@ -1,0 +1,36 @@
+{
+  "caseId": "jpeg-full-corrupt-segment-length",
+  "category": "damaged-full-restoration",
+  "format": "jpeg",
+  "damageClass": "corrupt-app0-segment-length",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T16:53:35Z",
+    "productMessage": "Sign in to EaseUS Fixo.",
+    "operatorNote": "The photo path accepted the JPEG and identified it as damaged, but the access gate appeared before repair and no output was released.",
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/jpeg-full-corrupt-segment-length/attachments/01.png",
+        "byteLength": 65533,
+        "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

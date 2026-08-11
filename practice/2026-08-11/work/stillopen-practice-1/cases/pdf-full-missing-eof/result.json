@@ -1,0 +1,47 @@
+{
+  "caseId": "pdf-full-missing-eof",
+  "category": "damaged-full-restoration",
+  "format": "pdf",
+  "damageClass": "missing-final-eof",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T16:59:37.388Z",
+    "endedAt": "2026-08-11T16:59:37.528Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/pdf-full-missing-eof/stdout.txt",
+    "stderr": "cases/pdf-full-missing-eof/stderr.txt",
+    "output": {
+      "path": "cases/pdf-full-missing-eof/tool-output/recovered.bin",
+      "byteLength": 1347,
+      "sha256": "51abfe0fe86d6dfeffa4df742f68bad2ae610980e3084b4a6ebc2a9a87eed3ec"
+    }
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": true,
+    "score": 1,
+    "recoveredUnits": 3,
+    "totalUnits": 3,
+    "unit": "exact-render-and-text-page",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 3,
+      "pageCount": true,
+      "pageDimensions": true,
+      "exactPageRenders": true,
+      "exactExtractedText": true,
+      "matchingPages": 3,
+      "pageRecoveryFraction": 1
+    }
+  },
+  "score": 1,
+  "disposition": "verified-pass"
+}

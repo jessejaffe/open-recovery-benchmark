@@ -1,0 +1,36 @@
+{
+  "caseId": "pdf-partial-truncated-stream",
+  "category": "damaged-partial-restoration",
+  "format": "pdf",
+  "damageClass": "truncated-page-content-stream",
+  "eligible": true,
+  "observation": {
+    "disposition": "refusal",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "refusal",
+    "attemptedAt": "2026-08-11T16:47:05Z",
+    "productMessage": "Oh no! We couldn't process your files. This file has not been processed because it was damaged or we were unable to read it.",
+    "operatorNote": "The product displayed its Damaged/Corrupted File error page and produced no output.",
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/pdf-partial-truncated-stream/attachments/01.png",
+        "byteLength": 67093,
+        "sha256": "d867635db52cf937e32d643aedd60f19a9eac70a62c9846d56c511268917ccf3"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "refusal"
+}

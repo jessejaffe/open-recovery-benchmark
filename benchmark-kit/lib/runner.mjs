@@ -9,10 +9,10 @@ import { missingOutputValidation, validateCapturedOutput } from "./validators.mj
 
 const HARNESS = Object.freeze({
   name: "stillopen-open-recovery-benchmark-kit",
-  version: "1.2.0",
+  version: "1.3.0",
 });
 
-const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", HARNESS.version]);
+const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", "1.2.0", HARNESS.version]);
 const CASE_CATEGORIES = [
   "damaged-full-restoration",
   "damaged-partial-restoration",
@@ -48,6 +48,10 @@ function scoredDisposition(validation, terminal) {
   if (!terminal.terminalOutcomeEligible) return terminal.disposition;
   if (validation.pass) return "verified-pass";
   return validation.score > 0 ? "verified-partial" : "changed-output";
+}
+
+function scoringEligible(disposition) {
+  return !["unavailable", "paywalled"].includes(disposition);
 }
 
 async function captureProcess({ executable, args, cwd, timeoutMs, maxCapturedBytes }) {
@@ -183,35 +187,41 @@ async function inventory(root) {
   return files;
 }
 
-function summarize(caseResults, tool) {
+function summarize(caseResults, tool, protocol) {
   const categoryScores = Object.fromEntries(CASE_CATEGORIES.map((category) => {
     const cases = caseResults.filter((item) => item.category === category);
-    const total = cases.reduce((sum, item) => sum + item.score, 0);
+    const eligibleCases = cases.filter((item) => item.eligible);
+    const total = eligibleCases.reduce((sum, item) => sum + item.score, 0);
     return [category, {
       cases: cases.length,
-      meanRecoveryScore: cases.length === 0 ? null : Number((total / cases.length).toFixed(6)),
+      eligibleCases: eligibleCases.length,
+      unscoredCases: cases.length - eligibleCases.length,
+      meanRecoveryScore: eligibleCases.length === 0 ? null : Number((total / eligibleCases.length).toFixed(6)),
       fullRecoveries: cases.filter((item) => item.disposition === "verified-pass").length,
       partialRecoveries: cases.filter((item) => item.disposition === "verified-partial").length,
-      zeroRecoveries: cases.filter((item) => item.score === 0).length,
+      zeroRecoveries: eligibleCases.filter((item) => item.score === 0).length,
     }];
   }));
-  const totalScore = caseResults.reduce((sum, item) => sum + item.score, 0);
+  const eligibleCases = caseResults.filter((item) => item.eligible);
+  const totalScore = eligibleCases.reduce((sum, item) => sum + item.score, 0);
   return {
-    eligibleCases: caseResults.length,
+    declaredCases: caseResults.length,
+    eligibleCases: eligibleCases.length,
+    unscoredCases: caseResults.length - eligibleCases.length,
     verifiedPasses: caseResults.filter((item) => item.disposition === "verified-pass").length,
     verifiedPartials: caseResults.filter((item) => item.disposition === "verified-partial").length,
     changedOutputs: caseResults.filter((item) => item.disposition === "changed-output").length,
     refusals: caseResults.filter((item) => item.disposition === "refusal").length,
     unavailable: caseResults.filter((item) => ["unavailable", "paywalled"].includes(item.disposition)).length,
     errors: caseResults.filter((item) => ["error", "launch-error", "timeout", "no-output"].includes(item.disposition)).length,
-    meanRecoveryScore: caseResults.length === 0 ? null : Number((totalScore / caseResults.length).toFixed(6)),
+    meanRecoveryScore: eligibleCases.length === 0 ? null : Number((totalScore / eligibleCases.length).toFixed(6)),
     categoryScores,
-    competitiveSummaryEligible: !tool.synthetic,
+    competitiveSummaryEligible: !tool.synthetic && protocol.competitiveSummaryEligible !== false,
   };
 }
 
 async function finalizeRun({ runRoot, protocol, corpus, tool, plan, caseResults }) {
-  const summary = summarize(caseResults, tool);
+  const summary = summarize(caseResults, tool, protocol);
   const run = {
     schemaVersion: 1,
     kind: "benchmark-run",
@@ -328,7 +338,7 @@ export async function executeBenchmark({ protocolPath, corpusPath, toolPath, wor
       category: item.category,
       format: item.format,
       damageClass: item.damageClass,
-      eligible: true,
+      eligible: scoringEligible(terminal.disposition),
       observation: {
         disposition: terminal.disposition,
         terminalOutcomeEligible: terminal.terminalOutcomeEligible,
@@ -425,7 +435,7 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
       category: item.category,
       format: item.format,
       damageClass: item.damageClass,
-      eligible: true,
+      eligible: scoringEligible(terminal.disposition),
       observation: {
         disposition: terminal.disposition,
         terminalOutcomeEligible: terminal.terminalOutcomeEligible,
@@ -478,7 +488,7 @@ export async function verifyRun(runRoot) {
   if (canonicalize(run.cases.map((item) => item.caseId)) !== canonicalize(plan.orderedCases)) {
     throw new Error("Run cases do not exactly match the frozen case order.");
   }
-  if (canonicalize(run.summary) !== canonicalize(summarize(run.cases, tool))) throw new Error("Run summary does not match its case evidence.");
+  if (canonicalize(run.summary) !== canonicalize(summarize(run.cases, tool, protocol))) throw new Error("Run summary does not match its case evidence.");
   const expectedClaimBoundary = tool.synthetic
     ? "Synthetic harness demonstration only; this run is not competitor performance evidence."
     : protocol.publicClaim;
@@ -494,7 +504,7 @@ export async function verifyRun(runRoot) {
   }
   for (const item of run.cases) {
     const frozenCase = corpus.cases.find((candidate) => candidate.id === item.caseId);
-    if (!frozenCase || item.eligible !== true || item.category !== frozenCase.category || item.format !== frozenCase.format || item.damageClass !== frozenCase.damageClass) {
+    if (!frozenCase || typeof item.eligible !== "boolean" || item.category !== frozenCase.category || item.format !== frozenCase.format || item.damageClass !== frozenCase.damageClass) {
       throw new Error(`Run case metadata does not match the frozen corpus for ${item.caseId}.`);
     }
     const inputEvidence = await hashFile(resolveContained(runRoot, `cases/${item.caseId}/input.bin`, "case input evidence"));
@@ -558,6 +568,9 @@ export async function verifyRun(runRoot) {
     if (item.observation.disposition !== expectedTerminal.disposition
       || item.observation.terminalOutcomeEligible !== expectedTerminal.terminalOutcomeEligible) {
       throw new Error(`Terminal outcome semantics are inconsistent for ${item.caseId}.`);
+    }
+    if (item.eligible !== scoringEligible(expectedTerminal.disposition)) {
+      throw new Error(`Scoring eligibility is inconsistent for ${item.caseId}.`);
     }
     const expectedScore = expectedTerminal.terminalOutcomeEligible ? expectedValidation.score : 0;
     if (item.score !== expectedScore) throw new Error(`Recovery score is inconsistent for ${item.caseId}.`);

@@ -37,6 +37,9 @@ export function validateProtocol(protocol) {
   contract(protocol, "benchmark-protocol");
   text(protocol.title, "benchmark-protocol.title");
   text(protocol.publicClaim, "benchmark-protocol.publicClaim");
+  if (protocol.competitiveSummaryEligible !== undefined && typeof protocol.competitiveSummaryEligible !== "boolean") {
+    throw new Error("benchmark-protocol.competitiveSummaryEligible must be boolean when declared.");
+  }
   text(protocol.frozenAt, "benchmark-protocol.frozenAt");
   object(protocol.scoring, "benchmark-protocol.scoring");
   if (protocol.scoring.denominator !== "all-eligible-cases") throw new Error("Only the all-eligible-cases denominator is supported in schemaVersion 1.");

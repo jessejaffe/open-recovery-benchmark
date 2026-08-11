@@ -1,0 +1,30 @@
+{
+  "caseId": "zip-full-missing-directory",
+  "category": "damaged-full-restoration",
+  "format": "zip",
+  "damageClass": "missing-central-directory",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T16:49:05Z",
+    "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
+    "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+    "output": null,
+    "attachments": []
+  },
+  "validation": {
+    "validator": "zip-entry-bytes-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

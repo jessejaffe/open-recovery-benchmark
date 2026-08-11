@@ -6,8 +6,14 @@ bundles offline.
 
 ## Status
 
-**Foundation only. No StillOpen report, competitor result, product ranking, or
-production benchmark publication is included in this repository.**
+**Foundation plus one explicitly unofficial backend rehearsal. No Benchmark
+v1.0, official competitor ranking, or production benchmark publication is
+included in this repository.**
+
+The [2026-08-11 practice bundle](practice/2026-08-11/README.md) contains a
+project-authored eight-case corpus, guided browser observations, recovered
+outputs, screenshots, and five independently verifiable run bundles. Its
+protocol marks every result ineligible for a competitive summary.
 
 The setup releases establish the public source and license trust anchor. Future
 benchmark definitions and results can identify the exact public
@@ -46,6 +52,11 @@ behind a paywall, the attempt remains visible as `paywalled`. Its evidence may b
 published, but it is unscored and must not be represented as a technical failure.
 Maintenance, unavailable services, and workflows that produce no downloadable
 output are likewise reported separately from recovery performance.
+
+Every aggregate must show declared-case coverage beside its scored denominator.
+`unavailable` and `paywalled` cases remain in the evidence bundle but do not enter
+the mean recovery score. A refusal, changed output, timeout, or processing error
+on an eligible case remains a zero.
 
 ## Verify the setup
 

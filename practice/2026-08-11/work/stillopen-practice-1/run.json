@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "stillopen-practice-1",
+  "protocol": {
+    "id": "practice-recovery-rehearsal-2026-08-11",
+    "title": "Unofficial recovery benchmark backend rehearsal",
+    "publicClaim": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
+    "digest": "d9d4ef5ead4230b2b8828d5d4aaa35fec0635cfba82cf3b7250121985849a38c"
+  },
+  "corpus": {
+    "id": "practice-eight-case-recovery-corpus-2026-08-11",
+    "title": "Eight-case PDF, JPEG, PNG, and ZIP practice corpus",
+    "digest": "c1131f0914f4246cd566aa41e0617be5360624121e432f8c48d72029a399820a"
+  },
+  "tool": {
+    "id": "stillopen-wasm-a90e461-practice",
+    "digest": "b44e6ecf76411ff6230ba1330ceb95a676d2609b529d5bb5d75a31b3fc835fa8",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "a90e46198c0d835adb14eddf807804e6028c0cd8",
+    "platform": "Node.js host using the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "planDigest": "3b391a2d8c6cb2fe414cf534f89b624bd6f2a7edfe5b49b18602cadbc3552695",
+  "claimBoundary": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
+  "cases": [
+    {
+      "caseId": "pdf-full-missing-eof",
+      "category": "damaged-full-restoration",
+      "format": "pdf",
+      "damageClass": "missing-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:37.388Z",
+        "endedAt": "2026-08-11T16:59:37.528Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pdf-full-missing-eof/stdout.txt",
+        "stderr": "cases/pdf-full-missing-eof/stderr.txt",
+        "output": {
+          "path": "cases/pdf-full-missing-eof/tool-output/recovered.bin",
+          "byteLength": 1347,
+          "sha256": "51abfe0fe86d6dfeffa4df742f68bad2ae610980e3084b4a6ebc2a9a87eed3ec"
+        }
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 3,
+        "totalUnits": 3,
+        "unit": "exact-render-and-text-page",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true,
+          "matchingPages": 3,
+          "pageRecoveryFraction": 1
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pdf-partial-truncated-stream",
+      "category": "damaged-partial-restoration",
+      "format": "pdf",
+      "damageClass": "truncated-page-content-stream",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:37.724Z",
+        "endedAt": "2026-08-11T16:59:37.821Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pdf-partial-truncated-stream/stdout.txt",
+        "stderr": "cases/pdf-partial-truncated-stream/stderr.txt",
+        "output": {
+          "path": "cases/pdf-partial-truncated-stream/tool-output/recovered.bin",
+          "byteLength": 974,
+          "sha256": "17ea0c15e9bfc6987f0ec384ca99fd304a940c30e66caf069b19bc87230631d8"
+        }
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "score": 0.6666666666666666,
+        "recoveredUnits": 2,
+        "totalUnits": 3,
+        "unit": "exact-render-and-text-page",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 2,
+          "pageCount": false,
+          "pageDimensions": false,
+          "exactPageRenders": false,
+          "exactExtractedText": false,
+          "matchingPages": 2,
+          "pageRecoveryFraction": 0.6666666666666666
+        }
+      },
+      "score": 0.6666666666666666,
+      "disposition": "verified-partial"
+    },
+    {
+      "caseId": "jpeg-full-corrupt-segment-length",
+      "category": "damaged-full-restoration",
+      "format": "jpeg",
+      "damageClass": "corrupt-app0-segment-length",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:37.830Z",
+        "endedAt": "2026-08-11T16:59:37.918Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/jpeg-full-corrupt-segment-length/stdout.txt",
+        "stderr": "cases/jpeg-full-corrupt-segment-length/stderr.txt",
+        "output": {
+          "path": "cases/jpeg-full-corrupt-segment-length/tool-output/recovered.bin",
+          "byteLength": 83,
+          "sha256": "13ac77cba732e7c6871076dc6d779d2439dd6942d3e68e31f3fe94c3a8d534b9"
+        }
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 384,
+        "totalUnits": 384,
+        "unit": "exact-decoded-pixel",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 24,
+          "expectedHeight": 16,
+          "actualWidth": 24,
+          "actualHeight": 16,
+          "dimensions": true,
+          "expectedRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+          "actualRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+          "exactDecodedPixels": true,
+          "matchingPixels": 384,
+          "totalPixels": 384,
+          "exactPixelFraction": 1,
+          "normalizedChannelSimilarity": 1
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "jpeg-partial-corrupt-entropy",
+      "category": "damaged-partial-restoration",
+      "format": "jpeg",
+      "damageClass": "corrupt-entropy-coded-byte",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:37.921Z",
+        "endedAt": "2026-08-11T16:59:38.007Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/jpeg-partial-corrupt-entropy/stdout.txt",
+        "stderr": "cases/jpeg-partial-corrupt-entropy/stderr.txt",
+        "output": {
+          "path": "cases/jpeg-partial-corrupt-entropy/tool-output/recovered.bin",
+          "byteLength": 517,
+          "sha256": "deae9813fbdb4ae8fe2bb7cd2b5085c0ada3e4b28b048a5e0ce4a06da21054b2"
+        }
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": 384,
+        "unit": "exact-decoded-pixel",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 24,
+          "expectedHeight": 16,
+          "actualWidth": 24,
+          "actualHeight": 16,
+          "dimensions": true,
+          "expectedRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+          "actualRgbaSha256": "992f8078765826f709a37466ecb7594fd7e4f01cf0287da8d7a6025f0f59f9b5",
+          "exactDecodedPixels": false,
+          "matchingPixels": 0,
+          "totalPixels": 384,
+          "exactPixelFraction": 0,
+          "normalizedChannelSimilarity": 0.8995838439542484
+        }
+      },
+      "score": 0,
+      "disposition": "changed-output"
+    },
+    {
+      "caseId": "png-full-missing-iend",
+      "category": "damaged-full-restoration",
+      "format": "png",
+      "damageClass": "missing-ending-chunk",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:38.010Z",
+        "endedAt": "2026-08-11T16:59:38.096Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/png-full-missing-iend/stdout.txt",
+        "stderr": "cases/png-full-missing-iend/stderr.txt",
+        "output": {
+          "path": "cases/png-full-missing-iend/tool-output/recovered.bin",
+          "byteLength": 1620,
+          "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+        }
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 512,
+        "totalUnits": 512,
+        "unit": "exact-decoded-pixel",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 16,
+          "actualWidth": 32,
+          "actualHeight": 16,
+          "dimensions": true,
+          "expectedRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+          "actualRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+          "exactDecodedPixels": true,
+          "matchingPixels": 512,
+          "totalPixels": 512,
+          "exactPixelFraction": 1,
+          "normalizedChannelSimilarity": 1
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "png-partial-truncated-idat",
+      "category": "damaged-partial-restoration",
+      "format": "png",
+      "damageClass": "truncated-image-data",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:38.099Z",
+        "endedAt": "2026-08-11T16:59:38.184Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/png-partial-truncated-idat/stdout.txt",
+        "stderr": "cases/png-partial-truncated-idat/stderr.txt",
+        "output": {
+          "path": "cases/png-partial-truncated-idat/tool-output/recovered.bin",
+          "byteLength": 1013,
+          "sha256": "f44ad247a595d588755c539a5b5bd1620696aeeba69d0713979318db610fbff7"
+        }
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0.5,
+        "recoveredUnits": 256,
+        "totalUnits": 512,
+        "unit": "exact-decoded-pixel",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedWidth": 32,
+          "expectedHeight": 16,
+          "actualWidth": 32,
+          "actualHeight": 16,
+          "dimensions": true,
+          "expectedRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+          "actualRgbaSha256": "65f7302e9d51cebbeac9fba20649019eb86e2c0ed4d7053f6404150ff8971a45",
+          "exactDecodedPixels": false,
+          "matchingPixels": 256,
+          "totalPixels": 512,
+          "exactPixelFraction": 0.5,
+          "normalizedChannelSimilarity": 0.9236940870098039
+        }
+      },
+      "score": 0.5,
+      "disposition": "verified-partial"
+    },
+    {
+      "caseId": "zip-full-missing-directory",
+      "category": "damaged-full-restoration",
+      "format": "zip",
+      "damageClass": "missing-central-directory",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:38.187Z",
+        "endedAt": "2026-08-11T16:59:38.272Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/zip-full-missing-directory/stdout.txt",
+        "stderr": "cases/zip-full-missing-directory/stderr.txt",
+        "output": {
+          "path": "cases/zip-full-missing-directory/tool-output/recovered.bin",
+          "byteLength": 4900,
+          "sha256": "2a57ed00112b56a95ced5019c0e46ec3fa68a3dc8793c501afec34767a10bb3f"
+        }
+      },
+      "validation": {
+        "validator": "zip-entry-bytes-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 3736,
+        "totalUnits": 3736,
+        "unit": "verified-entry-byte",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedEntries": 2,
+          "actualEntries": 3,
+          "exactEntries": 2,
+          "unexpectedEntries": [
+            "_StillOpen Recovery Report.txt"
+          ],
+          "unexpectedEntryCount": 1,
+          "recoveredBytes": 3736,
+          "totalBytes": 3736,
+          "recoveredByteFraction": 1
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "zip-partial-truncated-deflate",
+      "category": "damaged-partial-restoration",
+      "format": "zip",
+      "damageClass": "truncated-deflated-entry",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "startedAt": "2026-08-11T16:59:38.276Z",
+        "endedAt": "2026-08-11T16:59:38.360Z",
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/zip-partial-truncated-deflate/stdout.txt",
+        "stderr": "cases/zip-partial-truncated-deflate/stderr.txt",
+        "output": {
+          "path": "cases/zip-partial-truncated-deflate/tool-output/recovered.bin",
+          "byteLength": 3242,
+          "sha256": "487f33278a348fafb5c0f04e9b06321ae0e8d343cc825638a8f5fe3e252f781e"
+        }
+      },
+      "validation": {
+        "validator": "zip-entry-bytes-v1",
+        "pass": false,
+        "score": 0.0173982869379015,
+        "recoveredUnits": 65,
+        "totalUnits": 3736,
+        "unit": "verified-entry-byte",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedEntries": 2,
+          "actualEntries": 3,
+          "exactEntries": 1,
+          "unexpectedEntries": [
+            "_StillOpen Recovery Report.txt",
+            "data/records (StillOpen partial).csv"
+          ],
+          "unexpectedEntryCount": 2,
+          "recoveredBytes": 65,
+          "totalBytes": 3736,
+          "recoveredByteFraction": 0.0173982869379015
+        }
+      },
+      "score": 0.0173982869379015,
+      "disposition": "verified-partial"
+    }
+  ],
+  "summary": {
+    "declaredCases": 8,
+    "eligibleCases": 8,
+    "unscoredCases": 0,
+    "verifiedPasses": 4,
+    "verifiedPartials": 3,
+    "changedOutputs": 1,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "meanRecoveryScore": 0.648008,
+    "categoryScores": {
+      "damaged-full-restoration": {
+        "cases": 4,
+        "eligibleCases": 4,
+        "unscoredCases": 0,
+        "meanRecoveryScore": 1,
+        "fullRecoveries": 4,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "damaged-partial-restoration": {
+        "cases": 4,
+        "eligibleCases": 4,
+        "unscoredCases": 0,
+        "meanRecoveryScore": 0.296016,
+        "fullRecoveries": 0,
+        "partialRecoveries": 3,
+        "zeroRecoveries": 1
+      },
+      "healthy-control": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      }
+    },
+    "competitiveSummaryEligible": false
+  }
+}

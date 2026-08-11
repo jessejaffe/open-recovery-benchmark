@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "zpdf-practice-1",
+  "protocol": {
+    "id": "practice-recovery-rehearsal-2026-08-11",
+    "title": "Unofficial recovery benchmark backend rehearsal",
+    "publicClaim": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
+    "digest": "d9d4ef5ead4230b2b8828d5d4aaa35fec0635cfba82cf3b7250121985849a38c"
+  },
+  "corpus": {
+    "id": "practice-eight-case-recovery-corpus-2026-08-11",
+    "title": "Eight-case PDF, JPEG, PNG, and ZIP practice corpus",
+    "digest": "c1131f0914f4246cd566aa41e0617be5360624121e432f8c48d72029a399820a"
+  },
+  "tool": {
+    "id": "zpdf-repair-pdf-web-2026-08-11",
+    "digest": "4bda10e93755e776b0931bac7cf53f135e2886cac4e6a4a9831af441af897959",
+    "vendor": "zPDF",
+    "product": "Repair PDF",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "planDigest": "6c18a366aa31ab9d99d27cf8c9d822d421b2bc519c2c6d775028baec9565b2b8",
+  "claimBoundary": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
+  "cases": [
+    {
+      "caseId": "pdf-full-missing-eof",
+      "category": "damaged-full-restoration",
+      "format": "pdf",
+      "damageClass": "missing-final-eof",
+      "eligible": true,
+      "observation": {
+        "disposition": "output-produced",
+        "terminalOutcomeEligible": true,
+        "productOutcome": "success",
+        "attemptedAt": "2026-08-11T16:45:20Z",
+        "productMessage": "PDF repaired successfully!",
+        "operatorNote": "The file was repeated independently after an ambiguous two-file batch attempt. The independent run produced one downloadable repaired PDF.",
+        "output": {
+          "path": "cases/pdf-full-missing-eof/operator-output.bin",
+          "byteLength": 1347,
+          "sha256": "6d6e6f8e149f32bb9ef258b5c7cf8a92831ebdbcc64f03c8f2f0f85ec241b436"
+        },
+        "attachments": []
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 3,
+        "totalUnits": 3,
+        "unit": "exact-render-and-text-page",
+        "checks": {
+          "groundTruthReadable": true,
+          "outputReadable": true,
+          "expectedPageCount": 3,
+          "actualPageCount": 3,
+          "pageCount": true,
+          "pageDimensions": true,
+          "exactPageRenders": true,
+          "exactExtractedText": true,
+          "matchingPages": 3,
+          "pageRecoveryFraction": 1
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "pdf-partial-truncated-stream",
+      "category": "damaged-partial-restoration",
+      "format": "pdf",
+      "damageClass": "truncated-page-content-stream",
+      "eligible": true,
+      "observation": {
+        "disposition": "refusal",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "refusal",
+        "attemptedAt": "2026-08-11T16:45:58Z",
+        "productMessage": "Unable to repair the PDF file.",
+        "operatorNote": "Repeated independently so the product message could be assigned to this case without relying on the earlier batch UI.",
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/pdf-partial-truncated-stream/attachments/01.png",
+            "byteLength": 72173,
+            "sha256": "155460d1ba3331110a0db605fb8e102e02d4a93462a6baeab1d28d14002bf782"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "pdf-render-text-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "refusal"
+    },
+    {
+      "caseId": "jpeg-full-corrupt-segment-length",
+      "category": "damaged-full-restoration",
+      "format": "jpeg",
+      "damageClass": "corrupt-app0-segment-length",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "jpeg-partial-corrupt-entropy",
+      "category": "damaged-partial-restoration",
+      "format": "jpeg",
+      "damageClass": "corrupt-entropy-coded-byte",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "png-full-missing-iend",
+      "category": "damaged-full-restoration",
+      "format": "png",
+      "damageClass": "missing-ending-chunk",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "png-partial-truncated-idat",
+      "category": "damaged-partial-restoration",
+      "format": "png",
+      "damageClass": "truncated-image-data",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "raster-rgba-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "zip-full-missing-directory",
+      "category": "damaged-full-restoration",
+      "format": "zip",
+      "damageClass": "missing-central-directory",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "zip-entry-bytes-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "zip-partial-truncated-deflate",
+      "category": "damaged-partial-restoration",
+      "format": "zip",
+      "damageClass": "truncated-deflated-entry",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T16:46:00Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "zip-entry-bytes-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    }
+  ],
+  "summary": {
+    "declaredCases": 8,
+    "eligibleCases": 2,
+    "unscoredCases": 6,
+    "verifiedPasses": 1,
+    "verifiedPartials": 0,
+    "changedOutputs": 0,
+    "refusals": 1,
+    "unavailable": 6,
+    "errors": 0,
+    "meanRecoveryScore": 0.5,
+    "categoryScores": {
+      "damaged-full-restoration": {
+        "cases": 4,
+        "eligibleCases": 1,
+        "unscoredCases": 3,
+        "meanRecoveryScore": 1,
+        "fullRecoveries": 1,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "damaged-partial-restoration": {
+        "cases": 4,
+        "eligibleCases": 1,
+        "unscoredCases": 3,
+        "meanRecoveryScore": 0,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 1
+      },
+      "healthy-control": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      }
+    },
+    "competitiveSummaryEligible": false
+  }
+}

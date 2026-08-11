@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "kind": "unofficial-practice-benchmark-summary",
+  "id": "practice-recovery-rehearsal-2026-08-11-summary",
+  "status": "practice-only-not-competitive",
+  "harnessVersion": "1.3.0",
+  "declaredCases": 8,
+  "comparisonWarning": "Scores use tool-specific eligible denominators and are not a ranking. Always report scoredCases beside meanRecoveryScore.",
+  "tools": [
+    {
+      "id": "stillopen-wasm-a90e461-practice",
+      "runId": "stillopen-practice-1",
+      "evidenceRoot": "6ea406c1e9a451f2963d7acfd1afb89420c74c922d1fb881714325a744799a2e",
+      "scoredCases": 8,
+      "unscoredCases": 0,
+      "verifiedPasses": 4,
+      "verifiedPartials": 3,
+      "eligibleZeroes": 1,
+      "meanRecoveryScore": 0.648008
+    },
+    {
+      "id": "zpdf-repair-pdf-web-2026-08-11",
+      "runId": "zpdf-practice-1",
+      "evidenceRoot": "d1a2e48d67fba9989631827a3f4c21753f9d9393a6fd42b00c6f295c2296c02f",
+      "scoredCases": 2,
+      "unscoredCases": 6,
+      "verifiedPasses": 1,
+      "verifiedPartials": 0,
+      "eligibleZeroes": 1,
+      "meanRecoveryScore": 0.5
+    },
+    {
+      "id": "ilovepdf-repair-pdf-web-2026-08-11",
+      "runId": "ilovepdf-practice-1",
+      "evidenceRoot": "75689fb0fc9c2f4a45e170f3a0a87e7179d6e14201e32e9d42e3c585ca27036b",
+      "scoredCases": 2,
+      "unscoredCases": 6,
+      "verifiedPasses": 0,
+      "verifiedPartials": 0,
+      "eligibleZeroes": 2,
+      "meanRecoveryScore": 0
+    },
+    {
+      "id": "easeus-online-repair-web-2026-08-11",
+      "runId": "easeus-practice-1",
+      "evidenceRoot": "670885c2cb5d70ac2b3d2752c954c55d1a94a4aa0d13ba6ec6c0844c3983f0d2",
+      "scoredCases": 0,
+      "unscoredCases": 8,
+      "verifiedPasses": 0,
+      "verifiedPartials": 0,
+      "eligibleZeroes": 0,
+      "meanRecoveryScore": null
+    },
+    {
+      "id": "repairit-online-repair-web-2026-08-11",
+      "runId": "repairit-practice-1",
+      "evidenceRoot": "c3c6e004cff8daa66275f51f4bd6bade359b190d7263321960718aea86f7af83",
+      "scoredCases": 3,
+      "unscoredCases": 5,
+      "verifiedPasses": 2,
+      "verifiedPartials": 0,
+      "eligibleZeroes": 1,
+      "meanRecoveryScore": 0.666667
+    }
+  ],
+  "requiredBeforeV1": [
+    "healthy-control semantics and fixtures",
+    "broader externally authored source corpus",
+    "multi-output selection rule",
+    "repeat guided runs and signed operator attestations",
+    "coverage-first results UI"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "caseId": "png-full-missing-iend",
+  "category": "damaged-full-restoration",
+  "format": "png",
+  "damageClass": "missing-ending-chunk",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T16:50:05Z",
+    "productMessage": "Successful",
+    "operatorNote": "The Download All archive contained one complete PNG result.",
+    "output": {
+      "path": "cases/png-full-missing-iend/operator-output.bin",
+      "byteLength": 1608,
+      "sha256": "34589659cee8dfa03d0f0dfa14ea22ffd7cf7ee89a9f69d8c2aac61e08e3f017"
+    },
+    "attachments": []
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "score": 1,
+    "recoveredUnits": 512,
+    "totalUnits": 512,
+    "unit": "exact-decoded-pixel",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 16,
+      "actualWidth": 32,
+      "actualHeight": 16,
+      "dimensions": true,
+      "expectedRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+      "actualRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+      "exactDecodedPixels": true,
+      "matchingPixels": 512,
+      "totalPixels": 512,
+      "exactPixelFraction": 1,
+      "normalizedChannelSimilarity": 1
+    }
+  },
+  "score": 1,
+  "disposition": "verified-pass"
+}

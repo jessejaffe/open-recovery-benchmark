@@ -1,0 +1,50 @@
+{
+  "caseId": "zip-partial-truncated-deflate",
+  "category": "damaged-partial-restoration",
+  "format": "zip",
+  "damageClass": "truncated-deflated-entry",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T16:59:38.276Z",
+    "endedAt": "2026-08-11T16:59:38.360Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/zip-partial-truncated-deflate/stdout.txt",
+    "stderr": "cases/zip-partial-truncated-deflate/stderr.txt",
+    "output": {
+      "path": "cases/zip-partial-truncated-deflate/tool-output/recovered.bin",
+      "byteLength": 3242,
+      "sha256": "487f33278a348fafb5c0f04e9b06321ae0e8d343cc825638a8f5fe3e252f781e"
+    }
+  },
+  "validation": {
+    "validator": "zip-entry-bytes-v1",
+    "pass": false,
+    "score": 0.0173982869379015,
+    "recoveredUnits": 65,
+    "totalUnits": 3736,
+    "unit": "verified-entry-byte",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedEntries": 2,
+      "actualEntries": 3,
+      "exactEntries": 1,
+      "unexpectedEntries": [
+        "_StillOpen Recovery Report.txt",
+        "data/records (StillOpen partial).csv"
+      ],
+      "unexpectedEntryCount": 2,
+      "recoveredBytes": 65,
+      "totalBytes": 3736,
+      "recoveredByteFraction": 0.0173982869379015
+    }
+  },
+  "score": 0.0173982869379015,
+  "disposition": "verified-partial"
+}

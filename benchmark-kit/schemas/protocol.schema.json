@@ -11,6 +11,7 @@
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
     "title": { "type": "string", "minLength": 1 },
     "publicClaim": { "type": "string", "minLength": 1 },
+    "competitiveSummaryEligible": { "type": "boolean" },
     "frozenAt": { "type": "string", "format": "date-time" },
     "inclusionRules": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "exclusionRules": { "type": "array", "items": { "type": "string", "minLength": 1 } },

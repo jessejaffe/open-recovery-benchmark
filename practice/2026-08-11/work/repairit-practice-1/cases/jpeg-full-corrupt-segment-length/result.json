@@ -1,0 +1,63 @@
+{
+  "caseId": "jpeg-full-corrupt-segment-length",
+  "category": "damaged-full-restoration",
+  "format": "jpeg",
+  "damageClass": "corrupt-app0-segment-length",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T16:50:05Z",
+    "productMessage": "Successful",
+    "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output; candidate 2 and the untouched Download All archive are retained as attachments. Both candidates independently decode to the same benchmark score.",
+    "output": {
+      "path": "cases/jpeg-full-corrupt-segment-length/operator-output.bin",
+      "byteLength": 549,
+      "sha256": "d6619d89986ef287ccaecbc78d31849d430e0c3957b61c88d2be8950705e6ea6"
+    },
+    "attachments": [
+      {
+        "path": "cases/jpeg-full-corrupt-segment-length/attachments/01.jpg",
+        "byteLength": 567,
+        "sha256": "f6939bdd8979191dadb3cbae6e0efcc5330f751ae983789eaae53cc2ee8517af"
+      },
+      {
+        "path": "cases/jpeg-full-corrupt-segment-length/attachments/02.zip",
+        "byteLength": 3885,
+        "sha256": "397c3c081fb585279f443ba56fbe107cba396468804d86a58b4207911955d447"
+      },
+      {
+        "path": "cases/jpeg-full-corrupt-segment-length/attachments/03.png",
+        "byteLength": 66297,
+        "sha256": "b9d588e2311d5943bfcd41dc8d5452c95d593774e819873256b4afa07e4ba12d"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": true,
+    "score": 1,
+    "recoveredUnits": 384,
+    "totalUnits": 384,
+    "unit": "exact-decoded-pixel",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 24,
+      "expectedHeight": 16,
+      "actualWidth": 24,
+      "actualHeight": 16,
+      "dimensions": true,
+      "expectedRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+      "actualRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+      "exactDecodedPixels": true,
+      "matchingPixels": 384,
+      "totalPixels": 384,
+      "exactPixelFraction": 1,
+      "normalizedChannelSimilarity": 1
+    }
+  },
+  "score": 1,
+  "disposition": "verified-pass"
+}

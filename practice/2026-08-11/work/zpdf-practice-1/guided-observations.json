@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "zpdf-practice-observations-2026-08-11",
+  "toolId": "zpdf-repair-pdf-web-2026-08-11",
+  "cases": [
+    {
+      "caseId": "pdf-full-missing-eof",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T16:45:20Z",
+      "productMessage": "PDF repaired successfully!",
+      "operatorNote": "The file was repeated independently after an ambiguous two-file batch attempt. The independent run produced one downloadable repaired PDF.",
+      "outputPath": "outputs/pdf-full-missing-eof.pdf"
+    },
+    {
+      "caseId": "pdf-partial-truncated-stream",
+      "productOutcome": "refusal",
+      "attemptedAt": "2026-08-11T16:45:58Z",
+      "productMessage": "Unable to repair the PDF file.",
+      "operatorNote": "Repeated independently so the product message could be assigned to this case without relying on the earlier batch UI.",
+      "attachments": [
+        "attachments/pdf-partial-refusal.png"
+      ]
+    },
+    {
+      "caseId": "jpeg-full-corrupt-segment-length",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    },
+    {
+      "caseId": "jpeg-partial-corrupt-entropy",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    },
+    {
+      "caseId": "png-full-missing-iend",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    },
+    {
+      "caseId": "png-partial-truncated-idat",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    },
+    {
+      "caseId": "zip-full-missing-directory",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    },
+    {
+      "caseId": "zip-partial-truncated-deflate",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T16:46:00Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure."
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-attestation",
+  "runId": "zpdf-practice-1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "cases/jpeg-full-corrupt-segment-length/ground-truth.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-full-corrupt-segment-length/input.bin",
+      "byteLength": 585,
+      "sha256": "842e9ec182b365b8c67afd8850371b0dd23310bbd5ad9bceeae0a76032bb56a8"
+    },
+    {
+      "path": "cases/jpeg-full-corrupt-segment-length/result.json",
+      "byteLength": 801,
+      "sha256": "b4606cae18f48f2046fcbeb194a62e9110376164d3f6613efb3a51946d586e44"
+    },
+    {
+      "path": "cases/jpeg-partial-corrupt-entropy/ground-truth.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-partial-corrupt-entropy/input.bin",
+      "byteLength": 585,
+      "sha256": "dca7020744af0de33266d91e3ecfc729cfbd6bce1299a7ccecd1f8022324faf8"
+    },
+    {
+      "path": "cases/jpeg-partial-corrupt-entropy/result.json",
+      "byteLength": 799,
+      "sha256": "60e7156315d62d3eac9bdfd6fd67a46461b901a92e9b788d1fc57350d362d035"
+    },
+    {
+      "path": "cases/pdf-full-missing-eof/ground-truth.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-full-missing-eof/input.bin",
+      "byteLength": 1202,
+      "sha256": "65711364e02671388bd15a901245cb74f76578170067090aa1ca58c6a38b4d2a"
+    },
+    {
+      "path": "cases/pdf-full-missing-eof/operator-output.bin",
+      "byteLength": 1347,
+      "sha256": "6d6e6f8e149f32bb9ef258b5c7cf8a92831ebdbcc64f03c8f2f0f85ec241b436"
+    },
+    {
+      "path": "cases/pdf-full-missing-eof/result.json",
+      "byteLength": 1321,
+      "sha256": "2565bac20665fc8ae472af02acbced2f92ab50ebda2c6cef5decb460c5367a64"
+    },
+    {
+      "path": "cases/pdf-partial-truncated-stream/attachments/01.png",
+      "byteLength": 72173,
+      "sha256": "155460d1ba3331110a0db605fb8e102e02d4a93462a6baeab1d28d14002bf782"
+    },
+    {
+      "path": "cases/pdf-partial-truncated-stream/ground-truth.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-partial-truncated-stream/input.bin",
+      "byteLength": 911,
+      "sha256": "100b571fb18fa14380859a2f958107693974d3402ada46ceae5637e41f44867f"
+    },
+    {
+      "path": "cases/pdf-partial-truncated-stream/result.json",
+      "byteLength": 1053,
+      "sha256": "af09cc762eb71b4f4283dbee39abbe5d589c98680708a39ba18f5a0b4b08db48"
+    },
+    {
+      "path": "cases/png-full-missing-iend/ground-truth.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-full-missing-iend/input.bin",
+      "byteLength": 1608,
+      "sha256": "34589659cee8dfa03d0f0dfa14ea22ffd7cf7ee89a9f69d8c2aac61e08e3f017"
+    },
+    {
+      "path": "cases/png-full-missing-iend/result.json",
+      "byteLength": 782,
+      "sha256": "63d3f3b3be3b8e6dea3ce156b2c72ec0dc28353bdd677f9bca41e20c92960dfc"
+    },
+    {
+      "path": "cases/png-partial-truncated-idat/ground-truth.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-partial-truncated-idat/input.bin",
+      "byteLength": 834,
+      "sha256": "624d56c9907e26563512343a9630464bb0e69b9ec236d6d7e1f3eeb7afa4108e"
+    },
+    {
+      "path": "cases/png-partial-truncated-idat/result.json",
+      "byteLength": 790,
+      "sha256": "a463d11a6b1c63c9b40de6e9244ff71ed29bb9a0a985a76528b40ad7fb103097"
+    },
+    {
+      "path": "cases/zip-full-missing-directory/ground-truth.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-full-missing-directory/input.bin",
+      "byteLength": 546,
+      "sha256": "85b69ed82d9ed391c9d8a2daadcaff2d204f9ea88b13e6b31765b67dcf2671bb"
+    },
+    {
+      "path": "cases/zip-full-missing-directory/result.json",
+      "byteLength": 796,
+      "sha256": "8aa8cbf7c13cd79e188eedd90ef43bd86ad0f521bd4de020df18bd19a95f879c"
+    },
+    {
+      "path": "cases/zip-partial-truncated-deflate/ground-truth.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-partial-truncated-deflate/input.bin",
+      "byteLength": 399,
+      "sha256": "276ae28d4b1a9ba37765320decd44a50d7c06d13b30d829bb45dad69ca40030d"
+    },
+    {
+      "path": "cases/zip-partial-truncated-deflate/result.json",
+      "byteLength": 801,
+      "sha256": "dcb0445fe15fab8f346529382f3a69ba161ff3360ba1c74f2f996e0d31176d52"
+    },
+    {
+      "path": "corpus.json",
+      "byteLength": 6640,
+      "sha256": "26501851cf41a08b9e63cd6ea98cff16ac1cb17826dc6827fdc326e98c3bed63"
+    },
+    {
+      "path": "guided-observations.json",
+      "byteLength": 2833,
+      "sha256": "9af60cbe551253376af9a78dff0d3898efef704c275a455ed027c49323115590"
+    },
+    {
+      "path": "plan.json",
+      "byteLength": 1523,
+      "sha256": "61ddfed4b2d895bd6cea3c46b51eec1bcd3c2062a8c27464e9f68ad4eaaa2ecc"
+    },
+    {
+      "path": "protocol.json",
+      "byteLength": 1586,
+      "sha256": "93c1044fe902f372a25c8215448218e30fe215bad25cab5ecaba0ed950e4f8b5"
+    },
+    {
+      "path": "run.json",
+      "byteLength": 10645,
+      "sha256": "db21ac6537ab6cd7275da33705c7e3050f0e95387a258ea67d513c0a6b8874cb"
+    },
+    {
+      "path": "tool.json",
+      "byteLength": 759,
+      "sha256": "bef74e55c02c9c202a88bf305a84f5c74c7ee3e7c24bd951a2e9ea50a83fa1cc"
+    }
+  ],
+  "signature": null,
+  "signatureStatus": "unsigned",
+  "rootDigest": "d1a2e48d67fba9989631827a3f4c21753f9d9393a6fd42b00c6f295c2296c02f"
+}

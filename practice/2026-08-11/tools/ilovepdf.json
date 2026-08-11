@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "ilovepdf-repair-pdf-web-2026-08-11",
+  "vendor": "iLovePDF",
+  "product": "Repair PDF",
+  "version": "Web service observed 2026-08-11",
+  "platform": "Operator-controlled browser session",
+  "synthetic": false,
+  "acquisition": { "source": "https://www.ilovepdf.com/repair-pdf" },
+  "adapter": { "kind": "guided", "instructions": ["Confirm the case ID and input hash.", "Attempt supported PDF cases through the free web interface.", "Save every downloadable repaired file without renaming its contents.", "Record non-PDF cases as unavailable because this product declares PDF-only repair."] }
+}

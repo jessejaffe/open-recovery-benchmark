@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.3.0"
+  },
+  "protocol": {
+    "id": "practice-recovery-rehearsal-2026-08-11",
+    "digest": "d9d4ef5ead4230b2b8828d5d4aaa35fec0635cfba82cf3b7250121985849a38c"
+  },
+  "corpus": {
+    "id": "practice-eight-case-recovery-corpus-2026-08-11",
+    "digest": "c1131f0914f4246cd566aa41e0617be5360624121e432f8c48d72029a399820a"
+  },
+  "tool": {
+    "id": "repairit-online-repair-web-2026-08-11",
+    "digest": "cee05a38474f8576f4e77d0063b970f4f0aae179851f0ba3718892ea7bd34348",
+    "vendor": "Wondershare",
+    "product": "Repairit Online",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-full-missing-eof",
+    "pdf-partial-truncated-stream",
+    "jpeg-full-corrupt-segment-length",
+    "jpeg-partial-corrupt-entropy",
+    "png-full-missing-iend",
+    "png-partial-truncated-idat",
+    "zip-full-missing-directory",
+    "zip-partial-truncated-deflate"
+  ],
+  "planDigest": "cec944b964e46f68218f2865c922e2a9bed95edf119dcd27670407e48bf27aea"
+}

@@ -1,0 +1,36 @@
+{
+  "caseId": "pdf-full-missing-eof",
+  "category": "damaged-full-restoration",
+  "format": "pdf",
+  "damageClass": "missing-final-eof",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T16:48:05Z",
+    "productMessage": "Repair completed. Sign in to EaseUS Fixo.",
+    "operatorNote": "The browser tier reported completion but required Google, Facebook, Twitter, or email sign-in before releasing the output. No account was supplied, so the technical result is unscored.",
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/pdf-full-missing-eof/attachments/01.png",
+        "byteLength": 65689,
+        "sha256": "2fc167c67fb241fadd3686594735bf55aa4335b5545671bcc27d64708c68cea8"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

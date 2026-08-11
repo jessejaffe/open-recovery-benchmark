@@ -1,0 +1,32 @@
+{
+  "$schema": "../../benchmark-kit/schemas/protocol.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-protocol",
+  "id": "practice-recovery-rehearsal-2026-08-11",
+  "title": "Unofficial recovery benchmark backend rehearsal",
+  "publicClaim": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
+  "competitiveSummaryEligible": false,
+  "frozenAt": "2026-08-11T16:39:35Z",
+  "inclusionRules": [
+    "Run every declared case in manifest order for StillOpen.",
+    "For guided web tools, attempt every supported declared format and record unsupported formats explicitly.",
+    "Preserve a complete recovered output whenever the free or freemium workflow makes it downloadable.",
+    "Score product outputs only with the benchmark-owned validator."
+  ],
+  "exclusionRules": [
+    "These project-authored practice cases may not support an official neutrality claim.",
+    "Paid-only tools are outside this rehearsal.",
+    "Paywalled, maintenance, unavailable, unsupported, and no-output outcomes are visible but may not be represented as technical repair failures.",
+    "Practice results may not be promoted as Benchmark v1.0 or as a finished public leaderboard."
+  ],
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  }
+}

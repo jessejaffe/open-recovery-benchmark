@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "stillopen-wasm-a90e461-practice",
+  "vendor": "StillOpen",
+  "product": "StillOpen WebAssembly recovery core",
+  "version": "a90e46198c0d835adb14eddf807804e6028c0cd8",
+  "platform": "Node.js host using the released browser WebAssembly artifact",
+  "synthetic": false,
+  "acquisition": {
+    "source": "GitHub revision a90e46198c0d835adb14eddf807804e6028c0cd8; public/wasm/stillopen-core.wasm"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "{node}",
+    "args": [
+      "../../../../C++/benchmark-kit/adapters/stillopen-recovery.mjs",
+      "--input",
+      "{input}",
+      "--output",
+      "{output}"
+    ],
+    "outputFile": "recovered.bin",
+    "exitCodeDisposition": {
+      "2": "refusal"
+    }
+  }
+}

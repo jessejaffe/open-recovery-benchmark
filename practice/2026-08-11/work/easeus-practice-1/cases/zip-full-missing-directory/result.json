@@ -1,0 +1,30 @@
+{
+  "caseId": "zip-full-missing-directory",
+  "category": "damaged-full-restoration",
+  "format": "zip",
+  "damageClass": "missing-central-directory",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T16:52:30Z",
+    "productMessage": "Sign in to EaseUS Fixo.",
+    "operatorNote": "The ZIP was accepted and identified as damaged, but the access gate prevented processing and no output was released.",
+    "output": null,
+    "attachments": []
+  },
+  "validation": {
+    "validator": "zip-entry-bytes-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.3.0"
+  },
+  "protocol": {
+    "id": "practice-recovery-rehearsal-2026-08-11",
+    "digest": "d9d4ef5ead4230b2b8828d5d4aaa35fec0635cfba82cf3b7250121985849a38c"
+  },
+  "corpus": {
+    "id": "practice-eight-case-recovery-corpus-2026-08-11",
+    "digest": "c1131f0914f4246cd566aa41e0617be5360624121e432f8c48d72029a399820a"
+  },
+  "tool": {
+    "id": "zpdf-repair-pdf-web-2026-08-11",
+    "digest": "4bda10e93755e776b0931bac7cf53f135e2886cac4e6a4a9831af441af897959",
+    "vendor": "zPDF",
+    "product": "Repair PDF",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-full-missing-eof",
+    "pdf-partial-truncated-stream",
+    "jpeg-full-corrupt-segment-length",
+    "jpeg-partial-corrupt-entropy",
+    "png-full-missing-iend",
+    "png-partial-truncated-idat",
+    "zip-full-missing-directory",
+    "zip-partial-truncated-deflate"
+  ],
+  "planDigest": "6c18a366aa31ab9d99d27cf8c9d822d421b2bc519c2c6d775028baec9565b2b8"
+}

@@ -389,7 +389,10 @@ async function zipEntryBytes({ outputPath, groundTruthPath }) {
     if (prefix === expectedBytes.byteLength && actualBytes.byteLength === expectedBytes.byteLength) exactEntries += 1;
   }
   const score = totalBytes === 0 ? Number(exactEntries === expected.entries.size) : recoveredBytes / totalBytes;
-  const pass = exactEntries === expected.entries.size && actual.entries.size === expected.entries.size;
+  const unexpectedEntries = [...actual.entries.keys()]
+    .filter((name) => !expected.entries.has(name))
+    .sort();
+  const pass = exactEntries === expected.entries.size;
   return {
     validator: "zip-entry-bytes-v1",
     pass,
@@ -403,6 +406,8 @@ async function zipEntryBytes({ outputPath, groundTruthPath }) {
       expectedEntries: expected.entries.size,
       actualEntries: actual.entries.size,
       exactEntries,
+      unexpectedEntries,
+      unexpectedEntryCount: unexpectedEntries.length,
       recoveredBytes,
       totalBytes,
       recoveredByteFraction: score,

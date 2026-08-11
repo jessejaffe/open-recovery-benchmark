@@ -1,0 +1,47 @@
+{
+  "caseId": "pdf-partial-truncated-stream",
+  "category": "damaged-partial-restoration",
+  "format": "pdf",
+  "damageClass": "truncated-page-content-stream",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T16:59:37.724Z",
+    "endedAt": "2026-08-11T16:59:37.821Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/pdf-partial-truncated-stream/stdout.txt",
+    "stderr": "cases/pdf-partial-truncated-stream/stderr.txt",
+    "output": {
+      "path": "cases/pdf-partial-truncated-stream/tool-output/recovered.bin",
+      "byteLength": 974,
+      "sha256": "17ea0c15e9bfc6987f0ec384ca99fd304a940c30e66caf069b19bc87230631d8"
+    }
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "score": 0.6666666666666666,
+    "recoveredUnits": 2,
+    "totalUnits": 3,
+    "unit": "exact-render-and-text-page",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedPageCount": 3,
+      "actualPageCount": 2,
+      "pageCount": false,
+      "pageDimensions": false,
+      "exactPageRenders": false,
+      "exactExtractedText": false,
+      "matchingPages": 2,
+      "pageRecoveryFraction": 0.6666666666666666
+    }
+  },
+  "score": 0.6666666666666666,
+  "disposition": "verified-partial"
+}

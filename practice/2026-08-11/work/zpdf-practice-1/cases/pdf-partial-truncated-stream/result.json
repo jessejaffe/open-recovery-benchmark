@@ -1,0 +1,36 @@
+{
+  "caseId": "pdf-partial-truncated-stream",
+  "category": "damaged-partial-restoration",
+  "format": "pdf",
+  "damageClass": "truncated-page-content-stream",
+  "eligible": true,
+  "observation": {
+    "disposition": "refusal",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "refusal",
+    "attemptedAt": "2026-08-11T16:45:58Z",
+    "productMessage": "Unable to repair the PDF file.",
+    "operatorNote": "Repeated independently so the product message could be assigned to this case without relying on the earlier batch UI.",
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/pdf-partial-truncated-stream/attachments/01.png",
+        "byteLength": 72173,
+        "sha256": "155460d1ba3331110a0db605fb8e102e02d4a93462a6baeab1d28d14002bf782"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "pdf-render-text-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "refusal"
+}

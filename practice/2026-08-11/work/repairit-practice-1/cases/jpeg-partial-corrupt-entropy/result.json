@@ -1,0 +1,53 @@
+{
+  "caseId": "jpeg-partial-corrupt-entropy",
+  "category": "damaged-partial-restoration",
+  "format": "jpeg",
+  "damageClass": "corrupt-entropy-coded-byte",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T16:50:05Z",
+    "productMessage": "Successful",
+    "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output and candidate 2 is retained as an attachment; both independently decode to the same benchmark score.",
+    "output": {
+      "path": "cases/jpeg-partial-corrupt-entropy/operator-output.bin",
+      "byteLength": 585,
+      "sha256": "dca7020744af0de33266d91e3ecfc729cfbd6bce1299a7ccecd1f8022324faf8"
+    },
+    "attachments": [
+      {
+        "path": "cases/jpeg-partial-corrupt-entropy/attachments/01.jpg",
+        "byteLength": 549,
+        "sha256": "9bba0cc002dedee47bb45283d8ef0dc4d96eb13b22c612e6dd4ee2c81c4e93a4"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": 384,
+    "unit": "exact-decoded-pixel",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 24,
+      "expectedHeight": 16,
+      "actualWidth": 24,
+      "actualHeight": 16,
+      "dimensions": true,
+      "expectedRgbaSha256": "d61740c74223eef914678774c4ef4ca42ece9bfc4a825d0ca87645da52aedab2",
+      "actualRgbaSha256": "992f8078765826f709a37466ecb7594fd7e4f01cf0287da8d7a6025f0f59f9b5",
+      "exactDecodedPixels": false,
+      "matchingPixels": 0,
+      "totalPixels": 384,
+      "exactPixelFraction": 0,
+      "normalizedChannelSimilarity": 0.8995838439542484
+    }
+  },
+  "score": 0,
+  "disposition": "changed-output"
+}

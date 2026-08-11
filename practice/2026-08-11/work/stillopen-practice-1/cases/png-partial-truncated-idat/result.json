@@ -1,0 +1,51 @@
+{
+  "caseId": "png-partial-truncated-idat",
+  "category": "damaged-partial-restoration",
+  "format": "png",
+  "damageClass": "truncated-image-data",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "startedAt": "2026-08-11T16:59:38.099Z",
+    "endedAt": "2026-08-11T16:59:38.184Z",
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/png-partial-truncated-idat/stdout.txt",
+    "stderr": "cases/png-partial-truncated-idat/stderr.txt",
+    "output": {
+      "path": "cases/png-partial-truncated-idat/tool-output/recovered.bin",
+      "byteLength": 1013,
+      "sha256": "f44ad247a595d588755c539a5b5bd1620696aeeba69d0713979318db610fbff7"
+    }
+  },
+  "validation": {
+    "validator": "raster-rgba-v1",
+    "pass": false,
+    "score": 0.5,
+    "recoveredUnits": 256,
+    "totalUnits": 512,
+    "unit": "exact-decoded-pixel",
+    "checks": {
+      "groundTruthReadable": true,
+      "outputReadable": true,
+      "expectedWidth": 32,
+      "expectedHeight": 16,
+      "actualWidth": 32,
+      "actualHeight": 16,
+      "dimensions": true,
+      "expectedRgbaSha256": "38e12d74136d6383f34eb0d4d2c11bf629a25e4284f2a0c33b4772da37b2c2e9",
+      "actualRgbaSha256": "65f7302e9d51cebbeac9fba20649019eb86e2c0ed4d7053f6404150ff8971a45",
+      "exactDecodedPixels": false,
+      "matchingPixels": 256,
+      "totalPixels": 512,
+      "exactPixelFraction": 0.5,
+      "normalizedChannelSimilarity": 0.9236940870098039
+    }
+  },
+  "score": 0.5,
+  "disposition": "verified-partial"
+}

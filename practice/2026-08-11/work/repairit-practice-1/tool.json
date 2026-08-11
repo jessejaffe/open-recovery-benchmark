@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "repairit-online-repair-web-2026-08-11",
+  "vendor": "Wondershare",
+  "product": "Repairit Online",
+  "version": "Web service observed 2026-08-11",
+  "platform": "Operator-controlled browser session",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://repairit.wondershare.com/app/file-repair and associated online photo repair path"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Confirm the case ID and input hash.",
+      "Use the matching free online file or photo repair path.",
+      "Save every complete downloadable repaired file.",
+      "Record maintenance, upload rejection, or unsupported formats as unavailable.",
+      "Record a withheld complete output as paywalled, not as a technical failure."
+    ]
+  }
+}
