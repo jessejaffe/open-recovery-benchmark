@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-attestation",
+  "runId": "repairit-photo-healthy-controls-1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "cases/jpeg-healthy-no-repair/attachments/01.png",
+      "byteLength": 61103,
+      "sha256": "a020ef915d172acb01c16ba7bbbb9d53a16b1c979744a5eda629527584aeaeba"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/attachments/02.png",
+      "byteLength": 51824,
+      "sha256": "cbb561c0a382b66edf5f4590c86f29ffc2fc190986451008c026cfa4bc7bdd0e"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/attachments/03.png",
+      "byteLength": 77399,
+      "sha256": "d5faa68c9767726f4bf6a2cc553ab1148069f1a0335e4b2a47ae2511cfc48718"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/ground-truth.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/input.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/result.json",
+      "byteLength": 1784,
+      "sha256": "a8a5c0cfec8d738ffd5afd50f88d643ac45f8beec5b28537778451d223b23e59"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/input.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/result.json",
+      "byteLength": 964,
+      "sha256": "7d90d753ea091ce8b9d43ebae980aae60496a59aeebbd185c88960ee8921ed6c"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/attachments/01.png",
+      "byteLength": 77399,
+      "sha256": "d5faa68c9767726f4bf6a2cc553ab1148069f1a0335e4b2a47ae2511cfc48718"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/input.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/result.json",
+      "byteLength": 1395,
+      "sha256": "63ca71a9da2f7aa75b96458b0308f4950b9d54194cd26b8d7219eb7ae241de82"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/ground-truth.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/input.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/result.json",
+      "byteLength": 964,
+      "sha256": "99532570ee54fb75a81b4ae22a35ddc7c2d34d18ffdcb7a74f930d6e66ac407f"
+    },
+    {
+      "path": "corpus.json",
+      "byteLength": 3452,
+      "sha256": "ceb17e1a09d8b9ff13db2965f4de203651999005d0c493b0900a1762e6af5158"
+    },
+    {
+      "path": "guided-observations.json",
+      "byteLength": 2930,
+      "sha256": "3a9c90264ed2d30e88178349da9cb6a4ddaba680dbd4ef1a0c7107de2f2e605c"
+    },
+    {
+      "path": "plan.json",
+      "byteLength": 1510,
+      "sha256": "6a53740b027da63da3b7acb64b72f4c971b30d00e2097118c4783f6769976b31"
+    },
+    {
+      "path": "protocol.json",
+      "byteLength": 1772,
+      "sha256": "07f3bd19b593f7889f5fba0e332940f52027f44aa311f9625bddbeb1b9aa8eaf"
+    },
+    {
+      "path": "run.json",
+      "byteLength": 8215,
+      "sha256": "e9bfb2848b1b43380d641b0fabc7d646f6227060587b669fae0970ba3154a7d4"
+    },
+    {
+      "path": "tool.json",
+      "byteLength": 953,
+      "sha256": "2821954fbf6e1e0d80d42743c01e42195ef2069aa97935687b50aa1e4426701f"
+    }
+  ],
+  "signature": null,
+  "signatureStatus": "unsigned",
+  "rootDigest": "29cbbb23e3f506c2eef75ea97d85f7ea7432232a3287dbfd6870b84532d47346"
+}

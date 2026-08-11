@@ -9,10 +9,10 @@ import { missingOutputValidation, validateCapturedOutput } from "./validators.mj
 
 const HARNESS = Object.freeze({
   name: "stillopen-open-recovery-benchmark-kit",
-  version: "1.4.0",
+  version: "1.5.0",
 });
 
-const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", "1.2.0", "1.3.0", HARNESS.version]);
+const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", HARNESS.version]);
 const CASE_CATEGORIES = [
   "damaged-full-restoration",
   "damaged-partial-restoration",
@@ -22,6 +22,18 @@ const CASE_CATEGORIES = [
 function safeRunId(value) {
   if (!/^[a-z0-9][a-z0-9._-]{1,99}$/.test(value)) throw new Error("runId is not a portable identifier.");
   return value;
+}
+
+function harnessAtLeast(version, minimum) {
+  const actual = version.split(".").map(Number);
+  const required = minimum.split(".").map(Number);
+  for (let index = 0; index < Math.max(actual.length, required.length); index += 1) {
+    const actualPart = actual[index] ?? 0;
+    const requiredPart = required[index] ?? 0;
+    if (actualPart > requiredPart) return true;
+    if (actualPart < requiredPart) return false;
+  }
+  return true;
 }
 
 function substitute(value, replacements) {
@@ -44,7 +56,28 @@ function guidedTerminalOutcome(productOutcome, hasOutput) {
   return { disposition, terminalOutcomeEligible: disposition === "output-produced" };
 }
 
+function healthyNoActionValidation(item, hasOutput) {
+  const inputMatchesGroundTruth = item.input.byteLength === item.groundTruth.byteLength
+    && item.input.sha256 === item.groundTruth.sha256;
+  const pass = item.category === "healthy-control" && inputMatchesGroundTruth && !hasOutput;
+  return {
+    validator: "healthy-control-no-action-v1",
+    pass,
+    score: pass ? 1 : 0,
+    recoveredUnits: pass ? 1 : 0,
+    totalUnits: 1,
+    unit: "healthy-file-left-unchanged",
+    checks: {
+      healthyControl: item.category === "healthy-control",
+      inputMatchesGroundTruth,
+      explicitNoAction: true,
+      outputPresent: hasOutput,
+    },
+  };
+}
+
 function scoredDisposition(validation, terminal) {
+  if (terminal.disposition === "healthy-no-action") return validation.pass ? "verified-pass" : "incorrect-no-action";
   if (!terminal.terminalOutcomeEligible) return terminal.disposition;
   if (validation.pass) return "verified-pass";
   return validation.score > 0 ? "verified-partial" : "changed-output";
@@ -52,6 +85,11 @@ function scoredDisposition(validation, terminal) {
 
 function scoringEligible(disposition) {
   return !["unavailable", "paywalled"].includes(disposition);
+}
+
+function scoreCase(validation, terminal) {
+  if (terminal.disposition === "healthy-no-action") return validation.score;
+  return terminal.terminalOutcomeEligible ? validation.score : 0;
 }
 
 async function captureProcess({ executable, args, cwd, timeoutMs, maxCapturedBytes }) {
@@ -143,6 +181,19 @@ function makePlan(protocol, corpus, tool, environment = {
   }
   if (harness.version === "1.0.0" && corpus.cases.some((item) => item.groundTruth.validator !== "exact-sha256-v1")) {
     throw new Error("Benchmark harness 1.0.0 supports only exact-sha256-v1.");
+  }
+  if (harnessAtLeast(harness.version, "1.5.0") && corpus.cases.some((item) => item.category === "healthy-control")) {
+    if (protocol.scoring.healthyNoActionDisposition !== "healthy-no-action"
+      || protocol.scoring.healthyOutputRequirement !== "exact-byte-identity") {
+      throw new Error("Harness 1.5 healthy controls require explicit no-action and exact-byte output scoring rules.");
+    }
+    for (const item of corpus.cases.filter((candidate) => candidate.category === "healthy-control")) {
+      if (item.groundTruth.validator !== "exact-sha256-v1"
+        || item.input.byteLength !== item.groundTruth.byteLength
+        || item.input.sha256 !== item.groundTruth.sha256) {
+        throw new Error(`Healthy control ${item.id} must use byte-identical input and ground truth with exact-sha256-v1.`);
+      }
+    }
   }
   const planBody = {
     schemaVersion: 1,
@@ -323,7 +374,9 @@ export async function executeBenchmark({ protocolPath, corpusPath, toolPath, wor
     }
     const terminal = commandTerminalOutcome(tool, processResult, Boolean(output));
 
-    const validation = output
+    const validation = terminal.disposition === "healthy-no-action"
+      ? healthyNoActionValidation(item, Boolean(output))
+      : output
       ? await validateCapturedOutput({
           validator: item.groundTruth.validator,
           outputPath: outputEvidence,
@@ -354,7 +407,7 @@ export async function executeBenchmark({ protocolPath, corpusPath, toolPath, wor
         output,
       },
       validation,
-      score: terminal.terminalOutcomeEligible ? validation.score : 0,
+      score: scoreCase(validation, terminal),
       disposition,
     };
     await writeJson(path.join(caseRoot, "result.json"), result);
@@ -419,7 +472,10 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
     if (inputAfterCapture.byteLength !== item.input.byteLength || inputAfterCapture.sha256 !== item.input.sha256) {
       throw new Error(`case ${item.id} input changed during guided evidence capture.`);
     }
-    const validation = output
+    const terminal = guidedTerminalOutcome(recorded.productOutcome, Boolean(output));
+    const validation = terminal.disposition === "healthy-no-action"
+      ? healthyNoActionValidation(item, Boolean(output))
+      : output
       ? await validateCapturedOutput({
           validator: item.groundTruth.validator,
           outputPath: resolveContained(runRoot, output.path, "guided output evidence"),
@@ -428,7 +484,6 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
           groundTruth: item.groundTruth,
         })
       : missingOutputValidation(item.groundTruth.validator);
-    const terminal = guidedTerminalOutcome(recorded.productOutcome, Boolean(output));
     const disposition = scoredDisposition(validation, terminal);
     const result = {
       caseId: item.id,
@@ -448,7 +503,7 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
         attachments,
       },
       validation,
-      score: terminal.terminalOutcomeEligible ? validation.score : 0,
+      score: scoreCase(validation, terminal),
       disposition,
     };
     await writeJson(path.join(caseRoot, "result.json"), result);
@@ -515,22 +570,6 @@ export async function verifyRun(runRoot) {
       throw new Error(`Case input or ground truth does not match the frozen corpus for ${item.caseId}.`);
     }
     let expectedValidation;
-    if (item.observation.output) {
-      const actualOutput = await hashFile(resolveContained(runRoot, item.observation.output.path, "case output evidence"));
-      if (actualOutput.byteLength !== item.observation.output.byteLength || actualOutput.sha256 !== item.observation.output.sha256) {
-        throw new Error(`Case output record does not match captured evidence for ${item.caseId}.`);
-      }
-      expectedValidation = await validateCapturedOutput({
-        validator: frozenCase.groundTruth.validator,
-        outputPath: resolveContained(runRoot, item.observation.output.path, "case output evidence"),
-        output: actualOutput,
-        groundTruthPath: resolveContained(runRoot, `cases/${item.caseId}/ground-truth.bin`, "case ground-truth evidence"),
-        groundTruth: frozenCase.groundTruth,
-      });
-    } else {
-      expectedValidation = missingOutputValidation(frozenCase.groundTruth.validator);
-    }
-    if (canonicalize(item.validation) !== canonicalize(expectedValidation)) throw new Error(`Independent validation record is inconsistent for ${item.caseId}.`);
     let expectedTerminal;
     if (tool.adapter.kind === "command") {
       if (typeof item.observation.timedOut !== "boolean"
@@ -567,6 +606,27 @@ export async function verifyRun(runRoot) {
       }
       expectedTerminal = guidedTerminalOutcome(recorded.productOutcome, Boolean(item.observation.output));
     }
+    let actualOutput = null;
+    if (item.observation.output) {
+      actualOutput = await hashFile(resolveContained(runRoot, item.observation.output.path, "case output evidence"));
+      if (actualOutput.byteLength !== item.observation.output.byteLength || actualOutput.sha256 !== item.observation.output.sha256) {
+        throw new Error(`Case output record does not match captured evidence for ${item.caseId}.`);
+      }
+    }
+    if (expectedTerminal.disposition === "healthy-no-action") {
+      expectedValidation = healthyNoActionValidation(frozenCase, Boolean(item.observation.output));
+    } else if (actualOutput) {
+      expectedValidation = await validateCapturedOutput({
+        validator: frozenCase.groundTruth.validator,
+        outputPath: resolveContained(runRoot, item.observation.output.path, "case output evidence"),
+        output: actualOutput,
+        groundTruthPath: resolveContained(runRoot, `cases/${item.caseId}/ground-truth.bin`, "case ground-truth evidence"),
+        groundTruth: frozenCase.groundTruth,
+      });
+    } else {
+      expectedValidation = missingOutputValidation(frozenCase.groundTruth.validator);
+    }
+    if (canonicalize(item.validation) !== canonicalize(expectedValidation)) throw new Error(`Independent validation record is inconsistent for ${item.caseId}.`);
     if (item.observation.disposition !== expectedTerminal.disposition
       || item.observation.terminalOutcomeEligible !== expectedTerminal.terminalOutcomeEligible) {
       throw new Error(`Terminal outcome semantics are inconsistent for ${item.caseId}.`);
@@ -574,7 +634,7 @@ export async function verifyRun(runRoot) {
     if (item.eligible !== scoringEligible(expectedTerminal.disposition)) {
       throw new Error(`Scoring eligibility is inconsistent for ${item.caseId}.`);
     }
-    const expectedScore = expectedTerminal.terminalOutcomeEligible ? expectedValidation.score : 0;
+    const expectedScore = scoreCase(expectedValidation, expectedTerminal);
     if (item.score !== expectedScore) throw new Error(`Recovery score is inconsistent for ${item.caseId}.`);
     const expectedDisposition = scoredDisposition(expectedValidation, expectedTerminal);
     if (item.disposition !== expectedDisposition) throw new Error(`Scored disposition is inconsistent for ${item.caseId}.`);

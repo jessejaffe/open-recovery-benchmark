@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "easeus-healthy-controls-1",
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "title": "Unofficial healthy-file control addendum",
+    "publicClaim": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "title": "Four intact PDF, JPEG, PNG, and ZIP controls",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "easeus-online-repair-web-2026-08-11",
+    "digest": "9c671d602876a69eef0a3c46e0b0095b60ce4d68059496edacbdcb89a42d3454",
+    "vendor": "EaseUS",
+    "product": "Online File Repair",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "planDigest": "58b4f8a6eecd829b775ad316bc40ae900cf6e68487423790cdd3cef5fe312d1a",
+  "claimBoundary": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+  "cases": [
+    {
+      "caseId": "pdf-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "pdf",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:48:46Z",
+        "productMessage": "Sign in to EaseUS Fixo.",
+        "operatorNote": "EaseUS accepted the intact PDF and labeled it 'Damaged file detected', but required an account when repair was requested. No technical result or score is claimed.",
+        "accessConstraint": {
+          "kind": "account-required",
+          "stage": "before-processing",
+          "scope": "product-path",
+          "note": "The false damage diagnosis is preserved as an observation, but the account gate keeps the case unscored."
+        },
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/01.png",
+            "byteLength": 102127,
+            "sha256": "19863b33beeeb054f91539ded2262a2f8e5588ae49221b89a6ca9cb0e0ffa664"
+          },
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/02.png",
+            "byteLength": 96190,
+            "sha256": "d1e4eb4622cd52cf5b4843b20a704d336cdc2301776e6b978950d5b116bdd4b5"
+          },
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/03.png",
+            "byteLength": 70398,
+            "sha256": "aca3ae2969c47c1c1bceea825879c22b8c098b9ada0056221de9047b22cb7d40"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "jpeg-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "jpeg",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:48:46Z",
+        "productMessage": "Sign in to EaseUS Fixo.",
+        "operatorNote": "Not uploaded after the same-day photo-repair path had already established the same account requirement before processing; no technical result is claimed.",
+        "accessConstraint": {
+          "kind": "account-required",
+          "stage": "before-processing",
+          "scope": "product-path"
+        },
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/jpeg-healthy-no-repair/attachments/01.png",
+            "byteLength": 65533,
+            "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "png-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "png",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:48:46Z",
+        "productMessage": "Sign in to EaseUS Fixo.",
+        "operatorNote": "Not uploaded after the same-day photo-repair path had already established the same account requirement before processing; no technical result is claimed.",
+        "accessConstraint": {
+          "kind": "account-required",
+          "stage": "before-processing",
+          "scope": "product-path"
+        },
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/png-healthy-no-repair/attachments/01.png",
+            "byteLength": 65533,
+            "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "zip-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "zip",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:48:46Z",
+        "productMessage": "Sign in to EaseUS Fixo.",
+        "operatorNote": "Not uploaded after the healthy PDF established an account requirement on the same document-and-archive repair path; no technical result is claimed.",
+        "accessConstraint": {
+          "kind": "account-required",
+          "stage": "before-processing",
+          "scope": "product-path"
+        },
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/zip-healthy-no-repair/attachments/01.png",
+            "byteLength": 70398,
+            "sha256": "aca3ae2969c47c1c1bceea825879c22b8c098b9ada0056221de9047b22cb7d40"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    }
+  ],
+  "summary": {
+    "declaredCases": 4,
+    "eligibleCases": 0,
+    "unscoredCases": 4,
+    "verifiedPasses": 0,
+    "verifiedPartials": 0,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 4,
+    "errors": 0,
+    "meanRecoveryScore": null,
+    "categoryScores": {
+      "damaged-full-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "damaged-partial-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "healthy-control": {
+        "cases": 4,
+        "eligibleCases": 0,
+        "unscoredCases": 4,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      }
+    },
+    "competitiveSummaryEligible": false
+  }
+}

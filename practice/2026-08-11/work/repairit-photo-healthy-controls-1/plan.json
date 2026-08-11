@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.5.0"
+  },
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "repairit-online-photo-web-healthy-controls-2026-08-11",
+    "digest": "20a77bacea62432193ec634ab826e4eb7d5f97dd16ef8180f8932ca5a69c6377",
+    "vendor": "Wondershare",
+    "product": "Repairit Online Photo",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-healthy-no-repair",
+    "jpeg-healthy-no-repair",
+    "png-healthy-no-repair",
+    "zip-healthy-no-repair"
+  ],
+  "planDigest": "4e45653f06ea839d7a8168975ec22ee903a75530a2a29187adf610fe4d38c51a"
+}

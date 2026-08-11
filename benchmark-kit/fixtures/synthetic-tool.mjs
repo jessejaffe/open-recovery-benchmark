@@ -6,7 +6,14 @@ const flags = Object.fromEntries(Array.from({ length: Math.floor(process.argv.sl
 }));
 
 if (!flags.mode || !flags.input || !flags.output) throw new Error("mode, input, and output are required.");
-if (flags.mode === "refusal-case") {
+if (flags.mode === "healthy-output") {
+  await writeFile(flags.output, await readFile(flags.input), { flag: "wx" });
+  process.stdout.write("Fixture product incorrectly reports no action after creating an output.\n");
+  process.exitCode = 3;
+} else if (flags.mode === "healthy-case") {
+  process.stdout.write("Fixture product reports that the healthy input needs no action.\n");
+  process.exitCode = 3;
+} else if (flags.mode === "refusal-case") {
   process.stderr.write("Fixture product refused the input and produced no output.\n");
   process.exitCode = 2;
 } else {

@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "ilovepdf-healthy-controls-1",
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "title": "Unofficial healthy-file control addendum",
+    "publicClaim": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "title": "Four intact PDF, JPEG, PNG, and ZIP controls",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "ilovepdf-repair-pdf-web-2026-08-11",
+    "digest": "6e323b8f22d1431ecf7868d396df1b934e89e30d2fa532e738b2c24bb99cb3e1",
+    "vendor": "iLovePDF",
+    "product": "Repair PDF",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "planDigest": "e8bc3af960012c48db1be6690c6cb7821f9982b4f5e759416a78782ee9cacfb0",
+  "claimBoundary": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+  "cases": [
+    {
+      "caseId": "pdf-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "pdf",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": true,
+      "observation": {
+        "disposition": "refusal",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "refusal",
+        "attemptedAt": "2026-08-11T17:46:40Z",
+        "productMessage": "Oh no! We couldn't process your files. This file has not been processed because it was damaged or we were unable to read it.",
+        "operatorNote": "iLovePDF accepted the intact PDF but displayed its Damaged/Corrupted File error page and produced no output.",
+        "accessConstraint": null,
+        "output": null,
+        "attachments": [
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/01.png",
+            "byteLength": 53751,
+            "sha256": "59a8f5aa65877e82145d138c8b215352317b848c4c7ebf5ff79d2289967f90b0"
+          },
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/02.png",
+            "byteLength": 47450,
+            "sha256": "19e22fb91107eb85606a19efab6667655578ac10626027e56bc1e94e8f28fa4b"
+          },
+          {
+            "path": "cases/pdf-healthy-no-repair/attachments/03.png",
+            "byteLength": 67093,
+            "sha256": "d867635db52cf937e32d643aedd60f19a9eac70a62c9846d56c511268917ccf3"
+          }
+        ]
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "refusal"
+    },
+    {
+      "caseId": "jpeg-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "jpeg",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:46:40Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "png-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "png",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:46:40Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    },
+    {
+      "caseId": "zip-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "zip",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": false,
+      "observation": {
+        "disposition": "unavailable",
+        "terminalOutcomeEligible": false,
+        "productOutcome": "unavailable",
+        "attemptedAt": "2026-08-11T17:46:40Z",
+        "productMessage": "Repair PDF accepts PDF files only.",
+        "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
+        "output": null,
+        "attachments": []
+      },
+      "validation": {
+        "validator": "exact-sha256-v1",
+        "pass": false,
+        "score": 0,
+        "recoveredUnits": 0,
+        "totalUnits": null,
+        "unit": null,
+        "checks": {
+          "outputPresent": false
+        }
+      },
+      "score": 0,
+      "disposition": "unavailable"
+    }
+  ],
+  "summary": {
+    "declaredCases": 4,
+    "eligibleCases": 1,
+    "unscoredCases": 3,
+    "verifiedPasses": 0,
+    "verifiedPartials": 0,
+    "changedOutputs": 0,
+    "refusals": 1,
+    "unavailable": 3,
+    "errors": 0,
+    "meanRecoveryScore": 0,
+    "categoryScores": {
+      "damaged-full-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "damaged-partial-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "healthy-control": {
+        "cases": 4,
+        "eligibleCases": 1,
+        "unscoredCases": 3,
+        "meanRecoveryScore": 0,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 1
+      }
+    },
+    "competitiveSummaryEligible": false
+  }
+}

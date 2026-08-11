@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.5.0"
+  },
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "ilovepdf-repair-pdf-web-2026-08-11",
+    "digest": "6e323b8f22d1431ecf7868d396df1b934e89e30d2fa532e738b2c24bb99cb3e1",
+    "vendor": "iLovePDF",
+    "product": "Repair PDF",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-healthy-no-repair",
+    "jpeg-healthy-no-repair",
+    "png-healthy-no-repair",
+    "zip-healthy-no-repair"
+  ],
+  "planDigest": "e8bc3af960012c48db1be6690c6cb7821f9982b4f5e759416a78782ee9cacfb0"
+}

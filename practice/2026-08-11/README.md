@@ -1,7 +1,8 @@
 # Practice benchmark rehearsal — 2026-08-11
 
-This is an explicitly unofficial backend rehearsal. It is not Benchmark v1.0,
-not a neutral corpus, and not eligible for a public competitor ranking.
+This is an explicitly unofficial backend rehearsal with a later healthy-control
+addendum. It is not Benchmark v1.0, not a neutral corpus, and not eligible for a
+public competitor ranking.
 
 The rehearsal answers narrower engineering questions:
 
@@ -14,10 +15,35 @@ The rehearsal answers narrower engineering questions:
 
 ## Scope
 
-The corpus contains eight small project-authored cases: one expected full and
-one expected partial recovery for PDF, JPEG, PNG, and ZIP. It intentionally
-omits healthy controls; the v1 protocol still needs explicit semantics for a
-tool that correctly reports that a healthy file needs no repair.
+The original damaged-file corpus contains eight small project-authored cases:
+one expected full and one expected partial recovery for PDF, JPEG, PNG, and ZIP.
+It intentionally remains frozen without controls so the earlier competitor runs
+are not rewritten. A separate four-case addendum now freezes healthy PDF, JPEG,
+PNG, and ZIP semantics and a StillOpen control run.
+
+## Healthy-control addendum
+
+Harness 1.5 treats a healthy file as a preservation test rather than a recovery
+request. An explicit `healthy-no-action` result with no output receives full
+credit. A produced replacement passes only when its SHA-256 digest and byte
+length exactly match the intact input. A generic refusal, silent no-output,
+error, or changed replacement receives zero.
+
+| Tool | Healthy controls | Explicit no-action | Changed outputs | Mean control score |
+| --- | ---: | ---: | ---: | ---: |
+| StillOpen | 4 / 4 | 4 | 0 | 1.000000 |
+
+The controls and result are in `healthy-controls-corpus.json`,
+`healthy-controls-protocol.json`, `healthy-controls-summary.json`, and
+`work/stillopen-healthy-controls-1/`. The evidence root is
+`e0ff00c1827de5dcfc4ec1334de249884a820ff26d14e2a938b0473f370f30cf`.
+No browser competitor was rerun, so no competitor control result is implied.
+
+The first attempted run exposed an adapter false positive: evidence copies are
+named `input.bin`, and that temporary extension conflicted with the detected
+format. The pinned adapter now classifies the scan using its byte-detected
+format. The final four-case run produces no replacement downloads and verifies
+offline. See [`docs/healthy-controls.md`](../../docs/healthy-controls.md).
 
 Tools in the rehearsal:
 
@@ -105,13 +131,37 @@ archive are preserved as evidence. Both candidate pairs produced identical
 independent scores, but Benchmark v1.0 still needs an explicit general rule for
 products that return multiple alternatives.
 
+## Healthy-file control addendum
+
+The intact PDF, JPEG, PNG, and ZIP controls use stricter semantics than damaged
+recovery cases: an explicit healthy/no-action result passes, and any generated
+replacement must be byte-for-byte identical. Coverage is shown beside the mean.
+
+| Tool surface | Scored / declared | Healthy passes | Eligible zero | Unscored | Mean |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| StillOpen | 4 / 4 | 4 | 0 | 0 | 1.000000 |
+| zPDF Repair PDF | 1 / 4 | 0 | 1 changed output | 3 unsupported | 0.000000 |
+| iLovePDF Repair PDF | 1 / 4 | 0 | 1 refusal | 3 unsupported | 0.000000 |
+| EaseUS Online File Repair | 0 / 4 | 0 | 0 | 4 account-gated | — |
+| Repairit Online Photo | 0 / 4 | 0 | 0 | 2 queued + 2 unsupported | — |
+
+StillOpen left all four intact files alone. zPDF unnecessarily rewrote the
+healthy PDF. iLovePDF rejected that healthy PDF as damaged. EaseUS diagnosed the
+healthy PDF as damaged but required an account before processing, so no score is
+claimed. Repairit's image cases remained unscored after its free path displayed
+a 01:38:38 queue estimate; the session did not wait or install desktop software.
+
+The machine-readable snapshot is `healthy-controls-summary.json`. The exact
+rule and the adapter false positive caught by the first control attempt are
+documented in `../../docs/healthy-controls.md`.
+
 The machine-readable snapshot is in `summary.json`. Every row points to a
 content-addressed run under `work/`, and each run can be verified offline.
 
 ## Backend findings before Benchmark v1.0
 
-1. Add healthy controls and define a correct "no repair needed" outcome before
-   freezing the v1 protocol.
+1. Integrate the verified healthy-control semantics into the eventual combined
+   v1 corpus without rewriting the historical eight-case rehearsal.
 2. Freeze a broader corpus with more damage classes and, where licensing allows,
    externally authored source material. Project-authored damage must remain a
    visible limitation rather than being disguised as neutral.

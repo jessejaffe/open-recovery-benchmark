@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.5.0"
+  },
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "easeus-online-repair-web-2026-08-11",
+    "digest": "9c671d602876a69eef0a3c46e0b0095b60ce4d68059496edacbdcb89a42d3454",
+    "vendor": "EaseUS",
+    "product": "Online File Repair",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-healthy-no-repair",
+    "jpeg-healthy-no-repair",
+    "png-healthy-no-repair",
+    "zip-healthy-no-repair"
+  ],
+  "planDigest": "58b4f8a6eecd829b775ad316bc40ae900cf6e68487423790cdd3cef5fe312d1a"
+}

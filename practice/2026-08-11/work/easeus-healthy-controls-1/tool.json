@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "easeus-online-repair-web-2026-08-11",
+  "vendor": "EaseUS",
+  "product": "Online File Repair",
+  "version": "Web service observed 2026-08-11",
+  "platform": "Operator-controlled browser session",
+  "synthetic": false,
+  "acquisition": {
+    "source": "https://repair.easeus.com/document_repair/ and https://repair.easeus.com/photo_repair/"
+  },
+  "adapter": {
+    "kind": "guided",
+    "instructions": [
+      "Confirm the case ID and input hash.",
+      "Use the matching free online document or photo repair path.",
+      "Save every complete downloadable repaired file.",
+      "Record a withheld complete output as paywalled and preserve the visible product message.",
+      "Record formats rejected by the service as unavailable rather than failed recovery."
+    ]
+  }
+}

@@ -13,6 +13,15 @@ Every corpus case belongs to exactly one of three categories:
   amount must be measured against frozen ground truth.
 - `healthy-control`: unnecessary changes are visible and reduce the score.
 
+Harness 1.5 gives a healthy control full credit in exactly two situations: the
+tool explicitly reports `healthy-no-action` and produces no file, or it returns
+an output that is byte-for-byte identical to the healthy input. A generic
+refusal, error, or silent no-output remains a zero because it does not establish
+that the tool recognized the file as healthy. Every healthy-control corpus entry
+must use the same SHA-256 and byte length for input and ground truth with the
+`exact-sha256-v1` validator. This prevents a re-encoded, metadata-changed, or
+otherwise unnecessary replacement from passing merely because it still opens.
+
 Product messages never decide the score. A benchmark-owned validator compares
 the captured output with frozen ground truth and reports a deterministic value
 from 0 to 1 plus its numerator, denominator, and unit. Exact-byte validation is

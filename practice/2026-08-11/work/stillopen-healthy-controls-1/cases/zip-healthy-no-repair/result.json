@@ -1,0 +1,37 @@
+{
+  "caseId": "zip-healthy-no-repair",
+  "category": "healthy-control",
+  "format": "zip",
+  "damageClass": "none-confirmed-healthy",
+  "eligible": true,
+  "observation": {
+    "disposition": "healthy-no-action",
+    "terminalOutcomeEligible": false,
+    "startedAt": "2026-08-11T17:40:28.934Z",
+    "endedAt": "2026-08-11T17:40:29.019Z",
+    "exitCode": 3,
+    "signal": null,
+    "timedOut": false,
+    "captureTruncated": false,
+    "launchError": null,
+    "stdout": "cases/zip-healthy-no-repair/stdout.txt",
+    "stderr": "cases/zip-healthy-no-repair/stderr.txt",
+    "output": null
+  },
+  "validation": {
+    "validator": "healthy-control-no-action-v1",
+    "pass": true,
+    "score": 1,
+    "recoveredUnits": 1,
+    "totalUnits": 1,
+    "unit": "healthy-file-left-unchanged",
+    "checks": {
+      "healthyControl": true,
+      "inputMatchesGroundTruth": true,
+      "explicitNoAction": true,
+      "outputPresent": false
+    }
+  },
+  "score": 1,
+  "disposition": "verified-pass"
+}

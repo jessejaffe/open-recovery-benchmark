@@ -1,0 +1,52 @@
+{
+  "caseId": "jpeg-healthy-no-repair",
+  "category": "healthy-control",
+  "format": "jpeg",
+  "damageClass": "none-confirmed-healthy",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T17:47:48Z",
+    "productMessage": "High-speed repair limit reached, entering low-speed queue. Current position: 1643. Remaining time: 01:38:38.",
+    "operatorNote": "The free photo path admitted the intact JPEG, but the bounded operator session ended rather than waiting roughly 98 minutes. No output or technical result was available.",
+    "accessConstraint": {
+      "kind": "unknown-unavailable",
+      "stage": "after-upload",
+      "scope": "session",
+      "note": "A long free-service processing queue is not a recovery failure or a payment gate."
+    },
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/jpeg-healthy-no-repair/attachments/01.png",
+        "byteLength": 61103,
+        "sha256": "a020ef915d172acb01c16ba7bbbb9d53a16b1c979744a5eda629527584aeaeba"
+      },
+      {
+        "path": "cases/jpeg-healthy-no-repair/attachments/02.png",
+        "byteLength": 51824,
+        "sha256": "cbb561c0a382b66edf5f4590c86f29ffc2fc190986451008c026cfa4bc7bdd0e"
+      },
+      {
+        "path": "cases/jpeg-healthy-no-repair/attachments/03.png",
+        "byteLength": 77399,
+        "sha256": "d5faa68c9767726f4bf6a2cc553ab1148069f1a0335e4b2a47ae2511cfc48718"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "exact-sha256-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-attestation",
+  "runId": "stillopen-healthy-controls-1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "cases/jpeg-healthy-no-repair/ground-truth.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/input.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/result.json",
+      "byteLength": 993,
+      "sha256": "0f58acb1799b73bf2ee09d61508d127f730f76e86cddaefb89e22c74ac9aa864"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/stdout.txt",
+      "byteLength": 88,
+      "sha256": "01dd7455f3191847c7a724b4696abebf14279eb22493ad8ffd5a8c7e1d65d565"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/input.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/result.json",
+      "byteLength": 989,
+      "sha256": "7c0022c01eeebb0ffa9cbce135f94e01bbad4bb4836127ccb6d069819a9145f2"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/stdout.txt",
+      "byteLength": 87,
+      "sha256": "380e9a64254d2f4aeb50b4ffab1d254721bb6a18a1d83c69975f81de9d075ce5"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/input.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/result.json",
+      "byteLength": 989,
+      "sha256": "b30ca05b028dd75c4fdf2473b0f34507df6c112535fc97bbf639310fbcc44d67"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/stdout.txt",
+      "byteLength": 87,
+      "sha256": "e3fe8dc9a143aff10aa6d76471b7a85c71e5c9ff5a47f1d84e38ea203251f18e"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/ground-truth.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/input.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/result.json",
+      "byteLength": 989,
+      "sha256": "019082e1006aa77aa062d4458d38c60d8650a3132d1780316bdd60f3c65ad29d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/stderr.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/stdout.txt",
+      "byteLength": 87,
+      "sha256": "9bd44e7eea7c302ff6722def3447829d88fbf7b7839128224440d8e096c51188"
+    },
+    {
+      "path": "corpus.json",
+      "byteLength": 3452,
+      "sha256": "ceb17e1a09d8b9ff13db2965f4de203651999005d0c493b0900a1762e6af5158"
+    },
+    {
+      "path": "plan.json",
+      "byteLength": 1542,
+      "sha256": "a871784f3d3518cff7a89bd5e48a4f892f1bc1d94816ddd9051fae38f76f46a6"
+    },
+    {
+      "path": "protocol.json",
+      "byteLength": 1720,
+      "sha256": "6df02143d6b4e346e452dcc038a3cf2087bdd1e500533336aed968e30d99935b"
+    },
+    {
+      "path": "run.json",
+      "byteLength": 7025,
+      "sha256": "a3047e55ce5d5aaa1923990c4bce1baa8371261463268799256ab222fe955adc"
+    },
+    {
+      "path": "tool.json",
+      "byteLength": 895,
+      "sha256": "9aa4179fbe953cc58b1b337d671928fb34980e0bb130c1fa0ea2082e8d2c4e56"
+    }
+  ],
+  "signature": null,
+  "signatureStatus": "unsigned",
+  "rootDigest": "e0ff00c1827de5dcfc4ec1334de249884a820ff26d14e2a938b0473f370f30cf"
+}

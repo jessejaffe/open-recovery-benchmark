@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.5.0"
+  },
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "digest": "0490f08d374fe5b26c2f1623e54a715ca3c169a86f89146e4b5d93fbf805672a"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "stillopen-wasm-30df551-healthy-controls",
+    "digest": "14b35fda1ea553dde5d81ebf3f245ebd2b8236a82864fb78c131d0d222be9da3",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "30df551a8cc046a0772ba076ad1819a536ee4f55",
+    "platform": "Node.js host using the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-healthy-no-repair",
+    "jpeg-healthy-no-repair",
+    "png-healthy-no-repair",
+    "zip-healthy-no-repair"
+  ],
+  "planDigest": "f6862fadfac39bafbfd84141dfb2a13aa385ee04c07508abbfc00f23bb9eacb9"
+}

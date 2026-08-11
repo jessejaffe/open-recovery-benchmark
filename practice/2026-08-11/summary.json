@@ -64,7 +64,7 @@
     }
   ],
   "requiredBeforeV1": [
-    "healthy-control semantics and fixtures",
+    "integrate the verified healthy-control addendum into the eventual combined v1 corpus",
     "broader externally authored source corpus",
     "multi-output selection rule",
     "repeat guided runs and signed operator attestations",

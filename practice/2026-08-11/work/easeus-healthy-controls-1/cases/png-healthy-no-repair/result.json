@@ -1,0 +1,41 @@
+{
+  "caseId": "png-healthy-no-repair",
+  "category": "healthy-control",
+  "format": "png",
+  "damageClass": "none-confirmed-healthy",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T17:48:46Z",
+    "productMessage": "Sign in to EaseUS Fixo.",
+    "operatorNote": "Not uploaded after the same-day photo-repair path had already established the same account requirement before processing; no technical result is claimed.",
+    "accessConstraint": {
+      "kind": "account-required",
+      "stage": "before-processing",
+      "scope": "product-path"
+    },
+    "output": null,
+    "attachments": [
+      {
+        "path": "cases/png-healthy-no-repair/attachments/01.png",
+        "byteLength": 65533,
+        "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "exact-sha256-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

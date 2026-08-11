@@ -49,7 +49,7 @@
     },
     {
       "id": "refusal-case",
-      "category": "healthy-control",
+      "category": "damaged-full-restoration",
       "format": "synthetic/text",
       "damageClass": "truncated-directory",
       "input": {

@@ -18,7 +18,7 @@
         "required": ["caseId", "productOutcome", "attemptedAt"],
         "properties": {
           "caseId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
-          "productOutcome": { "enum": ["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output"] },
+          "productOutcome": { "enum": ["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output", "healthy-no-action"] },
           "attemptedAt": { "type": "string", "format": "date-time" },
           "productMessage": { "type": "string" },
           "operatorNote": { "type": "string" },

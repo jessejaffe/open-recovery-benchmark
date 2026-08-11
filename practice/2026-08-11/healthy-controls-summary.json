@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "kind": "unofficial-practice-healthy-control-summary",
+  "id": "practice-healthy-controls-2026-08-11-summary",
+  "status": "practice-only-not-competitive",
+  "harnessVersion": "1.5.0",
+  "declaredCases": 4,
+  "runId": "stillopen-healthy-controls-1",
+  "evidenceRoot": "e0ff00c1827de5dcfc4ec1334de249884a820ff26d14e2a938b0473f370f30cf",
+  "eligibleCases": 4,
+  "verifiedPasses": 4,
+  "changedOutputs": 0,
+  "refusals": 0,
+  "meanControlScore": 1,
+  "browserCompetitorsRun": true,
+  "finding": "StillOpen explicitly identified all four intact controls as healthy and produced no replacement output.",
+  "implementationFinding": "The first attempt exposed and then fixed an adapter-only false positive caused by the harness's extensionless input.bin evidence filename. The final pinned adapter classifies the temporary copy using its byte-detected format.",
+  "competitorRuns": [
+    {
+      "tool": "zPDF Repair PDF",
+      "runId": "zpdf-healthy-controls-1",
+      "evidenceRoot": "191b26e6cbedec9475d10e709dfd58a4a87b58ecf616b315b15f92eb51647e23",
+      "declaredCases": 4,
+      "eligibleCases": 1,
+      "unscoredCases": 3,
+      "verifiedPasses": 0,
+      "changedOutputs": 1,
+      "refusals": 0,
+      "meanControlScore": 0,
+      "finding": "The PDF-only surface rewrote the intact PDF into a different 1,347-byte file; JPEG, PNG, and ZIP were outside product scope."
+    },
+    {
+      "tool": "iLovePDF Repair PDF",
+      "runId": "ilovepdf-healthy-controls-1",
+      "evidenceRoot": "0afb7fc10f685297575f06885349c9ec955b1af73e6ccb5e9b439326384b2869",
+      "declaredCases": 4,
+      "eligibleCases": 1,
+      "unscoredCases": 3,
+      "verifiedPasses": 0,
+      "changedOutputs": 0,
+      "refusals": 1,
+      "meanControlScore": 0,
+      "finding": "The PDF-only surface accepted the intact PDF but rejected it as damaged or unreadable; JPEG, PNG, and ZIP were outside product scope."
+    },
+    {
+      "tool": "EaseUS Online File Repair",
+      "runId": "easeus-healthy-controls-1",
+      "evidenceRoot": "4ee944cce0d1b290e38b898a223e03baa6d62fc0ac1975ada6d5e05004fa89eb",
+      "declaredCases": 4,
+      "eligibleCases": 0,
+      "unscoredCases": 4,
+      "verifiedPasses": 0,
+      "changedOutputs": 0,
+      "refusals": 0,
+      "meanControlScore": null,
+      "finding": "The service labeled the intact PDF as damaged, then required an account before processing; the account gate leaves all four controls unscored."
+    },
+    {
+      "tool": "Repairit Online Photo",
+      "runId": "repairit-photo-healthy-controls-1",
+      "evidenceRoot": "29cbbb23e3f506c2eef75ea97d85f7ea7432232a3287dbfd6870b84532d47346",
+      "declaredCases": 4,
+      "eligibleCases": 0,
+      "unscoredCases": 4,
+      "verifiedPasses": 0,
+      "changedOutputs": 0,
+      "refusals": 0,
+      "meanControlScore": null,
+      "finding": "The photo surface admitted the intact JPEG and PNG but placed the batch in a free queue showing a 01:38:38 estimate; PDF and ZIP were outside this surface."
+    }
+  ]
+}

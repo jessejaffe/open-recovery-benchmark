@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-plan",
+  "harness": {
+    "name": "stillopen-open-recovery-benchmark-kit",
+    "version": "1.5.0"
+  },
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "digest": "acfbef56f87e6d88fbe159469ffd540a8829cb22acac07246703007912d9c74b"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "zpdf-repair-pdf-web-2026-08-11",
+    "digest": "4bda10e93755e776b0931bac7cf53f135e2886cac4e6a4a9831af441af897959",
+    "vendor": "zPDF",
+    "product": "Repair PDF",
+    "version": "Web service observed 2026-08-11",
+    "platform": "Operator-controlled browser session",
+    "synthetic": false
+  },
+  "scoring": {
+    "denominator": "all-eligible-cases",
+    "passDisposition": "verified-pass",
+    "partialDisposition": "verified-partial",
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
+  },
+  "limits": {
+    "timeoutMs": 120000,
+    "maxCapturedBytes": 131072
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0"
+  },
+  "orderedCases": [
+    "pdf-healthy-no-repair",
+    "jpeg-healthy-no-repair",
+    "png-healthy-no-repair",
+    "zip-healthy-no-repair"
+  ],
+  "planDigest": "26f47d85fa7706bd1b00f92c1cee21683224bd07f2a7afe1ca82519e0c247ad2"
+}

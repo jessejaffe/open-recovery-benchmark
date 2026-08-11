@@ -6,14 +6,21 @@ bundles offline.
 
 ## Status
 
-**Foundation plus one explicitly unofficial backend rehearsal. No Benchmark
-v1.0, official competitor ranking, or production benchmark publication is
-included in this repository.**
+**Foundation plus one explicitly unofficial backend rehearsal and a four-format
+healthy-control addendum. No Benchmark v1.0, official competitor ranking, or
+production benchmark publication is included in this repository.**
 
 The [2026-08-11 practice bundle](practice/2026-08-11/README.md) contains a
 project-authored eight-case corpus, guided browser observations, recovered
-outputs, screenshots, and five independently verifiable run bundles. Its
-protocol marks every result ineligible for a competitive summary.
+outputs, screenshots, five damaged-file runs, and five healthy-control runs.
+Its protocols mark every result ineligible for a competitive summary.
+
+The same practice directory also contains a
+[`healthy-control addendum`](practice/2026-08-11/healthy-controls-summary.json)
+for intact PDF, JPEG, PNG, and ZIP inputs. Its scoring contract is documented in
+[`docs/healthy-controls.md`](docs/healthy-controls.md). The addendum includes
+StillOpen plus four free or freemium browser surfaces, with coverage shown beside
+every mean and account, queue, and unsupported-format cases left unscored.
 
 The setup releases establish the public source and license trust anchor. Future
 benchmark definitions and results can identify the exact public
@@ -30,6 +37,8 @@ Git commit that defined their runner, schemas, fixtures, and scoring behavior.
 - Three required case categories: damaged files expected to be fully restored,
   damaged files where partial restoration must be measured, and healthy
   controls that expose unnecessary changes.
+- Strict healthy-control scoring that rewards an explicit no-action diagnosis or
+  a byte-identical output and rejects unnecessary replacements.
 - Deterministic 0–1 recovery scores with visible recovered-unit counts: exact
   decoded pixels for raster images, exact render-and-text pages for PDFs, and
   verified entry bytes for ZIP archives. Similarity diagnostics are reported

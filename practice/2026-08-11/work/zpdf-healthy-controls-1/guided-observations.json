@@ -1,0 +1,57 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "zpdf-healthy-controls-2026-08-11",
+  "toolId": "zpdf-repair-pdf-web-2026-08-11",
+  "cases": [
+    {
+      "caseId": "pdf-healthy-no-repair",
+      "productOutcome": "success",
+      "attemptedAt": "2026-08-11T17:45:25Z",
+      "productMessage": "PDF repaired successfully!",
+      "operatorNote": "zPDF accepted the intact PDF, declared repair success, and generated a different 1,347-byte replacement for the 1,208-byte input. The exact-identity healthy-control validator determines the score.",
+      "outputPath": "healthy/outputs/three-page-basic-zpdf.pdf",
+      "attachments": [
+        "healthy/attachments/01-ready.png",
+        "healthy/attachments/02-success.png"
+      ]
+    },
+    {
+      "caseId": "jpeg-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:45:25Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+      "accessConstraint": {
+        "kind": "format-not-supported",
+        "stage": "before-upload",
+        "scope": "case"
+      }
+    },
+    {
+      "caseId": "png-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:45:25Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+      "accessConstraint": {
+        "kind": "format-not-supported",
+        "stage": "before-upload",
+        "scope": "case"
+      }
+    },
+    {
+      "caseId": "zip-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:45:25Z",
+      "productMessage": "Repair PDF accepts PDF files only.",
+      "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+      "accessConstraint": {
+        "kind": "format-not-supported",
+        "stage": "before-upload",
+        "scope": "case"
+      }
+    }
+  ]
+}

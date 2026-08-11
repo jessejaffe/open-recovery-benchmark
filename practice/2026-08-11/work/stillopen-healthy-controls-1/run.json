@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "runId": "stillopen-healthy-controls-1",
+  "protocol": {
+    "id": "practice-healthy-controls-2026-08-11",
+    "title": "Unofficial healthy-file control addendum",
+    "publicClaim": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+    "digest": "0490f08d374fe5b26c2f1623e54a715ca3c169a86f89146e4b5d93fbf805672a"
+  },
+  "corpus": {
+    "id": "practice-four-healthy-controls-2026-08-11",
+    "title": "Four intact PDF, JPEG, PNG, and ZIP controls",
+    "digest": "580dd3ac9b7be2b6fac7d9502911abc1f0aaa141c2891280c03202eb6fab5463"
+  },
+  "tool": {
+    "id": "stillopen-wasm-30df551-healthy-controls",
+    "digest": "14b35fda1ea553dde5d81ebf3f245ebd2b8236a82864fb78c131d0d222be9da3",
+    "vendor": "StillOpen",
+    "product": "StillOpen WebAssembly recovery core",
+    "version": "30df551a8cc046a0772ba076ad1819a536ee4f55",
+    "platform": "Node.js host using the released browser WebAssembly artifact",
+    "synthetic": false
+  },
+  "planDigest": "f6862fadfac39bafbfd84141dfb2a13aa385ee04c07508abbfc00f23bb9eacb9",
+  "claimBoundary": "Practice evidence only. Four intact PDF, JPEG, PNG, and ZIP controls exercise no-action and exact-identity semantics; this addendum is not Benchmark v1.0 or a competitor ranking.",
+  "cases": [
+    {
+      "caseId": "pdf-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "pdf",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-action",
+        "terminalOutcomeEligible": false,
+        "startedAt": "2026-08-11T17:40:28.650Z",
+        "endedAt": "2026-08-11T17:40:28.752Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/pdf-healthy-no-repair/stdout.txt",
+        "stderr": "cases/pdf-healthy-no-repair/stderr.txt",
+        "output": null
+      },
+      "validation": {
+        "validator": "healthy-control-no-action-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 1,
+        "totalUnits": 1,
+        "unit": "healthy-file-left-unchanged",
+        "checks": {
+          "healthyControl": true,
+          "inputMatchesGroundTruth": true,
+          "explicitNoAction": true,
+          "outputPresent": false
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "jpeg-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "jpeg",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-action",
+        "terminalOutcomeEligible": false,
+        "startedAt": "2026-08-11T17:40:28.757Z",
+        "endedAt": "2026-08-11T17:40:28.845Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/jpeg-healthy-no-repair/stdout.txt",
+        "stderr": "cases/jpeg-healthy-no-repair/stderr.txt",
+        "output": null
+      },
+      "validation": {
+        "validator": "healthy-control-no-action-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 1,
+        "totalUnits": 1,
+        "unit": "healthy-file-left-unchanged",
+        "checks": {
+          "healthyControl": true,
+          "inputMatchesGroundTruth": true,
+          "explicitNoAction": true,
+          "outputPresent": false
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "png-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "png",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-action",
+        "terminalOutcomeEligible": false,
+        "startedAt": "2026-08-11T17:40:28.847Z",
+        "endedAt": "2026-08-11T17:40:28.932Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/png-healthy-no-repair/stdout.txt",
+        "stderr": "cases/png-healthy-no-repair/stderr.txt",
+        "output": null
+      },
+      "validation": {
+        "validator": "healthy-control-no-action-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 1,
+        "totalUnits": 1,
+        "unit": "healthy-file-left-unchanged",
+        "checks": {
+          "healthyControl": true,
+          "inputMatchesGroundTruth": true,
+          "explicitNoAction": true,
+          "outputPresent": false
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    },
+    {
+      "caseId": "zip-healthy-no-repair",
+      "category": "healthy-control",
+      "format": "zip",
+      "damageClass": "none-confirmed-healthy",
+      "eligible": true,
+      "observation": {
+        "disposition": "healthy-no-action",
+        "terminalOutcomeEligible": false,
+        "startedAt": "2026-08-11T17:40:28.934Z",
+        "endedAt": "2026-08-11T17:40:29.019Z",
+        "exitCode": 3,
+        "signal": null,
+        "timedOut": false,
+        "captureTruncated": false,
+        "launchError": null,
+        "stdout": "cases/zip-healthy-no-repair/stdout.txt",
+        "stderr": "cases/zip-healthy-no-repair/stderr.txt",
+        "output": null
+      },
+      "validation": {
+        "validator": "healthy-control-no-action-v1",
+        "pass": true,
+        "score": 1,
+        "recoveredUnits": 1,
+        "totalUnits": 1,
+        "unit": "healthy-file-left-unchanged",
+        "checks": {
+          "healthyControl": true,
+          "inputMatchesGroundTruth": true,
+          "explicitNoAction": true,
+          "outputPresent": false
+        }
+      },
+      "score": 1,
+      "disposition": "verified-pass"
+    }
+  ],
+  "summary": {
+    "declaredCases": 4,
+    "eligibleCases": 4,
+    "unscoredCases": 0,
+    "verifiedPasses": 4,
+    "verifiedPartials": 0,
+    "changedOutputs": 0,
+    "refusals": 0,
+    "unavailable": 0,
+    "errors": 0,
+    "meanRecoveryScore": 1,
+    "categoryScores": {
+      "damaged-full-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "damaged-partial-restoration": {
+        "cases": 0,
+        "eligibleCases": 0,
+        "unscoredCases": 0,
+        "meanRecoveryScore": null,
+        "fullRecoveries": 0,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      },
+      "healthy-control": {
+        "cases": 4,
+        "eligibleCases": 4,
+        "unscoredCases": 0,
+        "meanRecoveryScore": 1,
+        "fullRecoveries": 4,
+        "partialRecoveries": 0,
+        "zeroRecoveries": 0
+      }
+    },
+    "competitiveSummaryEligible": false
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../../benchmark-kit/schemas/guided-observations.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-guided-observations",
+  "id": "repairit-photo-healthy-controls-2026-08-11",
+  "toolId": "repairit-online-photo-web-healthy-controls-2026-08-11",
+  "cases": [
+    {
+      "caseId": "pdf-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:47:48Z",
+      "productMessage": "Repairit Online Photo accepts image files, not PDF files.",
+      "operatorNote": "Unsupported scope of the specifically tested photo-repair surface; not a technical recovery failure.",
+      "accessConstraint": {
+        "kind": "format-not-supported",
+        "stage": "before-upload",
+        "scope": "case"
+      }
+    },
+    {
+      "caseId": "jpeg-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:47:48Z",
+      "productMessage": "High-speed repair limit reached, entering low-speed queue. Current position: 1643. Remaining time: 01:38:38.",
+      "operatorNote": "The free photo path admitted the intact JPEG, but the bounded operator session ended rather than waiting roughly 98 minutes. No output or technical result was available.",
+      "accessConstraint": {
+        "kind": "unknown-unavailable",
+        "stage": "after-upload",
+        "scope": "session",
+        "note": "A long free-service processing queue is not a recovery failure or a payment gate."
+      },
+      "attachments": [
+        "healthy/attachments/01-upload.png",
+        "healthy/attachments/02-ready.png",
+        "healthy/attachments/03-desktop-gate.png"
+      ]
+    },
+    {
+      "caseId": "png-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:47:48Z",
+      "productMessage": "High-speed repair limit reached, entering low-speed queue. Current position: 1643. Remaining time: 01:38:38.",
+      "operatorNote": "The free photo path admitted the intact PNG in the same batch, but it remained waiting behind the JPEG when the bounded session ended. No output or technical result was available.",
+      "accessConstraint": {
+        "kind": "unknown-unavailable",
+        "stage": "after-upload",
+        "scope": "session",
+        "note": "A long free-service processing queue is not a recovery failure or a payment gate."
+      },
+      "attachments": [
+        "healthy/attachments/03-desktop-gate.png"
+      ]
+    },
+    {
+      "caseId": "zip-healthy-no-repair",
+      "productOutcome": "unavailable",
+      "attemptedAt": "2026-08-11T17:47:48Z",
+      "productMessage": "Repairit Online Photo accepts image files, not ZIP files.",
+      "operatorNote": "Unsupported scope of the specifically tested photo-repair surface; not a technical recovery failure.",
+      "accessConstraint": {
+        "kind": "format-not-supported",
+        "stage": "before-upload",
+        "scope": "case"
+      }
+    }
+  ]
+}

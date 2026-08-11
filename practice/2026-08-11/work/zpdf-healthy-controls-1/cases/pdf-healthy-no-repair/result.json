@@ -1,0 +1,48 @@
+{
+  "caseId": "pdf-healthy-no-repair",
+  "category": "healthy-control",
+  "format": "pdf",
+  "damageClass": "none-confirmed-healthy",
+  "eligible": true,
+  "observation": {
+    "disposition": "output-produced",
+    "terminalOutcomeEligible": true,
+    "productOutcome": "success",
+    "attemptedAt": "2026-08-11T17:45:25Z",
+    "productMessage": "PDF repaired successfully!",
+    "operatorNote": "zPDF accepted the intact PDF, declared repair success, and generated a different 1,347-byte replacement for the 1,208-byte input. The exact-identity healthy-control validator determines the score.",
+    "accessConstraint": null,
+    "output": {
+      "path": "cases/pdf-healthy-no-repair/operator-output.bin",
+      "byteLength": 1347,
+      "sha256": "59324bee6b3275293c76e040c2af6f8468f5a232bf362e0cbced598041024286"
+    },
+    "attachments": [
+      {
+        "path": "cases/pdf-healthy-no-repair/attachments/01.png",
+        "byteLength": 70710,
+        "sha256": "002ca98432dd2219b6ea64ef93f0a13120f3695a4ebeedff0e45228853ce937e"
+      },
+      {
+        "path": "cases/pdf-healthy-no-repair/attachments/02.png",
+        "byteLength": 70439,
+        "sha256": "c961e38f174bf6e69f98d778cd58c1b6fb05464ff2290627ee44434a94ccb345"
+      }
+    ]
+  },
+  "validation": {
+    "validator": "exact-sha256-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": 1,
+    "unit": "file",
+    "checks": {
+      "expectedSha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3",
+      "actualSha256": "59324bee6b3275293c76e040c2af6f8468f5a232bf362e0cbced598041024286",
+      "exactBytes": false
+    }
+  },
+  "score": 0,
+  "disposition": "changed-output"
+}

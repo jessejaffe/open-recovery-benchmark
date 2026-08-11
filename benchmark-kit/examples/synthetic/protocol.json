@@ -17,7 +17,9 @@
     "denominator": "all-eligible-cases",
     "passDisposition": "verified-pass",
     "partialDisposition": "verified-partial",
-    "scoreRange": "zero-to-one"
+    "scoreRange": "zero-to-one",
+    "healthyNoActionDisposition": "healthy-no-action",
+    "healthyOutputRequirement": "exact-byte-identity"
   },
   "limits": {
     "timeoutMs": 5000,

@@ -1,0 +1,35 @@
+{
+  "caseId": "png-healthy-no-repair",
+  "category": "healthy-control",
+  "format": "png",
+  "damageClass": "none-confirmed-healthy",
+  "eligible": false,
+  "observation": {
+    "disposition": "unavailable",
+    "terminalOutcomeEligible": false,
+    "productOutcome": "unavailable",
+    "attemptedAt": "2026-08-11T17:45:25Z",
+    "productMessage": "Repair PDF accepts PDF files only.",
+    "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+    "accessConstraint": {
+      "kind": "format-not-supported",
+      "stage": "before-upload",
+      "scope": "case"
+    },
+    "output": null,
+    "attachments": []
+  },
+  "validation": {
+    "validator": "exact-sha256-v1",
+    "pass": false,
+    "score": 0,
+    "recoveredUnits": 0,
+    "totalUnits": null,
+    "unit": null,
+    "checks": {
+      "outputPresent": false
+    }
+  },
+  "score": 0,
+  "disposition": "unavailable"
+}

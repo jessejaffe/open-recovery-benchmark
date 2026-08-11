@@ -22,7 +22,9 @@
         "denominator": { "const": "all-eligible-cases" },
         "passDisposition": { "const": "verified-pass" },
         "partialDisposition": { "const": "verified-partial" },
-        "scoreRange": { "const": "zero-to-one" }
+        "scoreRange": { "const": "zero-to-one" },
+        "healthyNoActionDisposition": { "const": "healthy-no-action" },
+        "healthyOutputRequirement": { "const": "exact-byte-identity" }
       },
       "additionalProperties": false
     },

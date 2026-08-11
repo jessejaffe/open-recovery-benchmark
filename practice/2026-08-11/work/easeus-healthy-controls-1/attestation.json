@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-attestation",
+  "runId": "easeus-healthy-controls-1",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "cases/jpeg-healthy-no-repair/attachments/01.png",
+      "byteLength": 65533,
+      "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/ground-truth.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/input.bin",
+      "byteLength": 585,
+      "sha256": "0602580fcd80efbeabf04de581b3cfd68a2082e99802fee5e678e4ccd8f27cf5"
+    },
+    {
+      "path": "cases/jpeg-healthy-no-repair/result.json",
+      "byteLength": 1195,
+      "sha256": "091456ee18292683c25f9ef67e088cd702037a73aca87d3b8acc01ec1f964447"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/attachments/01.png",
+      "byteLength": 102127,
+      "sha256": "19863b33beeeb054f91539ded2262a2f8e5588ae49221b89a6ca9cb0e0ffa664"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/attachments/02.png",
+      "byteLength": 96190,
+      "sha256": "d1e4eb4622cd52cf5b4843b20a704d336cdc2301776e6b978950d5b116bdd4b5"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/attachments/03.png",
+      "byteLength": 70398,
+      "sha256": "aca3ae2969c47c1c1bceea825879c22b8c098b9ada0056221de9047b22cb7d40"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/input.bin",
+      "byteLength": 1208,
+      "sha256": "ece21a7ffa476ac16a3def3ba7791eaa37070887fbf2a99140045442eac1dcc3"
+    },
+    {
+      "path": "cases/pdf-healthy-no-repair/result.json",
+      "byteLength": 1718,
+      "sha256": "865079457e1900e87b2a02aea6231785e926a529c6d2fd3f2822f5861e143f5c"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/attachments/01.png",
+      "byteLength": 65533,
+      "sha256": "4a60ed817b3433be963baa5b4bd863737b2fdf28cdcd332e35d43c043883a754"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/ground-truth.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/input.bin",
+      "byteLength": 1620,
+      "sha256": "161523e5ddbd5424c819e8b234f4215e1569e05056cdc4ff6fa515fb5bac0b1b"
+    },
+    {
+      "path": "cases/png-healthy-no-repair/result.json",
+      "byteLength": 1192,
+      "sha256": "163959a0253597af2425f3207d2e41d8bd8e7f100e3b72676596920c6a5cd8fd"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/attachments/01.png",
+      "byteLength": 70398,
+      "sha256": "aca3ae2969c47c1c1bceea825879c22b8c098b9ada0056221de9047b22cb7d40"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/ground-truth.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/input.bin",
+      "byteLength": 696,
+      "sha256": "915710f10028646ff61f5995649d254874b5cb1fac5e90c26255964d36bb269d"
+    },
+    {
+      "path": "cases/zip-healthy-no-repair/result.json",
+      "byteLength": 1186,
+      "sha256": "8943a984b089ef7ca7ecbde5bbf3465be7d559167f6a90b83173f014083ddf16"
+    },
+    {
+      "path": "corpus.json",
+      "byteLength": 3452,
+      "sha256": "ceb17e1a09d8b9ff13db2965f4de203651999005d0c493b0900a1762e6af5158"
+    },
+    {
+      "path": "guided-observations.json",
+      "byteLength": 2846,
+      "sha256": "199daded7fc76603b8a9429b6efc6046ce4cbc3d64c3a4898fbad9a3394267ae"
+    },
+    {
+      "path": "plan.json",
+      "byteLength": 1484,
+      "sha256": "55144c33e0dc03f6848dc644dff94f382c2f176d5e1a9258823fbd85981c0cdb"
+    },
+    {
+      "path": "protocol.json",
+      "byteLength": 1772,
+      "sha256": "07f3bd19b593f7889f5fba0e332940f52027f44aa311f9625bddbeb1b9aa8eaf"
+    },
+    {
+      "path": "run.json",
+      "byteLength": 8409,
+      "sha256": "fce05fe7f77cfef4ccd7ebe96bfc37775063d4b74d1aa5301c8d5b7739fd1307"
+    },
+    {
+      "path": "tool.json",
+      "byteLength": 901,
+      "sha256": "2d9957069c6fc4e690d0fcaf8c89296dd3be05cf8255ffcebeaac3250bb19302"
+    }
+  ],
+  "signature": null,
+  "signatureStatus": "unsigned",
+  "rootDigest": "4ee944cce0d1b290e38b898a223e03baa6d62fc0ac1975ada6d5e05004fa89eb"
+}

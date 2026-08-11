@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "stillopen-wasm-30df551-healthy-controls",
+  "vendor": "StillOpen",
+  "product": "StillOpen WebAssembly recovery core",
+  "version": "30df551a8cc046a0772ba076ad1819a536ee4f55",
+  "platform": "Node.js host using the released browser WebAssembly artifact",
+  "synthetic": false,
+  "acquisition": {
+    "source": "Private GitHub revision 30df551a8cc046a0772ba076ad1819a536ee4f55; public/wasm/stillopen-core.wasm"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "{node}",
+    "args": [
+      "../../../../C++/benchmark-kit/adapters/stillopen-recovery.mjs",
+      "--input",
+      "{input}",
+      "--output",
+      "{output}"
+    ],
+    "outputFile": "recovered.bin",
+    "exitCodeDisposition": {
+      "2": "refusal",
+      "3": "healthy-no-action"
+    }
+  }
+}

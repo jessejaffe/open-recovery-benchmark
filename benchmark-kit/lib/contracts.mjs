@@ -48,6 +48,12 @@ export function validateProtocol(protocol) {
   if (protocol.scoring.passDisposition !== "verified-pass") throw new Error("The pass disposition must be verified-pass.");
   if (protocol.scoring.partialDisposition !== "verified-partial") throw new Error("The partial disposition must be verified-partial.");
   if (protocol.scoring.scoreRange !== "zero-to-one") throw new Error("The score range must be zero-to-one.");
+  if (protocol.scoring.healthyNoActionDisposition !== undefined && protocol.scoring.healthyNoActionDisposition !== "healthy-no-action") {
+    throw new Error("The healthy no-action disposition must be healthy-no-action when declared.");
+  }
+  if (protocol.scoring.healthyOutputRequirement !== undefined && protocol.scoring.healthyOutputRequirement !== "exact-byte-identity") {
+    throw new Error("The healthy output requirement must be exact-byte-identity when declared.");
+  }
   object(protocol.limits, "benchmark-protocol.limits");
   if (!Number.isInteger(protocol.limits.timeoutMs) || protocol.limits.timeoutMs < 100 || protocol.limits.timeoutMs > 3_600_000) {
     throw new Error("benchmark-protocol.limits.timeoutMs is outside the supported range.");
@@ -104,7 +110,7 @@ export function validateTool(tool) {
     text(tool.adapter.outputFile, "benchmark-tool.adapter.outputFile");
     if (tool.adapter.exitCodeDisposition) {
       object(tool.adapter.exitCodeDisposition, "benchmark-tool.adapter.exitCodeDisposition");
-      const allowed = new Set(["refusal", "error", "unavailable", "paywalled", "no-output"]);
+      const allowed = new Set(["refusal", "error", "unavailable", "paywalled", "no-output", "healthy-no-action"]);
       for (const [exitCode, disposition] of Object.entries(tool.adapter.exitCodeDisposition)) {
         if (!/^-?\d+$/.test(exitCode) || !allowed.has(disposition)) throw new Error("benchmark-tool.adapter.exitCodeDisposition contains an unsafe mapping.");
       }
@@ -118,7 +124,7 @@ export function validateTool(tool) {
   }
 }
 
-const GUIDED_OUTCOMES = new Set(["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output"]);
+const GUIDED_OUTCOMES = new Set(["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output", "healthy-no-action"]);
 const ACCESS_CONSTRAINT_KINDS = new Set([
   "format-not-supported",
   "service-maintenance",
@@ -179,6 +185,7 @@ export function validateGuidedObservations(observations, corpus, tool) {
     if (item.operatorNote !== undefined && typeof item.operatorNote !== "string") throw new Error(`${label}.operatorNote must be a string.`);
     if (item.accessConstraint !== undefined) validateAccessConstraint(item.accessConstraint, `${label}.accessConstraint`, item.productOutcome);
     if (item.productOutcome === "success" && !item.outputPath) throw new Error(`${label} reports success without an outputPath.`);
+    if (item.productOutcome === "healthy-no-action" && item.outputPath) throw new Error(`${label} reports healthy-no-action with an outputPath.`);
     if (item.attachments !== undefined && (!Array.isArray(item.attachments) || !item.attachments.every((value) => typeof value === "string" && value.trim()))) {
       throw new Error(`${label}.attachments must be relative paths.`);
     }
