@@ -35,6 +35,18 @@ Git commit that defined their runner, schemas, fixtures, and scoring behavior.
 The synthetic fixtures exercise the harness. They are not product evidence and
 cannot appear in a competitive summary.
 
+## Competitor inclusion policy
+
+Competitive panels are limited to tools with a free mode or a freemium path
+that can reasonably be tested without purchasing a license. Paid-only products
+are outside the scored panel.
+
+If a freemium product accepts a case but withholds the complete recovered output
+behind a paywall, the attempt remains visible as `paywalled`. Its evidence may be
+published, but it is unscored and must not be represented as a technical failure.
+Maintenance, unavailable services, and workflows that produce no downloadable
+output are likewise reported separately from recovery performance.
+
 ## Verify the setup
 
 Requires Node.js 22.13 or newer.
