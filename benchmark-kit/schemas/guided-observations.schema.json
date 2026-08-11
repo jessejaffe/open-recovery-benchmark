@@ -22,6 +22,46 @@
           "attemptedAt": { "type": "string", "format": "date-time" },
           "productMessage": { "type": "string" },
           "operatorNote": { "type": "string" },
+          "accessConstraint": {
+            "type": "object",
+            "required": ["kind", "stage", "scope"],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "format-not-supported",
+                  "service-maintenance",
+                  "free-tier-quota",
+                  "account-required",
+                  "payment-required",
+                  "software-install-required",
+                  "region-restricted",
+                  "unknown-unavailable"
+                ]
+              },
+              "stage": {
+                "enum": [
+                  "before-upload",
+                  "after-upload",
+                  "before-processing",
+                  "after-processing",
+                  "before-download",
+                  "not-applicable"
+                ]
+              },
+              "scope": { "enum": ["case", "session", "product-path"] },
+              "limit": {
+                "type": "object",
+                "required": ["maximum", "unit"],
+                "properties": {
+                  "maximum": { "type": "integer", "minimum": 1 },
+                  "unit": { "type": "string", "minLength": 1 }
+                },
+                "additionalProperties": false
+              },
+              "note": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
           "outputPath": { "type": "string", "minLength": 1 },
           "attachments": { "type": "array", "items": { "type": "string", "minLength": 1 } }
         },

@@ -11,6 +11,7 @@
     "attemptedAt": "2026-08-11T16:50:05Z",
     "productMessage": "Successful",
     "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output; candidate 2 and the untouched Download All archive are retained as attachments. Both candidates independently decode to the same benchmark score.",
+    "accessConstraint": null,
     "output": {
       "path": "cases/jpeg-full-corrupt-segment-length/operator-output.bin",
       "byteLength": 549,

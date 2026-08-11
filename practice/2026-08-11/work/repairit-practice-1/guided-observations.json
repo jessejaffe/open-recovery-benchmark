@@ -11,6 +11,12 @@
       "attemptedAt": "2026-08-11T16:49:05Z",
       "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
       "operatorNote": "No desktop software was downloaded for this browser-only rehearsal.",
+      "accessConstraint": {
+        "kind": "service-maintenance",
+        "stage": "before-upload",
+        "scope": "product-path",
+        "note": "The vendor directed users to its desktop application; this benchmark did not install software."
+      },
       "attachments": [
         "attachments/file-repair-maintenance.png"
       ]
@@ -20,7 +26,12 @@
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:49:05Z",
       "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
-      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed."
+      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+      "accessConstraint": {
+        "kind": "service-maintenance",
+        "stage": "before-upload",
+        "scope": "product-path"
+      }
     },
     {
       "caseId": "jpeg-full-corrupt-segment-length",
@@ -59,21 +70,43 @@
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:51:10Z",
       "productMessage": "Repairit Online Free: Repair up to 3 photos.",
-      "operatorNote": "The free browser path had admitted three photos and no longer exposed an add-photo control after completion. The fourth case was not admitted and the quota was not circumvented."
+      "operatorNote": "The free browser path had admitted three photos and no longer exposed an add-photo control after completion. The fourth case was not admitted and the quota was not circumvented.",
+      "accessConstraint": {
+        "kind": "free-tier-quota",
+        "stage": "before-upload",
+        "scope": "session",
+        "limit": {
+          "maximum": 3,
+          "unit": "photos"
+        },
+        "note": "The free allowance was exhausted after the three earlier image cases."
+      }
     },
     {
       "caseId": "zip-full-missing-directory",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:49:05Z",
       "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
-      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed."
+      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+      "accessConstraint": {
+        "kind": "service-maintenance",
+        "stage": "before-upload",
+        "scope": "product-path",
+        "note": "Repairit's primary online file page advertises PDF and Office formats but not ZIP; its desktop offer advertises ZIP. The unavailable page prevented an online upload attempt."
+      }
     },
     {
       "caseId": "zip-partial-truncated-deflate",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:49:05Z",
       "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
-      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed."
+      "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+      "accessConstraint": {
+        "kind": "service-maintenance",
+        "stage": "before-upload",
+        "scope": "product-path",
+        "note": "Repairit's primary online file page advertises PDF and Office formats but not ZIP; its desktop offer advertises ZIP. The unavailable page prevented an online upload attempt."
+      }
     }
   ]
 }

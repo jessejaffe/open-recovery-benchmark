@@ -22,7 +22,7 @@
     "platform": "Node.js host using the released browser WebAssembly artifact",
     "synthetic": false
   },
-  "planDigest": "3b391a2d8c6cb2fe414cf534f89b624bd6f2a7edfe5b49b18602cadbc3552695",
+  "planDigest": "03ef2e68af44863e562b35b17e9a7b234987006102d91bc5787a66c919c94382",
   "claimBoundary": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
   "cases": [
     {
@@ -34,8 +34,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:37.388Z",
-        "endedAt": "2026-08-11T16:59:37.528Z",
+        "startedAt": "2026-08-11T17:27:08.315Z",
+        "endedAt": "2026-08-11T17:27:08.423Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -46,7 +46,7 @@
         "output": {
           "path": "cases/pdf-full-missing-eof/tool-output/recovered.bin",
           "byteLength": 1347,
-          "sha256": "51abfe0fe86d6dfeffa4df742f68bad2ae610980e3084b4a6ebc2a9a87eed3ec"
+          "sha256": "8cd78f7e27ac3cfc87fae606f01a0550d9a08a46947f57b2134e1d8b3139410e"
         }
       },
       "validation": {
@@ -81,8 +81,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:37.724Z",
-        "endedAt": "2026-08-11T16:59:37.821Z",
+        "startedAt": "2026-08-11T17:27:08.676Z",
+        "endedAt": "2026-08-11T17:27:08.777Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -128,8 +128,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:37.830Z",
-        "endedAt": "2026-08-11T16:59:37.918Z",
+        "startedAt": "2026-08-11T17:27:08.787Z",
+        "endedAt": "2026-08-11T17:27:08.877Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -179,8 +179,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:37.921Z",
-        "endedAt": "2026-08-11T16:59:38.007Z",
+        "startedAt": "2026-08-11T17:27:08.883Z",
+        "endedAt": "2026-08-11T17:27:08.971Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -230,8 +230,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:38.010Z",
-        "endedAt": "2026-08-11T16:59:38.096Z",
+        "startedAt": "2026-08-11T17:27:08.974Z",
+        "endedAt": "2026-08-11T17:27:09.063Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -281,8 +281,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:38.099Z",
-        "endedAt": "2026-08-11T16:59:38.184Z",
+        "startedAt": "2026-08-11T17:27:09.067Z",
+        "endedAt": "2026-08-11T17:27:09.159Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -332,8 +332,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:38.187Z",
-        "endedAt": "2026-08-11T16:59:38.272Z",
+        "startedAt": "2026-08-11T17:27:09.162Z",
+        "endedAt": "2026-08-11T17:27:09.273Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,
@@ -381,8 +381,8 @@
       "observation": {
         "disposition": "output-produced",
         "terminalOutcomeEligible": true,
-        "startedAt": "2026-08-11T16:59:38.276Z",
-        "endedAt": "2026-08-11T16:59:38.360Z",
+        "startedAt": "2026-08-11T17:27:09.278Z",
+        "endedAt": "2026-08-11T17:27:09.392Z",
         "exitCode": 0,
         "signal": null,
         "timedOut": false,

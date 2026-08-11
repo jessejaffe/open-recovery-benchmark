@@ -36,8 +36,8 @@
     },
     {
       "path": "cases/jpeg-full-corrupt-segment-length/result.json",
-      "byteLength": 2300,
-      "sha256": "59ff4616f8dc6eb1f8345f7f752bc4c4f755cf2196b21b29d91cb7523b52c760"
+      "byteLength": 2330,
+      "sha256": "33c70add9b2f2e140adb422645307e7db1744d45daa34653c5a0c3daa0afad2f"
     },
     {
       "path": "cases/jpeg-partial-corrupt-entropy/attachments/01.jpg",
@@ -61,8 +61,8 @@
     },
     {
       "path": "cases/jpeg-partial-corrupt-entropy/result.json",
-      "byteLength": 1845,
-      "sha256": "1a3a8b7b19e6e2c38d238046c807202ae413cd7bd6f18a7ee86812a789aacc50"
+      "byteLength": 1875,
+      "sha256": "2372b6ebb0ca1f993112e1c0ccbd46594aaea3c4fba003af462e97852cb1053e"
     },
     {
       "path": "cases/pdf-full-missing-eof/attachments/01.png",
@@ -81,8 +81,8 @@
     },
     {
       "path": "cases/pdf-full-missing-eof/result.json",
-      "byteLength": 1083,
-      "sha256": "c04314875ef39f4686e47ed8e0b32bbbfd480f2d67c661315055bb7eb8912aeb"
+      "byteLength": 1327,
+      "sha256": "a0e547834be4d0e6582dd0c263c17e3d895d2b42eed3a13b92e43655549b92bf"
     },
     {
       "path": "cases/pdf-partial-truncated-stream/ground-truth.bin",
@@ -96,8 +96,8 @@
     },
     {
       "path": "cases/pdf-partial-truncated-stream/result.json",
-      "byteLength": 942,
-      "sha256": "36415bbb5218f6ca1e4b6e02f39cee56e56fb3edfac9c2b66d5fed909d0c3e8d"
+      "byteLength": 1074,
+      "sha256": "ab4c74dcc1a494a2dd9bffd588837a1e0f90c719a96e65cb1dfb53ed0cb010d9"
     },
     {
       "path": "cases/png-full-missing-iend/ground-truth.bin",
@@ -116,8 +116,8 @@
     },
     {
       "path": "cases/png-full-missing-iend/result.json",
-      "byteLength": 1468,
-      "sha256": "15b7b75dd4bef8bd43d1124fc131595194f992e262c5b2367df00559f3206e4c"
+      "byteLength": 1498,
+      "sha256": "d003c3443bc0ce7709af5b569de4e27878f294393934e4a0cf2c55fb14e97fec"
     },
     {
       "path": "cases/png-partial-truncated-idat/ground-truth.bin",
@@ -131,8 +131,8 @@
     },
     {
       "path": "cases/png-partial-truncated-idat/result.json",
-      "byteLength": 917,
-      "sha256": "1a4cd2f27d0f8f6ad1a498a1a97a30f819ddbfaf5140e81e4d21b38c44d4c5b2"
+      "byteLength": 1200,
+      "sha256": "2829959f6b95ad0bdf9c726a92d097f7825ac67ad79c336d18edad9cac2d5eea"
     },
     {
       "path": "cases/zip-full-missing-directory/ground-truth.bin",
@@ -146,8 +146,8 @@
     },
     {
       "path": "cases/zip-full-missing-directory/result.json",
-      "byteLength": 933,
-      "sha256": "1066ee021c5da2f35e318b63d368753757028c209148a65a0d779bfc6d48029d"
+      "byteLength": 1256,
+      "sha256": "c3fc4ea661fa4cfb0af7137fe3697104c59d4de4dc597c65925d1fc5c81d4ef9"
     },
     {
       "path": "cases/zip-partial-truncated-deflate/ground-truth.bin",
@@ -161,8 +161,8 @@
     },
     {
       "path": "cases/zip-partial-truncated-deflate/result.json",
-      "byteLength": 938,
-      "sha256": "52f0679f2e39cd0a3776a68171c6e03300370741738ad7cf36cff960144dcaf7"
+      "byteLength": 1261,
+      "sha256": "4b7d99020d8467df60387f044bb16ac38479e627f2f0b075449b0247427eb451"
     },
     {
       "path": "corpus.json",
@@ -171,13 +171,13 @@
     },
     {
       "path": "guided-observations.json",
-      "byteLength": 3961,
-      "sha256": "a9a3cee7d5fba155a9280097cab46f3fda29be85d8e5041f40e3a0c61154a4d9"
+      "byteLength": 5332,
+      "sha256": "70d9337883bc48069ce1d95b1ae5b5793b76e257fb31a3df2d52e60747babb16"
     },
     {
       "path": "plan.json",
       "byteLength": 1542,
-      "sha256": "a42999b7766e414e6cb3f5f07d8882e4b2c5cd237fc80617458831cd92d63245"
+      "sha256": "d10df8aaabaa99d21fe54a9ad9058baef2d092006009161e039a7bd1ee8142a4"
     },
     {
       "path": "protocol.json",
@@ -186,8 +186,8 @@
     },
     {
       "path": "run.json",
-      "byteLength": 14196,
-      "sha256": "4ba555a3472e6f804cc4f0f5719afe75ca504110808eefb2a54307e2e181f75e"
+      "byteLength": 15735,
+      "sha256": "0d62becca607fd470dad59c86f4cffe6263d0f17b17947c5970727f8917fd8f7"
     },
     {
       "path": "tool.json",
@@ -197,5 +197,5 @@
   ],
   "signature": null,
   "signatureStatus": "unsigned",
-  "rootDigest": "c3c6e004cff8daa66275f51f4bd6bade359b190d7263321960718aea86f7af83"
+  "rootDigest": "e88f3bf23f5690799118ac3284b08b2835ca67fad65f58e23ec306e1012d70ea"
 }

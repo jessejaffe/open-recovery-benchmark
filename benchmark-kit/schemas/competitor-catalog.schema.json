@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stillopen.org/benchmark-kit/schemas/competitor-catalog.schema.json",
+  "title": "StillOpen benchmark competitor fact catalog",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "id", "asOf", "competitors"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "benchmark-competitor-catalog" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+    "asOf": { "type": "string", "format": "date-time" },
+    "competitors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["toolId", "vendor", "product", "surfaces", "facts"],
+        "properties": {
+          "toolId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+          "vendor": { "type": "string", "minLength": 1 },
+          "product": { "type": "string", "minLength": 1 },
+          "surfaces": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "delivery", "sourceUrls"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+                "label": { "type": "string", "minLength": 1 },
+                "delivery": { "enum": ["browser", "desktop", "browser-and-desktop"] },
+                "sourceUrls": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "format": "uri" }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "facts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "kind", "surfaceId", "statement"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+                "kind": { "enum": ["vendor-claim", "operator-observation", "benchmark-interpretation"] },
+                "surfaceId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{1,79}$" },
+                "statement": { "type": "string", "minLength": 1 },
+                "sourceUrls": { "type": "array", "items": { "type": "string", "format": "uri" } },
+                "evidencePaths": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+                "affectedCaseIds": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

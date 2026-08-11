@@ -17,7 +17,7 @@
     {
       "path": "cases/jpeg-full-corrupt-segment-length/result.json",
       "byteLength": 1624,
-      "sha256": "ff2b1ef3e2d09bb5074246af76650693239cea14a346761ec9e7b928b7a8e488"
+      "sha256": "78cda942fb72bcf0c1853aa469ae7ec9f65d7460fcc0587d57a7bb49b0bba850"
     },
     {
       "path": "cases/jpeg-full-corrupt-segment-length/stderr.txt",
@@ -47,7 +47,7 @@
     {
       "path": "cases/jpeg-partial-corrupt-entropy/result.json",
       "byteLength": 1627,
-      "sha256": "68efc760fa20e22edec9e2aff1e84fe9bf0e37e9a32948b620c936f2e4da4c05"
+      "sha256": "7c5f21759667b88948432ec5de13476963fa85530c48bd5449db4e95e51371b3"
     },
     {
       "path": "cases/jpeg-partial-corrupt-entropy/stderr.txt",
@@ -77,7 +77,7 @@
     {
       "path": "cases/pdf-full-missing-eof/result.json",
       "byteLength": 1330,
-      "sha256": "66e0234868b7b8ade5e490ea05a0be925b1a7222e5c075724c95a7058568fe99"
+      "sha256": "bae4cd5aedf0e88732d4334f924b73fc1e346b0778cf5949801402e3e925558f"
     },
     {
       "path": "cases/pdf-full-missing-eof/stderr.txt",
@@ -92,7 +92,7 @@
     {
       "path": "cases/pdf-full-missing-eof/tool-output/recovered.bin",
       "byteLength": 1347,
-      "sha256": "51abfe0fe86d6dfeffa4df742f68bad2ae610980e3084b4a6ebc2a9a87eed3ec"
+      "sha256": "8cd78f7e27ac3cfc87fae606f01a0550d9a08a46947f57b2134e1d8b3139410e"
     },
     {
       "path": "cases/pdf-partial-truncated-stream/ground-truth.bin",
@@ -107,7 +107,7 @@
     {
       "path": "cases/pdf-partial-truncated-stream/result.json",
       "byteLength": 1435,
-      "sha256": "c2accc6a8e22c51c00ff9ac879bde76611f3605814f454d251e7a739dc7b84eb"
+      "sha256": "8df287d0f9368a120157bdad2df6066100ae4d4815c13237e876691246036ac5"
     },
     {
       "path": "cases/pdf-partial-truncated-stream/stderr.txt",
@@ -137,7 +137,7 @@
     {
       "path": "cases/png-full-missing-iend/result.json",
       "byteLength": 1574,
-      "sha256": "7e0199145c5cc4067f25fe28bf23bf9986b0352252d72565ed87e8a4050fbb02"
+      "sha256": "12090268adb32f67fe038ce50daa55c74d30a2f3f46ec9c1d20d6b7aca9c5cf1"
     },
     {
       "path": "cases/png-full-missing-iend/stderr.txt",
@@ -167,7 +167,7 @@
     {
       "path": "cases/png-partial-truncated-idat/result.json",
       "byteLength": 1625,
-      "sha256": "a9acb72901e2a8cdde85f4396be2701a39b7de0c5b1bc7e2e6374cd343b3f8d8"
+      "sha256": "f00916b354a5af5c0e35bcd41f84986968f6145bb9e1604f91636618dd7f64a4"
     },
     {
       "path": "cases/png-partial-truncated-idat/stderr.txt",
@@ -197,7 +197,7 @@
     {
       "path": "cases/zip-full-missing-directory/result.json",
       "byteLength": 1404,
-      "sha256": "2156b50fd8922885e6b3bee2d2f1f9d0e72f26440d69c6111464eb8ca4c5d494"
+      "sha256": "950622def2a75338e39b7b6f5c9966c4a75d917bdf0848256db3447655b647c2"
     },
     {
       "path": "cases/zip-full-missing-directory/stderr.txt",
@@ -227,7 +227,7 @@
     {
       "path": "cases/zip-partial-truncated-deflate/result.json",
       "byteLength": 1517,
-      "sha256": "ea45d74463525235bf7822df0d6aa6948f9cfcf490899068ee17d7026113b20c"
+      "sha256": "a3820b4a20a580e29939e1235754d328bdd3e26c91d2aa63a8ef92aa4f94226e"
     },
     {
       "path": "cases/zip-partial-truncated-deflate/stderr.txt",
@@ -252,7 +252,7 @@
     {
       "path": "plan.json",
       "byteLength": 1588,
-      "sha256": "8a5652ae2af8aeebc62d338ba3807aa70b3c619465c466e15ad91258da48d491"
+      "sha256": "49380ef521976d7cac94005e41549cebbc45cfa997a1b58bc77ba673d57a33f3"
     },
     {
       "path": "protocol.json",
@@ -262,7 +262,7 @@
     {
       "path": "run.json",
       "byteLength": 16272,
-      "sha256": "96e32049e59c4e37c7e4f330aeead29b10dca01e3ec64e0cc06e4b0f3af98586"
+      "sha256": "4ad970754fa439b01ddae0ac7805a9aecac266bdb2a8282acf15bcf8eae8a613"
     },
     {
       "path": "tool.json",
@@ -272,5 +272,5 @@
   ],
   "signature": null,
   "signatureStatus": "unsigned",
-  "rootDigest": "6ea406c1e9a451f2963d7acfd1afb89420c74c922d1fb881714325a744799a2e"
+  "rootDigest": "7ab5a975925e1c2634364e269be94d30ca7e63b4d46867311b065182f8f94b25"
 }

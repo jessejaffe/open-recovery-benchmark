@@ -11,6 +11,12 @@
       "attemptedAt": "2026-08-11T16:48:05Z",
       "productMessage": "Repair completed. Sign in to EaseUS Fixo.",
       "operatorNote": "The browser tier reported completion but required Google, Facebook, Twitter, or email sign-in before releasing the output. No account was supplied, so the technical result is unscored.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "after-processing",
+        "scope": "case",
+        "note": "The service reported completion but released no output without sign-in. This is an account gate, not evidence of a payment demand or recovery failure."
+      },
       "attachments": [
         "attachments/document-account-gate.png"
       ]
@@ -20,7 +26,12 @@
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:52:30Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "The file was accepted and identified as damaged, but the access gate appeared before repair and no output was released."
+      "operatorNote": "The file was accepted and identified as damaged, but the access gate appeared before repair and no output was released.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-processing",
+        "scope": "case"
+      }
     },
     {
       "caseId": "jpeg-full-corrupt-segment-length",
@@ -28,6 +39,11 @@
       "attemptedAt": "2026-08-11T16:53:35Z",
       "productMessage": "Sign in to EaseUS Fixo.",
       "operatorNote": "The photo path accepted the JPEG and identified it as damaged, but the access gate appeared before repair and no output was released.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-processing",
+        "scope": "product-path"
+      },
       "attachments": [
         "attachments/photo-account-gate.png"
       ]
@@ -37,35 +53,60 @@
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:53:45Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed."
+      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-upload",
+        "scope": "product-path"
+      }
     },
     {
       "caseId": "png-full-missing-iend",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:53:45Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed."
+      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-upload",
+        "scope": "product-path"
+      }
     },
     {
       "caseId": "png-partial-truncated-idat",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:53:45Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed."
+      "operatorNote": "Not uploaded after the same photo-repair path established an account requirement before processing; no technical result is claimed.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-upload",
+        "scope": "product-path"
+      }
     },
     {
       "caseId": "zip-full-missing-directory",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:52:30Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "The ZIP was accepted and identified as damaged, but the access gate prevented processing and no output was released."
+      "operatorNote": "The ZIP was accepted and identified as damaged, but the access gate prevented processing and no output was released.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-processing",
+        "scope": "case"
+      }
     },
     {
       "caseId": "zip-partial-truncated-deflate",
       "productOutcome": "unavailable",
       "attemptedAt": "2026-08-11T16:52:20Z",
       "productMessage": "Sign in to EaseUS Fixo.",
-      "operatorNote": "The ZIP was accepted and identified as damaged, but the access gate prevented processing and no output was released."
+      "operatorNote": "The ZIP was accepted and identified as damaged, but the access gate prevented processing and no output was released.",
+      "accessConstraint": {
+        "kind": "account-required",
+        "stage": "before-processing",
+        "scope": "case"
+      }
     }
   ]
 }

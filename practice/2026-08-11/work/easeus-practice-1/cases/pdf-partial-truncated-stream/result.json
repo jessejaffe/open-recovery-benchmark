@@ -11,6 +11,11 @@
     "attemptedAt": "2026-08-11T16:52:30Z",
     "productMessage": "Sign in to EaseUS Fixo.",
     "operatorNote": "The file was accepted and identified as damaged, but the access gate appeared before repair and no output was released.",
+    "accessConstraint": {
+      "kind": "account-required",
+      "stage": "before-processing",
+      "scope": "case"
+    },
     "output": null,
     "attachments": []
   },

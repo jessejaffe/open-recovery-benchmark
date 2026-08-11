@@ -11,6 +11,7 @@
     "attemptedAt": "2026-08-11T16:50:05Z",
     "productMessage": "Successful",
     "operatorNote": "The Download All archive contained one complete PNG result.",
+    "accessConstraint": null,
     "output": {
       "path": "cases/png-full-missing-iend/operator-output.bin",
       "byteLength": 1608,

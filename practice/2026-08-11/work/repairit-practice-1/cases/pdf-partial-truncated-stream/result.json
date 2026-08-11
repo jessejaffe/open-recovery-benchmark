@@ -11,6 +11,11 @@
     "attemptedAt": "2026-08-11T16:49:05Z",
     "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
     "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+    "accessConstraint": {
+      "kind": "service-maintenance",
+      "stage": "before-upload",
+      "scope": "product-path"
+    },
     "output": null,
     "attachments": []
   },

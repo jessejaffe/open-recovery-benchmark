@@ -11,6 +11,7 @@
     "attemptedAt": "2026-08-11T16:50:05Z",
     "productMessage": "Successful",
     "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output and candidate 2 is retained as an attachment; both independently decode to the same benchmark score.",
+    "accessConstraint": null,
     "output": {
       "path": "cases/jpeg-partial-corrupt-entropy/operator-output.bin",
       "byteLength": 585,

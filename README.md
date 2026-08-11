@@ -22,6 +22,9 @@ Git commit that defined their runner, schemas, fixtures, and scoring behavior.
 ## Included
 
 - Versioned JSON contracts for protocols, corpora, tools, and guided captures.
+- Structured competitor facts and access constraints that keep vendor claims,
+  operator observations, account gates, payment gates, quotas, maintenance, and
+  unsupported formats distinct.
 - Command and operator-guided execution paths.
 - Independent exact-byte, raster RGBA, and PDF render/text validators.
 - Three required case categories: damaged files expected to be fully restored,
@@ -83,6 +86,12 @@ earlier one.
 
 Hashes demonstrate bundle integrity; they do not authenticate an operator.
 Unsigned bundles must remain visibly labeled as unsigned.
+
+The proposed official signing workflow uses a digital signature over the
+evidence root, run identity, operator identity, and signing time. See
+[`docs/operator-signatures.md`](docs/operator-signatures.md). A signature proves
+attribution and integrity; it does not by itself prove that the manual browser
+steps were performed honestly.
 
 ## License
 

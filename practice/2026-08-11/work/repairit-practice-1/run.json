@@ -22,7 +22,7 @@
     "platform": "Operator-controlled browser session",
     "synthetic": false
   },
-  "planDigest": "cec944b964e46f68218f2865c922e2a9bed95edf119dcd27670407e48bf27aea",
+  "planDigest": "d646a8f9ca8c4927c679ca728b2a74eabb93c82b88fd0efb9193a09f6f877e47",
   "claimBoundary": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
   "cases": [
     {
@@ -38,6 +38,12 @@
         "attemptedAt": "2026-08-11T16:49:05Z",
         "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
         "operatorNote": "No desktop software was downloaded for this browser-only rehearsal.",
+        "accessConstraint": {
+          "kind": "service-maintenance",
+          "stage": "before-upload",
+          "scope": "product-path",
+          "note": "The vendor directed users to its desktop application; this benchmark did not install software."
+        },
         "output": null,
         "attachments": [
           {
@@ -74,6 +80,11 @@
         "attemptedAt": "2026-08-11T16:49:05Z",
         "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
         "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+        "accessConstraint": {
+          "kind": "service-maintenance",
+          "stage": "before-upload",
+          "scope": "product-path"
+        },
         "output": null,
         "attachments": []
       },
@@ -104,6 +115,7 @@
         "attemptedAt": "2026-08-11T16:50:05Z",
         "productMessage": "Successful",
         "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output; candidate 2 and the untouched Download All archive are retained as attachments. Both candidates independently decode to the same benchmark score.",
+        "accessConstraint": null,
         "output": {
           "path": "cases/jpeg-full-corrupt-segment-length/operator-output.bin",
           "byteLength": 549,
@@ -167,6 +179,7 @@
         "attemptedAt": "2026-08-11T16:50:05Z",
         "productMessage": "Successful",
         "operatorNote": "Repairit returned two complete candidates. Candidate 1 is the deterministic primary output and candidate 2 is retained as an attachment; both independently decode to the same benchmark score.",
+        "accessConstraint": null,
         "output": {
           "path": "cases/jpeg-partial-corrupt-entropy/operator-output.bin",
           "byteLength": 585,
@@ -220,6 +233,7 @@
         "attemptedAt": "2026-08-11T16:50:05Z",
         "productMessage": "Successful",
         "operatorNote": "The Download All archive contained one complete PNG result.",
+        "accessConstraint": null,
         "output": {
           "path": "cases/png-full-missing-iend/operator-output.bin",
           "byteLength": 1608,
@@ -267,6 +281,16 @@
         "attemptedAt": "2026-08-11T16:51:10Z",
         "productMessage": "Repairit Online Free: Repair up to 3 photos.",
         "operatorNote": "The free browser path had admitted three photos and no longer exposed an add-photo control after completion. The fourth case was not admitted and the quota was not circumvented.",
+        "accessConstraint": {
+          "kind": "free-tier-quota",
+          "stage": "before-upload",
+          "scope": "session",
+          "limit": {
+            "maximum": 3,
+            "unit": "photos"
+          },
+          "note": "The free allowance was exhausted after the three earlier image cases."
+        },
         "output": null,
         "attachments": []
       },
@@ -297,6 +321,12 @@
         "attemptedAt": "2026-08-11T16:49:05Z",
         "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
         "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+        "accessConstraint": {
+          "kind": "service-maintenance",
+          "stage": "before-upload",
+          "scope": "product-path",
+          "note": "Repairit's primary online file page advertises PDF and Office formats but not ZIP; its desktop offer advertises ZIP. The unavailable page prevented an online upload attempt."
+        },
         "output": null,
         "attachments": []
       },
@@ -327,6 +357,12 @@
         "attemptedAt": "2026-08-11T16:49:05Z",
         "productMessage": "The File Repair feature is temporarily unavailable due to maintenance. Please use the desktop application to process your files.",
         "operatorNote": "The maintenance state applied to the online file-repair path; no technical attempt or score is claimed.",
+        "accessConstraint": {
+          "kind": "service-maintenance",
+          "stage": "before-upload",
+          "scope": "product-path",
+          "note": "Repairit's primary online file page advertises PDF and Office formats but not ZIP; its desktop offer advertises ZIP. The unavailable page prevented an online upload attempt."
+        },
         "output": null,
         "attachments": []
       },

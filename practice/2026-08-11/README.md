@@ -30,6 +30,10 @@ Tools in the rehearsal:
 The browser products use guided capture. Unsupported formats are recorded as
 `unavailable`; a result withheld behind payment is recorded as `paywalled` and
 is unscored. Neither state is reported as a technical recovery failure.
+Known access causes are also preserved as structured constraints, including
+format scope, service maintenance, account requirements, and free-tier quotas.
+The dated vendor-claim and operator-observation catalog is in
+[`competitors/catalog.json`](competitors/catalog.json).
 
 ## Backend workflow
 
@@ -70,7 +74,7 @@ they cannot be compared without the coverage column.
 | zPDF | 2 / 8 | 1 | 0 | 1 refusal | 6 unsupported | 0.500000 |
 | iLovePDF | 2 / 8 | 0 | 0 | 2 refusals | 6 unsupported | 0.000000 |
 | EaseUS Online | 0 / 8 | 0 | 0 | 0 | 8 account-gated | — |
-| Repairit Online | 3 / 8 | 2 | 0 | 1 changed output | 5 maintenance/quota | 0.666667 |
+| Repairit Online | 3 / 8 | 2 | 0 | 1 changed output | 4 maintenance + 1 free-tier quota | 0.666667 |
 
 StillOpen exactly recovered all four expected-full cases. Its three partial
 credits were two of three PDF pages, half of the PNG pixels, and 65 of 3,736
@@ -84,6 +88,16 @@ account before releasing it and then gated further processing, so no EaseUS
 output is scored. Repairit's file-repair path was under maintenance. Its photo
 path returned two exact full recoveries and one altered entropy-damaged JPEG;
 the fourth photo was not admitted after the free three-photo allowance.
+Repairit's premium tier makes that allowance a commercial paywall, but the case
+record says `free-tier-quota` because no fourth output was processed and then
+withheld.
+
+Repairit's surfaces must not be collapsed into one capability claim. Its
+official online file page advertises PDF and Office formats, so the maintenance
+page does not establish that Repairit cannot repair PDFs. The primary online
+page does not list ZIP, while the separately downloaded desktop offer advertises
+ZIP repair. Because this rehearsal installed no software and the online page was
+unavailable before upload, its ZIP cases remain unscored rather than failed.
 
 Repairit returned two candidates for each JPEG. Candidate 1 is the deterministic
 primary output in this rehearsal; candidate 2 and the original Download All
@@ -103,8 +117,11 @@ content-addressed run under `work/`, and each run can be verified offline.
    visible limitation rather than being disguised as neutral.
 3. Formalize multi-output selection, free-tier quota handling, and account-only
    access as protocol rules.
-4. Make the future UI show format coverage, scored denominator, access state,
-   full/partial/zero counts, recovered units, and unexpected ZIP entries before
-   showing any mean.
+4. Keep dated competitor facts current as each run reveals product scope,
+   delivery mode, quotas, account gates, payment gates, and service outages.
 5. Repeat guided runs at least twice and add signed operator attestations before
    treating browser-service evidence as an official release.
+6. Defer the results UI until those backend contracts are frozen. Its eventual
+   first view must show format coverage, scored denominator, access state,
+   full/partial/zero counts, recovered units, and unexpected ZIP entries before
+   showing any mean.

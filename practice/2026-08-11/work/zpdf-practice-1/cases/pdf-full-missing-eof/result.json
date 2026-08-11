@@ -11,6 +11,7 @@
     "attemptedAt": "2026-08-11T16:45:20Z",
     "productMessage": "PDF repaired successfully!",
     "operatorNote": "The file was repeated independently after an ambiguous two-file batch attempt. The independent run produced one downloadable repaired PDF.",
+    "accessConstraint": null,
     "output": {
       "path": "cases/pdf-full-missing-eof/operator-output.bin",
       "byteLength": 1347,

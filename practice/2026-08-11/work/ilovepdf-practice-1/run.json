@@ -22,7 +22,7 @@
     "platform": "Operator-controlled browser session",
     "synthetic": false
   },
-  "planDigest": "070459e524974a87530813442b35944605f6547c5ba42ba4177392005bb309c8",
+  "planDigest": "fb2f386f0fef1d29b8a1a16bb7f441362d14b39ee24ba1fd17011213682ba600",
   "claimBoundary": "Practice evidence only. This vendor-authored eight-case rehearsal validates the benchmark backend and operator workflow; it is not Benchmark v1.0 and must not be presented as an official competitor ranking.",
   "cases": [
     {
@@ -38,6 +38,7 @@
         "attemptedAt": "2026-08-11T16:46:35Z",
         "productMessage": "Oh no! We couldn't process your files. This file has not been processed because it was damaged or we were unable to read it.",
         "operatorNote": "The product displayed its Damaged/Corrupted File error page and produced no output.",
+        "accessConstraint": null,
         "output": null,
         "attachments": []
       },
@@ -68,6 +69,7 @@
         "attemptedAt": "2026-08-11T16:47:05Z",
         "productMessage": "Oh no! We couldn't process your files. This file has not been processed because it was damaged or we were unable to read it.",
         "operatorNote": "The product displayed its Damaged/Corrupted File error page and produced no output.",
+        "accessConstraint": null,
         "output": null,
         "attachments": [
           {
@@ -104,6 +106,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },
@@ -134,6 +141,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },
@@ -164,6 +176,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },
@@ -194,6 +211,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },
@@ -224,6 +246,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },
@@ -254,6 +281,11 @@
         "attemptedAt": "2026-08-11T16:47:10Z",
         "productMessage": "Repair PDF accepts PDF files only.",
         "operatorNote": "Unsupported product scope; not a technical recovery failure.",
+        "accessConstraint": {
+          "kind": "format-not-supported",
+          "stage": "before-upload",
+          "scope": "case"
+        },
         "output": null,
         "attachments": []
       },

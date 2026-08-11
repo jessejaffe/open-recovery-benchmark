@@ -11,6 +11,12 @@
     "attemptedAt": "2026-08-11T16:48:05Z",
     "productMessage": "Repair completed. Sign in to EaseUS Fixo.",
     "operatorNote": "The browser tier reported completion but required Google, Facebook, Twitter, or email sign-in before releasing the output. No account was supplied, so the technical result is unscored.",
+    "accessConstraint": {
+      "kind": "account-required",
+      "stage": "after-processing",
+      "scope": "case",
+      "note": "The service reported completion but released no output without sign-in. This is an account gate, not evidence of a payment demand or recovery failure."
+    },
     "output": null,
     "attachments": [
       {

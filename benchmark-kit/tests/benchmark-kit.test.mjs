@@ -6,6 +6,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { canonicalize, sha256 } from "../lib/canonical.mjs";
 import { hashFile, readJson } from "../lib/files.mjs";
+import { validateCompetitorCatalog } from "../lib/contracts.mjs";
 import { publishRun, verifyPublication } from "../lib/publisher.mjs";
 import { executeBenchmark, ingestGuidedBenchmark, makePlan, verifyRun } from "../lib/runner.mjs";
 import { validateCapturedOutput } from "../lib/validators.mjs";
@@ -21,6 +22,21 @@ const inputs = {
 async function workspace() {
   return mkdtemp(path.join(os.tmpdir(), "stillopen-benchmark-test-"));
 }
+
+test("practice competitor catalog separates vendor claims from observed constraints", async () => {
+  const catalogRoot = path.join(kitRoot, "..", "practice", "2026-08-11", "competitors");
+  const catalog = await readJson(path.join(catalogRoot, "catalog.json"));
+  assert.doesNotThrow(() => validateCompetitorCatalog(catalog));
+  for (const competitor of catalog.competitors) {
+    for (const fact of competitor.facts) {
+      for (const evidencePath of fact.evidencePaths ?? []) await readFile(path.resolve(catalogRoot, evidencePath));
+    }
+  }
+  const repairit = catalog.competitors.find((item) => item.vendor === "Wondershare");
+  assert.ok(repairit);
+  assert.match(repairit.facts.find((fact) => fact.id === "online-photo-free-limit").statement, /three photos/);
+  assert.match(repairit.facts.find((fact) => fact.id === "zip-interpretation").statement, /does not establish.*ZIP recovery failure/);
+});
 
 const CRC_TABLE = Array.from({ length: 256 }, (_, value) => {
   let crc = value;
@@ -232,6 +248,12 @@ test("unavailable guided cases stay visible without entering recovery-score deno
   observations.id = "synthetic-guided-with-unavailable-v1";
   observations.cases[2].productOutcome = "unavailable";
   observations.cases[2].productMessage = "Synthetic service unavailable.";
+  observations.cases[2].accessConstraint = {
+    kind: "free-tier-quota",
+    stage: "before-upload",
+    scope: "session",
+    limit: { maximum: 2, unit: "files" },
+  };
   const observationsPath = path.join(root, "observations.json");
   const outputRoot = path.join(root, "guided-outputs");
   await mkdir(outputRoot);
@@ -257,7 +279,33 @@ test("unavailable guided cases stay visible without entering recovery-score deno
   assert.equal(result.run.summary.categoryScores["healthy-control"].eligibleCases, 0);
   assert.equal(result.run.summary.categoryScores["healthy-control"].meanRecoveryScore, null);
   assert.equal(result.run.cases[2].eligible, false);
+  assert.deepEqual(result.run.cases[2].observation.accessConstraint, observations.cases[2].accessConstraint);
   assert.equal((await verifyRun(result.runRoot)).ok, true);
+});
+
+test("guided access constraints reject quota records without a numeric limit", async () => {
+  const root = await workspace();
+  const observations = await readJson(path.join(exampleRoot, "guided-observations.json"));
+  observations.id = "synthetic-guided-invalid-quota-v1";
+  observations.cases[2].productOutcome = "unavailable";
+  observations.cases[2].accessConstraint = {
+    kind: "free-tier-quota",
+    stage: "before-upload",
+    scope: "session",
+  };
+  const observationsPath = path.join(root, "observations.json");
+  await writeFile(observationsPath, `${JSON.stringify(observations, null, 2)}\n`);
+  await assert.rejects(
+    ingestGuidedBenchmark({
+      protocolPath: inputs.protocolPath,
+      corpusPath: inputs.corpusPath,
+      toolPath: path.join(exampleRoot, "tools", "synthetic-guided.json"),
+      observationsPath,
+      workspaceRoot: root,
+      runId: "guided-invalid-quota-run",
+    }),
+    /limit is required for a free-tier quota/,
+  );
 });
 
 test("verification ties rehashed guided outcomes to their source observation record", async () => {

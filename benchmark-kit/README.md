@@ -48,4 +48,15 @@ run with time and output-capture limits. Guided captures ingest an operator's
 structured observation and supporting files, then score the captured output
 independently.
 
-This repository currently publishes no product result bundles.
+For new guided captures, an `unavailable` or `paywalled` case should include an
+`accessConstraint` whenever the cause is known. The structured record separates
+unsupported formats, maintenance, account gates, payment gates, free-tier
+quotas, install requirements, and regional restrictions. Its `stage` says
+whether the constraint appeared before upload, before or after processing, or
+before download; its `scope` says whether it applied to one case, the browser
+session, or the whole product path. A free-tier quota also records the stated
+numeric limit. These facts explain coverage and never substitute for output
+validation.
+
+The repository includes an explicitly unofficial practice product bundle under
+`practice/`; it is backend evidence and not an official competitor ranking.

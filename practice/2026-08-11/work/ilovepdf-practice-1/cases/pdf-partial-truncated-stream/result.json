@@ -11,6 +11,7 @@
     "attemptedAt": "2026-08-11T16:47:05Z",
     "productMessage": "Oh no! We couldn't process your files. This file has not been processed because it was damaged or we were unable to read it.",
     "operatorNote": "The product displayed its Damaged/Corrupted File error page and produced no output.",
+    "accessConstraint": null,
     "output": null,
     "attachments": [
       {

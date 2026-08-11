@@ -3,7 +3,7 @@
   "kind": "benchmark-plan",
   "harness": {
     "name": "stillopen-open-recovery-benchmark-kit",
-    "version": "1.3.0"
+    "version": "1.4.0"
   },
   "protocol": {
     "id": "practice-recovery-rehearsal-2026-08-11",
@@ -47,5 +47,5 @@
     "zip-full-missing-directory",
     "zip-partial-truncated-deflate"
   ],
-  "planDigest": "cec944b964e46f68218f2865c922e2a9bed95edf119dcd27670407e48bf27aea"
+  "planDigest": "d646a8f9ca8c4927c679ca728b2a74eabb93c82b88fd0efb9193a09f6f877e47"
 }

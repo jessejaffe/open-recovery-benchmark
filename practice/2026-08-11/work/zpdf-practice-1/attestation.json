@@ -16,8 +16,8 @@
     },
     {
       "path": "cases/jpeg-full-corrupt-segment-length/result.json",
-      "byteLength": 801,
-      "sha256": "b4606cae18f48f2046fcbeb194a62e9110376164d3f6613efb3a51946d586e44"
+      "byteLength": 926,
+      "sha256": "b5f4403c7d58310a847cc7454d486c13263b9b23bfb34b3d0da677c531333498"
     },
     {
       "path": "cases/jpeg-partial-corrupt-entropy/ground-truth.bin",
@@ -31,8 +31,8 @@
     },
     {
       "path": "cases/jpeg-partial-corrupt-entropy/result.json",
-      "byteLength": 799,
-      "sha256": "60e7156315d62d3eac9bdfd6fd67a46461b901a92e9b788d1fc57350d362d035"
+      "byteLength": 924,
+      "sha256": "b1013d88c612827060f1207420233856cba3a22aedb90652ff9ccd3e1f63fa65"
     },
     {
       "path": "cases/pdf-full-missing-eof/ground-truth.bin",
@@ -51,8 +51,8 @@
     },
     {
       "path": "cases/pdf-full-missing-eof/result.json",
-      "byteLength": 1321,
-      "sha256": "2565bac20665fc8ae472af02acbced2f92ab50ebda2c6cef5decb460c5367a64"
+      "byteLength": 1351,
+      "sha256": "e301b499809f2218803e260dfe979238148b6c9470c30d134daad0c1e1c5c984"
     },
     {
       "path": "cases/pdf-partial-truncated-stream/attachments/01.png",
@@ -71,8 +71,8 @@
     },
     {
       "path": "cases/pdf-partial-truncated-stream/result.json",
-      "byteLength": 1053,
-      "sha256": "af09cc762eb71b4f4283dbee39abbe5d589c98680708a39ba18f5a0b4b08db48"
+      "byteLength": 1083,
+      "sha256": "ca0259f100346c125e339459df88b221b46b0a2084596f212b779019a443ebda"
     },
     {
       "path": "cases/png-full-missing-iend/ground-truth.bin",
@@ -86,8 +86,8 @@
     },
     {
       "path": "cases/png-full-missing-iend/result.json",
-      "byteLength": 782,
-      "sha256": "63d3f3b3be3b8e6dea3ce156b2c72ec0dc28353bdd677f9bca41e20c92960dfc"
+      "byteLength": 907,
+      "sha256": "8ce7309eb14f6e82c1b464e52a40081b8822c434d003ef67a3942491cf0f215c"
     },
     {
       "path": "cases/png-partial-truncated-idat/ground-truth.bin",
@@ -101,8 +101,8 @@
     },
     {
       "path": "cases/png-partial-truncated-idat/result.json",
-      "byteLength": 790,
-      "sha256": "a463d11a6b1c63c9b40de6e9244ff71ed29bb9a0a985a76528b40ad7fb103097"
+      "byteLength": 915,
+      "sha256": "e48aad1537d66be7e1263f0825f383553fc9b30a6db0bd83ff49476185ab4dc8"
     },
     {
       "path": "cases/zip-full-missing-directory/ground-truth.bin",
@@ -116,8 +116,8 @@
     },
     {
       "path": "cases/zip-full-missing-directory/result.json",
-      "byteLength": 796,
-      "sha256": "8aa8cbf7c13cd79e188eedd90ef43bd86ad0f521bd4de020df18bd19a95f879c"
+      "byteLength": 921,
+      "sha256": "dee98ce2560d458041b3701fdf70690e717d7a353ec668e719314a522ae666cf"
     },
     {
       "path": "cases/zip-partial-truncated-deflate/ground-truth.bin",
@@ -131,8 +131,8 @@
     },
     {
       "path": "cases/zip-partial-truncated-deflate/result.json",
-      "byteLength": 801,
-      "sha256": "dcb0445fe15fab8f346529382f3a69ba161ff3360ba1c74f2f996e0d31176d52"
+      "byteLength": 926,
+      "sha256": "5ff7500893eda667ce7e4073b7f63091539b76553fe2565e5a1c1499fe0cf246"
     },
     {
       "path": "corpus.json",
@@ -141,13 +141,13 @@
     },
     {
       "path": "guided-observations.json",
-      "byteLength": 2833,
-      "sha256": "9af60cbe551253376af9a78dff0d3898efef704c275a455ed027c49323115590"
+      "byteLength": 3643,
+      "sha256": "2a96c9f1ed2b8ac0fe729ba14f6cde56fafed5e0e7f2e1c337403bd798f4102d"
     },
     {
       "path": "plan.json",
       "byteLength": 1523,
-      "sha256": "61ddfed4b2d895bd6cea3c46b51eec1bcd3c2062a8c27464e9f68ad4eaaa2ecc"
+      "sha256": "f63e67dfd16f108ddd3e8c147d00e01918fc1d737b15de82df463a2d06569a43"
     },
     {
       "path": "protocol.json",
@@ -156,8 +156,8 @@
     },
     {
       "path": "run.json",
-      "byteLength": 10645,
-      "sha256": "db21ac6537ab6cd7275da33705c7e3050f0e95387a258ea67d513c0a6b8874cb"
+      "byteLength": 11583,
+      "sha256": "09403add4d4defa019f23b8f8941cf2107bc60fc30398bd0efd5bd8e9cb66dab"
     },
     {
       "path": "tool.json",
@@ -167,5 +167,5 @@
   ],
   "signature": null,
   "signatureStatus": "unsigned",
-  "rootDigest": "d1a2e48d67fba9989631827a3f4c21753f9d9393a6fd42b00c6f295c2296c02f"
+  "rootDigest": "95a7c57ac96f637491bc840bfe592459c0882219204d1fa4cde233d9684cd8ae"
 }

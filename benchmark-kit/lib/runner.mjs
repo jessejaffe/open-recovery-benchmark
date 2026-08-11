@@ -9,10 +9,10 @@ import { missingOutputValidation, validateCapturedOutput } from "./validators.mj
 
 const HARNESS = Object.freeze({
   name: "stillopen-open-recovery-benchmark-kit",
-  version: "1.3.0",
+  version: "1.4.0",
 });
 
-const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", "1.2.0", HARNESS.version]);
+const SUPPORTED_HARNESS_VERSIONS = new Set(["1.0.0", "1.1.0", "1.2.0", "1.3.0", HARNESS.version]);
 const CASE_CATEGORIES = [
   "damaged-full-restoration",
   "damaged-partial-restoration",
@@ -443,6 +443,7 @@ export async function ingestGuidedBenchmark({ protocolPath, corpusPath, toolPath
         attemptedAt: recorded.attemptedAt,
         productMessage: recorded.productMessage ?? null,
         operatorNote: recorded.operatorNote ?? null,
+        accessConstraint: recorded.accessConstraint ?? null,
         output,
         attachments,
       },
@@ -547,6 +548,7 @@ export async function verifyRun(runRoot) {
         || item.observation.attemptedAt !== recorded.attemptedAt
         || item.observation.productMessage !== (recorded.productMessage ?? null)
         || item.observation.operatorNote !== (recorded.operatorNote ?? null)
+        || canonicalize(item.observation.accessConstraint ?? null) !== canonicalize(recorded.accessConstraint ?? null)
         || Boolean(item.observation.output) !== Boolean(recorded.outputPath)) {
         throw new Error(`Guided case record does not match guided-observations.json for ${item.caseId}.`);
       }

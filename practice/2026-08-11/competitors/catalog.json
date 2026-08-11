@@ -1,0 +1,212 @@
+{
+  "$schema": "../../../benchmark-kit/schemas/competitor-catalog.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-competitor-catalog",
+  "id": "practice-competitor-facts-2026-08-11",
+  "asOf": "2026-08-11T17:00:00Z",
+  "competitors": [
+    {
+      "toolId": "zpdf-repair-pdf-web-2026-08-11",
+      "vendor": "zPDF",
+      "product": "Repair PDF",
+      "surfaces": [
+        {
+          "id": "repair-pdf-web",
+          "label": "Repair PDF web tool",
+          "delivery": "browser",
+          "sourceUrls": ["https://zpdf.app/en/tools/repair-pdf"]
+        }
+      ],
+      "facts": [
+        {
+          "id": "pdf-only-scope",
+          "kind": "operator-observation",
+          "surfaceId": "repair-pdf-web",
+          "statement": "The selected product path accepted PDF files only, so six image and ZIP cases were outside its scope.",
+          "affectedCaseIds": [
+            "jpeg-full-corrupt-segment-length",
+            "jpeg-partial-corrupt-entropy",
+            "png-full-missing-iend",
+            "png-partial-truncated-idat",
+            "zip-full-missing-directory",
+            "zip-partial-truncated-deflate"
+          ]
+        },
+        {
+          "id": "practice-results",
+          "kind": "operator-observation",
+          "surfaceId": "repair-pdf-web",
+          "statement": "The service repaired the missing-EOF PDF and explicitly refused the truncated-content PDF.",
+          "affectedCaseIds": ["pdf-full-missing-eof", "pdf-partial-truncated-stream"]
+        }
+      ]
+    },
+    {
+      "toolId": "ilovepdf-repair-pdf-web-2026-08-11",
+      "vendor": "iLovePDF",
+      "product": "Repair PDF",
+      "surfaces": [
+        {
+          "id": "repair-pdf-web",
+          "label": "Repair PDF web tool",
+          "delivery": "browser",
+          "sourceUrls": ["https://www.ilovepdf.com/repair-pdf"]
+        }
+      ],
+      "facts": [
+        {
+          "id": "pdf-only-scope",
+          "kind": "operator-observation",
+          "surfaceId": "repair-pdf-web",
+          "statement": "The selected product path accepted PDF files only, so six image and ZIP cases were outside its scope.",
+          "affectedCaseIds": [
+            "jpeg-full-corrupt-segment-length",
+            "jpeg-partial-corrupt-entropy",
+            "png-full-missing-iend",
+            "png-partial-truncated-idat",
+            "zip-full-missing-directory",
+            "zip-partial-truncated-deflate"
+          ]
+        },
+        {
+          "id": "practice-results",
+          "kind": "operator-observation",
+          "surfaceId": "repair-pdf-web",
+          "statement": "The service refused both practice PDFs as damaged or unreadable and released no output.",
+          "evidencePaths": ["../observations/ilovepdf/attachments/pdf-partial-refusal.png"],
+          "affectedCaseIds": ["pdf-full-missing-eof", "pdf-partial-truncated-stream"]
+        }
+      ]
+    },
+    {
+      "toolId": "easeus-online-repair-web-2026-08-11",
+      "vendor": "EaseUS",
+      "product": "Online File Repair",
+      "surfaces": [
+        {
+          "id": "document-repair-web",
+          "label": "Document repair web tool",
+          "delivery": "browser",
+          "sourceUrls": ["https://repair.easeus.com/document_repair/"]
+        },
+        {
+          "id": "photo-repair-web",
+          "label": "Photo repair web tool",
+          "delivery": "browser",
+          "sourceUrls": ["https://repair.easeus.com/photo_repair/"]
+        }
+      ],
+      "facts": [
+        {
+          "id": "account-gate",
+          "kind": "operator-observation",
+          "surfaceId": "document-repair-web",
+          "statement": "The service required an account before releasing or processing outputs; no payment demand was established, so the cases are account-gated rather than paywalled.",
+          "evidencePaths": ["../observations/easeus/attachments/document-account-gate.png"],
+          "affectedCaseIds": [
+            "pdf-full-missing-eof",
+            "pdf-partial-truncated-stream",
+            "zip-full-missing-directory",
+            "zip-partial-truncated-deflate"
+          ]
+        },
+        {
+          "id": "photo-account-gate",
+          "kind": "operator-observation",
+          "surfaceId": "photo-repair-web",
+          "statement": "The photo path required an account before processing and released no benchmark output.",
+          "evidencePaths": ["../observations/easeus/attachments/photo-account-gate.png"],
+          "affectedCaseIds": [
+            "jpeg-full-corrupt-segment-length",
+            "jpeg-partial-corrupt-entropy",
+            "png-full-missing-iend",
+            "png-partial-truncated-idat"
+          ]
+        }
+      ]
+    },
+    {
+      "toolId": "repairit-online-repair-web-2026-08-11",
+      "vendor": "Wondershare",
+      "product": "Repairit",
+      "surfaces": [
+        {
+          "id": "online-photo",
+          "label": "Repairit Online Photo Repair",
+          "delivery": "browser",
+          "sourceUrls": ["https://repairit.wondershare.com/online-photo-repair.html"]
+        },
+        {
+          "id": "online-file",
+          "label": "Repairit Online File Repair",
+          "delivery": "browser",
+          "sourceUrls": ["https://repairit.wondershare.com/online-file-repair.html"]
+        },
+        {
+          "id": "desktop-file",
+          "label": "Repairit desktop file repair",
+          "delivery": "desktop",
+          "sourceUrls": ["https://repairit.wondershare.com/buy/file-repair.html"]
+        }
+      ],
+      "facts": [
+        {
+          "id": "online-photo-free-limit",
+          "kind": "vendor-claim",
+          "surfaceId": "online-photo",
+          "statement": "The free online photo tier advertises repair of up to three photos; the premium tier advertises up to 300 photos monthly.",
+          "sourceUrls": ["https://repairit.wondershare.com/online-photo-repair.html"]
+        },
+        {
+          "id": "three-photo-limit-observed",
+          "kind": "operator-observation",
+          "surfaceId": "online-photo",
+          "statement": "Three image cases were admitted. The fourth image case was not admitted after the free allowance was exhausted.",
+          "evidencePaths": ["../observations/repairit/attachments/photo-results.png"],
+          "affectedCaseIds": ["png-partial-truncated-idat"]
+        },
+        {
+          "id": "multiple-photo-candidates",
+          "kind": "operator-observation",
+          "surfaceId": "online-photo",
+          "statement": "Repairit returned two alternatives for each JPEG; both alternatives had the same independent score in this rehearsal.",
+          "evidencePaths": ["../observations/repairit/attachments/raw-download-all.zip"],
+          "affectedCaseIds": ["jpeg-full-corrupt-segment-length", "jpeg-partial-corrupt-entropy"]
+        },
+        {
+          "id": "online-file-advertised-formats",
+          "kind": "vendor-claim",
+          "surfaceId": "online-file",
+          "statement": "The primary online file-repair page advertises PDF, DOCX, PPTX, and XLSX support.",
+          "sourceUrls": ["https://repairit.wondershare.com/online-file-repair.html"]
+        },
+        {
+          "id": "online-file-maintenance",
+          "kind": "operator-observation",
+          "surfaceId": "online-file",
+          "statement": "The online file-repair path reported temporary maintenance and directed the operator to the desktop application, so no PDF or ZIP file was processed.",
+          "evidencePaths": ["../observations/repairit/attachments/file-repair-maintenance.png"],
+          "affectedCaseIds": [
+            "pdf-full-missing-eof",
+            "pdf-partial-truncated-stream",
+            "zip-full-missing-directory",
+            "zip-partial-truncated-deflate"
+          ]
+        },
+        {
+          "id": "desktop-zip-claim",
+          "kind": "vendor-claim",
+          "surfaceId": "desktop-file",
+          "statement": "The desktop file-repair offer advertises ZIP repair, but no desktop software was installed or tested in this browser-only rehearsal.",
+          "sourceUrls": ["https://repairit.wondershare.com/buy/file-repair.html"]
+        },
+        {
+          "id": "zip-interpretation",
+          "kind": "benchmark-interpretation",
+          "surfaceId": "online-file",
+          "statement": "The rehearsal does not establish a Repairit ZIP recovery failure. ZIP is not listed on the primary online format page, is advertised for desktop, and the online path was unavailable before upload."
+        }
+      ]
+    }
+  ]
+}

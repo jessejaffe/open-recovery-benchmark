@@ -7,6 +7,8 @@ const CASE_CATEGORIES = new Set([
   "damaged-partial-restoration",
   "healthy-control",
 ]);
+const COMPETITOR_FACT_KINDS = new Set(["vendor-claim", "operator-observation", "benchmark-interpretation"]);
+const DELIVERY_MODES = new Set(["browser", "desktop", "browser-and-desktop"]);
 
 function object(value, label) {
   if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error(`${label} must be an object.`);
@@ -117,6 +119,44 @@ export function validateTool(tool) {
 }
 
 const GUIDED_OUTCOMES = new Set(["success", "refusal", "error", "timeout", "unavailable", "paywalled", "no-output"]);
+const ACCESS_CONSTRAINT_KINDS = new Set([
+  "format-not-supported",
+  "service-maintenance",
+  "free-tier-quota",
+  "account-required",
+  "payment-required",
+  "software-install-required",
+  "region-restricted",
+  "unknown-unavailable",
+]);
+const ACCESS_CONSTRAINT_STAGES = new Set([
+  "before-upload",
+  "after-upload",
+  "before-processing",
+  "after-processing",
+  "before-download",
+  "not-applicable",
+]);
+const ACCESS_CONSTRAINT_SCOPES = new Set(["case", "session", "product-path"]);
+
+function validateAccessConstraint(value, label, productOutcome) {
+  object(value, label);
+  if (!["unavailable", "paywalled"].includes(productOutcome)) {
+    throw new Error(`${label} may be recorded only for unavailable or paywalled outcomes.`);
+  }
+  if (!ACCESS_CONSTRAINT_KINDS.has(value.kind)) throw new Error(`${label}.kind is unsupported.`);
+  if (!ACCESS_CONSTRAINT_STAGES.has(value.stage)) throw new Error(`${label}.stage is unsupported.`);
+  if (!ACCESS_CONSTRAINT_SCOPES.has(value.scope)) throw new Error(`${label}.scope is unsupported.`);
+  if (value.note !== undefined && typeof value.note !== "string") throw new Error(`${label}.note must be a string.`);
+  if (value.limit !== undefined) {
+    object(value.limit, `${label}.limit`);
+    if (!Number.isInteger(value.limit.maximum) || value.limit.maximum < 1) throw new Error(`${label}.limit.maximum must be a positive integer.`);
+    text(value.limit.unit, `${label}.limit.unit`);
+  }
+  if (value.kind === "free-tier-quota" && value.limit === undefined) {
+    throw new Error(`${label}.limit is required for a free-tier quota.`);
+  }
+}
 
 export function validateGuidedObservations(observations, corpus, tool) {
   contract(observations, "benchmark-guided-observations");
@@ -137,10 +177,69 @@ export function validateGuidedObservations(observations, corpus, tool) {
     if (item.outputPath !== undefined) text(item.outputPath, `${label}.outputPath`);
     if (item.productMessage !== undefined && typeof item.productMessage !== "string") throw new Error(`${label}.productMessage must be a string.`);
     if (item.operatorNote !== undefined && typeof item.operatorNote !== "string") throw new Error(`${label}.operatorNote must be a string.`);
+    if (item.accessConstraint !== undefined) validateAccessConstraint(item.accessConstraint, `${label}.accessConstraint`, item.productOutcome);
     if (item.productOutcome === "success" && !item.outputPath) throw new Error(`${label} reports success without an outputPath.`);
     if (item.attachments !== undefined && (!Array.isArray(item.attachments) || !item.attachments.every((value) => typeof value === "string" && value.trim()))) {
       throw new Error(`${label}.attachments must be relative paths.`);
     }
   }
   if (seen.size !== expectedIds.size) throw new Error("Guided observations must contain exactly one terminal observation for every frozen case.");
+}
+
+export function validateCompetitorCatalog(catalog) {
+  contract(catalog, "benchmark-competitor-catalog");
+  text(catalog.asOf, "benchmark-competitor-catalog.asOf");
+  if (!Number.isFinite(Date.parse(catalog.asOf))) throw new Error("benchmark-competitor-catalog.asOf must be an ISO-compatible timestamp.");
+  if (!Array.isArray(catalog.competitors) || catalog.competitors.length === 0) {
+    throw new Error("benchmark-competitor-catalog.competitors must not be empty.");
+  }
+  const toolIds = new Set();
+  for (const [competitorIndex, competitor] of catalog.competitors.entries()) {
+    const label = `benchmark-competitor-catalog.competitors[${competitorIndex}]`;
+    object(competitor, label);
+    id(competitor.toolId, `${label}.toolId`);
+    if (toolIds.has(competitor.toolId)) throw new Error(`Duplicate competitor toolId ${competitor.toolId}.`);
+    toolIds.add(competitor.toolId);
+    text(competitor.vendor, `${label}.vendor`);
+    text(competitor.product, `${label}.product`);
+    if (!Array.isArray(competitor.surfaces) || competitor.surfaces.length === 0) throw new Error(`${label}.surfaces must not be empty.`);
+    const surfaceIds = new Set();
+    for (const [surfaceIndex, surface] of competitor.surfaces.entries()) {
+      const surfaceLabel = `${label}.surfaces[${surfaceIndex}]`;
+      object(surface, surfaceLabel);
+      id(surface.id, `${surfaceLabel}.id`);
+      if (surfaceIds.has(surface.id)) throw new Error(`Duplicate competitor surface id ${surface.id}.`);
+      surfaceIds.add(surface.id);
+      text(surface.label, `${surfaceLabel}.label`);
+      if (!DELIVERY_MODES.has(surface.delivery)) throw new Error(`${surfaceLabel}.delivery is unsupported.`);
+      if (!Array.isArray(surface.sourceUrls) || surface.sourceUrls.length === 0) throw new Error(`${surfaceLabel}.sourceUrls must not be empty.`);
+      for (const [urlIndex, value] of surface.sourceUrls.entries()) {
+        text(value, `${surfaceLabel}.sourceUrls[${urlIndex}]`);
+        if (!URL.canParse(value)) throw new Error(`${surfaceLabel}.sourceUrls[${urlIndex}] must be an absolute URL.`);
+      }
+    }
+    if (!Array.isArray(competitor.facts) || competitor.facts.length === 0) throw new Error(`${label}.facts must not be empty.`);
+    const factIds = new Set();
+    for (const [factIndex, fact] of competitor.facts.entries()) {
+      const factLabel = `${label}.facts[${factIndex}]`;
+      object(fact, factLabel);
+      id(fact.id, `${factLabel}.id`);
+      if (factIds.has(fact.id)) throw new Error(`Duplicate competitor fact id ${fact.id}.`);
+      factIds.add(fact.id);
+      if (!COMPETITOR_FACT_KINDS.has(fact.kind)) throw new Error(`${factLabel}.kind is unsupported.`);
+      if (!surfaceIds.has(fact.surfaceId)) throw new Error(`${factLabel}.surfaceId does not name a declared surface.`);
+      text(fact.statement, `${factLabel}.statement`);
+      for (const property of ["sourceUrls", "evidencePaths", "affectedCaseIds"]) {
+        if (fact[property] !== undefined && (!Array.isArray(fact[property]) || !fact[property].every((value) => typeof value === "string" && value.trim()))) {
+          throw new Error(`${factLabel}.${property} must be an array of non-empty strings.`);
+        }
+      }
+      if (fact.kind === "vendor-claim" && (!fact.sourceUrls || fact.sourceUrls.length === 0)) {
+        throw new Error(`${factLabel}.sourceUrls is required for a vendor claim.`);
+      }
+      for (const [urlIndex, value] of (fact.sourceUrls ?? []).entries()) {
+        if (!URL.canParse(value)) throw new Error(`${factLabel}.sourceUrls[${urlIndex}] must be an absolute URL.`);
+      }
+    }
+  }
 }

@@ -11,6 +11,16 @@
     "attemptedAt": "2026-08-11T16:51:10Z",
     "productMessage": "Repairit Online Free: Repair up to 3 photos.",
     "operatorNote": "The free browser path had admitted three photos and no longer exposed an add-photo control after completion. The fourth case was not admitted and the quota was not circumvented.",
+    "accessConstraint": {
+      "kind": "free-tier-quota",
+      "stage": "before-upload",
+      "scope": "session",
+      "limit": {
+        "maximum": 3,
+        "unit": "photos"
+      },
+      "note": "The free allowance was exhausted after the three earlier image cases."
+    },
     "output": null,
     "attachments": []
   },
