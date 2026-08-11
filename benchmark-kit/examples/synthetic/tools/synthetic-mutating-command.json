@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-tool",
+  "id": "synthetic-mutating-fixture-v1",
+  "vendor": "StillOpen test fixtures",
+  "product": "Synthetic mutating command adapter",
+  "version": "1.0.0",
+  "platform": "Node.js test runtime",
+  "synthetic": true,
+  "acquisition": {
+    "source": "benchmark-kit/fixtures/synthetic-tool.mjs"
+  },
+  "adapter": {
+    "kind": "command",
+    "executable": "{node}",
+    "args": [
+      "../../../fixtures/synthetic-tool.mjs",
+      "--mode",
+      "mutate-input",
+      "--input",
+      "{input}",
+      "--output",
+      "{output}"
+    ],
+    "outputFile": "output.bin"
+  }
+}

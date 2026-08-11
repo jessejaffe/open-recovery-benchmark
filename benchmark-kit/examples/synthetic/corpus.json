@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/corpus.schema.json",
+  "schemaVersion": 1,
+  "kind": "benchmark-corpus",
+  "id": "synthetic-command-corpus-v1",
+  "title": "Three-case synthetic recovery corpus",
+  "cases": [
+    {
+      "id": "exact-case",
+      "format": "synthetic/text",
+      "damageClass": "truncated-directory",
+      "input": {
+        "path": "cases/exact.damaged",
+        "byteLength": 53,
+        "sha256": "ac972a547378815c291e7edf2024fe30eb4ec1c39ea992b54812060fd4802f8d"
+      },
+      "groundTruth": {
+        "validator": "exact-sha256-v1",
+        "path": "ground-truth/exact.txt",
+        "byteLength": 26,
+        "sha256": "36b6e1aa091c6841353a59ed182623407d83ba4d92957c90a24197bc8ce6acf3"
+      },
+      "provenance": {
+        "source": "Project-generated deterministic fixture",
+        "license": "Project-authored fixture included for benchmark reproduction"
+      }
+    },
+    {
+      "id": "changed-case",
+      "format": "synthetic/text",
+      "damageClass": "truncated-directory",
+      "input": {
+        "path": "cases/changed.damaged",
+        "byteLength": 53,
+        "sha256": "9cfe7466ce0869b011f3fc6333604ff3b54d25c5f752a1e845563826b4b3ec5b"
+      },
+      "groundTruth": {
+        "validator": "exact-sha256-v1",
+        "path": "ground-truth/changed.txt",
+        "byteLength": 26,
+        "sha256": "77532c7c34d5db668dd64cac277518a5756d977301f2a3a9b5f507e3dc180e13"
+      },
+      "provenance": {
+        "source": "Project-generated deterministic fixture",
+        "license": "Project-authored fixture included for benchmark reproduction"
+      }
+    },
+    {
+      "id": "refusal-case",
+      "format": "synthetic/text",
+      "damageClass": "truncated-directory",
+      "input": {
+        "path": "cases/refusal.damaged",
+        "byteLength": 55,
+        "sha256": "f2a618642d0586cb4fbd76fdccc0f8d39d5ae22e5d6bc3c033426fe74275081a"
+      },
+      "groundTruth": {
+        "validator": "exact-sha256-v1",
+        "path": "ground-truth/refusal.txt",
+        "byteLength": 28,
+        "sha256": "bec6b154313467b6a6a120b3746566c32b7ce325996834bbebe8db5237f2a50a"
+      },
+      "provenance": {
+        "source": "Project-generated deterministic fixture",
+        "license": "Project-authored fixture included for benchmark reproduction"
+      }
+    }
+  ]
+}

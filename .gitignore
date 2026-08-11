@@ -1,0 +1,4 @@
+node_modules/
+benchmark-work/
+.DS_Store
+coverage/

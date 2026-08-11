@@ -1,0 +1,24 @@
+name: Verify benchmark foundation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run demo -- --workspace benchmark-work --run-id ci-proof
+      - run: >-
+          node benchmark-kit/cli.mjs verify-publication
+          --publication benchmark-work/ci-proof-publication
